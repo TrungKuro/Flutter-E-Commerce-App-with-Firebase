@@ -4,40 +4,96 @@
 >
 > ---
 >
-> <u>3 giai đoạn chính</u>:
-> 1. `Cấu hình app:`
->     - App Configuration:
->       - Setup Folder Structure.
->       - Light & Dark Theme Setup.
->       - Setup Widgets Common: button, textfield, chip, ...
->       - Create Helper Functions.
->       - Create Constants.
->       - Create Utility Classes.
-> 2. `Thiết kế UI:`
->     - Login Design:
->       - Native Splash Screen.
->       - OnBoarding Screen.
->       - Register Screen (with Email Verification).
->       - Success Screen.
->       - Login Screen.
->       - Forget Screen (and Reset Password).
->     - E-Store Design:
->       - Wishlist Screen.
->       - Settings Screen.
->       - Profile Screen.
->       - Orders Screen.
-> 3. `Xử lý Backend:`
->     - Login Backend:
->       - `Firebase` Setup.
->       - OnBoarding - (xuất hiện 1 lần mỗi khi chạy, lưu trữ cục bộ).
->       - Register User & Email Verification (xác thực Email và Pass, lưu trữ trong `Firestore`).
->       - Login using Email & Pass.
->       - Forget Pass & Reset Pass.
->       - `GOOGLE SIGN-IN`.
->       - `FACEBOOK SIGN-IN`.
->     - E-Store Backend:
->       - Fetch: Categories, Brands, Products.
->       - Add + Remove: Wishlist Items of each user.
->       - Add + Update + Remove: User Addresses.
->       - Add to Cart.
->       - Checkout & Create Orders.
+> <u>Dự án có 3 phần chính</u>:
+> 1. `App Configuration`
+> 2. `UI Design`
+> 3. `Backend`
+
+---
+---
+---
+
+## Phần I. App Configuration:
+
+> - Setup Folder Structure.
+> - Setup Light & Dark Theme.
+> - Essential Utilities.
+> - Helper Functions.
+> - Constants.
+>
+> ---
+>
+> <u>Nguồn</u>:
+> - [Efficient Folder Structures for Large Flutter Apps | Feature-First vs. Module-First Approach](https://www.youtube.com/watch?v=QDhaK7L09qI).
+> - [Professional Setup of a Theme in Flutter | Light and Dark theme Flutter](https://www.youtube.com/watch?v=Ct9CrMegezQ).
+> - [Mastering Flutter: Essential Utilities, Helper Functions, Constants and much more](https://www.youtube.com/watch?v=3StjTeWs-ZQ).
+>
+> ---
+>
+> `1.` Create Asset folder.
+> - Nơi để chúng ta đặt mọi thứ liên quan đến: *"icons, images, logos, fonts, ..."*
+> - Và khao báo các đường dẫn thư mục trên cho file `pubspec.yaml`.
+>
+> `2.` Setting up Packages and Dependencies.
+> - Sử dụng gói [GetX](https://pub.dev/packages/get) để **[ State Manager ]**.
+> - Sử dụng gói [Cupertino Icons](https://pub.dev/packages/cupertino_icons) để dùng các Icon theo thiết kế **[ Cupertino ]**.
+> - Sử dụng gói [Iconsax](https://pub.dev/packages/iconsax) để dùng các Icon của **[ Framework Vuesax ]**.
+>
+> `3.` Create folders using *"feature first"* approach.
+> - Tiếp cận theo hướng *"tính năng"* trước và *"lớp"* sau. Với mỗi *"tính năng"* được chia thành 3 *"lớp"* : `models` - `screens (views)` - `controllers` theo mô hình `MVC`.
+>
+> ---
+>
+> **[!]** Cấu trúc thư mục của một dự án nhìn chung sẽ gồm:
+>   - `[bindings]` - các ràng buộc với **[ State Manager ]**.
+>   - `[common]` - các thứ có thể xài chung như:
+>     - `[styles]` - các kiểu cho phông chữ.
+>     - `[widgets]` - các Widget tuỳ chỉnh riêng hay dùng.
+>   - `[data]` - đây là *"lớp dữ liệu"* gồm 'KHO LƯU TRỮ' và 'DỊCH VỤ'.<br>Cả 2 đều sẽ xử lý các *"truy vấn đám mây" (Cloud Queries)*.<br>Ví dụ sử dụng **[ Cloud Firestore ]** của **[ Firebase ]**.
+>     - `[repositories]` - KHO LƯU TRỮ xử lý đẩy/lấy data với Cloud.
+>     - `[services]` - DỊCH VỤ xử lý với các `API` của Cloud.
+>   - `[localization]` - gói ngôn ngữ cho ứng dụng tuỳ theo vùng miền.
+>   - `[utils]` - các <u>tiện ích thiết yếu</u> như:
+>     - `[constants]` - các dữ liệu hằng số của ứng dụng, như: color, size, enum, text, api-constant, image-string, ...
+>     - `[device]` - các chức năng cho thiết bị, như: xoay ngang dọc, keyboard, ...
+>     - `[formatters]` - các định dạng, như: định dạng ngày, định dạng số điện thoại, định dạng thẻ ngân hàng, ...
+>     - `[http]` - các chức năng về `HTTP`.
+>     - `[local_storage]` - các chức năng *"lưu trữ cục bộ"* trên thiết bị.
+>     - `[logging]` - các chức năng quản lý tài khoản người dùng.
+>     - `[theme]` - các cài đặt chủ đề UI cho ứng dụng.
+>     - `[validators]` - trình xác thực, như: xác thực tài khoản, xác thực Email, xác thực số điện thoại, xác thực thẻ ngân hàng, ...
+>
+> **[!]** Cuối cùng, thư mục `[features]` - nơi chứa các tính năng của dự án. Cụ thể dự án này có 3 tính năng chính:
+> - `authentication`: tính năng xác thực người dùng.
+> - `personnalization`: tính năng cho người dùng cá nhân hoá.
+> - `shop`: tính năng của cửa hàng.
+
+---
+---
+---
+
+## Phần II. UI Design:
+
+> - ...
+>
+> ---
+>
+> <u>Nguồn</u>:
+> - []().
+>
+> ---
+>
+> ...
+
+## Phần III. Backend:
+
+> - ...
+>
+> ---
+>
+> <u>Nguồn</u>:
+> - []().
+>
+> ---
+>
+> ...
