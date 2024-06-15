@@ -15,10 +15,17 @@ dependencies:
 
   # State Manager
   get: ^4.6.6
+  get_storage: ^2.1.1
 
   # Icons
   cupertino_icons: ^1.0.8
   iconsax: ^0.0.8
+
+  # Utility
+  http: ^1.2.1
+  intl: ^0.19.0
+  logger: ^2.3.0
+  url_launcher: ^6.3.0
 
 # ------------------------------- PACKAGES END ------------------------------ #
 

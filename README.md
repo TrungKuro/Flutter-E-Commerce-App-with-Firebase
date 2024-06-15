@@ -38,6 +38,12 @@
 > - Sử dụng gói [GetX](https://pub.dev/packages/get) để **[ State Manager ]**.
 > - Sử dụng gói [Cupertino Icons](https://pub.dev/packages/cupertino_icons) để dùng các Icon theo thiết kế **[ Cupertino ]**.
 > - Sử dụng gói [Iconsax](https://pub.dev/packages/iconsax) để dùng các Icon của **[ Framework Vuesax ]**.
+> - ...
+> - Gói [HTTP](https://pub.dev/packages/http).
+> - Gói [Intl](https://pub.dev/packages/intl).
+> - Gói [Logger](https://pub.dev/packages/logger).
+> - Gói [URL Launcher](https://pub.dev/packages/url_launcher).
+> - Gói [Get Storage](https://pub.dev/packages/get_storage).
 >
 > `3.` Create folders using *"feature first"* approach.
 > - Tiếp cận theo hướng *"tính năng"* trước và *"lớp"* sau. Với mỗi *"tính năng"* được chia thành 3 *"lớp"* : `models` - `screens (views)` - `controllers` theo mô hình `MVC`.
