@@ -44,6 +44,8 @@
 > - Gói [Logger](https://pub.dev/packages/logger).
 > - Gói [URL Launcher](https://pub.dev/packages/url_launcher).
 > - Gói [Get Storage](https://pub.dev/packages/get_storage).
+> - ...
+> - Gói [Flutter Native Splash](https://pub.dev/packages/flutter_native_splash).
 >
 > `3.` Create folders using *"feature first"* approach.
 > - Tiếp cận theo hướng *"tính năng"* trước và *"lớp"* sau.
@@ -84,12 +86,14 @@
 
 ## Phần II. UI Design:
 
-> - ...
+> - Login Design.
+> - E-Commerce Design.
 >
 > ---
 >
 > <u>Nguồn</u>:
-> - []().
+> - [Flaticon](https://www.flaticon.com/): Icon cho Logo Splash.
+> - [Free vector and 3D illustrations](https://icons8.com/illustrations): ảnh động cho OnBoarding Screen.
 >
 > ---
 >
@@ -97,7 +101,8 @@
 
 ## Phần III. Backend:
 
-> - ...
+> - Login Backend.
+> - E-Commerce Backend.
 >
 > ---
 >
