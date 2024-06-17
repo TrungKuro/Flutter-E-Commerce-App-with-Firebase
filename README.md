@@ -32,7 +32,7 @@
 >
 > `1.` Create Asset folder.
 > - Nơi để chúng ta đặt mọi thứ liên quan đến: *"icons, images, logos, fonts, ..."*
-> - Và khao báo các đường dẫn thư mục trên cho file `pubspec.yaml`.
+> - Và khai báo các đường dẫn thư mục trên cho file `pubspec.yaml`.
 >
 > `2.` Setting up Packages and Dependencies.
 > - Sử dụng gói [GetX](https://pub.dev/packages/get) để **[ State Manager ]**.
@@ -46,7 +46,11 @@
 > - Gói [Get Storage](https://pub.dev/packages/get_storage).
 >
 > `3.` Create folders using *"feature first"* approach.
-> - Tiếp cận theo hướng *"tính năng"* trước và *"lớp"* sau. Với mỗi *"tính năng"* được chia thành 3 *"lớp"* : `models` - `screens (views)` - `controllers` theo mô hình `MVC`.
+> - Tiếp cận theo hướng *"tính năng"* trước và *"lớp"* sau.
+> - Với mỗi *"tính năng"* được chia thành 3 *"lớp"* theo mô hình `MVC`:
+>   - `models`
+>   - `screens (views)`
+>   - `controllers`
 >
 > ---
 >
