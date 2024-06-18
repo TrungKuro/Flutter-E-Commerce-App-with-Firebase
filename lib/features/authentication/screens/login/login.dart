@@ -31,7 +31,7 @@ class LoginScreen extends StatelessWidget {
               EFormDivider(dividerText: ETexts.orSignInWith.capitalize!),
               const SizedBox(height: ESizes.spaceBtwSections),
 
-              /// Footer
+              /// Social Buttons
               const ESocialButtons(),
             ],
           ),

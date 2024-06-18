@@ -16,9 +16,12 @@ class ELoginHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Image(
-          height: 100,
-          image: AssetImage(isDark ? EImages.lightAppLogo : EImages.darkAppLogo),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: ESizes.md),
+          child: Image(
+            height: 100,
+            image: AssetImage(isDark ? EImages.lightAppLogo : EImages.darkAppLogo),
+          ),
         ),
         Text(
           ETexts.loginTitle,
