@@ -1,5 +1,7 @@
+import 'package:e_commerce_app/features/authentication/screens.onboarding/onboarding.dart';
 import 'package:e_commerce_app/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 /* ------------------------------------------------------------------------- */
 
@@ -8,17 +10,13 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       /* ------------------------------------------------------------------- */
       themeMode: ThemeMode.system,
       theme: EAppTheme.lightTheme,
       darkTheme: EAppTheme.darkTheme,
       /* ------------------------------------------------------------------- */
-      home: const Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+      home: const OnBoardingScreen(),
       /* ------------------------------------------------------------------- */
     );
   }

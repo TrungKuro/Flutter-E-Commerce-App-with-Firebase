@@ -46,6 +46,7 @@
 > - Gói [Get Storage](https://pub.dev/packages/get_storage).
 > - ...
 > - Gói [Flutter Native Splash](https://pub.dev/packages/flutter_native_splash).
+> - Gói [Smooth Page Indicator](https://pub.dev/packages/smooth_page_indicator).
 >
 > `3.` Create folders using *"feature first"* approach.
 > - Tiếp cận theo hướng *"tính năng"* trước và *"lớp"* sau.
