@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/theme/custom_themes/appbar_theme.dart';
 import 'package:e_commerce_app/utils/theme/custom_themes/bottom_sheet_theme.dart';
 import 'package:e_commerce_app/utils/theme/custom_themes/checkbox_theme.dart';
@@ -21,8 +22,8 @@ class EAppTheme {
     fontFamily: 'Poppins',
     brightness: Brightness.light,
     //
-    scaffoldBackgroundColor: Colors.white,
-    primaryColor: Colors.blue, //!
+    scaffoldBackgroundColor: EColors.light, //!
+    primaryColor: EColors.primary, //!
     //
     textTheme: EAppTextTheme.lightTextTheme,
     elevatedButtonTheme: EAppElevatedButtonTheme.lightElevatedButtonTheme,
@@ -41,8 +42,8 @@ class EAppTheme {
     fontFamily: 'Poppins',
     brightness: Brightness.dark,
     //
-    scaffoldBackgroundColor: Colors.black,
-    primaryColor: Colors.blue, //!
+    scaffoldBackgroundColor: EColors.dark, //!
+    primaryColor: EColors.primary, //!
     //
     textTheme: EAppTextTheme.darkTextTheme,
     elevatedButtonTheme: EAppElevatedButtonTheme.darkElevatedButtonTheme,

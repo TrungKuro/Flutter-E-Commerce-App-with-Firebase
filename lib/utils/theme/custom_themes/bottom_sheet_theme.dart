@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 /* ------------------------------------------------------------------------- */
@@ -11,8 +12,8 @@ class EAppBottomSheetTheme {
   static BottomSheetThemeData lightBottomSheetTheme = BottomSheetThemeData(
     showDragHandle: true,
     //
-    backgroundColor: Colors.white,
-    modalBackgroundColor: Colors.white,
+    backgroundColor: EColors.light,
+    modalBackgroundColor: EColors.light,
     //
     constraints: const BoxConstraints(minWidth: double.infinity),
     //
@@ -24,8 +25,8 @@ class EAppBottomSheetTheme {
   static BottomSheetThemeData darkBottomSheetTheme = BottomSheetThemeData(
     showDragHandle: true,
     //
-    backgroundColor: Colors.black,
-    modalBackgroundColor: Colors.black,
+    backgroundColor: EColors.dark,
+    modalBackgroundColor: EColors.dark,
     //
     constraints: const BoxConstraints(minWidth: double.infinity),
     //

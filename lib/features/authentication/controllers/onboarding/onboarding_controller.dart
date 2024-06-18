@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/features/authentication/screens/login/login.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
@@ -21,7 +22,7 @@ class OnBoardingController extends GetxController {
   void nextPage() {
     // Hiện có 3 trang OnBoarding, nên trang cuối cùng có Index là 2
     if (currentPageIndex.value == 2) {
-      // Get.to(LoginScreen()); //!
+      Get.offAll(const LoginScreen()); //!
     } else {
       currentPageIndex.value = currentPageIndex.value + 1;
       pageController.jumpToPage(currentPageIndex.value);

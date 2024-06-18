@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 /* ------------------------------------------------------------------------- */
@@ -12,11 +13,11 @@ class EAppOutlinedButtonTheme {
     style: OutlinedButton.styleFrom(
       elevation: 0,
       //
-      foregroundColor: Colors.black,
+      foregroundColor: EColors.black,
       //
-      side: const BorderSide(color: Colors.blue),
+      side: const BorderSide(color: EColors.borderPrimary),
       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
-      textStyle: const TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w600),
+      textStyle: const TextStyle(fontSize: 16, color: EColors.textBlack, fontWeight: FontWeight.w600),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
     ),
   );
@@ -27,11 +28,11 @@ class EAppOutlinedButtonTheme {
     style: OutlinedButton.styleFrom(
       elevation: 0,
       //
-      foregroundColor: Colors.white,
+      foregroundColor: EColors.white,
       //
-      side: const BorderSide(color: Colors.blueAccent),
+      side: const BorderSide(color: EColors.borderPrimary),
       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
-      textStyle: const TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.w600),
+      textStyle: const TextStyle(fontSize: 16, color: EColors.textWhite, fontWeight: FontWeight.w600),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
     ),
   );

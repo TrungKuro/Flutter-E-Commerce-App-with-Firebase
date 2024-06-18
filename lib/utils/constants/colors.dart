@@ -29,6 +29,7 @@ class EColors {
   static const Color textSecondary = Color(0xFF6c757d);
   //
   static const Color textWhite = Colors.white;
+  static const Color textBlack = Colors.black;
 
   /* -------------------------- Background Colors -------------------------- */
 

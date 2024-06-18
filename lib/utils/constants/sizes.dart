@@ -52,18 +52,18 @@ class ESizes {
 
   /* ---------------------------- Divider Height --------------------------- */
 
-  static const dividerHeight = 1;
+  static const double dividerHeight = 1;
 
   /* ------------------------ Product Item Dimension ----------------------- */
 
-  static const productImageSize = 120;
-  static const productImageRadius = 16;
-  static const productItemHeight = 160;
+  static const double productImageSize = 120;
+  static const double productImageRadius = 16;
+  static const double productItemHeight = 160;
 
   /* ----------------------------- Input Field ----------------------------- */
 
-  static const inputFieldRadius = 12;
-  static const spaceBtwInputFields = 16;
+  static const double inputFieldRadius = 12;
+  static const double spaceBtwInputFields = 16;
 
   /* ------------------------------ Card Sizes ----------------------------- */
 
