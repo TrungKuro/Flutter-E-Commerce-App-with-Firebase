@@ -33,7 +33,7 @@ class EAppBarTheme {
     backgroundColor: Colors.transparent,
     surfaceTintColor: Colors.transparent,
     //
-    iconTheme: IconThemeData(color: EColors.black, size: 24),
+    iconTheme: IconThemeData(color: EColors.white, size: 24),
     actionsIconTheme: IconThemeData(color: EColors.white, size: 24),
     //
     titleTextStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: EColors.white),
