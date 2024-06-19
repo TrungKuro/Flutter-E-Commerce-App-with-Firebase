@@ -1,7 +1,9 @@
+import 'package:e_commerce_app/features/authentication/screens/signup/verify_email.dart';
 import 'package:e_commerce_app/features/authentication/screens/signup/widgets/terms_conditions_checkbox.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class ESignUpForm extends StatelessWidget {
@@ -87,7 +89,7 @@ class ESignUpForm extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {}, //!
+              onPressed: () => Get.to(() => const VerifyEmailScreen()), //!
               child: const Text(ETexts.createAccount),
             ),
           ),
