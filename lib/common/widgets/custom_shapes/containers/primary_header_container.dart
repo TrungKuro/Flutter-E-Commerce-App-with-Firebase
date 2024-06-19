@@ -50,6 +50,6 @@ class EPrimaryHeaderContainer extends StatelessWidget {
           /* ----------------------------------------------------------------- */
         ),
       ),
-    ); //!
+    );
   }
 }

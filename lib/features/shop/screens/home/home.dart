@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/common/widgets/custom_shapes/containers/primary_header_container.dart';
+import 'package:e_commerce_app/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -10,10 +11,18 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            //! Test phần layout hộp chứa tiêu đề
             EPrimaryHeaderContainer(
-              child: Center(child: Text('H.O.M.E')),
-            ), //!
+              child: Column(
+                children: [
+                  /// AppBar
+                  EHomeAppBar(),
+
+                  /// SearchBar
+
+                  /// Categories
+                ],
+              ),
+            ),
           ],
         ),
       ),

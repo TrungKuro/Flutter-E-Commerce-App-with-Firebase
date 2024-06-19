@@ -24,7 +24,7 @@ class ETexts {
   /* --------------------------------- Home -------------------------------- */
 
   static const String homeAppBarTitle = "Good day for shopping";
-  static const String homeAppBarSubTitle = "Taimoor Sikander";
+  static const String homeAppBarSubTitle = "Trung Kuro";
 
   /* --------------------- Authentication Headings Text -------------------- */
 
