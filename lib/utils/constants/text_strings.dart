@@ -78,4 +78,11 @@ class ETexts {
   static const String verificationCode = 'Verification Code';
   static const String resendEmail = 'Resend Email';
   static const String resendEmailIn = 'Resend email in';
+
+  /* ------------------------ Navigation Destination ----------------------- */
+
+  static const String home = 'Home';
+  static const String store = 'Store';
+  static const String wishList = 'Wishlist';
+  static const String profile = 'Profile';
 }
