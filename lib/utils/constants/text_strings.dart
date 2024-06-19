@@ -4,6 +4,8 @@ class ETexts {
 
   /* ----------------------------- Global Texts ---------------------------- */
 
+  static const String skip = 'Skip';
+  static const String done = 'Done';
   static const String submit = 'Submit';
   static const String appName = 'E-Store';
   static const String tContinue = 'Continue';
@@ -72,7 +74,7 @@ class ETexts {
   static const String privacyPolicy = 'Privacy Policy';
   static const String and = 'and';
   static const String termsOfUse = 'Terms of use';
-  
+
   static const String verificationCode = 'Verification Code';
   static const String resendEmail = 'Resend Email';
   static const String resendEmailIn = 'Resend email in';
