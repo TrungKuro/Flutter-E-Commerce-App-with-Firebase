@@ -39,4 +39,12 @@ class EImages {
   static const String furnitureIcon = 'assets/icons/categories/furniture.png';
   static const String jewelleryIcon = 'assets/icons/categories/jewellery.png';
   static const String electronicsIcon = 'assets/icons/categories/electronics.png';
+
+  /* ------------------------------- Banners ------------------------------- */
+
+  static const String promoBanner1 = 'assets/images/banners/promo-banner-1.jpg';
+  static const String promoBanner2 = 'assets/images/banners/promo-banner-2.jpg';
+  static const String promoBanner3 = 'assets/images/banners/promo-banner-3.jpg';
+  static const String promoBanner4 = 'assets/images/banners/promo-banner-4.jpg';
+  static const String promoBanner5 = 'assets/images/banners/promo-banner-5.jpg';
 }

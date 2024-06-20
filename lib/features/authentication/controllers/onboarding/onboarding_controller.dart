@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/features/authentication/screens/login/login.dart';
+import 'package:e_commerce_app/utils/constants/number_constants.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
@@ -20,8 +21,7 @@ class OnBoardingController extends GetxController {
 
   /// Update current index & Jump to the next page.
   void nextPage() {
-    // Hiện có 3 trang OnBoarding, nên trang cuối cùng có Index là 2
-    if (currentPageIndex.value == 2) {
+    if (currentPageIndex.value == ENumberConstants.onBoardingNumber - 1) {
       Get.offAll(const LoginScreen()); //!
     } else {
       currentPageIndex.value = currentPageIndex.value + 1;
@@ -31,8 +31,7 @@ class OnBoardingController extends GetxController {
 
   /// Update current index & Jump to the last page.
   void skipPage() {
-    // Hiện có 3 trang OnBoarding, nên trang cuối cùng có Index là 2
-    currentPageIndex.value = 2;
+    currentPageIndex.value = ENumberConstants.onBoardingNumber - 1;
     pageController.jumpToPage(currentPageIndex.value);
   }
 }

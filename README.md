@@ -47,6 +47,7 @@
 > - ...
 > - Gói [Flutter Native Splash](https://pub.dev/packages/flutter_native_splash).
 > - Gói [Smooth Page Indicator](https://pub.dev/packages/smooth_page_indicator).
+> - Gói [Carousel Slider](https://pub.dev/packages/carousel_slider).
 >
 > `3.` Create folders using *"feature first"* approach.
 > - Tiếp cận theo hướng *"tính năng"* trước và *"lớp"* sau.
@@ -95,6 +96,7 @@
 > <u>Nguồn</u>:
 > - [Flaticon](https://www.flaticon.com/): Icon cho Logo Splash.
 > - [Free vector and 3D illustrations](https://icons8.com/illustrations): ảnh động cho OnBoarding Screen.
+> - [Freepik](https://www.freepik.com/): ảnh Banner.
 >
 > ---
 >
