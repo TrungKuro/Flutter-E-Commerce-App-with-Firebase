@@ -26,6 +26,8 @@ class ETexts {
   static const String homeAppBarTitle = "Good day for shopping";
   static const String homeAppBarSubTitle = "Trung Kuro";
 
+  static const String searchBarTitle = 'Search in Store';
+
   /* --------------------- Authentication Headings Text -------------------- */
 
   static const String loginTitle = 'Welcome back,';
