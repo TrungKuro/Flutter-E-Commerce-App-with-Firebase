@@ -4,10 +4,12 @@ class ETexts {
 
   /* ----------------------------- Global Texts ---------------------------- */
 
+  static const String appName = 'E-Store';
+
   static const String skip = 'Skip';
   static const String done = 'Done';
   static const String submit = 'Submit';
-  static const String appName = 'E-Store';
+  static const String viewAll = 'View all';
   static const String tContinue = 'Continue';
 
   /* --------------------------- OnBoarding Texts -------------------------- */
@@ -27,6 +29,26 @@ class ETexts {
   static const String homeAppBarSubTitle = "Trung Kuro";
 
   static const String searchBarTitle = 'Search in Store';
+  static const String categoriesTitle = 'Popular Categories';
+
+  /* ------------------------------ Categories ----------------------------- */
+
+  static const String sports = 'Sports';
+  static const String clothes = 'Clothes';
+  static const String shoes = 'Shoes';
+  static const String cosmetics = 'Cosmetics';
+  static const String animals = 'Animals';
+  static const String toys = 'Toys';
+  static const String furniture = 'Furniture';
+  static const String jewellery = 'Jewellery';
+  static const String electronics = 'Electronics';
+
+  /* ------------------------ Navigation Destination ----------------------- */
+
+  static const String home = 'Home';
+  static const String store = 'Store';
+  static const String wishList = 'Wishlist';
+  static const String profile = 'Profile';
 
   /* --------------------- Authentication Headings Text -------------------- */
 
@@ -80,11 +102,4 @@ class ETexts {
   static const String verificationCode = 'Verification Code';
   static const String resendEmail = 'Resend Email';
   static const String resendEmailIn = 'Resend email in';
-
-  /* ------------------------ Navigation Destination ----------------------- */
-
-  static const String home = 'Home';
-  static const String store = 'Store';
-  static const String wishList = 'Wishlist';
-  static const String profile = 'Profile';
 }

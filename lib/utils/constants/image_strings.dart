@@ -27,4 +27,16 @@ class EImages {
   static const String deliveredEmailIllustration = 'assets/images/animations/sammy-line-man-receives-a-mail.png';
   static const String verifyIllustration =
       'assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif';
+
+  /* ---------------------------- Category Icons --------------------------- */
+
+  static const String sportsIcon = 'assets/icons/categories/sports.png';
+  static const String clothesIcon = 'assets/icons/categories/clothes.png';
+  static const String shoesIcon = 'assets/icons/categories/shoes.png';
+  static const String cosmeticsIcon = 'assets/icons/categories/cosmetics.png';
+  static const String animalsIcon = 'assets/icons/categories/animals.png';
+  static const String toysIcon = 'assets/icons/categories/toys.png';
+  static const String furnitureIcon = 'assets/icons/categories/furniture.png';
+  static const String jewelleryIcon = 'assets/icons/categories/jewellery.png';
+  static const String electronicsIcon = 'assets/icons/categories/electronics.png';
 }
