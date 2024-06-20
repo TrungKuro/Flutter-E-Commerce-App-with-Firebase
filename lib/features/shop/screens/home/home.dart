@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -22,15 +22,21 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   /// AppBar
-                  EHomeAppBar(),
-                  SizedBox(height: ESizes.spaceBtwSections),
+                  const EHomeAppBar(),
+                  const SizedBox(height: ESizes.spaceBtwSections),
 
                   /// SearchBar
-                  ESearchContainer(text: ETexts.searchBarTitle),
-                  SizedBox(height: ESizes.spaceBtwSections),
+                  ESearchContainer(
+                    text: ETexts.searchBarTitle,
+                    onTap: () {
+                      // ignore: avoid_print
+                      print('search');
+                    }, //!
+                  ),
+                  const SizedBox(height: ESizes.spaceBtwSections),
 
                   /// Categories
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.only(left: ESizes.defaultSpace),
                     child: Column(
                       children: [
