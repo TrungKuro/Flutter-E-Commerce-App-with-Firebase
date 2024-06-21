@@ -30,6 +30,7 @@ class ECircularIcon extends StatelessWidget {
       height: height,
       decoration: BoxDecoration(
         color: (backgroundColor) ?? (isDark ? EColors.black.withOpacity(0.9) : EColors.white.withOpacity(0.9)),
+        borderRadius: BorderRadius.circular(100),
       ),
       child: IconButton(
         onPressed: () {}, //!

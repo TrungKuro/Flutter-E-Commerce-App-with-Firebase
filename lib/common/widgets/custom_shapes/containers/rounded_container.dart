@@ -7,7 +7,7 @@ class ERoundedContainer extends StatelessWidget {
     super.key,
     this.width,
     this.height,
-    this.radius = ESizes.cardRadiusLg,
+    this.radius = ESizes.md,
     this.child,
     this.showBorder = false,
     this.borderColor = EColors.borderPrimary,

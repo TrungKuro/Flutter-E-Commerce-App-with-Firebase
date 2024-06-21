@@ -25,39 +25,50 @@ class EProductCardVertical extends StatelessWidget {
         padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
           boxShadow: [EShadowStyle.verticalProductShadow],
-          borderRadius: BorderRadius.circular(ESizes.productImageRadius),
+          borderRadius: BorderRadius.circular(ESizes.cardRadiusLg),
           color: isDark ? EColors.darkerGrey : EColors.white,
         ),
         child: Column(
           children: [
-            /// Thumbnail, Wishlist Button, Discount Tag
+            /// Thumbnail, Wishlist, Discount
             ERoundedContainer(
+              radius: ESizes.cardRadiusLg - 1,
               height: 180,
               padding: const EdgeInsets.all(ESizes.sm),
               backgroundColor: isDark ? EColors.dark : EColors.light,
               child: Stack(
                 children: [
                   /// Thumnail Image
-                  const ERoundedImage(imageUrl: EImages.productShoesNike1),
-
-                  /// Sale Tag
-                  Positioned(
-                    top: 12,
-                    child: ERoundedContainer(
-                      radius: ESizes.sm,
-                      backgroundColor: EColors.secondary.withOpacity(0.8),
-                      padding: const EdgeInsets.symmetric(horizontal: ESizes.sm, vertical: ESizes.xs),
-                      child: Text('25%', style: Theme.of(context).textTheme.labelLarge!.apply(color: EColors.black)),
-                    ),
+                  const ERoundedImage(
+                    borderRadius: ESizes.cardRadiusLg - 1 - ESizes.sm,
+                    imageUrl: EImages.productShoesNike4,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
                   ),
 
-                  /// Favourite Icon Button
-                  const Positioned(
-                    top: 0,
-                    right: 0,
-                    child: ECircularIcon(
-                      icon: Iconsax.heart5,
-                      color: EColors.favourite,
+                  /// Discount & Wishlist
+                  Positioned(
+                    top: 1,
+                    left: 1,
+                    right: 1,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        /// Sale Tag
+                        ERoundedContainer(
+                          radius: ESizes.sm,
+                          backgroundColor: EColors.secondary.withOpacity(0.8),
+                          padding: const EdgeInsets.symmetric(horizontal: ESizes.sm, vertical: ESizes.xs),
+                          child:
+                              Text('25%', style: Theme.of(context).textTheme.labelLarge!.apply(color: EColors.black)),
+                        ),
+
+                        /// Favourite Icon Button
+                        const ECircularIcon(
+                          icon: Iconsax.heart5,
+                          color: EColors.favourite,
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -71,11 +82,14 @@ class EProductCardVertical extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  /// Name Product
                   const EProductTitleText(
                     title: 'Green Nike Air Shoes',
                     smallSize: true,
                   ),
                   const SizedBox(height: ESizes.spaceBtwItems / 2),
+
+                  /// Name Company
                   Row(
                     children: [
                       Text(
@@ -92,6 +106,8 @@ class EProductCardVertical extends StatelessWidget {
                       ),
                     ],
                   ),
+
+                  /// Price & Button buy
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
