@@ -47,4 +47,12 @@ class EImages {
   static const String promoBanner3 = 'assets/images/banners/promo-banner-3.jpg';
   static const String promoBanner4 = 'assets/images/banners/promo-banner-4.jpg';
   static const String promoBanner5 = 'assets/images/banners/promo-banner-5.jpg';
+
+  /* ------------------------------- Products ------------------------------ */
+
+  static const String productShoesNike1 = 'assets/images/products/shoes/nike/Air-Jordan-1-Mid.png';
+  static const String productShoesNike2 = 'assets/images/products/shoes/nike/Jumpman-MVP.png';
+  static const String productShoesNike3 = 'assets/images/products/shoes/nike/Nike-Dunk-Low-Twist.png';
+  static const String productShoesNike4 = 'assets/images/products/shoes/nike/Nike-Pegasus-41.png';
+  static const String productShoesNike5 = 'assets/images/products/shoes/nike/Tatum-2-Sidewalk-Chalk-PF.png';
 }

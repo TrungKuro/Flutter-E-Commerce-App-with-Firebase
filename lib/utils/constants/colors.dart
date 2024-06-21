@@ -23,6 +23,10 @@ class EColors {
     ],
   );
 
+  /* ----------------------------- Icon Colors ----------------------------- */
+
+  static const Color favourite = Colors.red;
+
   /* ----------------------------- Text Colors ----------------------------- */
 
   static const Color textPrimary = Color(0xFF333333);

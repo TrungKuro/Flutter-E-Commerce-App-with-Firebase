@@ -1,5 +1,7 @@
 import 'package:e_commerce_app/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:e_commerce_app/common/widgets/layouts/grid_layout.dart';
+import 'package:e_commerce_app/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/home_categories.dart';
@@ -61,15 +63,27 @@ class HomeScreen extends StatelessWidget {
             ),
 
             /// Body
-            const Padding(
-              padding: EdgeInsets.all(ESizes.defaultSpace),
-              child: EPromoSlider(
-                banners: [
-                  EImages.promoBanner1,
-                  EImages.promoBanner2,
-                  EImages.promoBanner3,
-                  EImages.promoBanner4,
-                  EImages.promoBanner5,
+            Padding(
+              padding: const EdgeInsets.all(ESizes.defaultSpace),
+              child: Column(
+                children: [
+                  /// Promo Slider
+                  const EPromoSlider(
+                    banners: [
+                      EImages.promoBanner1,
+                      EImages.promoBanner2,
+                      EImages.promoBanner3,
+                      EImages.promoBanner4,
+                      EImages.promoBanner5,
+                    ],
+                  ),
+                  const SizedBox(height: ESizes.spaceBtwSections),
+
+                  /// Popular Products
+                  EGridLayout(
+                    itemCount: 6, //!
+                    itemBuilder: (_, index) => const EProductCardVertical(),
+                  ),
                 ],
               ),
             ),

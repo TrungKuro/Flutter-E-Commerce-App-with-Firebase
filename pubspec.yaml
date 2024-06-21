@@ -49,6 +49,7 @@ flutter:
     - assets/images/on_boarding_images/
     - assets/images/animations/
     - assets/images/banners/
+    - assets/images/products/shoes/nike/
 
 # ------------------------------- LOCAL FONTS ------------------------------- #
 
