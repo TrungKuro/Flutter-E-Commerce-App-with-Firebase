@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget {
               height: 430, //!
               child: Column(
                 children: [
-                  /// AppBar
+                  /// AppBar - Name Customer
                   const EHomeAppBar(),
                   const SizedBox(height: ESizes.spaceBtwSections),
 
@@ -40,7 +40,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: ESizes.spaceBtwSections),
 
-                  /// Categories
+                  /// Popular Categories
                   const Padding(
                     padding: EdgeInsets.only(left: ESizes.defaultSpace),
                     child: Column(
@@ -53,7 +53,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         SizedBox(height: ESizes.spaceBtwSections),
 
-                        /// Categories
+                        /// List Categories Product
                         EHomeCategories(),
                       ],
                     ),
@@ -67,7 +67,7 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.all(ESizes.defaultSpace),
               child: Column(
                 children: [
-                  /// Promo Slider
+                  /// Promo Banner Slider
                   const EPromoSlider(
                     banners: [
                       EImages.promoBanner1,

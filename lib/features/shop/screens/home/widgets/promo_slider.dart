@@ -3,6 +3,7 @@ import 'package:e_commerce_app/common/widgets/custom_shapes/containers/circular_
 import 'package:e_commerce_app/common/widgets/images/rounded_image.dart';
 import 'package:e_commerce_app/features/shop/controllers/home/home_controller.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
+import 'package:e_commerce_app/utils/constants/number_constants.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -21,14 +22,26 @@ class EPromoSlider extends StatelessWidget {
 
     return Column(
       children: [
+        /// Banner
         CarouselSlider(
           options: CarouselOptions(
             viewportFraction: 1,
+            autoPlay: true, //!
+            autoPlayInterval: ENumberConstants.autoPlayInterval,
+            autoPlayAnimationDuration: ENumberConstants.autoPlayAnimationDuration,
             onPageChanged: (index, _) => controller.updatePageIndicator(index), //!
           ),
-          items: banners.map((url) => ERoundedImage(imageUrl: url, height: 200)).toList(),
+          items: banners
+              .map((url) => ERoundedImage(
+                    imageUrl: url,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ))
+              .toList(),
         ),
         const SizedBox(height: ESizes.spaceBtwItems),
+
+        /// Dot Navigation for Banner
         Center(
           child: Obx(
             () => Row(
