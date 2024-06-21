@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 /* ------------------------------------------------------------------------- */
 
 class EAppCheckboxTheme {
-  //! Hàm xây dựng riêng tư
+  //? Hàm xây dựng riêng tư
   EAppCheckboxTheme._();
 
   /* ----------------------------- Trường tĩnh ----------------------------- */

@@ -18,13 +18,13 @@ class EDeviceUtils {
 
   // Lấy thông số chiều cao của bàn phím ảo
   static double getKeyboardHeight() {
-    final viewInsets = MediaQuery.of(Get.context!).viewInsets;
+    final viewInsets = MediaQuery.of(Get.context!).viewInsets; //!
     return viewInsets.bottom;
   }
 
   // Cho biết bàn phím ảo có đang hiển thị hay ko?
   static Future<bool> isKeyboardVisible() async {
-    final viewInsets = View.of(Get.context!).viewInsets;
+    final viewInsets = View.of(Get.context!).viewInsets; //!
     return viewInsets.bottom > 0;
   }
 
@@ -39,7 +39,7 @@ class EDeviceUtils {
 
   // Lấy thông số chiều cao của thanh trạng thái
   static double getStatusBarHeight() {
-    return MediaQuery.of(Get.context!).padding.top;
+    return MediaQuery.of(Get.context!).padding.top; //!
   }
 
   // Cho ẩn thanh trạng thái
@@ -100,12 +100,12 @@ class EDeviceUtils {
 
   // Lấy tỉ lệ màn hình Pixel của thiết bị
   static double getPixelRatio() {
-    return MediaQuery.of(Get.context!).devicePixelRatio;
+    return MediaQuery.of(Get.context!).devicePixelRatio; //!
   }
 
   // Lấy kích thước CHIỀU CAO của màn hình
   static double getScreenHeight() {
-    return MediaQuery.of(Get.context!).size.height;
+    return MediaQuery.of(Get.context!).size.height; //!
   }
 
   // Lấy kích thước CHIỀU NGANG của màn hình

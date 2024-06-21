@@ -22,8 +22,8 @@ class OnBoardingScreen extends StatelessWidget {
         children: [
           /// Horizontal scrollable pages
           PageView(
-            controller: controller.pageController, //!
-            onPageChanged: controller.updatePageIndicator, //!
+            controller: controller.pageController,
+            onPageChanged: controller.updatePageIndicator,
             children: const [
               OnBoardingPage(
                 image: EImages.onBoardingImage1,

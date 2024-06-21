@@ -35,16 +35,16 @@ class EPrimaryHeaderContainer extends StatelessWidget {
               Positioned(
                 top: -150,
                 right: -250,
-                child: ECircularContainer(backgroundColor: EColors.textWhite.withOpacity(0.1)), //!
+                child: ECircularContainer(backgroundColor: EColors.textWhite.withOpacity(0.1)),
               ),
               Positioned(
                 top: 100,
                 right: -300,
-                child: ECircularContainer(backgroundColor: EColors.textWhite.withOpacity(0.1)), //!
+                child: ECircularContainer(backgroundColor: EColors.textWhite.withOpacity(0.1)),
               ),
 
-              ///
-              child, //!
+              /// Content on Background
+              child,
             ],
           ),
           /* ----------------------------------------------------------------- */

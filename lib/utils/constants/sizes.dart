@@ -1,5 +1,5 @@
 class ESizes {
-  //! Hàm xây dựng riêng tư
+  //? Hàm xây dựng riêng tư
   ESizes._();
 
   /* ----------------------- Padding and Margin sizes ---------------------- */

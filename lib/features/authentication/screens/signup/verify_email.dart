@@ -46,7 +46,7 @@ class VerifyEmailScreen extends StatelessWidget {
                 'support@codingwith.com',
                 style: Theme.of(context).textTheme.labelLarge,
                 textAlign: TextAlign.center,
-              ), //!
+              ),
               const SizedBox(height: ESizes.spaceBtwItems),
               Text(
                 ETexts.confirmEmailSubTitle,

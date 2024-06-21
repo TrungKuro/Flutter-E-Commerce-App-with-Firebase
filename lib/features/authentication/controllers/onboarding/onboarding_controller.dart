@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class OnBoardingController extends GetxController {
-  static OnBoardingController get instance => Get.find();
+  static OnBoardingController get instance => Get.find(); //!
 
   /// Variables.
   final pageController = PageController();

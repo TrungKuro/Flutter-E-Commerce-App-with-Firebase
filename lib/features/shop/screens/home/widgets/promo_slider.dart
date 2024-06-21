@@ -26,10 +26,10 @@ class EPromoSlider extends StatelessWidget {
         CarouselSlider(
           options: CarouselOptions(
             viewportFraction: 1,
-            autoPlay: true, //!
+            autoPlay: true,
             autoPlayInterval: ENumberConstants.autoPlayInterval,
             autoPlayAnimationDuration: ENumberConstants.autoPlayAnimationDuration,
-            onPageChanged: (index, _) => controller.updatePageIndicator(index), //!
+            onPageChanged: (index, _) => controller.updatePageIndicator(index),
           ),
           items: banners
               .map((url) => ERoundedImage(
@@ -52,7 +52,7 @@ class EPromoSlider extends StatelessWidget {
                     width: 20,
                     height: 4,
                     margin: const EdgeInsets.only(right: 10),
-                    backgroundColor: controller.carouselCurrentIndex.value == i ? EColors.primary : EColors.grey, //!
+                    backgroundColor: controller.carouselCurrentIndex.value == i ? EColors.primary : EColors.grey,
                   ),
               ],
             ),

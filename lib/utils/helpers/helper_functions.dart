@@ -46,7 +46,7 @@ class EHelperFunctions {
 
   // Cho hiển thị thông báo bằng thanh [SnackBar]
   static void showSnackBar(String message) {
-    ScaffoldMessenger.of(Get.context!).showSnackBar(SnackBar(content: Text(message)));
+    ScaffoldMessenger.of(Get.context!).showSnackBar(SnackBar(content: Text(message))); //!
   }
 
   /* ----------------------------------------------------------------------- */
@@ -54,7 +54,7 @@ class EHelperFunctions {
   // Cho hiện thị bảng thông báo
   static void showAlert(String title, String message) {
     showDialog(
-      context: Get.context!,
+      context: Get.context!, //!
       builder: (context) {
         return AlertDialog(
           title: Text(title),
@@ -99,17 +99,17 @@ class EHelperFunctions {
 
   // Trả về kích thước màn hình
   static Size screenSize() {
-    return MediaQuery.of(Get.context!).size;
+    return MediaQuery.of(Get.context!).size; //!
   }
 
   // Trả về kích thước CHIỀU CAO của màn hình
   static double screenHeight() {
-    return MediaQuery.of(Get.context!).size.height;
+    return MediaQuery.of(Get.context!).size.height; //!
   }
 
   // Trả về kích thước CHIỀU NGANG của màn hình
   static double screenWidth() {
-    return MediaQuery.of(Get.context!).size.width;
+    return MediaQuery.of(Get.context!).size.width; //!
   }
 
   /* ----------------------------------------------------------------------- */

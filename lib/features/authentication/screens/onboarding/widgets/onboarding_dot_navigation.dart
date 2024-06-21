@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
+import 'package:e_commerce_app/utils/constants/number_constants.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/device/device_utility.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
@@ -20,9 +21,9 @@ class OnBoardingDotNavigation extends StatelessWidget {
       bottom: EDeviceUtils.getBottomNavigationBarHeight() + 25,
       left: ESizes.defaultSpace,
       child: SmoothPageIndicator(
-        controller: controller.pageController, //!
-        onDotClicked: controller.dotNavigationClick, //!
-        count: 3, //!
+        controller: controller.pageController,
+        onDotClicked: controller.dotNavigationClick,
+        count: ENumberConstants.onBoardingNumber,
         effect: ExpandingDotsEffect(
           activeDotColor: isDark ? EColors.light : EColors.dark,
           dotHeight: 6,

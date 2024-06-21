@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 /* ------------------------------------------------------------------------- */
 
 class EAppTextTheme {
-  //! Hàm xây dựng riêng tư
+  //? Hàm xây dựng riêng tư
   EAppTextTheme._();
 
   /* ----------------------------- Trường tĩnh ----------------------------- */

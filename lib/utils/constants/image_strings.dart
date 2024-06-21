@@ -1,5 +1,5 @@
 class EImages {
-  //! Hàm xây dựng riêng tư
+  //? Hàm xây dựng riêng tư
   EImages._();
 
   /* ------------------------------ App Logos ------------------------------ */

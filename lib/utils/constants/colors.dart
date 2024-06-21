@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class EColors {
-  //! Hàm xây dựng riêng tư
+  //? Hàm xây dựng riêng tư
   EColors._();
 
   /* --------------------------- App Basic Colors -------------------------- */

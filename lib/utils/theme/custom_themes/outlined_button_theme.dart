@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 /* ------------------------------------------------------------------------- */
 
 class EAppOutlinedButtonTheme {
-  //! Hàm xây dựng riêng tư
+  //? Hàm xây dựng riêng tư
   EAppOutlinedButtonTheme._();
 
   /* ----------------------------- Trường tĩnh ----------------------------- */

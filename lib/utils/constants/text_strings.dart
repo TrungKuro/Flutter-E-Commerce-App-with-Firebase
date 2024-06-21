@@ -1,5 +1,5 @@
 class ETexts {
-  //! Hàm xây dựng riêng tư
+  //? Hàm xây dựng riêng tư
   ETexts._();
 
   /* ----------------------------- Global Texts ---------------------------- */

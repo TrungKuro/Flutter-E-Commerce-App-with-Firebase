@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 /* ------------------------------------------------------------------------- */
 
 class EAppTheme {
-  //! Hàm xây dựng riêng tư
+  //? Hàm xây dựng riêng tư
   EAppTheme._();
 
   /* ----------------------------- Trường tĩnh ----------------------------- */
@@ -22,8 +22,8 @@ class EAppTheme {
     fontFamily: 'Poppins',
     brightness: Brightness.light,
     //
-    scaffoldBackgroundColor: EColors.light, //!
-    primaryColor: EColors.primary, //!
+    scaffoldBackgroundColor: EColors.light,
+    primaryColor: EColors.primary,
     //
     textTheme: EAppTextTheme.lightTextTheme,
     elevatedButtonTheme: EAppElevatedButtonTheme.lightElevatedButtonTheme,
@@ -42,8 +42,8 @@ class EAppTheme {
     fontFamily: 'Poppins',
     brightness: Brightness.dark,
     //
-    scaffoldBackgroundColor: EColors.dark, //!
-    primaryColor: EColors.primary, //!
+    scaffoldBackgroundColor: EColors.dark,
+    primaryColor: EColors.primary,
     //
     textTheme: EAppTextTheme.darkTextTheme,
     elevatedButtonTheme: EAppElevatedButtonTheme.darkElevatedButtonTheme,

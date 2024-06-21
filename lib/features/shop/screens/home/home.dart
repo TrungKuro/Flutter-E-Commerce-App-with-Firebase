@@ -8,6 +8,7 @@ import 'package:e_commerce_app/features/shop/screens/home/widgets/home_categorie
 import 'package:e_commerce_app/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
+import 'package:e_commerce_app/utils/constants/number_constants.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             /// Header
             EPrimaryHeaderContainer(
-              height: 430, //!
+              height: ENumberConstants.heightHeader,
               child: Column(
                 children: [
                   /// AppBar - Name Customer
@@ -81,7 +82,7 @@ class HomeScreen extends StatelessWidget {
 
                   /// Popular Products
                   EGridLayout(
-                    itemCount: 6, //!
+                    itemCount: ENumberConstants.popularProductNumber,
                     itemBuilder: (_, index) => const EProductCardVertical(),
                   ),
                 ],
