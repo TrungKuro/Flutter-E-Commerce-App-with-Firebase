@@ -108,4 +108,15 @@ class EImages {
       "assets/images/products/toys/schleich/Schleich Eldrador Creatures 70151 - Jungle Emperor.webp";
   static const String productToysSchleich5 =
       "assets/images/products/toys/schleich/Schleich Eldrador Creatures 70152 Shadow Dragon.webp";
+
+  // Toys Bandai
+  static const String productToysBandai1 =
+      "assets/images/products/toys/bandai/GUNDAM UNIVERSE RX-78-2 GUNDAM [MARKING PLUS VER.].jpeg";
+  static const String productToysBandai2 =
+      "assets/images/products/toys/bandai/HG 1:144 GUNDAM LFRITH PRE-PRODUCTION MODEL.jpeg";
+  static const String productToysBandai3 =
+      "assets/images/products/toys/bandai/PG 1:60 UNICORN GUNDAM 03 PHENEX (NARRATIVE Ver.).jpeg";
+  static const String productToysBandai4 =
+      "assets/images/products/toys/bandai/PG 1:60 UNICORN GUNDAM PERFECTIBILITY.jpeg";
+  static const String productToysBandai5 = "assets/images/products/toys/bandai/RE:100 1:100 GUNDAM LINDWURM.jpeg";
 }

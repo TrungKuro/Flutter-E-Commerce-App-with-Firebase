@@ -55,6 +55,7 @@ flutter:
     - assets/images/products/shoes/puma/
     - assets/images/products/toys/lego/
     - assets/images/products/toys/schleich/
+    - assets/images/products/toys/bandai/
 
 # ------------------------------- LOCAL FONTS ------------------------------- #
 

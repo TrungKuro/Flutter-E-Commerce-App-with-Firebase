@@ -139,6 +139,12 @@
 >     - [Schleich Eldrador Creatures 42554 Shadow Wolf](https://electricgemz.co.uk/collections/schleich/products/schleich-eldrador-creatures-42554-shadow-wolf)
 >     - [Schleich Eldrador Creatures 70152 Shadow Dragon](https://electricgemz.co.uk/collections/schleich/products/schleich-eldrador-creatures-70152-shadow-dragon)
 >     - [Schleich Eldrador Creatures 70151 - Jungle Emperor](https://electricgemz.co.uk/collections/schleich/products/schleich-eldrador-creatures-70151-jungle-emperor)
+>   - Bandai
+>     - [GUNDAM UNIVERSE RX-78-2 GUNDAM [MARKING PLUS VER.]](https://p-bandai.com/us/item/N2627852001001)
+>     - [RE/100 1/100 GUNDAM LINDWURM](https://p-bandai.com/us/item/N2583475001005)
+>     - [PG 1/60 UNICORN GUNDAM PERFECTIBILITY](https://p-bandai.com/us/item/N2570545001006)
+>     - [HG 1/144 GUNDAM LFRITH PRE-PRODUCTION MODEL](https://p-bandai.com/us/item/N2703002001002)
+>     - [PG 1/60 UNICORN GUNDAM 03 PHENEX (NARRATIVE Ver.)](https://p-bandai.com/us/item/N2539737001005)
 
 ## Phần III. Backend:
 
