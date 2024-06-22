@@ -57,8 +57,19 @@ class EImages {
   static const String productShoesNike5 = 'assets/images/products/shoes/nike/Tatum-2-Sidewalk-Chalk-PF.png';
 
   static const String productShoesAdidas1 = 'assets/images/products/shoes/adidas/ADIZERO UBERSONIC 4 TENNIS SHOES.avif';
-  static const String productShoesAdidas2 = 'assets/images/products/shoes/adidas/ADIZERO UBERSONIC 4.1 TENNIS SHOES.avif';
+  static const String productShoesAdidas2 =
+      'assets/images/products/shoes/adidas/ADIZERO UBERSONIC 4.1 TENNIS SHOES.avif';
   static const String productShoesAdidas3 = 'assets/images/products/shoes/adidas/BARRICADE 13 TENNIS SHOES.avif';
   static const String productShoesAdidas4 = 'assets/images/products/shoes/adidas/OSADE SHOES.avif';
   static const String productShoesAdidas5 = 'assets/images/products/shoes/adidas/SOLEMATCH CONTROL TENNIS SHOES.avif';
+
+  static const String productShoesSkechers1 =
+      'assets/images/products/shoes/skechers/Arch Fit Foamies - Beach Escape.webp';
+  static const String productShoesSkechers2 = 'assets/images/products/shoes/skechers/Foamies Creston Ultra.webp';
+  static const String productShoesSkechers3 =
+      'assets/images/products/shoes/skechers/On-The-GO GOwalk Arch Fit - Mission II.webp';
+  static const String productShoesSkechers4 =
+      'assets/images/products/shoes/skechers/On-The-GO Hyper Slide - Palm Vacation.webp';
+  static const String productShoesSkechers5 =
+      'assets/images/products/shoes/skechers/On-The-GO Hyper Slide - Simplex.webp';
 }

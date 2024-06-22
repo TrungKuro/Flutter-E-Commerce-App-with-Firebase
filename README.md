@@ -114,6 +114,12 @@
 >     - [ADIZERO UBERSONIC 4.1 TENNIS SHOES](https://www.adidas.com.vn/en/adizero-ubersonic-4.1-tennis-shoes/IF0445.html)
 >     - [OSADE SHOES](https://www.adidas.com.vn/en/osade-shoes/ID3096.html)
 >     - [ADIZERO UBERSONIC 4 TENNIS SHOES](https://www.adidas.com.vn/en/adizero-ubersonic-4-tennis-shoes/HQ8379.html)
+>   - Skechers
+>     - [On-The-GO GOwalk Arch Fit - Mission II](https://www.skechersvn.vn/collections/men-sandals-slides/products/skechers-nam-xang-dan-on-the-go-gowalk-arch-fit-sandals-229064)
+>     - [On-The-GO Hyper Slide - Palm Vacation](https://www.skechersvn.vn/collections/men-sandals-slides/products/skechers-nam-xang-dan-on-the-go-hyper-slide-sandals-229140)
+>     - [On-The-GO Hyper Slide - Simplex](https://www.skechersvn.vn/collections/men-sandals-slides/products/skechers-nam-xang-dan-on-the-go-hyper-slide-sandals-246021)
+>     - [Arch Fit Foamies - Beach Escape](https://www.skechersvn.vn/collections/men-sandals-slides/products/skechers-nam-dep-quai-ngang-arch-fit-foamies-slides-243170)
+>     - [Foamies Creston Ultra](https://www.skechersvn.vn/collections/men-sandals-slides/products/skechers-nam-xang-dan-foamies-creston-ultra-sandals-243100)
 
 ## Phần III. Backend:
 

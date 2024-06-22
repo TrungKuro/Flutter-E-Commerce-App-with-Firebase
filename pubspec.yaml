@@ -51,6 +51,7 @@ flutter:
     - assets/images/banners/
     - assets/images/products/shoes/nike/
     - assets/images/products/shoes/adidas/
+    - assets/images/products/shoes/skechers/
 
 # ------------------------------- LOCAL FONTS ------------------------------- #
 
