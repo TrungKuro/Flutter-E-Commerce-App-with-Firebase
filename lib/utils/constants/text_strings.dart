@@ -36,6 +36,8 @@ class ETexts {
 
   static const String storeAppBarTitle = "Store";
 
+  static const String brandsTitle = 'Featured Brands';
+  
   /* ------------------------------ Categories ----------------------------- */
 
   static const String sports = 'Sports';

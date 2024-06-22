@@ -24,10 +24,10 @@ class HomeScreen extends StatelessWidget {
           children: [
             /// Header
             EPrimaryHeaderContainer(
-              height: ENumberConstants.heightHeader,
+              height: ENumberConstants.heightHeaderHome,
               child: Column(
                 children: [
-                  /// AppBar - Name Customer
+                  /// AppBar - Name Customer & Number of products in the shopping cart
                   const EHomeAppBar(),
                   const SizedBox(height: ESizes.spaceBtwSections),
 
@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
                     padding: EdgeInsets.only(left: ESizes.defaultSpace),
                     child: Column(
                       children: [
-                        /// Heading
+                        /// Title "Popular Categories"
                         ESectionHeading(
                           title: ETexts.categoriesTitle,
                           textColor: EColors.white,
@@ -54,7 +54,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         SizedBox(height: ESizes.spaceBtwSections),
 
-                        /// List Categories Product
+                        /// List "Categories Product"
                         EHomeCategories(),
                       ],
                     ),
@@ -80,14 +80,14 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: ESizes.spaceBtwSections),
 
-                  /// Heading
+                  /// Title "Popular Products"
                   ESectionHeading(
                     title: ETexts.productsTitle,
                     onPressed: () {}, //!
                   ),
                   const SizedBox(height: ESizes.spaceBtwItems),
 
-                  /// Popular Products
+                  /// List "Popular Products"
                   EGridLayout(
                     itemCount: ENumberConstants.popularProductNumber,
                     itemBuilder: (_, index) => const EProductCardVertical(),

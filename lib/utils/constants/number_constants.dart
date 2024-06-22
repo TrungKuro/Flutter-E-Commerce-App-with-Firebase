@@ -2,18 +2,33 @@ class ENumberConstants {
   //? Hàm xây dựng riêng tư
   ENumberConstants._();
 
-  /* ------------------------------ OnBoarding ----------------------------- */
+  /* ----------------------------------------------------------------------- */
+  /*                                ONBOARDING                               */
+  /* ----------------------------------------------------------------------- */
 
   //! Hiện có 3 trang OnBoarding
   //! Nên trang cuối cùng có Index là 2
   static const int onBoardingNumber = 3;
 
+  /* ----------------------------------------------------------------------- */
+  /*                                  COMMON                                 */
+  /* ----------------------------------------------------------------------- */
+
+  //! Số item hiển thị trên mỗi dòng
+  //! Trong "Popular Products" trên trang Home
+  //! Trong "Featured Brands" trên trang Store
+  static const int itemNumberOnRow = 2;
+
+  /* ----------------------------------------------------------------------- */
+  /*                               HOME SCREEN                               */
+  /* ----------------------------------------------------------------------- */
+
   /* ------------------------ Header of Home Screen ------------------------ */
 
   //! Chiều cao phần Header trên trang Home
-  static const double heightHeader = 410;
+  static const double heightHeaderHome = 410;
 
-  /* -------------------------------- Banner ------------------------------- */
+  /* ------------------------ Banner of Home Screen ------------------------ */
 
   //! Hiện cho hiển thị 5 Banner trên trang Home
   static const int promoBannerNumber = 5;
@@ -24,14 +39,28 @@ class ENumberConstants {
   //! Thời gian thực hiện hoạt ảnh chuyển giữa các Banner (tự động)
   static const Duration autoPlayAnimationDuration = Duration(seconds: 1);
 
-  /* --------------------------- Popular Products -------------------------- */
+  /* ------------------- Popular Products of Home Screen ------------------- */
 
-  //! Số item hiển thị trong Popular Products trên trang Home
-  static const int popularProductNumber = 10;
+  //! Số item hiển thị trong "Popular Products" trên trang Home
+  static const int popularProductNumber = 9;
 
-  //! Độ cao của mỗi item hiển thị trong Popular Products trên trang Home
+  //! Độ cao của mỗi item hiển thị trong "Popular Products" trên trang Home
   static const double heightPopularProduct = 288;
 
-  //! Số item hiển thị ở mỗi dòng trong Popular Products trên trang Home
-  static const int itemNumberOnRow = 2;
+  /* ----------------------------------------------------------------------- */
+  /*                               STORE SCREEN                              */
+  /* ----------------------------------------------------------------------- */
+
+  /* ------------------------ Header of Store Screen ----------------------- */
+
+  //! Chiều cao phần Header trên trang Store
+  static const double heightHeaderStore = 400;
+
+  /* ------------------- Featured Brands of Store Screen ------------------- */
+
+  //! Số item hiển thị trong "Featured Brands" trên trang Store
+  static const int featuredBrandNumber = 3;
+
+  //! Độ cao của mỗi item hiển thị trong "Featured Brands" trên trang Store
+  static const double heightFeaturedBrand = 80;
 }

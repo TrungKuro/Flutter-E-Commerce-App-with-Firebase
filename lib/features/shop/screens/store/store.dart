@@ -9,6 +9,7 @@ import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/enums.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
+import 'package:e_commerce_app/utils/constants/number_constants.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
@@ -41,8 +42,8 @@ class StoreScreen extends StatelessWidget {
               automaticallyImplyLeading: false,
               pinned: true,
               floating: true,
-              backgroundColor: isDark ? EColors.black : EColors.white,
-              expandedHeight: 440, //!!!
+              backgroundColor: isDark ? EColors.dark : EColors.light,
+              expandedHeight: ENumberConstants.heightHeaderStore,
               /* ----------------------------------------------------------- */
               flexibleSpace: Padding(
                 padding: const EdgeInsets.all(ESizes.defaultSpace),
@@ -60,17 +61,17 @@ class StoreScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: ESizes.spaceBtwSections),
 
-                    /// Featured Brands
+                    /// Title "Featured Brands"
                     ESectionHeading(
-                      title: 'Featured Brands', //!!!
+                      title: ETexts.brandsTitle,
                       onPressed: () {}, //!
                     ),
                     const SizedBox(height: ESizes.spaceBtwItems / 1.5),
 
-                    //!!!
+                    /// List "Featured Brands"
                     EGridLayout(
-                      itemCount: 4,
-                      mainAxisExtent: 80,
+                      itemCount: ENumberConstants.featuredBrandNumber,
+                      mainAxisExtent: ENumberConstants.heightFeaturedBrand,
                       itemBuilder: (_, index) {
                         return GestureDetector(
                           onTap: () {}, //!
@@ -80,7 +81,7 @@ class StoreScreen extends StatelessWidget {
                             backgroundColor: Colors.transparent,
                             child: Row(
                               children: [
-                                /// Icon
+                                /// Icon Categories
                                 Flexible(
                                   child: ECircularImage(
                                     isNetworkImage: false,
@@ -91,16 +92,19 @@ class StoreScreen extends StatelessWidget {
                                 ),
                                 const SizedBox(width: ESizes.spaceBtwItems / 2),
 
-                                /// Text
+                                /// Info
                                 Expanded(
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
+                                      /// Name Brand
                                       const EBrandTitleWithVerifiedIcon(
                                         title: 'Nike', //!!!
                                         brandTextSize: TextSizes.large,
                                       ),
+
+                                      /// Number Product
                                       Text(
                                         '256 products', //!!!
                                         overflow: TextOverflow.ellipsis,
@@ -115,6 +119,8 @@ class StoreScreen extends StatelessWidget {
                         );
                       },
                     ),
+
+                    //!!!
                   ],
                 ),
               ),
