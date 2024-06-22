@@ -55,4 +55,10 @@ class EImages {
   static const String productShoesNike3 = 'assets/images/products/shoes/nike/Nike-Dunk-Low-Twist.png';
   static const String productShoesNike4 = 'assets/images/products/shoes/nike/Nike-Pegasus-41.png';
   static const String productShoesNike5 = 'assets/images/products/shoes/nike/Tatum-2-Sidewalk-Chalk-PF.png';
+
+  static const String productShoesAdidas1 = 'assets/images/products/shoes/adidas/ADIZERO UBERSONIC 4 TENNIS SHOES.avif';
+  static const String productShoesAdidas2 = 'assets/images/products/shoes/adidas/ADIZERO UBERSONIC 4.1 TENNIS SHOES.avif';
+  static const String productShoesAdidas3 = 'assets/images/products/shoes/adidas/BARRICADE 13 TENNIS SHOES.avif';
+  static const String productShoesAdidas4 = 'assets/images/products/shoes/adidas/OSADE SHOES.avif';
+  static const String productShoesAdidas5 = 'assets/images/products/shoes/adidas/SOLEMATCH CONTROL TENNIS SHOES.avif';
 }

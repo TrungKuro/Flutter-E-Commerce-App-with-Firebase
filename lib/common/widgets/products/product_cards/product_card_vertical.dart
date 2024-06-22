@@ -32,7 +32,7 @@ class EProductCardVertical extends StatelessWidget {
           children: [
             /// Thumbnail, Wishlist, Discount
             ERoundedContainer(
-              radius: ESizes.cardRadiusLg - 1,
+              radius: ESizes.cardRadiusLg - 1, //! Tạo hiệu ứng "Nested corner radii"
               height: 180,
               padding: const EdgeInsets.all(ESizes.sm),
               backgroundColor: isDark ? EColors.dark : EColors.light,
@@ -40,9 +40,10 @@ class EProductCardVertical extends StatelessWidget {
                 children: [
                   /// Thumnail Image
                   const ERoundedImage(
-                    borderRadius: ESizes.cardRadiusLg - 1 - ESizes.sm,
-                    imageUrl: EImages.productShoesNike4,
+                    borderRadius: ESizes.cardRadiusLg - 1 - ESizes.sm, //! Tạo hiệu ứng "Nested corner radii"
+                    imageUrl: EImages.productShoesAdidas3,
                     width: double.infinity,
+                    height: double.infinity,
                     fit: BoxFit.cover,
                   ),
 
