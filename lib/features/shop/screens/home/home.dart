@@ -80,6 +80,13 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: ESizes.spaceBtwSections),
 
+                  /// Heading
+                  ESectionHeading(
+                    title: ETexts.productsTitle,
+                    onPressed: () {}, //!
+                  ),
+                  const SizedBox(height: ESizes.spaceBtwItems),
+
                   /// Popular Products
                   EGridLayout(
                     itemCount: ENumberConstants.popularProductNumber,

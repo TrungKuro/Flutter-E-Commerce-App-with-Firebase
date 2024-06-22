@@ -23,13 +23,18 @@ class ETexts {
       "For Seamless Transactions, Choose Your Payment Path - Your Convenience, Our Priority!";
   static const String onBoardingSubTitle3 = "From Our Doorstep to Yours - Swift, Secure, and Contactless Delivery!";
 
-  /* --------------------------------- Home -------------------------------- */
+  /* ----------------------------- Home Screen ----------------------------- */
 
   static const String homeAppBarTitle = "Good day for shopping";
   static const String homeAppBarSubTitle = "Trung Kuro";
 
   static const String searchBarTitle = 'Search in Store';
   static const String categoriesTitle = 'Popular Categories';
+  static const String productsTitle = 'Popular Products';
+
+  /* ----------------------------- Store Screen ---------------------------- */
+
+  static const String storeAppBarTitle = "Store";
 
   /* ------------------------------ Categories ----------------------------- */
 

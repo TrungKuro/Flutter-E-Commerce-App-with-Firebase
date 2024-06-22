@@ -2,7 +2,8 @@ import 'package:e_commerce_app/common/styles/shadow_styles.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:e_commerce_app/common/widgets/icons/circular_icon.dart';
 import 'package:e_commerce_app/common/widgets/images/rounded_image.dart';
-import 'package:e_commerce_app/common/widgets/products/product_price_text.dart';
+import 'package:e_commerce_app/common/widgets/texts/product_price_text.dart';
+import 'package:e_commerce_app/common/widgets/texts/brand_title_text_with_verified_icon.dart';
 import 'package:e_commerce_app/common/widgets/texts/product_title_text.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
@@ -32,7 +33,8 @@ class EProductCardVertical extends StatelessWidget {
           children: [
             /// Thumbnail, Wishlist, Discount
             ERoundedContainer(
-              radius: ESizes.cardRadiusLg - 1, //! Tạo hiệu ứng "Nested corner radii"
+              //! Tạo hiệu ứng "Nested corner radii"
+              radius: ESizes.cardRadiusLg - 1,
               height: 180,
               padding: const EdgeInsets.all(ESizes.sm),
               backgroundColor: isDark ? EColors.dark : EColors.light,
@@ -40,7 +42,8 @@ class EProductCardVertical extends StatelessWidget {
                 children: [
                   /// Thumnail Image
                   const ERoundedImage(
-                    borderRadius: ESizes.cardRadiusLg - 1 - ESizes.sm, //! Tạo hiệu ứng "Nested corner radii"
+                    //! Tạo hiệu ứng "Nested corner radii"
+                    borderRadius: ESizes.cardRadiusLg - 1 - ESizes.sm,
                     imageUrl: EImages.productShoesAdidas3,
                     width: double.infinity,
                     height: double.infinity,
@@ -78,65 +81,58 @@ class EProductCardVertical extends StatelessWidget {
             const SizedBox(height: ESizes.spaceBtwItems / 2),
 
             /// Details
-            Padding(
-              padding: const EdgeInsets.only(left: ESizes.sm),
+            const Padding(
+              padding: EdgeInsets.only(left: ESizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   /// Name Product
-                  const EProductTitleText(
-                    title: 'Green Nike Air Shoes',
+                  EProductTitleText(
+                    title: 'Green Nike Air Shoes', //!!!
                     smallSize: true,
                   ),
-                  const SizedBox(height: ESizes.spaceBtwItems / 2),
+                  SizedBox(height: ESizes.spaceBtwItems / 2),
 
-                  /// Name Company
-                  Row(
-                    children: [
-                      Text(
-                        'Nike',
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        style: Theme.of(context).textTheme.labelMedium,
-                      ),
-                      const SizedBox(width: ESizes.xs),
-                      const Icon(
-                        Iconsax.verify5,
-                        color: EColors.primary,
-                        size: ESizes.iconXs,
-                      ),
-                    ],
-                  ),
-
-                  /// Price & Button buy
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      /// Price
-                      const EProductPriceText(
-                        price: '35.0',
-                        isLarge: true,
-                      ),
-
-                      /// Add to Cart Button
-                      Container(
-                        decoration: const BoxDecoration(
-                          color: EColors.dark,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(ESizes.cardRadiusMd),
-                            bottomRight: Radius.circular(ESizes.productImageRadius),
-                          ),
-                        ),
-                        child: const SizedBox(
-                          width: ESizes.iconLg * 1.2,
-                          height: ESizes.iconLg * 1.2,
-                          child: Center(child: Icon(Iconsax.add, color: EColors.white)),
-                        ),
-                      ),
-                    ],
+                  /// Name Brand
+                  EBrandTitleWithVerifiedIcon(
+                    title: 'Nike', //!!!
                   ),
                 ],
               ),
+            ),
+
+            //! To keep the height of each Box same in case 1 or 2 lines of Headings
+            const Spacer(),
+
+            /// Price & Button buy
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                /// Price
+                const Padding(
+                  padding: EdgeInsets.only(left: ESizes.sm),
+                  child: EProductPriceText(
+                    price: '35.0', //!!!
+                    isLarge: true,
+                  ),
+                ),
+
+                /// Add to Cart Button
+                Container(
+                  decoration: const BoxDecoration(
+                    color: EColors.dark,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(ESizes.cardRadiusMd),
+                      bottomRight: Radius.circular(ESizes.productImageRadius),
+                    ),
+                  ),
+                  child: const SizedBox(
+                    width: ESizes.iconLg * 1.2,
+                    height: ESizes.iconLg * 1.2,
+                    child: Center(child: Icon(Iconsax.add, color: EColors.white)),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
