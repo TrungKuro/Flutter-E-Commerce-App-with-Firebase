@@ -120,6 +120,12 @@
 >     - [On-The-GO Hyper Slide - Simplex](https://www.skechersvn.vn/collections/men-sandals-slides/products/skechers-nam-xang-dan-on-the-go-hyper-slide-sandals-246021)
 >     - [Arch Fit Foamies - Beach Escape](https://www.skechersvn.vn/collections/men-sandals-slides/products/skechers-nam-dep-quai-ngang-arch-fit-foamies-slides-243170)
 >     - [Foamies Creston Ultra](https://www.skechersvn.vn/collections/men-sandals-slides/products/skechers-nam-xang-dan-foamies-creston-ultra-sandals-243100)
+>   - Puma
+>     - [FUTURE 7 PRO FG/AG Men's Soccer Cleats](https://us.puma.com/us/en/pd/future-7-pro-fg-ag-mens-soccer-cleats/107707?swatch=03)
+>     - [FUTURE 7 MATCH RUSH Turf Trainer Men's Soccer Cleats](https://us.puma.com/us/en/pd/future-7-match-rush-turf-trainer-mens-soccer-cleats/107843?swatch=01)
+>     - [ULTRA MATCH RUSH FG/AG Men's Soccer Cleats](https://us.puma.com/us/en/pd/ultra-match-rush-fg-ag-mens-soccer-cleats/107830?swatch=01)
+>     - [KING ULTIMATE RUSH FG/AG Men's Soccer Cleats](https://us.puma.com/us/en/pd/king-ultimate-rush-fg-ag-mens-soccer-cleats/107824?swatch=01)
+>     - [FUTURE 7 ULTIMATE CREATIVITY FG/AG Men's Soccer Cleats](https://us.puma.com/us/en/pd/future-7-ultimate-creativity-fg-ag-mens-soccer-cleats/107836?swatch=01)
 
 ## Phần III. Backend:
 

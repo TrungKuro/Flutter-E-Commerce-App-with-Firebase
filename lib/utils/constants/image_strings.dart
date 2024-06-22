@@ -50,12 +50,14 @@ class EImages {
 
   /* ------------------------------- Products ------------------------------ */
 
+  // Shoes Nike
   static const String productShoesNike1 = 'assets/images/products/shoes/nike/Air-Jordan-1-Mid.png';
   static const String productShoesNike2 = 'assets/images/products/shoes/nike/Jumpman-MVP.png';
   static const String productShoesNike3 = 'assets/images/products/shoes/nike/Nike-Dunk-Low-Twist.png';
   static const String productShoesNike4 = 'assets/images/products/shoes/nike/Nike-Pegasus-41.png';
   static const String productShoesNike5 = 'assets/images/products/shoes/nike/Tatum-2-Sidewalk-Chalk-PF.png';
 
+  // Shoes Adidas
   static const String productShoesAdidas1 = 'assets/images/products/shoes/adidas/ADIZERO UBERSONIC 4 TENNIS SHOES.avif';
   static const String productShoesAdidas2 =
       'assets/images/products/shoes/adidas/ADIZERO UBERSONIC 4.1 TENNIS SHOES.avif';
@@ -63,6 +65,7 @@ class EImages {
   static const String productShoesAdidas4 = 'assets/images/products/shoes/adidas/OSADE SHOES.avif';
   static const String productShoesAdidas5 = 'assets/images/products/shoes/adidas/SOLEMATCH CONTROL TENNIS SHOES.avif';
 
+  // Shoes Skechers
   static const String productShoesSkechers1 =
       'assets/images/products/shoes/skechers/Arch Fit Foamies - Beach Escape.webp';
   static const String productShoesSkechers2 = 'assets/images/products/shoes/skechers/Foamies Creston Ultra.webp';
@@ -72,4 +75,16 @@ class EImages {
       'assets/images/products/shoes/skechers/On-The-GO Hyper Slide - Palm Vacation.webp';
   static const String productShoesSkechers5 =
       'assets/images/products/shoes/skechers/On-The-GO Hyper Slide - Simplex.webp';
+
+  // Shoes Puma
+  static const String productShoesPuma1 =
+      "assets/images/products/shoes/puma/FUTURE 7 MATCH RUSH Turf Trainer Men's Soccer Cleats.avif";
+  static const String productShoesPuma2 =
+      "assets/images/products/shoes/puma/FUTURE 7 PRO FG:AG Men's Soccer Cleats.avif";
+  static const String productShoesPuma3 =
+      "assets/images/products/shoes/puma/FUTURE 7 ULTIMATE CREATIVITY FG:AG Men's Soccer Cleats.avif";
+  static const String productShoesPuma4 =
+      "assets/images/products/shoes/puma/KING ULTIMATE RUSH FG:AG Men's Soccer Cleats.avif";
+  static const String productShoesPuma5 =
+      "assets/images/products/shoes/puma/ULTRA MATCH RUSH FG:AG Men's Soccer Cleats.avif";
 }
