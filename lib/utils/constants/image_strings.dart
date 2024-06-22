@@ -119,4 +119,18 @@ class EImages {
   static const String productToysBandai4 =
       "assets/images/products/toys/bandai/PG 1:60 UNICORN GUNDAM PERFECTIBILITY.jpeg";
   static const String productToysBandai5 = "assets/images/products/toys/bandai/RE:100 1:100 GUNDAM LINDWURM.jpeg";
+
+  // Toys Kotobukiya
+  static const String productToysKotobukiya1 =
+      "assets/images/products/toys/kotobukiya/ARTFX J Io cuddling the sword.jpeg";
+  static const String productToysKotobukiya2 =
+      "assets/images/products/toys/kotobukiya/ARTFX J Izuku Midoriya Dark Deku Ver..jpeg";
+  static const String productToysKotobukiya3 = "assets/images/products/toys/kotobukiya/ARTFX J Kyojuro Rengoku.jpeg";
+  static const String productToysKotobukiya4 = "assets/images/products/toys/kotobukiya/ARTFX J Tobio Kageyama.jpeg";
+  static const String productToysKotobukiya5 =
+      "assets/images/products/toys/kotobukiya/SNK THE KING OF FIGHTERS 2001 ÁNGEL BISHOUJO STATUE.jpeg";
+
+  /* ------------------------------- Products ------------------------------ */
+
+  //
 }

@@ -145,6 +145,12 @@
 >     - [PG 1/60 UNICORN GUNDAM PERFECTIBILITY](https://p-bandai.com/us/item/N2570545001006)
 >     - [HG 1/144 GUNDAM LFRITH PRE-PRODUCTION MODEL](https://p-bandai.com/us/item/N2703002001002)
 >     - [PG 1/60 UNICORN GUNDAM 03 PHENEX (NARRATIVE Ver.)](https://p-bandai.com/us/item/N2539737001005)
+>   - Kotobukiya
+>     - [SNK THE KING OF FIGHTERS 2001 ÁNGEL BISHOUJO STATUE](https://www.kotobukiya.co.jp/en/product/detail/p4934054050680/)
+>     - [ARTFX J Tobio Kageyama](https://www.kotobukiya.co.jp/en/product/detail/p4934054051380/)
+>     - [ARTFX J Io cuddling the sword](https://www.kotobukiya.co.jp/en/product/detail/p4934054059010/)
+>     - [ARTFX J Izuku Midoriya Dark Deku Ver.](https://www.kotobukiya.co.jp/en/product/detail/p4934054052981/)
+>     - [ARTFX J Kyojuro Rengoku](https://www.kotobukiya.co.jp/en/product/detail/p4934054026562/)
 
 ## Phần III. Backend:
 
