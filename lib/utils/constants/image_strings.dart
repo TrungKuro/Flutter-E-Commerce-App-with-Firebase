@@ -87,4 +87,13 @@ class EImages {
       "assets/images/products/shoes/puma/KING ULTIMATE RUSH FG:AG Men's Soccer Cleats.avif";
   static const String productShoesPuma5 =
       "assets/images/products/shoes/puma/ULTRA MATCH RUSH FG:AG Men's Soccer Cleats.avif";
+
+  /* ------------------------------- Products ------------------------------ */
+
+  // Toys Lego
+  static const String productToysLego1 = "assets/images/products/toys/lego/Aston Martin Safety Car & AMR23.webp";
+  static const String productToysLego2 = "assets/images/products/toys/lego/Dungeons & Dragons- Red Dragon's Tale.webp";
+  static const String productToysLego3 = "assets/images/products/toys/lego/Hogwarts™ Castle- The Great Hall.webp";
+  static const String productToysLego4 = "assets/images/products/toys/lego/NASA Artemis Space Launch System.webp";
+  static const String productToysLego5 = "assets/images/products/toys/lego/TIE Interceptor.webp";
 }

@@ -126,6 +126,13 @@
 >     - [ULTRA MATCH RUSH FG/AG Men's Soccer Cleats](https://us.puma.com/us/en/pd/ultra-match-rush-fg-ag-mens-soccer-cleats/107830?swatch=01)
 >     - [KING ULTIMATE RUSH FG/AG Men's Soccer Cleats](https://us.puma.com/us/en/pd/king-ultimate-rush-fg-ag-mens-soccer-cleats/107824?swatch=01)
 >     - [FUTURE 7 ULTIMATE CREATIVITY FG/AG Men's Soccer Cleats](https://us.puma.com/us/en/pd/future-7-ultimate-creativity-fg-ag-mens-soccer-cleats/107836?swatch=01)
+> - Toys
+>   - Lego
+>     - [Aston Martin Safety Car & AMR23](https://www.lego.com/en-us/product/aston-martin-safety-car-amr23-76925?icmp=HP-SHCC-Standard-SC_CC_Block_Speed_Champion_76925_HP-TH-SC-M3LE7YI5VK)
+>     - [Dungeons & Dragons: Red Dragon's Tale](https://www.lego.com/en-us/product/dungeons-dragons-red-dragon-s-tale-21348)
+>     - [TIE Interceptor](https://www.lego.com/en-us/product/tie-interceptor-75382)
+>     - [Hogwarts™ Castle: The Great Hall](https://www.lego.com/en-us/product/hogwarts-castle-the-great-hall-76435)
+>     - [NASA Artemis Space Launch System](https://www.lego.com/en-us/product/nasa-artemis-space-launch-system-10341)
 
 ## Phần III. Backend:
 
