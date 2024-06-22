@@ -133,6 +133,12 @@
 >     - [TIE Interceptor](https://www.lego.com/en-us/product/tie-interceptor-75382)
 >     - [Hogwarts™ Castle: The Great Hall](https://www.lego.com/en-us/product/hogwarts-castle-the-great-hall-76435)
 >     - [NASA Artemis Space Launch System](https://www.lego.com/en-us/product/nasa-artemis-space-launch-system-10341)
+>   - Schleich
+>     - [Schleich Bayala 70743 - Llamacorn](https://electricgemz.co.uk/collections/schleich/products/schleich-bayala-70743-llamacorn)
+>     - [Schleich Bayala 70728 Rainbow Dragon](https://electricgemz.co.uk/collections/schleich/products/schleich-bayala-70728-rainbow-dragon)
+>     - [Schleich Eldrador Creatures 42554 Shadow Wolf](https://electricgemz.co.uk/collections/schleich/products/schleich-eldrador-creatures-42554-shadow-wolf)
+>     - [Schleich Eldrador Creatures 70152 Shadow Dragon](https://electricgemz.co.uk/collections/schleich/products/schleich-eldrador-creatures-70152-shadow-dragon)
+>     - [Schleich Eldrador Creatures 70151 - Jungle Emperor](https://electricgemz.co.uk/collections/schleich/products/schleich-eldrador-creatures-70151-jungle-emperor)
 
 ## Phần III. Backend:
 

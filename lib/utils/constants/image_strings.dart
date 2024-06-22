@@ -96,4 +96,16 @@ class EImages {
   static const String productToysLego3 = "assets/images/products/toys/lego/Hogwarts™ Castle- The Great Hall.webp";
   static const String productToysLego4 = "assets/images/products/toys/lego/NASA Artemis Space Launch System.webp";
   static const String productToysLego5 = "assets/images/products/toys/lego/TIE Interceptor.webp";
+
+  // Toys Schleich
+  static const String productToysSchleich1 =
+      "assets/images/products/toys/schleich/Schleich Bayala 70728 Rainbow Dragon.webp";
+  static const String productToysSchleich2 =
+      "assets/images/products/toys/schleich/Schleich Bayala 70743 - Llamacorn.webp";
+  static const String productToysSchleich3 =
+      "assets/images/products/toys/schleich/Schleich Eldrador Creatures 42554 Shadow Wolf.webp";
+  static const String productToysSchleich4 =
+      "assets/images/products/toys/schleich/Schleich Eldrador Creatures 70151 - Jungle Emperor.webp";
+  static const String productToysSchleich5 =
+      "assets/images/products/toys/schleich/Schleich Eldrador Creatures 70152 Shadow Dragon.webp";
 }
