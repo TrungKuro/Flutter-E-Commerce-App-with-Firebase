@@ -44,7 +44,7 @@ class EProductCardVertical extends StatelessWidget {
                   const ERoundedImage(
                     //! Tạo hiệu ứng "Nested corner radii"
                     borderRadius: ESizes.cardRadiusLg - 1 - ESizes.sm,
-                    imageUrl: EImages.productShoesAdidas3,
+                    imageUrl: EImages.productShoesAdidas3, //!!!
                     width: double.infinity,
                     height: double.infinity,
                     fit: BoxFit.cover,
@@ -63,15 +63,17 @@ class EProductCardVertical extends StatelessWidget {
                           radius: ESizes.sm,
                           backgroundColor: EColors.secondary.withOpacity(0.8),
                           padding: const EdgeInsets.symmetric(horizontal: ESizes.sm, vertical: ESizes.xs),
-                          child:
-                              Text('25%', style: Theme.of(context).textTheme.labelLarge!.apply(color: EColors.black)),
+                          child: Text(
+                            '25%', //!!!
+                            style: Theme.of(context).textTheme.labelLarge!.apply(color: EColors.black),
+                          ),
                         ),
 
                         /// Favourite Icon Button
                         const ECircularIcon(
                           icon: Iconsax.heart5,
                           color: EColors.favourite,
-                        ),
+                        ), //!!!
                       ],
                     ),
                   ),

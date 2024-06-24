@@ -54,7 +54,7 @@ class ENumberConstants {
   /* ------------------------ Header of Store Screen ----------------------- */
 
   //! Chiều cao phần Header trên trang Store
-  static const double heightHeaderStore = 400;
+  static const double heightHeaderStore = 440;
 
   /* ------------------- Featured Brands of Store Screen ------------------- */
 

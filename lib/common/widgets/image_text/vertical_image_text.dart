@@ -24,15 +24,16 @@ class EVerticalImageText extends StatelessWidget {
 
     return GestureDetector(
       onTap: onTap, //!
-      child: Padding(
-        padding: const EdgeInsets.only(right: ESizes.spaceBtwItems),
+      child: Container(
+        margin: const EdgeInsets.only(right: ESizes.spaceBtwItems),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             /// Circular Icon
             Container(
-              width: 56,
-              height: 56,
-              padding: const EdgeInsets.all(ESizes.sm),
+              width: 60,
+              height: 60,
+              padding: const EdgeInsets.all(ESizes.sm + ESizes.xs),
               decoration: BoxDecoration(
                 color: backgroundColor ?? (isDark ? EColors.black : EColors.white),
                 borderRadius: BorderRadius.circular(100),
@@ -49,12 +50,13 @@ class EVerticalImageText extends StatelessWidget {
             /// Text
             const SizedBox(height: ESizes.spaceBtwItems / 2),
             SizedBox(
-              width: 55,
+              width: 60,
               child: Text(
                 title,
                 style: Theme.of(context).textTheme.labelMedium!.apply(color: textColor),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
               ),
             ),
           ],

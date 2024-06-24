@@ -23,26 +23,20 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             /// Header
-            EPrimaryHeaderContainer(
+            const EPrimaryHeaderContainer(
               height: ENumberConstants.heightHeaderHome,
               child: Column(
                 children: [
                   /// AppBar - Name Customer & Number of products in the shopping cart
-                  const EHomeAppBar(),
-                  const SizedBox(height: ESizes.spaceBtwSections),
+                  EHomeAppBar(),
+                  SizedBox(height: ESizes.spaceBtwSections),
 
                   /// SearchBar
-                  ESearchContainer(
-                    text: ETexts.searchBarTitle,
-                    onTap: () {
-                      // ignore: avoid_print
-                      print('search');
-                    }, //!
-                  ),
-                  const SizedBox(height: ESizes.spaceBtwSections),
+                  ESearchContainer(text: ETexts.searchBarTitle, showBorder: false),
+                  SizedBox(height: ESizes.spaceBtwSections),
 
                   /// Popular Categories
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.only(left: ESizes.defaultSpace),
                     child: Column(
                       children: [
@@ -52,7 +46,7 @@ class HomeScreen extends StatelessWidget {
                           textColor: EColors.white,
                           showActionButton: false,
                         ),
-                        SizedBox(height: ESizes.spaceBtwSections),
+                        SizedBox(height: ESizes.spaceBtwItems),
 
                         /// List "Categories Product"
                         EHomeCategories(),
@@ -76,7 +70,7 @@ class HomeScreen extends StatelessWidget {
                       EImages.promoBanner3,
                       EImages.promoBanner4,
                       EImages.promoBanner5,
-                    ],
+                    ], //!!!
                   ),
                   const SizedBox(height: ESizes.spaceBtwSections),
 
