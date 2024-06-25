@@ -30,6 +30,17 @@ class StoreScreen extends StatelessWidget {
       const Tab(child: Text(ETexts.sports)),
       const Tab(child: Text(ETexts.toys)),
     ]; //!
+    List<Widget> tabBarViews = [
+      const ECategoryTab(),
+      Container(color: Colors.pink, child: const Center(child: Text('1'))),
+      Container(color: Colors.red, child: const Center(child: Text('2'))),
+      Container(color: Colors.green, child: const Center(child: Text('3'))),
+      Container(color: Colors.blue, child: const Center(child: Text('4'))),
+      Container(color: Colors.orange, child: const Center(child: Text('5'))),
+      Container(color: Colors.purple, child: const Center(child: Text('6'))),
+      Container(color: Colors.brown, child: const Center(child: Text('7'))),
+      Container(color: Colors.grey, child: const Center(child: Text('8'))),
+    ]; //!
 
     return DefaultTabController(
       length: tabs.length,
@@ -46,73 +57,65 @@ class StoreScreen extends StatelessWidget {
             )
           ],
         ),
+
+        /// Content
         body: NestedScrollView(
+          /// Header
+          headerSliverBuilder: (_, innerBoxIsScrolled) {
+            return [
+              SliverAppBar(
+                /* ----------------------------------------------------------- */
+                automaticallyImplyLeading: false,
+                pinned: true,
+                floating: true,
+                backgroundColor: isDark ? EColors.black : EColors.white,
+                expandedHeight: ENumberConstants.heightHeaderStore,
+                /* ----------------------------------------------------------- */
+                flexibleSpace: Padding(
+                  padding: const EdgeInsets.all(ESizes.defaultSpace),
+                  child: ListView(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    children: [
+                      /// Search Bar
+                      const SizedBox(height: ESizes.spaceBtwItems),
+                      const ESearchContainer(
+                        text: ETexts.searchBarTitle,
+                        padding: EdgeInsets.zero,
+                        showBorder: true,
+                        showBackground: false,
+                      ),
+                      const SizedBox(height: ESizes.spaceBtwSections),
 
-            /// Header
-            headerSliverBuilder: (_, innerBoxIsScrolled) {
-              return [
-                SliverAppBar(
-                  /* ----------------------------------------------------------- */
-                  automaticallyImplyLeading: false,
-                  pinned: true,
-                  floating: true,
-                  backgroundColor: isDark ? EColors.black : EColors.white,
-                  expandedHeight: ENumberConstants.heightHeaderStore,
-                  /* ----------------------------------------------------------- */
-                  flexibleSpace: Padding(
-                    padding: const EdgeInsets.all(ESizes.defaultSpace),
-                    child: ListView(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      children: [
-                        /// Search Bar
-                        const SizedBox(height: ESizes.spaceBtwItems),
-                        const ESearchContainer(
-                          text: ETexts.searchBarTitle,
-                          padding: EdgeInsets.zero,
-                          showBorder: true,
-                          showBackground: false,
-                        ),
-                        const SizedBox(height: ESizes.spaceBtwSections),
+                      /// Title "Featured Brands"
+                      ESectionHeading(
+                        title: ETexts.brandsTitle,
+                        onPressed: () {}, //!
+                      ),
+                      const SizedBox(height: ESizes.spaceBtwItems / 1.5),
 
-                        /// Title "Featured Brands"
-                        ESectionHeading(
-                          title: ETexts.brandsTitle,
-                          onPressed: () {}, //!
-                        ),
-                        const SizedBox(height: ESizes.spaceBtwItems / 1.5),
-
-                        /// List "Featured Brands"
-                        EGridLayout(
-                          itemCount: ENumberConstants.featuredBrandNumber,
-                          mainAxisExtent: ENumberConstants.heightFeaturedBrand,
-                          itemBuilder: (_, index) {
-                            return const EBrandCard(showBorder: false);
-                          },
-                        ),
-                      ],
-                    ),
+                      /// List "Featured Brands"
+                      EGridLayout(
+                        itemCount: ENumberConstants.featuredBrandNumber,
+                        mainAxisExtent: ENumberConstants.heightFeaturedBrand,
+                        itemBuilder: (_, index) {
+                          return const EBrandCard(showBorder: false);
+                        },
+                      ),
+                    ],
                   ),
-
-                  /// Tabs Categories
-                  bottom: ETabBard(
-                    tabs: tabs,
-                  ),
-                  /* ----------------------------------------------------------- */
                 ),
-              ];
-            },
 
-            /// Body
-            body: const TabBarView(
-              children: [
-                ECategoryTab(),
-                ECategoryTab(),
-                ECategoryTab(),
-                ECategoryTab(),
-                ECategoryTab(),
-              ],
-            )),
+                /// Tabs Categories
+                bottom: ETabBard(tabs: tabs),
+                /* ----------------------------------------------------------- */
+              ),
+            ];
+          },
+
+          /// Body
+          body: TabBarView(children: tabBarViews),
+        ),
       ),
     );
   }

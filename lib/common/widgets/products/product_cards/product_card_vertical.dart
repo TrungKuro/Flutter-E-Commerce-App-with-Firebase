@@ -83,27 +83,30 @@ class EProductCardVertical extends StatelessWidget {
             const SizedBox(height: ESizes.spaceBtwItems / 2),
 
             /// Details
-            const Padding(
-              padding: EdgeInsets.only(left: ESizes.sm),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  /// Name Product
-                  EProductTitleText(
-                    title: 'Green Nike Air Shoes', //!!!
-                    smallSize: true,
-                  ),
-                  SizedBox(height: ESizes.spaceBtwItems / 2),
+            const SizedBox(
+              width: double.infinity,
+              child: Padding(
+                padding: EdgeInsets.only(left: ESizes.sm),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    /// Name Product
+                    EProductTitleText(
+                      title: 'Green Nike Air Shoes.', //!!!
+                      smallSize: true,
+                    ),
+                    SizedBox(height: ESizes.spaceBtwItems / 2),
 
-                  /// Name Brand
-                  EBrandTitleWithVerifiedIcon(
-                    title: 'Nike', //!!!
-                  ),
-                ],
+                    /// Name Brand
+                    EBrandTitleWithVerifiedIcon(
+                      title: 'Nike', //!!!
+                    ),
+                  ],
+                ),
               ),
             ),
 
-            //! To keep the height of each Box same in case 1 or 2 lines of Headings
+            //! Đảm bảo giữ khoảng cách đều trên dưới dù tên sản phẩm là 1 hay 2 dòng
             const Spacer(),
 
             /// Price & Button buy

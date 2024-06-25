@@ -28,5 +28,8 @@ class ETabBard extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(EDeviceUtils.getAppBarHeight());
+  //! Khác với [EAppBar] là "AppBar" đầu tiên nên { preferredSize = getAppBarHeight }
+  //! Tuy nhiên với [ETabBard] là "AppBar" thứ hai nên giữa chúng sẽ có phần đệm khoảng cách nhau
+  //! Ta cần trừ đi phần đệm đó để khi hai AppBar thu gọn lại nhau sẽ ko nhìn thấy phần đệm đó
+  Size get preferredSize => Size.fromHeight(EDeviceUtils.getAppBarHeight() - EDeviceUtils.getMaterialListPadding());
 }

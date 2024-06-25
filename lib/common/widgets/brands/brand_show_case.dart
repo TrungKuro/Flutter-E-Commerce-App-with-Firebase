@@ -28,26 +28,47 @@ class EBrandShowcase extends StatelessWidget {
           const SizedBox(height: ESizes.spaceBtwItems),
 
           /// Brand Top 3 Product Images
-          Row(children: images.map((image) => brandTopProductImageWidget(image, context)).toList()),
+          Row(children: listBrandTopProductImageWidget(images, context)),
         ],
       ),
     );
   }
 }
 
-Widget brandTopProductImageWidget(String image, context) {
+/* ------------------------------------------------------------------------- */
+
+List<Widget> listBrandTopProductImageWidget(List<String> images, BuildContext context) {
+  List<Widget> brands = [];
+
+  for (int i = 0; i < images.length; i++) {
+    brands.add(brandTopProductImageWidget(images[i], context));
+    if (i < images.length - 1) brands.add(const SizedBox(width: ESizes.sm));
+  }
+
+  return brands;
+}
+
+/* ------------------------------------------------------------------------- */
+
+Widget brandTopProductImageWidget(String image, BuildContext context) {
   final isDark = EHelperFunctions.isDarkMode(context); //!
 
   return Expanded(
     child: ERoundedContainer(
       height: 100, //!!!
-      backgroundColor: isDark ? EColors.darkerGrey : EColors.light,
-      margin: const EdgeInsets.only(right: ESizes.sm),
-      padding: const EdgeInsets.all(ESizes.md),
-      child: Image(
-        fit: BoxFit.contain,
-        image: AssetImage(image),
-      ), //!!!
+      backgroundColor: EColors.grey,
+      padding: const EdgeInsets.all(ESizes.xs),
+      child: ClipRRect(
+        //! Tạo hiệu ứng "Nested corner radii"
+        borderRadius: BorderRadius.circular(ESizes.md - ESizes.xs),
+        child: Container(
+          color: isDark ? EColors.softGrey : EColors.darkGrey,
+          child: Image(
+            fit: BoxFit.cover,
+            image: AssetImage(image),
+          ),
+        ),
+      ),
     ),
   );
 }

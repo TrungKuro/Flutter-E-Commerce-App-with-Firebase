@@ -124,11 +124,11 @@ class EImages {
   static const String productToysKotobukiya1 =
       "assets/images/products/toys/kotobukiya/ARTFX J Io cuddling the sword.jpeg";
   static const String productToysKotobukiya2 =
-      "assets/images/products/toys/kotobukiya/ARTFX J Izuku Midoriya Dark Deku Ver..jpeg";
+      "assets/images/products/toys/kotobukiya/ARTFX J Izuku Midoriya Dark Deku Ver.jpeg";
   static const String productToysKotobukiya3 = "assets/images/products/toys/kotobukiya/ARTFX J Kyojuro Rengoku.jpeg";
   static const String productToysKotobukiya4 = "assets/images/products/toys/kotobukiya/ARTFX J Tobio Kageyama.jpeg";
   static const String productToysKotobukiya5 =
-      "assets/images/products/toys/kotobukiya/SNK THE KING OF FIGHTERS 2001 ÁNGEL BISHOUJO STATUE.jpeg";
+      "assets/images/products/toys/kotobukiya/SNK THE KING OF FIGHTERS 2001 ANGEL BISHOUJO STATUE.jpeg";
 
   /* ------------------------------- Products ------------------------------ */
 

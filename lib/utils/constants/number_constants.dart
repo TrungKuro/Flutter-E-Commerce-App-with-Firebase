@@ -17,6 +17,7 @@ class ENumberConstants {
   //! Số item hiển thị trên mỗi dòng
   //! Trong "Popular Products" trên trang Home
   //! Trong "Featured Brands" trên trang Store
+  //! Trong "You Might Like" trên trang Store
   static const int itemNumberOnRow = 2;
 
   /* ----------------------------------------------------------------------- */
@@ -63,4 +64,9 @@ class ENumberConstants {
 
   //! Độ cao của mỗi item hiển thị trong "Featured Brands" trên trang Store
   static const double heightFeaturedBrand = 80;
+
+  /* -------------------- You Might Like of Store Screen ------------------- */
+
+  //! Số item hiển thị trong "You Might Like" trên trang Store
+  static const int youMightLikeNumber = 5;
 }

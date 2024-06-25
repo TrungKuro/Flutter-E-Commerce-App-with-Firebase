@@ -3,7 +3,9 @@ import 'package:e_commerce_app/common/widgets/layouts/grid_layout.dart';
 import 'package:e_commerce_app/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
+import 'package:e_commerce_app/utils/constants/number_constants.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
+import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
 class ECategoryTab extends StatelessWidget {
@@ -19,7 +21,16 @@ class ECategoryTab extends StatelessWidget {
           padding: const EdgeInsets.all(ESizes.defaultSpace),
           child: Column(
             children: [
-              /// Brands
+              /// Brand first (Top 3 products)
+              const EBrandShowcase(
+                images: [
+                  EImages.productToysLego1,
+                  EImages.productToysLego3,
+                  EImages.productToysLego5,
+                ],
+              ), //!!!
+
+              /// Brand second (Top 3 products)
               const EBrandShowcase(
                 images: [
                   EImages.productShoesPuma1,
@@ -27,6 +38,8 @@ class ECategoryTab extends StatelessWidget {
                   EImages.productShoesPuma5,
                 ],
               ), //!!!
+
+              /// Brand third (Top 3 products)
               const EBrandShowcase(
                 images: [
                   EImages.productToysKotobukiya5,
@@ -34,17 +47,20 @@ class ECategoryTab extends StatelessWidget {
                   EImages.productToysKotobukiya1,
                 ],
               ), //!!!
+
+              /// Spacing
               const SizedBox(height: ESizes.spaceBtwItems),
 
-              /// Products
+              /// Title "You Might Like"
               ESectionHeading(
-                title: 'You might like', //!!!
+                title: ETexts.mightLikeTitle,
                 onPressed: () {}, //!
               ),
               const SizedBox(height: ESizes.spaceBtwItems),
 
+              /// List "You Might Like"
               EGridLayout(
-                itemCount: 4, //!!!
+                itemCount: ENumberConstants.youMightLikeNumber,
                 itemBuilder: (_, index) => const EProductCardVertical(),
               ),
             ],

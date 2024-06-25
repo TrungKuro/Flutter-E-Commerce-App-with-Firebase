@@ -64,6 +64,11 @@ class EDeviceUtils {
     return kToolbarHeight;
   }
 
+  // Lấy thông số phần đệm trên cùng của giữa các [Material List Items]
+  static double getMaterialListPadding() {
+    return kMaterialListPadding.top;
+  }
+
   /* ----------------------------- ORIENTATION ----------------------------- */
 
   // static bool isLandscapeOrientation(BuildContext context) {
