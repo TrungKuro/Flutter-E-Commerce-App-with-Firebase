@@ -18,7 +18,7 @@ class VerifyEmailScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
-            onPressed: () => Get.offAll(() => const LoginScreen()), //!
+            onPressed: () => Get.offAll(() => const LoginScreen()), //?
             icon: const Icon(CupertinoIcons.clear),
           ),
         ],
@@ -64,9 +64,9 @@ class VerifyEmailScreen extends StatelessWidget {
                       image: EImages.staticSuccessIllustration,
                       title: ETexts.yourAccountCreatedTitle,
                       subTitle: ETexts.yourAccountCreatedSubTitle,
-                      onPressed: () => Get.to(() => const LoginScreen()), //!
+                      onPressed: () => Get.to(() => const LoginScreen()), //?
                     ),
-                  ), //!
+                  ), //?
                   child: const Text(ETexts.tContinue),
                 ),
               ),
@@ -74,7 +74,7 @@ class VerifyEmailScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: TextButton(
-                  onPressed: () {}, //!
+                  onPressed: () {}, //?
                   child: const Text(ETexts.resendEmail),
                 ),
               ),

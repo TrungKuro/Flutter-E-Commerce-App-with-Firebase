@@ -22,7 +22,7 @@ class OnBoardingController extends GetxController {
   /// Update current index & Jump to the next page.
   void nextPage() {
     if (currentPageIndex.value == ENumberConstants.onBoardingNumber - 1) {
-      Get.offAll(() => const LoginScreen()); //!
+      Get.offAll(() => const LoginScreen()); //?
     } else {
       currentPageIndex.value = currentPageIndex.value + 1;
       pageController.jumpToPage(currentPageIndex.value);

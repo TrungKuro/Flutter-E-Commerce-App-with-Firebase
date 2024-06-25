@@ -46,14 +46,14 @@ class ELoginForm extends StatelessWidget {
                 Row(
                   children: [
                     Checkbox(
-                      value: true, onChanged: (value) {}, //!
+                      value: true, onChanged: (value) {}, //?
                     ),
                     const Text(ETexts.rememberMe),
                   ],
                 ),
                 // Forget Password
                 TextButton(
-                  onPressed: () => Get.to(() => const ForgetPassword()), //!
+                  onPressed: () => Get.to(() => const ForgetPassword()), //?
                   child: const Text(ETexts.forgetPassword),
                 ),
               ],
@@ -64,7 +64,7 @@ class ELoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () => Get.to(() => const NavigationMenu()), //!
+                onPressed: () => Get.to(() => const NavigationMenu()), //?
                 child: const Text(ETexts.signIn),
               ),
             ),
@@ -74,7 +74,7 @@ class ELoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(
-                onPressed: () => Get.to(() => const SignUpScreen()), //!
+                onPressed: () => Get.to(() => const SignUpScreen()), //?
                 child: const Text(ETexts.createAccount),
               ),
             ),

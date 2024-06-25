@@ -27,7 +27,7 @@ class ESearchContainer extends StatelessWidget {
     final isDark = EHelperFunctions.isDarkMode(context); //!
 
     return GestureDetector(
-      onTap: onTap, //!
+      onTap: onTap, //?
       child: Padding(
         padding: padding,
         child: Container(

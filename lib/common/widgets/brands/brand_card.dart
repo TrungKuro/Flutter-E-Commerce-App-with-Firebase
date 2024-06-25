@@ -23,7 +23,7 @@ class EBrandCard extends StatelessWidget {
     final isDark = EHelperFunctions.isDarkMode(context); //!
 
     return GestureDetector(
-      onTap: () {}, //!
+      onTap: () {}, //?
       /// Container Design
       child: ERoundedContainer(
         padding: const EdgeInsets.all(ESizes.sm),

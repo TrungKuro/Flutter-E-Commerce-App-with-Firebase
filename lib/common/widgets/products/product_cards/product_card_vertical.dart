@@ -20,7 +20,7 @@ class EProductCardVertical extends StatelessWidget {
     final isDark = EHelperFunctions.isDarkMode(context); //!
 
     return GestureDetector(
-      onTap: () {}, //!
+      onTap: () {}, //?
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),

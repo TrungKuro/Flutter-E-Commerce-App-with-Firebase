@@ -53,7 +53,7 @@ class StoreScreen extends StatelessWidget {
           ),
           actions: [
             ECartCounterIcon(
-              onPressed: () {}, //!
+              onPressed: () {}, //?
             )
           ],
         ),
@@ -90,7 +90,7 @@ class StoreScreen extends StatelessWidget {
                       /// Title "Featured Brands"
                       ESectionHeading(
                         title: ETexts.brandsTitle,
-                        onPressed: () {}, //!
+                        onPressed: () {}, //?
                       ),
                       const SizedBox(height: ESizes.spaceBtwItems / 1.5),
 

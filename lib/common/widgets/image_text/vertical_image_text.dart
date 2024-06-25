@@ -23,7 +23,7 @@ class EVerticalImageText extends StatelessWidget {
     final isDark = EHelperFunctions.isDarkMode(context); //!
 
     return GestureDetector(
-      onTap: onTap, //!
+      onTap: onTap, //?
       child: Container(
         margin: const EdgeInsets.only(right: ESizes.spaceBtwItems),
         child: Column(

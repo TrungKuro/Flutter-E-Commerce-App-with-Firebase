@@ -16,7 +16,7 @@ class ResetPassword extends StatelessWidget {
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
-            onPressed: () => Get.back(), //!
+            onPressed: () => Get.back(), //?
             icon: const Icon(CupertinoIcons.clear),
           ),
         ],
@@ -51,7 +51,7 @@ class ResetPassword extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {}, //!
+                  onPressed: () {}, //?
                   child: const Text(ETexts.done),
                 ),
               ),
@@ -59,7 +59,7 @@ class ResetPassword extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: TextButton(
-                  onPressed: () {}, //!
+                  onPressed: () {}, //?
                   child: const Text(ETexts.resendEmail),
                 ),
               ),
