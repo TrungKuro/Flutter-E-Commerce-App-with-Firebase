@@ -24,7 +24,6 @@ class HomeScreen extends StatelessWidget {
           children: [
             /// Header
             const EPrimaryHeaderContainer(
-              height: ENumberConstants.heightHeaderHome,
               child: Column(
                 children: [
                   /// AppBar - Name Customer & Number of products in the shopping cart
@@ -53,6 +52,7 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
+                  SizedBox(height: ESizes.spaceBtwSections),
                 ],
               ),
             ),

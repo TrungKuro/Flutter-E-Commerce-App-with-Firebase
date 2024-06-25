@@ -48,6 +48,10 @@ class EImages {
   static const String promoBanner4 = 'assets/images/banners/promo-banner-4.jpg';
   static const String promoBanner5 = 'assets/images/banners/promo-banner-5.jpg';
 
+  /* ------------------------------- Profile ------------------------------- */
+
+  static const String user = "assets/images/user/user.jpg";
+
   /* ------------------------------- Products ------------------------------ */
 
   // Shoes Nike

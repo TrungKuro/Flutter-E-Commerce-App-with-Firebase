@@ -35,10 +35,11 @@ class EBrandCard extends StatelessWidget {
             /// Icon Categories
             Flexible(
               child: ECircularImage(
-                isNetworkImage: false,
                 image: EImages.toysIcon, //!!!
                 backgroundColor: Colors.transparent,
                 overlayColor: isDark ? EColors.white : EColors.black,
+                padding: const EdgeInsets.all(ESizes.sm),
+                isClip: false,
               ),
             ),
             const SizedBox(width: ESizes.spaceBtwItems / 2),

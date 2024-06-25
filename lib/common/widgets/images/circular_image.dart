@@ -1,5 +1,4 @@
 import 'package:e_commerce_app/utils/constants/colors.dart';
-import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +12,8 @@ class ECircularImage extends StatelessWidget {
     this.backgroundColor,
     this.width = 56,
     this.height = 56,
-    this.padding = ESizes.sm,
+    this.padding,
+    this.isClip = true,
   });
 
   final BoxFit? fit;
@@ -21,7 +21,9 @@ class ECircularImage extends StatelessWidget {
   final bool isNetworkImage;
   final Color? overlayColor;
   final Color? backgroundColor;
-  final double width, height, padding;
+  final double width, height;
+  final EdgeInsetsGeometry? padding;
+  final bool isClip;
 
   @override
   Widget build(BuildContext context) {
@@ -30,19 +32,25 @@ class ECircularImage extends StatelessWidget {
     return Container(
       width: width,
       height: height,
-      padding: EdgeInsets.all(padding),
+      padding: padding,
       decoration: BoxDecoration(
         //! If image background color is null then switch it to light and dark mode color design
         color: (backgroundColor) ?? (isDark ? EColors.black : EColors.white),
-        borderRadius: BorderRadius.circular(100),
+        shape: BoxShape.circle,
       ),
-      child: Center(
-        child: Image(
-          fit: fit,
-          image: isNetworkImage ? NetworkImage(image) : AssetImage(image) as ImageProvider,
-          color: overlayColor,
-        ),
-      ),
+      child: isClip
+          ? ClipOval(
+              child: Image(
+                fit: fit,
+                image: isNetworkImage ? NetworkImage(image) : AssetImage(image) as ImageProvider,
+                color: overlayColor,
+              ),
+            )
+          : Image(
+              fit: fit,
+              image: isNetworkImage ? NetworkImage(image) : AssetImage(image) as ImageProvider,
+              color: overlayColor,
+            ),
     );
   }
 }

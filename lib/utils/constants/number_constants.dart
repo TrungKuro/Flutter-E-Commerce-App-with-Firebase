@@ -27,7 +27,7 @@ class ENumberConstants {
   /* ------------------------ Header of Home Screen ------------------------ */
 
   //! Chiều cao phần Header trên trang Home
-  static const double heightHeaderHome = 410;
+  // static const double heightHeaderHome = 410;
 
   /* ------------------------ Banner of Home Screen ------------------------ */
 

@@ -10,6 +10,7 @@ class ETexts {
   static const String done = 'Done';
   static const String submit = 'Submit';
   static const String viewAll = 'View all';
+  static const String logout = 'Logout';
   static const String tContinue = 'Continue';
 
   /* --------------------------- OnBoarding Texts -------------------------- */
@@ -26,11 +27,55 @@ class ETexts {
   /* ----------------------------- Home Screen ----------------------------- */
 
   static const String homeAppBarTitle = "Good day for shopping";
-  static const String homeAppBarSubTitle = "Trung Kuro";
+
+  //! Sử dụng cho "Home Screen" và "Settings Screen"
+  static const String userAppBarTitle = "Trung Kuro";
+  static const String emailAppBarSubTitle = "support@codingwithT.com";
 
   static const String searchBarTitle = 'Search in Store';
   static const String categoriesTitle = 'Popular Categories';
   static const String productsTitle = 'Popular Products';
+
+  /* --------------------------- Settings Screen --------------------------- */
+
+  static const String accountAppBarTitle = "Account";
+
+  static const String accountSettingsTitle = "Account Settings";
+
+  static const String myAddressTitle = "My Address";
+  static const String myAddressSubTitle = "Set shopping delivery address";
+
+  static const String myCartTitle = "My Cart";
+  static const String myCartSubTitle = "Add, remove products and move to checkout";
+
+  static const String myOrdersTitle = "My Orders";
+  static const String myOrdersSubTitle = "In-progress and Completed Orders";
+
+  static const String bankAccountTitle = "Bank Account";
+  static const String bankAccountSubTitle = "Withdraw balance to registered bank account";
+
+  static const String myCouponsTitle = "My Coupons";
+  static const String myCouponsSubTitle = "List of all the discounted coupons";
+
+  static const String notificationsTitle = "Notifications";
+  static const String notificationsSubTitle = "Set any kind of notification message";
+
+  static const String accountPrivacyTitle = "Account Privacy";
+  static const String accountPrivacySubTitle = "Manage data usage and connected accounts";
+
+  static const String appSettingsTitle = "App Settings";
+
+  static const String loadDataTitle = "Load Data";
+  static const String loadDataSubTitle = "Upload Data to your Cloud Firebase";
+
+  static const String geolocationTitle = "Geolocation";
+  static const String geolocationSubTitle = "Set recommendation based on location";
+
+  static const String safeModeTitle = "Safe Mode";
+  static const String safeModeSubTitle = "Search result is safe for all ages";
+
+  static const String imageQualityTitle = "HD Image Quality";
+  static const String imageQualitySubTitle = "Set image quality to be seen";
 
   /* ----------------------------- Store Screen ---------------------------- */
 
@@ -39,7 +84,7 @@ class ETexts {
   static const String brandsTitle = 'Featured Brands';
 
   static const String mightLikeTitle = 'You might like';
-  
+
   /* ------------------------------ Categories ----------------------------- */
 
   static const String sports = 'Sports';
