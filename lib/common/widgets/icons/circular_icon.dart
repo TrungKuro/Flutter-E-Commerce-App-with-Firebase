@@ -13,6 +13,7 @@ class ECircularIcon extends StatelessWidget {
     this.color,
     this.backgroundColor,
     this.onPressed,
+    this.isTransparent = false,
   });
 
   final double? width, height, size;
@@ -20,6 +21,7 @@ class ECircularIcon extends StatelessWidget {
   final Color? color;
   final Color? backgroundColor;
   final VoidCallback? onPressed;
+  final bool isTransparent;
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +31,11 @@ class ECircularIcon extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-        color: (backgroundColor) ?? (isDark ? EColors.black.withOpacity(0.9) : EColors.white.withOpacity(0.9)),
-        borderRadius: BorderRadius.circular(100),
+        // color: (backgroundColor) ?? (isDark ? EColors.black.withOpacity(0.7) : EColors.white.withOpacity(0.3)),
+        color: isTransparent
+            ? Colors.transparent
+            : (backgroundColor) ?? (isDark ? EColors.black.withOpacity(0.7) : EColors.white.withOpacity(0.3)),
+        shape: BoxShape.circle,
       ),
       child: IconButton(
         onPressed: onPressed, //?

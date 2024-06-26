@@ -16,7 +16,7 @@ class ERattingAndShare extends StatelessWidget {
         /// Rating
         Row(
           children: [
-            const Icon(Iconsax.star5, color: EColors.secondary, size: 24),
+            const Icon(Iconsax.star5, color: EColors.rating, size: 24),
             const SizedBox(width: ESizes.spaceBtwItems / 2),
             Text.rich(
               TextSpan(
@@ -24,6 +24,9 @@ class ERattingAndShare extends StatelessWidget {
                   TextSpan(
                     text: '5.0', //!!!
                     style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                  const TextSpan(
+                    text: ' ',
                   ),
                   const TextSpan(
                     text: '(199)', //!!!

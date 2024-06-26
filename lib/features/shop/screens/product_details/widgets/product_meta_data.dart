@@ -7,6 +7,7 @@ import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/enums.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
+import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,7 @@ class EProductMetalData extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        /// Price & Sale Price
+        /// Price & Sale
         Row(
           children: [
             /// Sale Tag
@@ -35,12 +36,14 @@ class EProductMetalData extends StatelessWidget {
             ),
             const SizedBox(width: ESizes.spaceBtwItems),
 
-            /// Price
+            /// Price Old
             Text(
               '\$250', //!!!
               style: Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough),
             ),
             const SizedBox(width: ESizes.spaceBtwItems),
+
+            /// Price New
             const EProductPriceText(
               price: '175', //!!!
               isLarge: true,
@@ -51,7 +54,7 @@ class EProductMetalData extends StatelessWidget {
 
         /// Title
         const EProductTitleText(
-          title: 'Green Nike', //!!!
+          title: 'Green Nike Sports Shirt', //!!!
         ),
         const SizedBox(height: ESizes.spaceBtwItems / 1.5),
 
@@ -59,11 +62,11 @@ class EProductMetalData extends StatelessWidget {
         Row(
           children: [
             const EProductTitleText(
-              title: 'Status', //!!!
+              title: ETexts.status,
             ),
             const SizedBox(width: ESizes.spaceBtwItems),
             Text(
-              'In Stock', //!!!
+              ETexts.outStock, //!!!
               style: Theme.of(context).textTheme.titleMedium,
             ),
           ],
@@ -75,10 +78,14 @@ class EProductMetalData extends StatelessWidget {
           children: [
             ECircularImage(
               image: EImages.shoesIcon, //!!!
+              backgroundColor: Colors.transparent,
               width: 32,
               height: 32,
               overlayColor: isDark ? EColors.white : EColors.black,
+              padding: const EdgeInsets.all(ESizes.xs),
+              isClip: false,
             ),
+            const SizedBox(width: ESizes.spaceBtwItems),
             const EBrandTitleWithVerifiedIcon(
               title: 'Nike', //!!!
               brandTextSize: TextSizes.medium,

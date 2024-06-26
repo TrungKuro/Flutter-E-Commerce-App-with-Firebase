@@ -75,7 +75,7 @@ class EProductCardVertical extends StatelessWidget {
                         const ECircularIcon(
                           icon: Iconsax.heart5,
                           color: EColors.favourite,
-                        ), //!!!
+                        ),
                       ],
                     ),
                   ),

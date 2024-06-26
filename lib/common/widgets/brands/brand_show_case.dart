@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/common/widgets/brands/brand_card.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
+import 'package:e_commerce_app/utils/constants/number_constants.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +56,7 @@ Widget brandTopProductImageWidget(String image, BuildContext context) {
 
   return Expanded(
     child: ERoundedContainer(
-      height: 100, //!!!
+      height: ENumberConstants.heightTop3ProductsBrand,
       backgroundColor: EColors.grey,
       padding: const EdgeInsets.all(ESizes.xs),
       child: ClipRRect(

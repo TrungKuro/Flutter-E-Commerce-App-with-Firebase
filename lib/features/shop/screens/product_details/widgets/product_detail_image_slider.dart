@@ -4,9 +4,12 @@ import 'package:e_commerce_app/common/widgets/icons/circular_icon.dart';
 import 'package:e_commerce_app/common/widgets/images/rounded_image.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
+import 'package:e_commerce_app/utils/constants/number_constants.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
+import 'package:e_commerce_app/utils/device/device_utility.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 
 class EProductDetailImageSlider extends StatelessWidget {
@@ -18,40 +21,42 @@ class EProductDetailImageSlider extends StatelessWidget {
 
     return ECurvedEdgeWidget(
       child: Container(
-        color: isDark ? EColors.darkerGrey : EColors.light,
+        color: isDark ? EColors.darkDarker30Per : EColors.lightDarker30Per,
         child: Stack(
           children: [
             /// Main Large Image
             const SizedBox(
-              height: 400, //!!!
-              child: Padding(
-                padding: EdgeInsets.all(ESizes.productImageRadius * 2),
-                child: Center(
-                  child: Image(
-                    image: AssetImage(EImages.productShoesAdidas3), //!!!
-                  ),
-                ),
+              height: ENumberConstants.heightLargeImageProduct,
+              child: Image(
+                fit: BoxFit.cover,
+                image: AssetImage(EImages.productShoesAdidas5), //!!!
               ),
             ),
 
             /// Image Slider
             Positioned(
+              left: 0,
               right: 0,
-              bottom: 30,
-              left: ESizes.defaultSpace,
+              bottom: ESizes.spaceBtwSections,
               child: SizedBox(
-                height: 80, //!!!
+                height: ENumberConstants.heightImageProduct,
                 child: ListView.separated(
-                  itemCount: 4, //!!!
+                  padding: const EdgeInsets.only(
+                    left: ESizes.defaultSpace,
+                    right: ESizes.defaultSpace,
+                  ),
+                  itemCount: ENumberConstants.productImageNumber,
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   physics: const AlwaysScrollableScrollPhysics(),
+                  //? Dấu (__) nghĩa là gì, nó khác gì với dấu (_)
                   separatorBuilder: (_, __) => const SizedBox(width: ESizes.spaceBtwItems),
                   itemBuilder: (_, index) => ERoundedImage(
-                    width: 80, //!!!
-                    backgroundColor: isDark ? EColors.dark : EColors.white,
-                    border: Border.all(color: EColors.primary),
-                    padding: const EdgeInsets.all(ESizes.sm),
+                    width: ENumberConstants.widthImageProduct,
+                    fit: BoxFit.cover,
+                    backgroundColor: isDark ? EColors.darkDarker30Per : EColors.lightDarker30Per,
+                    border: Border.all(color: EColors.accent),
+                    padding: ESizes.xs,
                     imageUrl: EImages.productShoesAdidas3, //!!!
                   ),
                 ),
@@ -59,9 +64,17 @@ class EProductDetailImageSlider extends StatelessWidget {
             ),
 
             /// AppBar Icons
-            const EAppBar(
+            EAppBar(
               showBackArrow: true,
-              actions: [ECircularIcon(icon: Iconsax.heart5, color: EColors.favourite)],
+              showBackgroundColorackArrow: true,
+              actions: [
+                ECircularIcon(
+                  icon: Iconsax.heart5,
+                  color: EColors.favourite,
+                  height: EDeviceUtils.getAppBarHeight(),
+                  width: EDeviceUtils.getAppBarHeight(),
+                ), //!!!
+              ],
             ),
           ],
         ),

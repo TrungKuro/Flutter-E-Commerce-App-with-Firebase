@@ -26,6 +26,7 @@ class EColors {
   /* ----------------------------- Icon Colors ----------------------------- */
 
   static const Color favourite = Colors.red;
+  static const Color rating = Colors.amber;
 
   /* ----------------------------- Text Colors ----------------------------- */
 
@@ -42,6 +43,22 @@ class EColors {
   static const Color dark = Color(0xFF272727);
   //
   static const Color primaryBackground = Color(0xFFf3f5ff);
+
+  //! Tăng cường độ đậm 30% cho màu "light"
+  static Color lightDarker30Per = Color.fromARGB(
+    light.alpha,
+    (light.red * 0.7).round(),
+    (light.green * 0.7).round(),
+    (light.blue * 0.7).round(),
+  );
+
+  //! Tăng cường độ đậm 30% cho màu "dark"
+  static Color darkDarker30Per = Color.fromARGB(
+    dark.alpha,
+    (dark.red * 0.7).round(),
+    (dark.green * 0.7).round(),
+    (dark.blue * 0.7).round(),
+  );
 
   /* --------------------- Background Container Colors --------------------- */
 

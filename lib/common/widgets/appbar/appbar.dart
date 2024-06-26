@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/common/widgets/icons/circular_icon.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/device/device_utility.dart';
@@ -11,6 +12,7 @@ class EAppBar extends StatelessWidget implements PreferredSizeWidget {
     super.key,
     this.title,
     this.showBackArrow = false,
+    this.showBackgroundColorackArrow = false,
     this.leadingIcon,
     this.actions,
     this.leadingOnPressed,
@@ -18,6 +20,7 @@ class EAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   final Widget? title;
   final bool showBackArrow;
+  final bool showBackgroundColorackArrow;
   final IconData? leadingIcon;
   final List<Widget>? actions;
   final VoidCallback? leadingOnPressed;
@@ -31,12 +34,18 @@ class EAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: AppBar(
         automaticallyImplyLeading: false,
         leading: showBackArrow
-            ? IconButton(
-                onPressed: () => Get.back(), //?
-                icon: const Icon(Iconsax.arrow_left),
-                color: isDark ? EColors.white : EColors.black,
-              )
-            : leadingIcon != null
+            ? (showBackgroundColorackArrow)
+                ? ECircularIcon(
+                    onPressed: () => Get.back(), //?
+                    icon: Iconsax.arrow_left,
+                    color: isDark ? EColors.white : EColors.black,
+                  )
+                : IconButton(
+                    onPressed: () => Get.back(), //?
+                    icon: const Icon(Iconsax.arrow_left),
+                    color: isDark ? EColors.white : EColors.black,
+                  )
+            : (leadingIcon != null)
                 ? IconButton(onPressed: leadingOnPressed, icon: Icon(leadingIcon))
                 : null,
         title: title,

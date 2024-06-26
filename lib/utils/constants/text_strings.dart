@@ -17,6 +17,10 @@ class ETexts {
   static const String searchBarTitle = 'Search in Store';
   static const String viewAll = 'View all';
 
+  static const String status = "Status";
+  static const String inStock = "In Stock";
+  static const String outStock = "Out Stock";
+
   /* --------------------------- OnBoarding Texts -------------------------- */
 
   static const String onBoardingTitle1 = "Choose your product";
@@ -31,9 +35,6 @@ class ETexts {
   /* ----------------------------- Home Screen ----------------------------- */
 
   static const String homeAppBarTitle = "Good day for shopping";
-
-  //! Sử dụng cho "Home Screen" và "Settings Screen"
-  static const String emailAppBarSubTitle = "hdh.trung96@gmail.com";//!!!
 
   static const String popularCategoriesTitle = 'Popular Categories';
   static const String popularProductsTitle = 'Popular Products';

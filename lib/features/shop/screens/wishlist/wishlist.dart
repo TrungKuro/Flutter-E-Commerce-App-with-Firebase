@@ -3,6 +3,7 @@ import 'package:e_commerce_app/common/widgets/icons/circular_icon.dart';
 import 'package:e_commerce_app/common/widgets/layouts/grid_layout.dart';
 import 'package:e_commerce_app/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:e_commerce_app/features/shop/screens/home/home.dart';
+import 'package:e_commerce_app/utils/constants/number_constants.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +24,7 @@ class FavouriteScreen extends StatelessWidget {
         actions: [
           ECircularIcon(
             icon: Iconsax.add,
+            isTransparent: true,
             onPressed: () => Get.to(const HomeScreen()), //?
           )
         ],
@@ -33,7 +35,7 @@ class FavouriteScreen extends StatelessWidget {
           child: Column(
             children: [
               EGridLayout(
-                itemCount: 7, //!!!
+                itemCount: ENumberConstants.wishlistNumber,
                 itemBuilder: (_, index) => const EProductCardVertical(),
               ),
             ],

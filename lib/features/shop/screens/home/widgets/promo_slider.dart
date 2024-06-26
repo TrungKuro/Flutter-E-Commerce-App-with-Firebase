@@ -35,6 +35,7 @@ class EPromoSlider extends StatelessWidget {
               .map((url) => ERoundedImage(
                     imageUrl: url,
                     width: double.infinity,
+                    height: double.infinity,
                     fit: BoxFit.cover,
                   ))
               .toList(),
