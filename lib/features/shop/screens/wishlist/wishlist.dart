@@ -17,7 +17,7 @@ class FavouriteScreen extends StatelessWidget {
     return Scaffold(
       appBar: EAppBar(
         title: Text(
-          ETexts.wishList,
+          ETexts.wishListAppBarTitle,
           style: Theme.of(context).textTheme.headlineMedium,
         ),
         actions: [

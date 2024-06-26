@@ -43,7 +43,7 @@ class VerifyEmailScreen extends StatelessWidget {
               ),
               const SizedBox(height: ESizes.spaceBtwItems),
               Text(
-                ETexts.emailAppBarSubTitle, //!!!
+                ETexts.emailValue, //!!!
                 style: Theme.of(context).textTheme.labelLarge,
                 textAlign: TextAlign.center,
               ),

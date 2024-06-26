@@ -20,7 +20,7 @@ class EHomeAppBar extends StatelessWidget {
             style: Theme.of(context).textTheme.labelMedium!.apply(color: EColors.grey),
           ),
           Text(
-            ETexts.userAppBarTitle, //!!!
+            ETexts.userNameValue, //!!!
             style: Theme.of(context).textTheme.headlineSmall!.apply(color: EColors.white),
           ),
         ],

@@ -6,12 +6,16 @@ class ETexts {
 
   static const String appName = 'E-Store';
 
+  static const String tContinue = 'Continue';
   static const String skip = 'Skip';
   static const String done = 'Done';
+
   static const String submit = 'Submit';
-  static const String viewAll = 'View all';
   static const String logout = 'Logout';
-  static const String tContinue = 'Continue';
+  static const String closeAccount = 'Close Account';
+
+  static const String searchBarTitle = 'Search in Store';
+  static const String viewAll = 'View all';
 
   /* --------------------------- OnBoarding Texts -------------------------- */
 
@@ -29,16 +33,25 @@ class ETexts {
   static const String homeAppBarTitle = "Good day for shopping";
 
   //! Sử dụng cho "Home Screen" và "Settings Screen"
-  static const String userAppBarTitle = "Trung Kuro";
-  static const String emailAppBarSubTitle = "support@codingwithT.com";
+  static const String emailAppBarSubTitle = "hdh.trung96@gmail.com";//!!!
 
-  static const String searchBarTitle = 'Search in Store';
-  static const String categoriesTitle = 'Popular Categories';
-  static const String productsTitle = 'Popular Products';
+  static const String popularCategoriesTitle = 'Popular Categories';
+  static const String popularProductsTitle = 'Popular Products';
+
+  /* ----------------------------- Store Screen ---------------------------- */
+
+  static const String storeAppBarTitle = store;
+
+  static const String featuredBrandsTitle = 'Featured Brands';
+  static const String mightLikeTitle = 'You might like';
+
+  /* --------------------------- Wishlist Screen --------------------------- */
+
+  static const String wishListAppBarTitle = wishList;
 
   /* --------------------------- Settings Screen --------------------------- */
 
-  static const String accountAppBarTitle = "Account";
+  static const String settingsAppBarTitle = "Account";
 
   static const String accountSettingsTitle = "Account Settings";
 
@@ -77,13 +90,35 @@ class ETexts {
   static const String imageQualityTitle = "HD Image Quality";
   static const String imageQualitySubTitle = "Set image quality to be seen";
 
-  /* ----------------------------- Store Screen ---------------------------- */
+  /* ---------------------------- Profile Screen --------------------------- */
 
-  static const String storeAppBarTitle = "Store";
+  static const String profileAppBarTitle = profile;
+  static const String profileAppBarSubTitle = "Change Profile Picture";
 
-  static const String brandsTitle = 'Featured Brands';
+  static const String profileInformationTitle = "Profile Information";
 
-  static const String mightLikeTitle = 'You might like';
+  static const String nameTitle = "Name";
+  static const String nameValue = "Hoàng Trung";
+
+  static const String userNameTitle = "User Name";
+  static const String userNameValue = "Trung Kuro";
+
+  static const String personalInformationTitle = "Personal Information";
+
+  static const String userIDTitle = "User ID";
+  static const String userIDValue = "12345";
+
+  static const String emailTitle = "E-mail";
+  static const String emailValue = "hdh.trung96@gmail.com";
+
+  static const String phoneNumberTitle = "Phone Number";
+  static const String phoneNumberValue = "076-2534798";
+
+  static const String genderTitle = "Gender";
+  static const String genderValue = "Male";
+
+  static const String dateOfBirthTitle = "Date of Birth";
+  static const String dateOfBirthValue = "25-11-1996";
 
   /* ------------------------------ Categories ----------------------------- */
 
@@ -134,14 +169,17 @@ class ETexts {
   static const String firstName = 'First Name';
   static const String lastName = 'Last Name';
 
-  static const String email = 'E-Mail';
+  static const String email = emailTitle;
+
+  static const String userName = userNameTitle;
+
   static const String password = 'Password';
   static const String newPassword = 'New Password';
-
-  static const String userName = 'Username';
-  static const String phoneNumber = 'Phone Number';
-  static const String rememberMe = 'Remember Me';
   static const String forgetPassword = 'Forget Password';
+
+  static const String phoneNumber = phoneNumberTitle;
+
+  static const String rememberMe = 'Remember Me';
 
   static const String signIn = 'Sign In';
   static const String createAccount = 'Create Account';

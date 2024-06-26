@@ -2,11 +2,13 @@ import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:e_commerce_app/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
-import 'package:e_commerce_app/features/personalization/screens/settings/settings_menu_tile.dart';
+import 'package:e_commerce_app/features/personalization/screens/profile/profile.dart';
+import 'package:e_commerce_app/features/personalization/screens/settings/widgets/settings_menu_tile.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -25,13 +27,15 @@ class SettingsScreen extends StatelessWidget {
                   /// AppBar
                   EAppBar(
                     title: Text(
-                      ETexts.accountAppBarTitle,
+                      ETexts.settingsAppBarTitle,
                       style: Theme.of(context).textTheme.headlineMedium!.apply(color: EColors.white),
                     ),
                   ),
 
                   /// User Profile Card
-                  const EUserProfileTile(),
+                  EUserProfileTile(
+                    onPressed: () => Get.to(() => const ProfileScreen()), //?
+                  ),
                   const SizedBox(height: ESizes.spaceBtwSections),
                 ],
               ),

@@ -89,7 +89,7 @@ class StoreScreen extends StatelessWidget {
 
                       /// Title "Featured Brands"
                       ESectionHeading(
-                        title: ETexts.brandsTitle,
+                        title: ETexts.featuredBrandsTitle,
                         onPressed: () {}, //?
                       ),
                       const SizedBox(height: ESizes.spaceBtwItems / 1.5),

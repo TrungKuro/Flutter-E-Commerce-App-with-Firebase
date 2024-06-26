@@ -34,6 +34,7 @@ class EColors {
   //
   static const Color textWhite = Colors.white;
   static const Color textBlack = Colors.black;
+  static const Color textRed = Colors.red;
 
   /* -------------------------- Background Colors -------------------------- */
 

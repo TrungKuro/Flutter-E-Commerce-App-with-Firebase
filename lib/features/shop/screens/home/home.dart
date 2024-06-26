@@ -41,7 +41,7 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         /// Title "Popular Categories"
                         ESectionHeading(
-                          title: ETexts.categoriesTitle,
+                          title: ETexts.popularCategoriesTitle,
                           textColor: EColors.white,
                           showActionButton: false,
                         ),
@@ -76,7 +76,7 @@ class HomeScreen extends StatelessWidget {
 
                   /// Title "Popular Products"
                   ESectionHeading(
-                    title: ETexts.productsTitle,
+                    title: ETexts.popularProductsTitle,
                     onPressed: () {}, //?
                   ),
                   const SizedBox(height: ESizes.spaceBtwItems),
