@@ -4,7 +4,9 @@ import 'package:e_commerce_app/common/widgets/texts/product_price_text.dart';
 import 'package:e_commerce_app/common/widgets/texts/product_title_text.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
+import 'package:e_commerce_app/utils/constants/number_constants.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
+import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
@@ -17,28 +19,38 @@ class EProductAttributes extends StatelessWidget {
 
     return Column(
       children: [
-        /// Selected Attribute Pricing & Description
+        /* ----------------------------------------------------------------- */
+        /*              Selected Attribute Pricing & Description             */
+        /* ----------------------------------------------------------------- */
+
         ERoundedContainer(
-          backgroundColor: isDark ? EColors.darkerGrey : EColors.grey, //!!!
+          backgroundColor: isDark ? EColors.darkDarker30Per : EColors.lightDarker30Per,
+          padding: const EdgeInsets.all(ESizes.md),
           child: Column(
             children: [
-              /// Title, Price and Stock Status
+              /// Price and Stock Status
               Row(
                 children: [
+                  /// Title
                   const ESectionHeading(
-                    title: 'Variation', //!!!
-                    showActionButton: true,
+                    title: ETexts.variation,
+                    showActionButton: false,
                   ),
                   const SizedBox(width: ESizes.spaceBtwItems),
+
+                  /// Info
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      /// Price
                       Row(
                         children: [
+                          /// Title Price
                           const EProductTitleText(
-                            title: 'Price : ', //!!!
+                            title: '${ETexts.price} :',
                             smallSize: true,
                           ),
+                          const SizedBox(width: ESizes.spaceBtwItems),
 
                           /// Actual Price
                           Text(
@@ -58,12 +70,16 @@ class EProductAttributes extends StatelessWidget {
                       /// Stock
                       Row(
                         children: [
+                          /// Title Stock
                           const EProductTitleText(
-                            title: 'Stock', //!!!
+                            title: '${ETexts.stock} :',
                             smallSize: true,
                           ),
+                          const SizedBox(width: ESizes.spaceBtwItems),
+
+                          /// Stock Status
                           Text(
-                            'In Stock', //!!!
+                            ETexts.inStock,
                             style: Theme.of(context).textTheme.titleMedium,
                           ),
                         ],
@@ -72,10 +88,12 @@ class EProductAttributes extends StatelessWidget {
                   ),
                 ],
               ),
+              const SizedBox(height: ESizes.spaceBtwItems),
 
               /// Variation Description
               const EProductTitleText(
-                title: 'This is the Description of the Product and it can go upto max 4 lines.', //!!!
+                title:
+                    'This is the Description of the Product and it can go upto max 4 lines.\nWhat that mean?\nLike this?\nWhat if I have more than.', //!!!
                 smallSize: true,
                 maxLines: 4,
               ),
@@ -84,16 +102,20 @@ class EProductAttributes extends StatelessWidget {
         ),
         const SizedBox(height: ESizes.spaceBtwItems),
 
-        /// Attributes Color
+        /* ----------------------------------------------------------------- */
+        /*                          Attributes Color                         */
+        /* ----------------------------------------------------------------- */
+
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const ESectionHeading(
-              title: 'Colors', //!!!
+              title: ETexts.attributesColor,
+              showActionButton: false,
             ),
             const SizedBox(height: ESizes.spaceBtwItems / 2),
             Wrap(
-              spacing: 8, //!!!
+              spacing: ENumberConstants.spacingBetweenChosenAttributes,
               children: [
                 EChoiceChip(
                   text: 'Green', //!!!
@@ -102,7 +124,7 @@ class EProductAttributes extends StatelessWidget {
                 ),
                 EChoiceChip(
                   text: 'Blue', //!!!
-                  selected: true, //!!!
+                  selected: false, //!!!
                   onSelected: (value) {}, //?
                 ),
                 EChoiceChip(
@@ -110,25 +132,55 @@ class EProductAttributes extends StatelessWidget {
                   selected: false, //!!!
                   onSelected: (value) {}, //?
                 ),
+                EChoiceChip(
+                  text: 'Red', //!!!
+                  selected: true, //!!!
+                  onSelected: (value) {}, //?
+                ),
+                EChoiceChip(
+                  text: 'Black', //!!!
+                  selected: false, //!!!
+                  onSelected: (value) {}, //?
+                ),
+                EChoiceChip(
+                  text: 'Brown', //!!!
+                  selected: false, //!!!
+                  onSelected: (value) {}, //?
+                ),
+                EChoiceChip(
+                  text: 'White', //!!!
+                  selected: false, //!!!
+                  onSelected: (value) {}, //?
+                ),
+                EChoiceChip(
+                  text: 'Purple', //!!!
+                  selected: false, //!!!
+                  onSelected: (value) {}, //?
+                ),
               ],
             ),
           ],
         ),
+        const SizedBox(height: ESizes.spaceBtwItems),
 
-        /// Attributes Size
+        /* ----------------------------------------------------------------- */
+        /*                          Attributes Size                          */
+        /* ----------------------------------------------------------------- */
+
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const ESectionHeading(
-              title: 'Size', //!!!
+              title: ETexts.attributesSize,
+              showActionButton: false,
             ),
             const SizedBox(height: ESizes.spaceBtwItems / 2),
             Wrap(
-              spacing: 8, //!!!
+              spacing: ENumberConstants.spacingBetweenChosenAttributes,
               children: [
                 EChoiceChip(
                   text: 'EU 34', //!!!
-                  selected: true, //!!!
+                  selected: false, //!!!
                   onSelected: (value) {}, //?
                 ),
                 EChoiceChip(
@@ -138,6 +190,11 @@ class EProductAttributes extends StatelessWidget {
                 ),
                 EChoiceChip(
                   text: 'EU 38', //!!!
+                  selected: true, //!!!
+                  onSelected: (value) {}, //?
+                ),
+                EChoiceChip(
+                  text: 'EU 40', //!!!
                   selected: false, //!!!
                   onSelected: (value) {}, //?
                 ),
@@ -145,6 +202,8 @@ class EProductAttributes extends StatelessWidget {
             ),
           ],
         ),
+
+        /* ----------------------------------------------------------------- */
       ],
     );
   }

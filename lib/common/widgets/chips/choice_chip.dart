@@ -28,8 +28,8 @@ class EChoiceChip extends StatelessWidget {
         labelStyle: TextStyle(color: selected ? EColors.white : null),
         avatar: isColor
             ? ECircularContainer(
-                width: 50, //!!!
-                height: 50, //!!!
+                width: 50,
+                height: 50,
                 backgroundColor: EHelperFunctions.getColor(text),
               )
             : null,

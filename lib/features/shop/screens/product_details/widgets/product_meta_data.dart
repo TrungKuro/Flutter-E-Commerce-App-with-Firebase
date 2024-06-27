@@ -62,7 +62,7 @@ class EProductMetalData extends StatelessWidget {
         Row(
           children: [
             const EProductTitleText(
-              title: ETexts.status,
+              title: '${ETexts.status} :',
             ),
             const SizedBox(width: ESizes.spaceBtwItems),
             Text(
@@ -79,13 +79,12 @@ class EProductMetalData extends StatelessWidget {
             ECircularImage(
               image: EImages.shoesIcon, //!!!
               backgroundColor: Colors.transparent,
-              width: 32,
-              height: 32,
+              width: 37,
+              height: 37,
               overlayColor: isDark ? EColors.white : EColors.black,
-              padding: const EdgeInsets.all(ESizes.xs),
+              padding: const EdgeInsets.all(ESizes.sm),
               isClip: false,
             ),
-            const SizedBox(width: ESizes.spaceBtwItems),
             const EBrandTitleWithVerifiedIcon(
               title: 'Nike', //!!!
               brandTextSize: TextSizes.medium,

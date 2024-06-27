@@ -16,10 +16,26 @@ class ETexts {
 
   static const String searchBarTitle = 'Search in Store';
   static const String viewAll = 'View all';
+  static const String checkOut = "Checkout";
+  static const String addToCart = "Add to Cart";
 
+  static const String variation = "Variation";
+  static const String price = "Price";
+  static const String stock = "Stock";
+
+  //! Stock Status
   static const String status = "Status";
   static const String inStock = "In Stock";
   static const String outStock = "Out Stock";
+
+  //! Attributes
+  static const String attributesColor = "Colors";
+  static const String attributesSize = "Sizes";
+
+  //! Description
+  static const String description = "Description";
+  static const String collapsedDescription = "\nShow more";
+  static const String expandedDescription = "\nShow less";
 
   /* --------------------------- OnBoarding Texts -------------------------- */
 

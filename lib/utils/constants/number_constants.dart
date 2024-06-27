@@ -97,4 +97,9 @@ class ENumberConstants {
 
   //! Độ rộng của item hiển thị các hình ảnh khác nhau của một sản phẩm trên trang [Product Detail]
   static const double widthImageProduct = 80;
+
+  /* ----------------------------------------------------------------------- */
+
+  //! Khoảng cách giữa các tuỳ chọn biến thể khác nhau của một sản phẩm trên trang [Product Detail]
+  static const double spacingBetweenChosenAttributes = 8;
 }
