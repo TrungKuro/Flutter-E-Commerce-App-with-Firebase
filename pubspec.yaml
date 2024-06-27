@@ -28,7 +28,10 @@ dependencies:
   url_launcher: ^6.3.0
   flutter_native_splash: ^2.4.0
   smooth_page_indicator: ^1.1.0
+
+  # Product Specific
   carousel_slider: ^4.2.1
+  readmore: ^3.0.0
 
 # ------------------------------- PACKAGES END ------------------------------ #
 
