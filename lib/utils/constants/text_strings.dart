@@ -37,6 +37,10 @@ class ETexts {
   static const String collapsedDescription = "\nShow more";
   static const String expandedDescription = "\nShow less";
 
+  //! Description
+  static const String reviewAndRatingAppBarTitle = "Reviews & Ratings";
+  static const String contentReviewAndRating = "Ratings and Reviews are verified and are from people who use the same type of device that you use.";
+
   /* --------------------------- OnBoarding Texts -------------------------- */
 
   static const String onBoardingTitle1 = "Choose your product";

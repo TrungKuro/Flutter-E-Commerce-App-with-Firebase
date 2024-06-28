@@ -152,7 +152,7 @@ class SettingsScreen extends StatelessWidget {
                       child: const Text(ETexts.logout),
                     ),
                   ),
-                  const SizedBox(height: ESizes.spaceBtwSections * 2.5),
+                  const SizedBox(height: ESizes.spaceBtwSections),
 
                   /* ------------------------------------------------------- */
                 ],

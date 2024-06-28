@@ -6,6 +6,7 @@ import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
+import 'package:e_commerce_app/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -39,19 +40,15 @@ class ProfileScreen extends StatelessWidget {
                   child: const Text(ETexts.profileAppBarSubTitle),
                 ),
 
-                const SizedBox(height: ESizes.spaceBtwItems / 2),
-                const Divider(),
-                const SizedBox(height: ESizes.spaceBtwItems),
-
                 /* --------------------------------------------------------- */
                 /*                          Details                          */
                 /* --------------------------------------------------------- */
 
+                const Divider(),
+                const SizedBox(height: ESizes.spaceBtwItems),
+
                 /// Heading Profile Info
-                const ESectionHeading(
-                  title: ETexts.profileInformationTitle,
-                  showActionButton: false,
-                ),
+                const ESectionHeading(title: ETexts.profileInformationTitle, showActionButton: false),
                 const SizedBox(height: ESizes.spaceBtwItems),
 
                 EProfileMenu(
@@ -70,10 +67,7 @@ class ProfileScreen extends StatelessWidget {
                 const SizedBox(height: ESizes.spaceBtwItems),
 
                 /// Heading Personal Info
-                const ESectionHeading(
-                  title: ETexts.personalInformationTitle,
-                  showActionButton: false,
-                ),
+                const ESectionHeading(title: ETexts.personalInformationTitle, showActionButton: false),
                 const SizedBox(height: ESizes.spaceBtwItems),
 
                 EProfileMenu(
@@ -103,6 +97,7 @@ class ProfileScreen extends StatelessWidget {
                   onPressed: () {}, //?
                 ),
 
+                const SizedBox(height: ESizes.spaceBtwItems),
                 const Divider(),
                 const SizedBox(height: ESizes.spaceBtwItems),
 
@@ -116,7 +111,8 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: ESizes.spaceBtwSections * 2.5),
+
+                SizedBox(height: EDeviceUtils.getBottomNavigationBarHeight()),
               ],
             ),
           ),

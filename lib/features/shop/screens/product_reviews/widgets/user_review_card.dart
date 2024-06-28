@@ -17,7 +17,9 @@ class EUserReviewCard extends StatelessWidget {
 
     return Column(
       children: [
-        ///!!!
+        /* --------------------------------------------------------------- */
+
+        /// Infor Customer (name & avatar)
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -36,7 +38,7 @@ class EUserReviewCard extends StatelessWidget {
         ),
         const SizedBox(height: ESizes.spaceBtwItems),
 
-        /// Review
+        /// Rating's Customer (rating & time)
         Row(
           children: [
             const ERatingBarIndicator(rating: 4), //!!!
@@ -45,46 +47,65 @@ class EUserReviewCard extends StatelessWidget {
           ],
         ),
         const SizedBox(height: ESizes.spaceBtwItems),
-        const ReadMoreText(
-          'The user interface of the app is quite intuitive. I was able to navigate and make purchases seamlessly. Great job!', //!!!
-          trimLines: 1,
-          trimMode: TrimMode.Line,
-          trimExpandedText: ETexts.expandedDescription,
-          trimCollapsedText: ETexts.collapsedDescription,
-          moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: EColors.primary),
-          lessStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: EColors.primary),
+
+        /// Review's Customer
+        const SizedBox(
+          width: double.infinity,
+          child: ReadMoreText(
+            "I’m also very pleased with the design of the shoes. They look stylish and modern, and I’ve received many compliments on them. I would highly recommend Nike shoes to anyone looking for a comfortable, durable, and stylish pair of shoes.", //!!!
+            trimLines: 1,
+            trimMode: TrimMode.Line,
+            trimExpandedText: ETexts.expandedDescription,
+            trimCollapsedText: ETexts.collapsedDescription,
+            moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: EColors.primary),
+            lessStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: EColors.primary),
+          ),
         ),
         const SizedBox(height: ESizes.spaceBtwItems),
 
-        /// Company Review
+        /// Reply's Company
         ERoundedContainer(
           backgroundColor: isDark ? EColors.darkerGrey : EColors.grey, //!!!
           child: Padding(
             padding: const EdgeInsets.all(ESizes.md),
             child: Column(
               children: [
+                /* ------------------------------------------------------- */
+
+                /// Infor Company (name & time)
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('E Store', style: Theme.of(context).textTheme.titleMedium), //!!!
+                    Text('Nike Store', style: Theme.of(context).textTheme.titleMedium), //!!!
                     Text('02 Nov, 2023', style: Theme.of(context).textTheme.bodyMedium), //!!!
                   ],
                 ),
                 const SizedBox(height: ESizes.spaceBtwItems),
-                const ReadMoreText(
-                  'The user interface of the app is quite intuitive. I was able to navigate and make purchases seamlessly. Great job!', //!!!
-                  trimLines: 1,
-                  trimMode: TrimMode.Line,
-                  trimExpandedText: ETexts.expandedDescription,
-                  trimCollapsedText: ETexts.collapsedDescription,
-                  moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: EColors.primary),
-                  lessStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: EColors.primary),
+
+                /// Reply
+                const SizedBox(
+                  width: double.infinity,
+                  child: ReadMoreText(
+                    "Thank you for your positive feedback about our Nike shoes. We're glad you're satisfied with the comfort, support, and design. We appreciate your feedback on the shoe's durability. Thank you again for being a loyal Nike customer.",
+                    trimLines: 1,
+                    trimMode: TrimMode.Line,
+                    trimExpandedText: ETexts.expandedDescription,
+                    trimCollapsedText: ETexts.collapsedDescription,
+                    moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: EColors.primary),
+                    lessStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: EColors.primary),
+                  ),
                 ),
+                /* ------------------------------------------------------- */
               ],
             ),
           ),
         ),
+
+        /* --------------------------------------------------------------- */
+
         const SizedBox(height: ESizes.spaceBtwSections),
+
+        /* --------------------------------------------------------------- */
       ],
     );
   }

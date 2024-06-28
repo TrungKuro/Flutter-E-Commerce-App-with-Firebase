@@ -15,7 +15,7 @@ class ERatingBarIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return RatingBarIndicator(
       rating: rating,
-      itemSize: 20, //!!!
+      itemSize: 20,
       unratedColor: EColors.grey,
       //? Dấu (__) nghĩa là gì, nó khác gì với dấu (_)
       itemBuilder: (_, __) => const Icon(Iconsax.star1, color: EColors.primary),
