@@ -9,6 +9,7 @@ class ETexts {
   static const String tContinue = 'Continue';
   static const String skip = 'Skip';
   static const String done = 'Done';
+  static const String save = 'Save';
 
   static const String submit = 'Submit';
   static const String logout = 'Logout';
@@ -36,10 +37,6 @@ class ETexts {
   static const String description = "Description";
   static const String collapsedDescription = "\nShow more";
   static const String expandedDescription = "\nShow less";
-
-  //! Description
-  static const String reviewAndRatingAppBarTitle = "Reviews & Ratings";
-  static const String contentReviewAndRating = "Ratings and Reviews are verified and are from people who use the same type of device that you use.";
 
   /* --------------------------- OnBoarding Texts -------------------------- */
 
@@ -140,6 +137,24 @@ class ETexts {
 
   static const String dateOfBirthTitle = "Date of Birth";
   static const String dateOfBirthValue = "25-11-1996";
+
+  /* ----------------------- Reviews & Ratings Screen ---------------------- */
+
+  static const String reviewAndRatingAppBarTitle = "Reviews & Ratings";
+  static const String reviewAndRatingAppBarSubTitle =
+      "Ratings and Reviews are verified and are from people who use the same type of device that you use.";
+
+  /* ---------------------------- Address Screen --------------------------- */
+
+  static const String addressScreenAppBarTitle = "Addresses";
+
+  static const String addNewAddressScreenAppBarTitle = "Add new Address";
+
+  static const String streetTitle = "Street";
+  static const String postalCodeTitle = "Postal Code";
+  static const String cityTitle = "City";
+  static const String stateTitle = "State";
+  static const String countryTitle = "Country";
 
   /* ------------------------------ Categories ----------------------------- */
 

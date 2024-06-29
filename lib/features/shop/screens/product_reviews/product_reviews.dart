@@ -23,7 +23,7 @@ class ProductReviewsScreen extends StatelessWidget {
               /* ----------------------------------------------------------- */
 
               /// Intro
-              const Text(ETexts.contentReviewAndRating),
+              const Text(ETexts.reviewAndRatingAppBarSubTitle),
               const SizedBox(height: ESizes.spaceBtwItems),
 
               /// Overall Product Ratings
