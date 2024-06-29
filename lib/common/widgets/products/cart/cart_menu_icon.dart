@@ -1,16 +1,17 @@
+import 'package:e_commerce_app/features/shop/screens/cart/cart.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
+import 'package:e_commerce_app/utils/constants/number_constants.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class ECartCounterIcon extends StatelessWidget {
   const ECartCounterIcon({
     super.key,
-    required this.onPressed,
     this.iconColor,
   });
 
-  final VoidCallback onPressed;
   final Color? iconColor;
 
   @override
@@ -21,7 +22,7 @@ class ECartCounterIcon extends StatelessWidget {
       children: [
         /// Icon & Button
         IconButton(
-          onPressed: onPressed, //?
+          onPressed: () => Get.to(() => const CartScreen()), //?
           icon: const Icon(Iconsax.shopping_bag),
           color: (iconColor) ?? (isDark ? EColors.white : EColors.black),
         ),
@@ -38,7 +39,7 @@ class ECartCounterIcon extends StatelessWidget {
             ),
             child: Center(
               child: Text(
-                '2', //!!!
+                ENumberConstants.numberProductsInCart.toString(), //!!!
                 style: Theme.of(context).textTheme.labelLarge!.apply(
                       color: (iconColor != null) ? (EColors.white) : (isDark ? EColors.black : EColors.white),
                       fontSizeFactor: 0.8,

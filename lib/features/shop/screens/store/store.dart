@@ -51,11 +51,7 @@ class StoreScreen extends StatelessWidget {
             ETexts.storeAppBarTitle,
             style: Theme.of(context).textTheme.headlineMedium,
           ),
-          actions: [
-            ECartCounterIcon(
-              onPressed: () {}, //?
-            )
-          ],
+          actions: const [ECartCounterIcon()],
         ),
 
         /// Content

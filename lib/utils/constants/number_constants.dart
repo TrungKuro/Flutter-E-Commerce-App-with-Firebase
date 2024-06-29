@@ -81,6 +81,16 @@ class ENumberConstants {
   static const int wishlistNumber = 5;
 
   /* ----------------------------------------------------------------------- */
+  /*                               CART SCREEN                               */
+  /* ----------------------------------------------------------------------- */
+
+  //! Số item hiển thị trên trang [Cart]
+  static const int numberProductsInCart = 9;
+
+  //! Độ cao của mỗi hình item hiển thị trên trang [Cart]
+  static const double heightProductInCart = 70;
+
+  /* ----------------------------------------------------------------------- */
   /*                          PRODUCT DETAIL SCREEN                          */
   /* ----------------------------------------------------------------------- */
 

@@ -156,6 +156,10 @@ class ETexts {
   static const String stateTitle = "State";
   static const String countryTitle = "Country";
 
+  /* ----------------------------- Cart Screen ----------------------------- */
+
+  static const String cartScreenAppBarTitle = "Cart";
+
   /* ------------------------------ Categories ----------------------------- */
 
   static const String sports = 'Sports';

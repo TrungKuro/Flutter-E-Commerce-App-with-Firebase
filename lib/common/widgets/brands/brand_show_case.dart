@@ -57,13 +57,13 @@ Widget brandTopProductImageWidget(String image, BuildContext context) {
   return Expanded(
     child: ERoundedContainer(
       height: ENumberConstants.heightTop3ProductsBrand,
-      backgroundColor: EColors.grey,
+      backgroundColor: isDark ? EColors.darkerGrey : EColors.grey,
       padding: const EdgeInsets.all(ESizes.xs),
       child: ClipRRect(
         //! Tạo hiệu ứng "Nested corner radii"
         borderRadius: BorderRadius.circular(ESizes.md - ESizes.xs),
         child: Container(
-          color: isDark ? EColors.softGrey : EColors.darkGrey,
+          color: EColors.darkGrey,
           child: Image(
             fit: BoxFit.cover,
             image: AssetImage(image),
