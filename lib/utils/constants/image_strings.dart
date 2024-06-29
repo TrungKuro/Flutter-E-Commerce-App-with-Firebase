@@ -58,6 +58,18 @@ class EImages {
   static const String userProfileImage2 = "assets/images/reviews/review_profile_image_2.jpg";
   static const String userProfileImage3 = "assets/images/reviews/review_profile_image_3.jpg";
 
+  /* --------------------------- Payment Methods --------------------------- */
+
+  static const String applePay = "assets/icons/payment_methods/apple-pay.png";
+  static const String googlePay = "assets/icons/payment_methods/google-pay.png";
+  static const String creditCard = "assets/icons/payment_methods/atm-card.png";
+  static const String masterCard = "assets/icons/payment_methods/master-card.png";
+  static const String paypal = "assets/icons/payment_methods/paypal.png";
+  static const String visa = "assets/icons/payment_methods/visa.png";
+  static const String paystack = "assets/icons/payment_methods/money-stack.png";
+  static const String paytm = "assets/icons/payment_methods/paytm.png";
+  static const String successfulPaymentIcon = "assets/icons/payment_methods/payment-check.png";
+
   /* ------------------------------- Products ------------------------------ */
 
   // Shoes Nike

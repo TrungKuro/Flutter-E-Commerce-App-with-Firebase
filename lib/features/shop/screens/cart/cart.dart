@@ -1,10 +1,11 @@
 import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
-import 'package:e_commerce_app/common/widgets/products/cart/cart_item.dart';
-import 'package:e_commerce_app/utils/constants/number_constants.dart';
+import 'package:e_commerce_app/features/shop/screens/cart/widgets/cart_items.dart';
+import 'package:e_commerce_app/features/shop/screens/checkout/checkout.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:e_commerce_app/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -25,23 +26,17 @@ class CartScreen extends StatelessWidget {
       /*                                 BODY                                */
       /* ------------------------------------------------------------------- */
 
-      body: Padding(
-        padding: const EdgeInsets.all(ESizes.defaultSpace),
-        child: ListView.separated(
-          shrinkWrap: true,
-          itemCount: ENumberConstants.numberProductsInCart, //!!!
-          //? Dấu (__) nghĩa là gì, nó khác gì với dấu (_)
-          separatorBuilder: (_, __) => const SizedBox(height: ESizes.spaceBtwSections),
-          itemBuilder: (_, __) => const Column(
-            children: [ECartItem()],
-          ),
-        ),
+      /// Items in Cart
+      body: const Padding(
+        padding: EdgeInsets.all(ESizes.defaultSpace),
+        child: ECartItems(),
       ),
 
       /* ------------------------------------------------------------------- */
       /*                                BOTTOM                               */
       /* ------------------------------------------------------------------- */
 
+      /// Checkout Button
       bottomNavigationBar: Padding(
         padding: EdgeInsets.only(
           top: ESizes.defaultSpace,
@@ -50,7 +45,7 @@ class CartScreen extends StatelessWidget {
           bottom: EDeviceUtils.getBottomNavigationBarHeight(),
         ),
         child: ElevatedButton(
-          onPressed: () {}, //?
+          onPressed: () => Get.to(() => const CheckoutScreen()), //?
           child: const Text('Checkout \$256.0'), //!!!
         ),
       ),

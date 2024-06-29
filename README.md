@@ -96,7 +96,7 @@
 > ---
 >
 > <u>Nguồn</u>:
-> - [Flaticon](https://www.flaticon.com/): Icon cho Logo Splash.
+> - [Flaticon](https://www.flaticon.com/): Icon cho Logo Splash, Icon Payment.
 > - [Free vector and 3D illustrations](https://icons8.com/illustrations): ảnh động cho OnBoarding Screen.
 > - [Freepik](https://www.freepik.com/): ảnh Banner, ảnh Avatar.
 >

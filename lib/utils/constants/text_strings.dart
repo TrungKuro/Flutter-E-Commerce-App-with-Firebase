@@ -160,6 +160,10 @@ class ETexts {
 
   static const String cartScreenAppBarTitle = "Cart";
 
+  /* --------------------------- Checkout Screen --------------------------- */
+
+  static const String checkoutScreenAppBarTitle = "Order Review";
+
   /* ------------------------------ Categories ----------------------------- */
 
   static const String sports = 'Sports';

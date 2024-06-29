@@ -11,7 +11,12 @@ import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class ECartItem extends StatelessWidget {
-  const ECartItem({super.key});
+  const ECartItem({
+    super.key,
+    required this.showAddRemoveButtons,
+  });
+
+  final bool showAddRemoveButtons;
 
   @override
   Widget build(BuildContext context) {
@@ -73,18 +78,19 @@ class ECartItem extends StatelessWidget {
 
               /* ------------------------------------------------------------- */
 
-              const SizedBox(height: ESizes.spaceBtwItems),
+              if (showAddRemoveButtons) const SizedBox(height: ESizes.spaceBtwItems),
 
               /* ------------------------------------------------------------- */
 
               /// Quantity & Total
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  EProductQuantityWithAddRemoveButton(),
-                  EProductPriceText(price: '256'), //!!!
-                ],
-              ),
+              if (showAddRemoveButtons)
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    EProductQuantityWithAddRemoveButton(),
+                    EProductPriceText(price: '256'), //!!!
+                  ],
+                ),
 
               /* ------------------------------------------------------------- */
             ],
