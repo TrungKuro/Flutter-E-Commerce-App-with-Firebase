@@ -16,11 +16,17 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      /* ------------------------------------------------------------------- */
+      /*                                 BODY                                */
+      /* ------------------------------------------------------------------- */
+
       body: SingleChildScrollView(
         child: Padding(
           padding: ESpacingStyle.paddingWithAppBarHeight,
           child: Column(
             children: [
+              /* ----------------------------------------------------------- */
+
               /// Logo, Title & Sub-Title
               const ELoginHeader(),
 
@@ -33,10 +39,14 @@ class LoginScreen extends StatelessWidget {
 
               /// Social Buttons
               const ESocialButtons(),
+
+              /* ----------------------------------------------------------- */
             ],
           ),
         ),
       ),
+
+      /* ------------------------------------------------------------------- */
     );
   }
 }

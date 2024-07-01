@@ -62,6 +62,8 @@ class UserAddressScreen extends StatelessWidget {
         backgroundColor: EColors.primary,
         child: const Icon(Iconsax.add, color: EColors.white),
       ),
+
+      /* ------------------------------------------------------------------- */
     );
   }
 }

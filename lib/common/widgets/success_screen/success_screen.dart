@@ -19,6 +19,10 @@ class SuccessScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      /* ------------------------------------------------------------------- */
+      /*                                 BODY                                */
+      /* ------------------------------------------------------------------- */
+
       body: SingleChildScrollView(
         child: Padding(
           padding: ESpacingStyle.paddingWithAppBarHeight * 2,
@@ -61,6 +65,8 @@ class SuccessScreen extends StatelessWidget {
           ),
         ),
       ),
+
+      /* ------------------------------------------------------------------- */
     );
   }
 }

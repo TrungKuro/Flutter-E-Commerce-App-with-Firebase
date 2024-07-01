@@ -35,7 +35,7 @@ class CheckoutScreen extends StatelessWidget {
           padding: EdgeInsets.all(ESizes.defaultSpace),
           child: Column(
             children: [
-              /* --------------------------------------------------------- */
+              /* ----------------------------------------------------------- */
 
               /// Items in Cart
               ECartItems(
@@ -51,7 +51,7 @@ class CheckoutScreen extends StatelessWidget {
               /// Billing Section
               EBillingSection(),
 
-              /* --------------------------------------------------------- */
+              /* ----------------------------------------------------------- */
             ],
           ),
         ),
@@ -79,6 +79,8 @@ class CheckoutScreen extends StatelessWidget {
           child: const Text('${ETexts.checkOut} \$256.0'), //!!!
         ),
       ),
+
+      /* ------------------------------------------------------------------- */
     );
   }
 }

@@ -45,7 +45,10 @@ class StoreScreen extends StatelessWidget {
     return DefaultTabController(
       length: tabs.length,
       child: Scaffold(
-        /// AppBar
+        /* ----------------------------------------------------------------- */
+        /*                                TOP                                */
+        /* ----------------------------------------------------------------- */
+
         appBar: EAppBar(
           title: Text(
             ETexts.storeAppBarTitle,
@@ -54,19 +57,23 @@ class StoreScreen extends StatelessWidget {
           actions: const [ECartCounterIcon()],
         ),
 
-        /// Content
+        /* ----------------------------------------------------------------- */
+        /*                                BODY                               */
+        /* ----------------------------------------------------------------- */
+
         body: NestedScrollView(
-          /// Header
+          /* --------------------------------------------------------------- */
+
           headerSliverBuilder: (_, innerBoxIsScrolled) {
             return [
               SliverAppBar(
-                /* ----------------------------------------------------------- */
+                /* --------------------------------------------------------- */
                 automaticallyImplyLeading: false,
                 pinned: true,
                 floating: true,
                 backgroundColor: isDark ? EColors.black : EColors.white,
                 expandedHeight: ENumberConstants.heightHeaderStore,
-                /* ----------------------------------------------------------- */
+                /* --------------------------------------------------------- */
                 flexibleSpace: Padding(
                   padding: const EdgeInsets.all(ESizes.defaultSpace),
                   child: ListView(
@@ -101,17 +108,22 @@ class StoreScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-
+                /* --------------------------------------------------------- */
                 /// Tabs Categories
                 bottom: ETabBard(tabs: tabs),
-                /* ----------------------------------------------------------- */
+                /* --------------------------------------------------------- */
               ),
             ];
           },
 
-          /// Body
+          /* --------------------------------------------------------------- */
+
           body: TabBarView(children: tabBarViews),
+
+          /* --------------------------------------------------------------- */
         ),
+
+        /* ----------------------------------------------------------------- */
       ),
     );
   }

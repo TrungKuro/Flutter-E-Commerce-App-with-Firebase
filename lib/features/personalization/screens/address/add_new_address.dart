@@ -10,16 +10,27 @@ class AddNewAddressScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      /* ------------------------------------------------------------------- */
+      /*                                 TOP                                 */
+      /* ------------------------------------------------------------------- */
+
       appBar: const EAppBar(
         showBackArrow: true,
         title: Text(ETexts.addNewAddressScreenAppBarTitle),
       ),
+
+      /* ------------------------------------------------------------------- */
+      /*                                 BODY                                */
+      /* ------------------------------------------------------------------- */
+
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(ESizes.defaultSpace),
           child: Form(
             child: Column(
               children: [
+                /* --------------------------------------------------------- */
+
                 /// Name User
                 TextFormField(
                   decoration: const InputDecoration(
@@ -113,11 +124,15 @@ class AddNewAddressScreen extends StatelessWidget {
                     child: const Text(ETexts.save),
                   ),
                 ),
+
+                /* --------------------------------------------------------- */
               ],
             ),
           ),
         ),
       ),
+
+      /* ------------------------------------------------------------------- */
     );
   }
 }

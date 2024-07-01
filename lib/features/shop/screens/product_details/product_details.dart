@@ -18,10 +18,15 @@ class ProductDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const EBottomAddToCart(),
+      /* ------------------------------------------------------------------- */
+      /*                                 BODY                                */
+      /* ------------------------------------------------------------------- */
+
       body: SingleChildScrollView(
         child: Column(
           children: [
+            /* ------------------------------------------------------------- */
+
             /// Product Image Slider
             const EProductDetailImageSlider(),
 
@@ -34,6 +39,8 @@ class ProductDetailScreen extends StatelessWidget {
               ),
               child: Column(
                 children: [
+                  /* ------------------------------------------------------- */
+
                   /// Rating & Share Button
                   const ERattingAndShare(),
 
@@ -93,12 +100,24 @@ class ProductDetailScreen extends StatelessWidget {
                       ),
                     ],
                   ),
+
+                  /* ------------------------------------------------------- */
                 ],
               ),
             ),
+
+            /* ------------------------------------------------------------- */
           ],
         ),
       ),
+
+      /* ------------------------------------------------------------------- */
+      /*                                BOTTOM                               */
+      /* ------------------------------------------------------------------- */
+
+      bottomNavigationBar: const EBottomAddToCart(),
+
+      /* ------------------------------------------------------------------- */
     );
   }
 }

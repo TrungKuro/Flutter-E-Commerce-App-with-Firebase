@@ -20,6 +20,16 @@ class NavigationMenu extends StatelessWidget {
     final isDark = EHelperFunctions.isDarkMode(context); //!
 
     return Scaffold(
+      /* ------------------------------------------------------------------- */
+      /*                                 BODY                                */
+      /* ------------------------------------------------------------------- */
+
+      body: Obx(() => controller.screens[controller.selectedIndex.value]),
+
+      /* ------------------------------------------------------------------- */
+      /*                                BOTTOM                               */
+      /* ------------------------------------------------------------------- */
+
       bottomNavigationBar: Obx(
         () => NavigationBar(
           height: 80,
@@ -36,8 +46,8 @@ class NavigationMenu extends StatelessWidget {
           ],
         ),
       ),
+
       /* ------------------------------------------------------------------- */
-      body: Obx(() => controller.screens[controller.selectedIndex.value]),
     );
   }
 }

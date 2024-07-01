@@ -14,6 +14,10 @@ class VerifyEmailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      /* ------------------------------------------------------------------- */
+      /*                                 TOP                                 */
+      /* ------------------------------------------------------------------- */
+
       appBar: AppBar(
         automaticallyImplyLeading: false,
         actions: [
@@ -23,11 +27,18 @@ class VerifyEmailScreen extends StatelessWidget {
           ),
         ],
       ),
+
+      /* ------------------------------------------------------------------- */
+      /*                                 BODY                                */
+      /* ------------------------------------------------------------------- */
+
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(ESizes.defaultSpace),
           child: Column(
             children: [
+              /* ----------------------------------------------------------- */
+
               /// Image
               Image(
                 width: EHelperFunctions.screenWidth() * 0.6,
@@ -78,10 +89,14 @@ class VerifyEmailScreen extends StatelessWidget {
                   child: const Text(ETexts.resendEmail),
                 ),
               ),
+
+              /* ----------------------------------------------------------- */
             ],
           ),
         ),
       ),
+
+      /* ------------------------------------------------------------------- */
     );
   }
 }

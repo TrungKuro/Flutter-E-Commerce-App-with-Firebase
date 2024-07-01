@@ -16,9 +16,16 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      /* ------------------------------------------------------------------- */
+      /*                                 TOP                                 */
+      /* ------------------------------------------------------------------- */
+
       appBar: const EAppBar(showBackArrow: true, title: Text(ETexts.profileAppBarTitle)),
 
-      /// Body
+      /* ------------------------------------------------------------------- */
+      /*                                 BODY                                */
+      /* ------------------------------------------------------------------- */
+
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(ESizes.defaultSpace),
@@ -112,12 +119,18 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
 
+                /* --------------------------------------------------------- */
+
                 SizedBox(height: EDeviceUtils.getBottomNavigationBarHeight()),
+
+                /* --------------------------------------------------------- */
               ],
             ),
           ),
         ),
       ),
+
+      /* ------------------------------------------------------------------- */
     );
   }
 }

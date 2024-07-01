@@ -49,6 +49,8 @@ class CartScreen extends StatelessWidget {
           child: const Text('${ETexts.checkOut} \$256.0'), //!!!
         ),
       ),
+
+      /* ------------------------------------------------------------------- */
     );
   }
 }

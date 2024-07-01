@@ -12,13 +12,24 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      /* ------------------------------------------------------------------- */
+      /*                                 TOP                                 */
+      /* ------------------------------------------------------------------- */
+
       appBar: AppBar(),
+
+      /* ------------------------------------------------------------------- */
+      /*                                BOTTOM                               */
+      /* ------------------------------------------------------------------- */
+
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(ESizes.defaultSpace),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              /* ----------------------------------------------------------- */
+
               /// Title
               Text(
                 ETexts.signupTitle,
@@ -36,10 +47,14 @@ class SignUpScreen extends StatelessWidget {
 
               /// Social Buttons
               const ESocialButtons(),
+
+              /* ----------------------------------------------------------- */
             ],
           ),
         ),
       ),
+
+      /* ------------------------------------------------------------------- */
     );
   }
 }

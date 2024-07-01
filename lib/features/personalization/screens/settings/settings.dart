@@ -19,13 +19,22 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      /* ------------------------------------------------------------------- */
+      /*                                 BODY                                */
+      /* ------------------------------------------------------------------- */
+
       body: SingleChildScrollView(
         child: Column(
           children: [
-            /// Header
+            /* ------------------------------------------------------------- */
+            /*                             HEADER                            */
+            /* ------------------------------------------------------------- */
+
             EPrimaryHeaderContainer(
               child: Column(
                 children: [
+                  /* ------------------------------------------------------- */
+
                   /// AppBar
                   EAppBar(
                     title: Text(
@@ -39,11 +48,16 @@ class SettingsScreen extends StatelessWidget {
                     onPressed: () => Get.to(() => const ProfileScreen()), //?
                   ),
                   const SizedBox(height: ESizes.spaceBtwSections),
+
+                  /* ------------------------------------------------------- */
                 ],
               ),
             ),
 
-            /// Body
+            /* ------------------------------------------------------------- */
+            /*                            CONTENT                            */
+            /* ------------------------------------------------------------- */
+
             Padding(
               padding: const EdgeInsets.all(ESizes.defaultSpace),
               child: Column(
@@ -162,9 +176,13 @@ class SettingsScreen extends StatelessWidget {
                 ],
               ),
             ),
+
+            /* ------------------------------------------------------------- */
           ],
         ),
       ),
+
+      /* ------------------------------------------------------------------- */
     );
   }
 }

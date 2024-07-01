@@ -19,6 +19,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      /* ------------------------------------------------------------------- */
+      /*                                 BODY                                */
+      /* ------------------------------------------------------------------- */
+
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -29,6 +33,8 @@ class HomeScreen extends StatelessWidget {
             const EPrimaryHeaderContainer(
               child: Column(
                 children: [
+                  /* ------------------------------------------------------- */
+
                   /// AppBar - Name Customer & Number of products in the shopping cart
                   EHomeAppBar(),
                   SizedBox(height: ESizes.spaceBtwSections),
@@ -56,6 +62,8 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: ESizes.spaceBtwSections),
+
+                  /* ------------------------------------------------------- */
                 ],
               ),
             ),
@@ -116,6 +124,8 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
+
+      /* ------------------------------------------------------------------- */
     );
   }
 }

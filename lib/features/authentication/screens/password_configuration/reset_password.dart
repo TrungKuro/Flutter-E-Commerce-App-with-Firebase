@@ -12,6 +12,10 @@ class ResetPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      /* ------------------------------------------------------------------- */
+      /*                                 TOP                                 */
+      /* ------------------------------------------------------------------- */
+
       appBar: AppBar(
         automaticallyImplyLeading: false,
         actions: [
@@ -21,6 +25,11 @@ class ResetPassword extends StatelessWidget {
           ),
         ],
       ),
+
+      /* ------------------------------------------------------------------- */
+      /*                                 BODY                                */
+      /* ------------------------------------------------------------------- */
+
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(ESizes.defaultSpace),
@@ -67,6 +76,8 @@ class ResetPassword extends StatelessWidget {
           ),
         ),
       ),
+
+      /* ------------------------------------------------------------------- */
     );
   }
 }

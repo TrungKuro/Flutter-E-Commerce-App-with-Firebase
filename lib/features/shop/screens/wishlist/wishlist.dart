@@ -16,6 +16,10 @@ class FavouriteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      /* ------------------------------------------------------------------- */
+      /*                                 TOP                                 */
+      /* ------------------------------------------------------------------- */
+
       appBar: EAppBar(
         title: Text(
           ETexts.wishListAppBarTitle,
@@ -29,6 +33,11 @@ class FavouriteScreen extends StatelessWidget {
           )
         ],
       ),
+
+      /* ------------------------------------------------------------------- */
+      /*                                 BODY                                */
+      /* ------------------------------------------------------------------- */
+
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(ESizes.defaultSpace),
@@ -42,6 +51,8 @@ class FavouriteScreen extends StatelessWidget {
           ),
         ),
       ),
+
+      /* ------------------------------------------------------------------- */
     );
   }
 }

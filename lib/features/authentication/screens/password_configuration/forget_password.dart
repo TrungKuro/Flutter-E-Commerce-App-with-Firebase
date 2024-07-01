@@ -11,7 +11,16 @@ class ForgetPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      /* ------------------------------------------------------------------- */
+      /*                                 TOP                                 */
+      /* ------------------------------------------------------------------- */
+
       appBar: AppBar(),
+
+      /* ------------------------------------------------------------------- */
+      /*                                 BODY                                */
+      /* ------------------------------------------------------------------- */
+
       body: Padding(
         padding: const EdgeInsets.all(ESizes.defaultSpace),
         child: Column(
@@ -49,6 +58,8 @@ class ForgetPassword extends StatelessWidget {
           ],
         ),
       ),
+
+      /* ------------------------------------------------------------------- */
     );
   }
 }

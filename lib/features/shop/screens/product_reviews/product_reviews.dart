@@ -13,7 +13,16 @@ class ProductReviewsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      /* ------------------------------------------------------------------- */
+      /*                                 TOP                                 */
+      /* ------------------------------------------------------------------- */
+
       appBar: const EAppBar(title: Text(ETexts.reviewAndRatingAppBarTitle), showBackArrow: true),
+
+      /* ------------------------------------------------------------------- */
+      /*                                 BODY                                */
+      /* ------------------------------------------------------------------- */
+
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(ESizes.defaultSpace),
@@ -61,6 +70,8 @@ class ProductReviewsScreen extends StatelessWidget {
           ),
         ),
       ),
+
+      /* ------------------------------------------------------------------- */
     );
   }
 }

@@ -18,8 +18,14 @@ class OnBoardingScreen extends StatelessWidget {
     final controller = Get.put(OnBoardingController()); //!
 
     return Scaffold(
+      /* ------------------------------------------------------------------- */
+      /*                                 BODY                                */
+      /* ------------------------------------------------------------------- */
+
       body: Stack(
         children: [
+          /* --------------------------------------------------------------- */
+
           /// Horizontal scrollable pages
           PageView(
             controller: controller.pageController,
@@ -51,8 +57,12 @@ class OnBoardingScreen extends StatelessWidget {
 
           /// Circular next button
           const OnBoardingNextButton(),
+
+          /* --------------------------------------------------------------- */
         ],
       ),
+
+      /* ------------------------------------------------------------------- */
     );
   }
 }
