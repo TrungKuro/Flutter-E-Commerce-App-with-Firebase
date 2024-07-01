@@ -15,18 +15,19 @@ class UserAddressScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      /* ------------------------------------------------------------------- */
+      /*                                 TOP                                 */
+      /* ------------------------------------------------------------------- */
+
       appBar: EAppBar(
         showBackArrow: true,
-        title: Text(
-          ETexts.addressScreenAppBarTitle,
-          style: Theme.of(context).textTheme.headlineSmall,
-        ),
+        title: Text(ETexts.addressScreenAppBarTitle, style: Theme.of(context).textTheme.headlineSmall),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => Get.to(() => const AddNewAddressScreen()), //?
-        backgroundColor: EColors.primary,
-        child: const Icon(Iconsax.add, color: EColors.white),
-      ),
+
+      /* ------------------------------------------------------------------- */
+      /*                                 BODY                                */
+      /* ------------------------------------------------------------------- */
+
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(ESizes.defaultSpace),
@@ -50,6 +51,16 @@ class UserAddressScreen extends StatelessWidget {
             ],
           ),
         ),
+      ),
+
+      /* ------------------------------------------------------------------- */
+      /*                                BOTTOM                               */
+      /* ------------------------------------------------------------------- */
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Get.to(() => const AddNewAddressScreen()), //?
+        backgroundColor: EColors.primary,
+        child: const Icon(Iconsax.add, color: EColors.white),
       ),
     );
   }

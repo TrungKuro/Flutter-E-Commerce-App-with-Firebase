@@ -112,4 +112,11 @@ class ENumberConstants {
 
   //! Khoảng cách giữa các tuỳ chọn biến thể khác nhau của một sản phẩm trên trang [Product Detail]
   static const double spacingBetweenChosenAttributes = 8;
+
+  /* ----------------------------------------------------------------------- */
+  /*                             MY ORDERS SCREEN                            */
+  /* ----------------------------------------------------------------------- */
+
+  //! Số item hiển thị các đơn hàng của người dùng trên trang [My Orders]
+  static const int userOrdersNumber = 5;
 }

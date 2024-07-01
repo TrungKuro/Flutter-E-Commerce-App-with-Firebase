@@ -5,6 +5,7 @@ import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/features/personalization/screens/address/user_address.dart';
 import 'package:e_commerce_app/features/personalization/screens/profile/profile.dart';
 import 'package:e_commerce_app/features/personalization/screens/settings/widgets/settings_menu_tile.dart';
+import 'package:e_commerce_app/features/shop/screens/order/order.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
@@ -70,10 +71,11 @@ class SettingsScreen extends StatelessWidget {
                     title: ETexts.myCartTitle,
                     subTitle: ETexts.myCartSubTitle,
                   ),
-                  const ESettingsMenuTile(
+                  ESettingsMenuTile(
                     icon: Iconsax.bag_tick,
                     title: ETexts.myOrdersTitle,
                     subTitle: ETexts.myOrdersSubTitle,
+                    onTap: () => Get.to(() => const OrderScreen()),
                   ),
                   const ESettingsMenuTile(
                     icon: Iconsax.bank,

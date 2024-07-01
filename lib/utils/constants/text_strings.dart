@@ -190,6 +190,14 @@ class ETexts {
   static const String paystackPaymentMethodSubTitle = "Paystack";
   static const String paytmPaymentMethodSubTitle = "Paytm";
 
+  /* ----------------------------- Order Screen ---------------------------- */
+
+  static const String orderScreenAppBarTitle = myOrdersTitle;
+
+  static const String statusOrderTitle = "Processing";
+  static const String orderTitle = "Order";
+  static const String shippingDateTitle = "Shipping Date";
+
   /* ---------------------------- Success Screen --------------------------- */
 
   static const String successScreenAppBarTitle = "Payment Success!";
