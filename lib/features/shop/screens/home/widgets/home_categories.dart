@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/common/widgets/image_text/vertical_image_text.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
+import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
@@ -24,10 +25,12 @@ class EHomeCategories extends StatelessWidget {
 
     return SizedBox(
       height: 85,
-      child: ListView.builder(
+      child: ListView.separated(
         shrinkWrap: true,
         itemCount: categories.length,
         scrollDirection: Axis.horizontal,
+        padding: const EdgeInsets.symmetric(horizontal: ESizes.defaultSpace),
+        separatorBuilder: (context, index) => const SizedBox(width: ESizes.spaceBtwItems),
         itemBuilder: (_, index) {
           return categories[index];
         },

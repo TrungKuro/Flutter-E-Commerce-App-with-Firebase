@@ -12,10 +12,11 @@ class ERoundedImage extends StatelessWidget {
     this.border,
     this.backgroundColor = EColors.light,
     this.fit = BoxFit.contain,
-    this.padding,
+    this.paddingAll,
     this.isNetworkImage = false,
     this.onPressed,
     this.borderRadius = ESizes.productImageRadius,
+    this.padding,
   });
 
   final double? width, height;
@@ -24,7 +25,8 @@ class ERoundedImage extends StatelessWidget {
   final BoxBorder? border;
   final Color? backgroundColor;
   final BoxFit? fit;
-  final double? padding;
+  final double? paddingAll;
+  final EdgeInsetsGeometry? padding;
   final bool isNetworkImage;
   final VoidCallback? onPressed;
   final double borderRadius;
@@ -36,7 +38,12 @@ class ERoundedImage extends StatelessWidget {
       child: Container(
         width: width,
         height: height,
-        padding: (padding != null) ? EdgeInsets.all(padding!) : null,
+        //! Thuộc tính "padding" được ưu tiên hơn "paddingAll" nếu nó được sử dụng
+        padding: (padding != null)
+            ? padding
+            : (paddingAll != null)
+                ? EdgeInsets.all(paddingAll!)
+                : null,
         decoration: BoxDecoration(
           border: border,
           color: backgroundColor,
@@ -44,9 +51,9 @@ class ERoundedImage extends StatelessWidget {
         ),
         child: ClipRRect(
           borderRadius: (applyImageRadius)
-              ? (padding != null)
+              ? (paddingAll != null)
                   //! Tạo hiệu ứng "Nested corner radii"
-                  ? BorderRadius.circular(borderRadius - padding!)
+                  ? BorderRadius.circular(borderRadius - paddingAll!)
                   : BorderRadius.circular(borderRadius)
               : BorderRadius.zero,
           child: Image(

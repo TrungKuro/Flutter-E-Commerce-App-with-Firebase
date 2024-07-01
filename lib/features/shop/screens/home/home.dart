@@ -22,7 +22,10 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            /// Header
+            /* ------------------------------------------------------------- */
+            /*                             HEADER                            */
+            /* ------------------------------------------------------------- */
+
             const EPrimaryHeaderContainer(
               child: Column(
                 children: [
@@ -35,34 +38,41 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(height: ESizes.spaceBtwSections),
 
                   /// Popular Categories
-                  Padding(
-                    padding: EdgeInsets.only(left: ESizes.defaultSpace),
-                    child: Column(
-                      children: [
-                        /// Title "Popular Categories"
-                        ESectionHeading(
+                  Column(
+                    children: [
+                      /// Title "Popular Categories"
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: ESizes.defaultSpace),
+                        child: ESectionHeading(
                           title: ETexts.popularCategoriesTitle,
                           textColor: EColors.white,
                           showActionButton: false,
                         ),
-                        SizedBox(height: ESizes.spaceBtwItems),
+                      ),
+                      SizedBox(height: ESizes.spaceBtwItems),
 
-                        /// List "Categories Product"
-                        EHomeCategories(),
-                      ],
-                    ),
+                      /// List "Categories Product"
+                      EHomeCategories(),
+                    ],
                   ),
                   SizedBox(height: ESizes.spaceBtwSections),
                 ],
               ),
             ),
 
-            /// Body
+            /* ------------------------------------------------------------- */
+            /*                              BODY                             */
+            /* ------------------------------------------------------------- */
+
             Padding(
-              padding: const EdgeInsets.all(ESizes.defaultSpace),
+              padding: const EdgeInsets.only(
+                top: ESizes.defaultSpace,
+                bottom: ESizes.defaultSpace,
+              ),
               child: Column(
                 children: [
-                  /// Promo Banner Slider
+                  /* ----------------- Promo Banner Slider ----------------- */
+
                   const EPromoSlider(
                     banners: [
                       EImages.promoBanner1,
@@ -74,18 +84,32 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: ESizes.spaceBtwSections),
 
-                  /// Title "Popular Products"
-                  ESectionHeading(
-                    title: ETexts.popularProductsTitle,
-                    onPressed: () {}, //?
-                  ),
-                  const SizedBox(height: ESizes.spaceBtwItems),
+                  /* ------------------- Popular Products ------------------ */
 
-                  /// List "Popular Products"
-                  EGridLayout(
-                    itemCount: ENumberConstants.popularProductNumber,
-                    itemBuilder: (_, index) => const EProductCardVertical(),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: ESizes.defaultSpace,
+                      right: ESizes.defaultSpace,
+                    ),
+                    child: Column(
+                      children: [
+                        /// Title "Popular Products"
+                        ESectionHeading(
+                          title: ETexts.popularProductsTitle,
+                          onPressed: () {}, //?
+                        ),
+                        const SizedBox(height: ESizes.spaceBtwItems),
+
+                        /// List "Popular Products"
+                        EGridLayout(
+                          itemCount: ENumberConstants.popularProductNumber,
+                          itemBuilder: (_, index) => const EProductCardVertical(),
+                        ),
+                      ],
+                    ),
                   ),
+
+                  /* ------------------------------------------------------- */
                 ],
               ),
             ),

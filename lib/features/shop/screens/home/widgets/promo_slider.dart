@@ -22,6 +22,8 @@ class EPromoSlider extends StatelessWidget {
 
     return Column(
       children: [
+        /* ----------------------------------------------------------------- */
+
         /// Banner
         CarouselSlider(
           options: CarouselOptions(
@@ -37,10 +39,18 @@ class EPromoSlider extends StatelessWidget {
                     width: double.infinity,
                     height: double.infinity,
                     fit: BoxFit.cover,
+                    padding: const EdgeInsets.symmetric(horizontal: ESizes.defaultSpace),
+                    backgroundColor: Colors.transparent,
                   ))
               .toList(),
         ),
+
+        /* ----------------------------------------------------------------- */
+
+        /// Divider
         const SizedBox(height: ESizes.spaceBtwItems),
+
+        /* ----------------------------------------------------------------- */
 
         /// Dot Navigation for Banner
         Center(
@@ -59,6 +69,8 @@ class EPromoSlider extends StatelessWidget {
             ),
           ),
         ),
+
+        /* ----------------------------------------------------------------- */
       ],
     );
   }

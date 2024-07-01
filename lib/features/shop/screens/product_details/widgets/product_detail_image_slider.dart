@@ -56,7 +56,7 @@ class EProductDetailImageSlider extends StatelessWidget {
                     fit: BoxFit.cover,
                     backgroundColor: isDark ? EColors.darkDarker30Per : EColors.lightDarker30Per,
                     border: Border.all(color: EColors.accent),
-                    padding: ESizes.xs,
+                    paddingAll: ESizes.xs,
                     imageUrl: EImages.productShoesAdidas3, //!!!
                   ),
                 ),
