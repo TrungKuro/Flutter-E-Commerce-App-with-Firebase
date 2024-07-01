@@ -7,13 +7,16 @@ class ECartItems extends StatelessWidget {
   const ECartItems({
     super.key,
     this.showAddRemoveButtons = true,
+    this.scrollable = true,
   });
 
   final bool showAddRemoveButtons;
+  final bool scrollable;
 
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
+      physics: scrollable ? null : const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       itemCount: ENumberConstants.numberProductsInCart, //!!!
       //? Dấu (__) nghĩa là gì, nó khác gì với dấu (_)

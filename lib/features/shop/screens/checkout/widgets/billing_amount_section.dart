@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/utils/constants/sizes.dart';
+import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
 class EBillingAmountSection extends StatelessWidget {
@@ -8,12 +9,14 @@ class EBillingAmountSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        /* ----------------------------------------------------------------- */
+
         /// SubTotal
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Subtotal', style: Theme.of(context).textTheme.bodyMedium),
-            Text('\$256.0', style: Theme.of(context).textTheme.bodyMedium),
+            Text(ETexts.subtotal, style: Theme.of(context).textTheme.bodyMedium),
+            Text('\$256.0', style: Theme.of(context).textTheme.bodyMedium), //!!!
           ],
         ),
         const SizedBox(height: ESizes.spaceBtwItems / 2),
@@ -22,8 +25,8 @@ class EBillingAmountSection extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Shipping Fee', style: Theme.of(context).textTheme.bodyMedium),
-            Text('\$6.0', style: Theme.of(context).textTheme.labelLarge),
+            Text(ETexts.shippingFee, style: Theme.of(context).textTheme.bodyMedium),
+            Text('\$6.0', style: Theme.of(context).textTheme.labelLarge), //!!!
           ],
         ),
         const SizedBox(height: ESizes.spaceBtwItems / 2),
@@ -32,8 +35,8 @@ class EBillingAmountSection extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Tax Fee', style: Theme.of(context).textTheme.bodyMedium),
-            Text('\$6.0', style: Theme.of(context).textTheme.labelLarge),
+            Text(ETexts.taxFee, style: Theme.of(context).textTheme.bodyMedium),
+            Text('\$6.0', style: Theme.of(context).textTheme.labelLarge), //!!!
           ],
         ),
         const SizedBox(height: ESizes.spaceBtwItems / 2),
@@ -42,10 +45,12 @@ class EBillingAmountSection extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Order Total', style: Theme.of(context).textTheme.bodyMedium),
-            Text('\$6.0', style: Theme.of(context).textTheme.titleMedium),
+            Text(ETexts.orderTotal, style: Theme.of(context).textTheme.bodyMedium),
+            Text('\$6.0', style: Theme.of(context).textTheme.titleMedium), //!!!
           ],
         ),
+
+        /* ----------------------------------------------------------------- */
       ],
     );
   }

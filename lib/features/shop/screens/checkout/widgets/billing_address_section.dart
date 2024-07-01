@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
+import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
 class EBillingAddressSection extends StatelessWidget {
@@ -10,29 +11,30 @@ class EBillingAddressSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ///
+        /* ----------------------------------------------------------------- */
+
+        /// Title
         ESectionHeading(
-          title: 'Shipping Address', //!!!
-          buttonTitle: 'Change', //!!!
+          title: ETexts.shippingAddressTitle,
+          buttonTitle: ETexts.change,
           onPressed: () {}, //?
         ),
-        Text(
-          'Coding with T', //!!!
-          style: Theme.of(context).textTheme.bodyLarge,
-        ),
         const SizedBox(height: ESizes.spaceBtwItems / 2),
+
+        /// SubTitle
+        Text('Coding with T', style: Theme.of(context).textTheme.bodyLarge), //!!!
+        const SizedBox(height: ESizes.spaceBtwItems / 2),
+
+        /// Detail
         Row(
           children: [
             const Icon(
               Icons.phone,
-              color: Colors.grey, //!!!
+              color: Colors.grey,
               size: 16,
             ),
             const SizedBox(width: ESizes.spaceBtwItems),
-            Text(
-              '+92-317-8059525', //!!!
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
+            Text('+92-317-8059525', style: Theme.of(context).textTheme.bodyMedium), //!!!
           ],
         ),
         const SizedBox(height: ESizes.spaceBtwItems / 2),
@@ -40,7 +42,7 @@ class EBillingAddressSection extends StatelessWidget {
           children: [
             const Icon(
               Icons.location_history,
-              color: Colors.grey, //!!!
+              color: Colors.grey,
               size: 16,
             ),
             const SizedBox(width: ESizes.spaceBtwItems),
@@ -51,6 +53,8 @@ class EBillingAddressSection extends StatelessWidget {
             ),
           ],
         ),
+
+        /* ----------------------------------------------------------------- */
       ],
     );
   }

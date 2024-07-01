@@ -10,6 +10,8 @@ class ETexts {
   static const String skip = 'Skip';
   static const String done = 'Done';
   static const String save = 'Save';
+  static const String apply = 'Apply';
+  static const String change = 'Change';
 
   static const String submit = 'Submit';
   static const String logout = 'Logout';
@@ -163,6 +165,35 @@ class ETexts {
   /* --------------------------- Checkout Screen --------------------------- */
 
   static const String checkoutScreenAppBarTitle = "Order Review";
+
+  /* ------------------------- Order Review Screen ------------------------- */
+
+  static const String hintTextCouponCode = "Have a promo code? Enter here";
+
+  static const String subtotal = "Subtotal";
+  static const String shippingFee = "Shipping Fee";
+  static const String taxFee = "Tax Fee";
+  static const String orderTotal = "Order Total";
+
+  static const String paymentMethodTitle = "Payment Method";
+  static const String shippingAddressTitle = "Shipping Address";
+
+  static const String applePaymentMethodSubTitle = "Apple Pay";
+  static const String googlePaymentMethodSubTitle = "Google Pay";
+  //
+  static const String creditCardPaymentMethodSubTitle = "Credit Card";
+  static const String masterCardPaymentMethodSubTitle = "Master Card";
+  //
+  static const String visaPaymentMethodSubTitle = "Visa";
+  //
+  static const String paypalPaymentMethodSubTitle = "Paypal";
+  static const String paystackPaymentMethodSubTitle = "Paystack";
+  static const String paytmPaymentMethodSubTitle = "Paytm";
+
+  /* ---------------------------- Success Screen --------------------------- */
+
+  static const String successScreenAppBarTitle = "Payment Success!";
+  static const String successScreenAppBarSubTitle = "Your item will be shipped soon!";
 
   /* ------------------------------ Categories ----------------------------- */
 

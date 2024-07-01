@@ -24,6 +24,8 @@ class SuccessScreen extends StatelessWidget {
           padding: ESpacingStyle.paddingWithAppBarHeight * 2,
           child: Column(
             children: [
+              /* ----------------------------------------------------------- */
+
               /// Image
               Image(
                 width: EHelperFunctions.screenWidth() * 0.6,
@@ -53,6 +55,8 @@ class SuccessScreen extends StatelessWidget {
                   child: const Text(ETexts.tContinue),
                 ),
               ),
+
+              /* ----------------------------------------------------------- */
             ],
           ),
         ),

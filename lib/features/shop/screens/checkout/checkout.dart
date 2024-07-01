@@ -1,16 +1,13 @@
 import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
-import 'package:e_commerce_app/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:e_commerce_app/common/widgets/products/cart/coupon_code.dart';
 import 'package:e_commerce_app/common/widgets/success_screen/success_screen.dart';
-import 'package:e_commerce_app/features/shop/screens/checkout/widgets/billing_address_section.dart';
-import 'package:e_commerce_app/features/shop/screens/checkout/widgets/billing_amount_section.dart';
-import 'package:e_commerce_app/features/shop/screens/checkout/widgets/billing_payment_section.dart';
+import 'package:e_commerce_app/features/shop/screens/cart/widgets/cart_items.dart';
+import 'package:e_commerce_app/features/shop/screens/checkout/widgets/billing_section.dart';
 import 'package:e_commerce_app/navigation_menu.dart';
-import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
-import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
+import 'package:e_commerce_app/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,8 +16,6 @@ class CheckoutScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = EHelperFunctions.isDarkMode(context); //!
-
     return Scaffold(
       /* ------------------------------------------------------------------- */
       /*                                 TOP                                 */
@@ -35,43 +30,28 @@ class CheckoutScreen extends StatelessWidget {
       /*                                 BODY                                */
       /* ------------------------------------------------------------------- */
 
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(ESizes.defaultSpace),
+          padding: EdgeInsets.all(ESizes.defaultSpace),
           child: Column(
             children: [
+              /* --------------------------------------------------------- */
+
               /// Items in Cart
-              // const ECartItems(showAddRemoveButtons: false),
-              const SizedBox(height: ESizes.spaceBtwSections),
+              ECartItems(
+                showAddRemoveButtons: false,
+                scrollable: false,
+              ),
+              SizedBox(height: ESizes.spaceBtwSections),
 
               /// Coupon TextField
-              const ECouponCode(),
-              const SizedBox(height: ESizes.spaceBtwSections),
+              ECouponCode(),
+              SizedBox(height: ESizes.spaceBtwSections),
 
               /// Billing Section
-              ERoundedContainer(
-                showBorder: true,
-                padding: const EdgeInsets.all(ESizes.md),
-                backgroundColor: isDark ? EColors.black : EColors.white,
-                child: const Column(
-                  children: [
-                    /// Pricing
-                    EBillingAmountSection(),
-                    SizedBox(height: ESizes.spaceBtwItems),
+              EBillingSection(),
 
-                    /// Divider
-                    Divider(),
-                    SizedBox(height: ESizes.spaceBtwItems),
-
-                    /// Payment Methods
-                    EBillingPaymentSection(),
-                    SizedBox(height: ESizes.spaceBtwItems),
-
-                    /// Address
-                    EBillingAddressSection(),
-                  ],
-                ),
-              ),
+              /* --------------------------------------------------------- */
             ],
           ),
         ),
@@ -83,15 +63,20 @@ class CheckoutScreen extends StatelessWidget {
 
       /// Checkout Button
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(ESizes.defaultSpace),
+        padding: EdgeInsets.only(
+          top: ESizes.defaultSpace,
+          left: ESizes.defaultSpace,
+          right: ESizes.defaultSpace,
+          bottom: EDeviceUtils.getBottomNavigationBarHeight(),
+        ),
         child: ElevatedButton(
           onPressed: () => Get.to(() => SuccessScreen(
                 image: EImages.successfulPaymentIcon,
-                title: 'Payment Success!', //!!!
-                subTitle: 'Your item will be shipped soon!', //!!!
+                title: ETexts.successScreenAppBarTitle,
+                subTitle: ETexts.successScreenAppBarSubTitle,
                 onPressed: () => Get.offAll(() => const NavigationMenu()), //?
               )), //?
-          child: const Text('Checkout \$256.0'), //!!!
+          child: const Text('${ETexts.checkOut} \$256.0'), //!!!
         ),
       ),
     );
