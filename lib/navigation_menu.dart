@@ -1,7 +1,7 @@
 import 'package:e_commerce_app/features/personalization/screens/settings/settings.dart';
 import 'package:e_commerce_app/features/shop/screens/home/home.dart';
 import 'package:e_commerce_app/features/shop/screens/store/store.dart';
-import 'package:e_commerce_app/features/shop/screens/wishlist/wishlist.dart';
+import 'package:e_commerce_app/features/shop/screens/wishlist/favourite.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';

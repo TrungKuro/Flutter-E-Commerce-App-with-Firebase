@@ -22,7 +22,7 @@ class EProductCardVertical extends StatelessWidget {
     final isDark = EHelperFunctions.isDarkMode(context); //!
 
     return GestureDetector(
-      onTap: () => Get.to(() => const ProductDetailScreen()), //?
+      onTap: () => Get.to(() => const ProductDetailsScreen()), //?
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),
@@ -33,6 +33,8 @@ class EProductCardVertical extends StatelessWidget {
         ),
         child: Column(
           children: [
+            /* ------------------------------------------------------------- */
+
             /// Thumbnail, Wishlist, Discount
             ERoundedContainer(
               //! Tạo hiệu ứng "Nested corner radii"
@@ -84,11 +86,16 @@ class EProductCardVertical extends StatelessWidget {
             ),
             const SizedBox(height: ESizes.spaceBtwItems / 2),
 
+            /* ------------------------------------------------------------- */
+
             /// Details
             const SizedBox(
               width: double.infinity,
               child: Padding(
-                padding: EdgeInsets.only(left: ESizes.sm),
+                padding: EdgeInsets.only(
+                  left: ESizes.sm,
+                  right: ESizes.sm,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -108,8 +115,12 @@ class EProductCardVertical extends StatelessWidget {
               ),
             ),
 
+            /* ------------------------------------------------------------- */
+
             //! Đảm bảo giữ khoảng cách đều trên dưới dù tên sản phẩm là 1 hay 2 dòng
             const Spacer(),
+
+            /* ------------------------------------------------------------- */
 
             /// Price & Button buy
             Row(
@@ -141,6 +152,8 @@ class EProductCardVertical extends StatelessWidget {
                 ),
               ],
             ),
+
+            /* ------------------------------------------------------------- */
           ],
         ),
       ),

@@ -53,7 +53,7 @@ class ELoginForm extends StatelessWidget {
                 ),
                 // Forget Password
                 TextButton(
-                  onPressed: () => Get.to(() => const ForgetPassword()), //?
+                  onPressed: () => Get.to(() => const ForgetPasswordScreen()), //?
                   child: const Text(ETexts.forgetPassword),
                 ),
               ],
