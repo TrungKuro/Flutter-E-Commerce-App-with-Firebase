@@ -169,7 +169,36 @@
 >
 > ---
 >
-> ...
+> `[1]` Flutter Onboarding Screen Only One Time:
+> - Load and Initialize `GetStorage` in *"main.dart"* (Local Storage).
+> - Manually control showing/hiding of a [Splash Screen].
+> - Set up an Authentication repository for screen redirection.
+> - Store / Retrieve data from Local Storage.
+>
+> <u>Cụ thể</u>:
+> - Với *"màn hình giới thiệu" [Onboarding Screen]* chỉ cần cho xuất hiện 1 lần đầu tiên, là đủ để cung cấp cho người dùng phần giới thiệu được cá nhân hóa về ứng dụng.
+> - Và sử dụng [Firebase Authentication] để xác định một cách thông minh xem người dùng là người mới hay người dùng quay lại.
+>
+> <u>Debug</u>:
+>
+> <pre>
+> Ở lần khởi động ứng dụng đầu tiên, sau khi chạy xong [Splash Screen]:
+>
+>   flutter: === GET STORAGE Auth Repo ===
+>   flutter: null
+>
+> [Onboarding Screen] xuất hiện, và khi người dùng đã xem qua hết, sẽ hiển thị [Login Screen]:
+> 
+>   flutter: === GET STORAGE Next Button ===
+>   flutter: true
+>   flutter: === GET STORAGE Next Button ===
+>   flutter: false
+>
+> Ở những lần khởi động ứng dụng sau, sau khi chạy xong [Splash Screen] sẽ vào thẳng trực tiếp [Login Screen]:
+>
+>   flutter: === GET STORAGE Auth Repo ===
+>   flutter: false
+> </pre>
 
 ---
 ---
