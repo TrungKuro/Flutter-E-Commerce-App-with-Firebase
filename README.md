@@ -50,6 +50,11 @@
 > - Gói [Carousel Slider](https://pub.dev/packages/carousel_slider).
 > - Gói [Read More](https://pub.dev/packages/readmore).
 > - Gói [Flutter Rating Bar](https://pub.dev/packages/flutter_rating_bar).
+> - ...
+> - Gói [Firebase Core](https://pub.dev/packages/firebase_core).
+> - Gói [Firebase Auth](https://pub.dev/packages/firebase_auth).
+> - Gói [Cloud Firestore](https://pub.dev/packages/cloud_firestore).
+> - Gói [Firebase Storage](https://pub.dev/packages/firebase_storage).
 >
 > `3.` Create folders using *"feature first"* approach.
 > - Tiếp cận theo hướng *"tính năng"* trước và *"lớp"* sau.
@@ -83,10 +88,6 @@
 > - `authentication`: tính năng xác thực người dùng.
 > - `personnalization`: tính năng cho người dùng cá nhân hoá.
 > - `shop`: tính năng của cửa hàng.
-
----
----
----
 
 ## Phần II. UI Design:
 
@@ -162,8 +163,135 @@
 > ---
 >
 > <u>Nguồn</u>:
-> - []().
+> - [How to Setup Firebase in Flutter | Firebase CLI | Flutter Firebase](https://www.youtube.com/watch?v=91fmyvqBoEo).
+> - [Use Keytool on mac for cert validation](https://dabeen.medium.com/use-keytool-on-mac-for-cert-valida-9f5572a0ebd8).
+> - [Firebase products and features](https://console.firebase.google.com/project/e-commerce-a4785/features).
 >
 > ---
 >
+> ...
+
+---
+---
+---
+
+## Cài đặt Firebase cho ứng dụng.
+
+> Nguồn:
+> - Cách cũ (thủ công) - [Flutter Firebase Setup | How to Connect Firebase with Flutter 2023](https://www.youtube.com/watch?v=keZL9K2ZmH4).
+> - Cách mới (tự động) dành cho Flutter - [Add Firebase to your Flutter app](https://firebase.google.com/docs/flutter/setup?platform=android).
+> - Video - [Firebase x Flutter Masterclass](https://www.youtube.com/watch?v=0RWLaJxW7Oc).
+>
+> ---
+>
+> Cách tìm **[ Android package name ]** cho Android:
+> - Nguồn: [Android Installation](https://firebase.flutter.dev/docs/manual-installation/android/).
+> - Trong thư mục dự án, mở file `android/app/build.gradle` đây là tệp Gradle cấp ứng dụng (app-level).
+> - Tìm đến chỉ mục `defaultConfig` bạn sẽ thấy thông tin `applicationId`.
+>
+> Cách tìm **[ Apple bundle ID ]** cho iOS:
+> - Nguồn: [iOS Installation](https://firebase.flutter.dev/docs/manual-installation/ios/).
+> - Mở `XCode`.
+> - Mở file `ios/Runner.xcworkspace` trong thư mục dự án.
+> - Tại thanh điều hướng bên trái, chọn `Runner` để xem toàn bộ thông tin dự án.
+> - Mở tab `General` bạn sẽ thấy thông tin `Bundle Identifier` tại mục `Identity`.
+>
+> ---
+>
+> <u>Step1</u>: Cách cài đặt **[ Firebase Command Line Interface (CLI) ]**.
+>
+> - Yêu cầu:
+>   - Trước tiên phải cài đặt **Node.js**.
+>   - Bởi vì **Node.js** đi kèm với `npm`, một công cụ quản lý gói cho JavaScript.
+>   - Nếu đã cài xong hoặc cài rồi có thể nhập lệnh `node -v` để kiểm tra phiên bản hiện tại.
+> - Nhập lệnh: `sudo npm install -g firebase-tools` để cài đặt hoặc cập nhập.
+> - Nhập lệnh: `firebase --version` để kiểm tra đã cài đặt chưa hoặc kiểm tra phiên bản hiện tại.
+> - Nhập lệnh: `firebase login` để kiểm tra đã đăng nhập hay chưa? (đăng nhập với Gmail sử dụng dịch vụ Firebase).
+> - Nhập lệnh: `flutter pub global activate flutterfire_cli` để cài đặt toàn cầu (global) gói `flutterfire_cli` cho **Flutter**.
+> - Nhập lệnh: `export PATH="$PATH":"$HOME/.pub-cache/bin"` (nếu có theo yêu cầu từ kết quả lệnh trên) để thêm thư mục `$HOME/.pub-cache/bin` vào biến môi trường `PATH`.
+>
+> <u>Step2</u>: Thiết lập cấu hình cho ứng dụng của bạn để sử dụng Firebase.
+>
+> - Yêu cầu: tạo **[ Firebase projects ]** cho ứng dụng nếu chưa có.
+> - Nhập lệnh: `flutterfire configure`, chọn *"Firebase projects"* để định cấu hình với ứng dụng **Flutter** của bạn, rồi chọn "Platforms" mà ứng dụng của bạn có hỗ trợ.
+>
+> <u>Step3</u>: Khởi tạo Firebase trong ứng dụng của bạn.
+>
+> - Nhập lệnh: `flutter pub add firebase_core` để thêm gói `firebase_core` vào dự án **Flutter** của bạn.
+> - Trong tệp `lib/main.dart`, hãy khởi tạo Firebase bằng cách sử dụng đối tượng `DefaultFirebaseOptions` được xuất bởi tệp cấu hình:
+>
+> ```Dart
+> Future<void> main() async {
+>
+>   WidgetsFlutterBinding.ensureInitialized();
+>
+>   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+>
+>   runApp(const MainApp());
+> }
+> ```
+>
+> <u>Step4</u>: Thêm plugin Firebase.
+>
+> - Bạn truy cập Firebase trong ứng dụng **Flutter** của mình thông qua các `plugin Firebase` **Flutter** khác nhau.
+> - Mỗi 1 plugin tương ứng cho 1 sản phẩm của hệ sinh thái Firebase.
+> - Danh sách các `plugin Firebase` cho **Flutter** như:
+>   - Authentication (`firebase_auth`).
+>   - Cloud Firestore (`cloud_firestore`).
+>   - Storage (`firebase_storage`).
+>   - ...
+> - Nhập lệnh: `flutter pub add PLUGIN_NAME` để thêm <u>plugin Firebase</u> cho dự án **Flutter** của bạn, trong đó `PLUGIN_NAME` là tên <u>plugin Firebase</u>.
+> - Thông tin chi tiết các gói Pub cho `plugin Firebase` ở đây: [firebase.google.com](https://pub.dev/publishers/firebase.google.com/packages).
+
+## Các Keyword
+
+### Get and Add `SHA 1` and `SHA 256`
+
+> Cho đăng ký *"dịch vụ xác thực" (Authentication)* của Firebase dành cho App Android.
+>
+> Trong đó, `Authentication` cung cấp giải pháp *"nhận dạng người dùng" (User Identity)* toàn diện.
+>
+> Firebase hỗ trợ 2 loại *"dấu vân tay chứng chỉ" (Certificate Fingerprints)*:
+> - `SHA-1`: Used to create OAuth 2 client and API key for your app.
+> - `SHA-256`: Used for configuring Firebase Dynamic links.
+>
+> `SHA certificate fingerprints:` là <u>keytool</u> để lấy *"hàm băm SHA" (SHA Hash)* của *"chứng chỉ ký" (Signing Certificate)* của bạn.
+>
+> <pre>
+> Thiết bị phát triển Mac:
+>
+>   keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android
+>
+> Thiết bị phát triển Windows:
+>
+>   keytool -list -v -keystore "\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
+>
+> Thiết bị phát triển Linux:
+>
+>   keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android
+> </pre>
+>
+> <u>Yêu cầu</u>: để sử dụng `keytool` thiết bị cần cài đặt **Java** để chạy `Java Runtime`.
+> - Truy cập trang (http://www.java.com) để down Java.
+> - Cài đặt và nhập lệnh `java -version` để kiểm tra đã cài đặt chưa, cũng như phiên bản hiện tại.
+
+### Cloud Firestore & Cloud Storage
+
+> Lưu ý có 2 chế độ:
+> - `Production Mode:`
+>   - Dữ liệu của bạn theo mặc định là riêng tư.
+>   - Quyền truy cập đọc/ghi của khách hàng sẽ chỉ được cấp theo quy định của *"quy tắc bảo mật" (Security Rules)* của bạn.
+>   - Sau khi xác định *"cấu trúc dữ liệu" (Data Structure)* của mình, bạn sẽ cần viết các quy tắc để bảo mật dữ liệu của mình.
+> - `Test Mode:`
+>   - Dữ liệu của bạn được mở theo mặc định để cho phép thiết lập nhanh.
+>   - Tuy nhiên, bạn phải cập nhật các *"quy tắc bảo mật"* của mình trong vòng 30 ngày.
+>   - Để cho phép máy khách có quyền truy cập đọc/ghi dài hạn.
+>
+> Trong đó:
+> - `Cloud Storage` có chức năng *"lưu trữ" (Store)* và *"truy xuất" (Retrieve)* nội dung do người dùng tạo.
+> - `Cloud Firestore` có chức năng cập nhập data theo <u>thời gian thực</u>, khả năng <u>truy vấn</u> mạnh mẽ và tự động <u>mở rộng</u> quy mô.
+
+
+## Các vấn đề
+
 > ...
