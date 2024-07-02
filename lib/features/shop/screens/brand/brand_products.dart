@@ -1,12 +1,12 @@
 import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
+import 'package:e_commerce_app/common/widgets/brands/brand_card.dart';
 import 'package:e_commerce_app/common/widgets/products/sortable/sortable_products.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
-import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:e_commerce_app/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
 
-class AllProductsScreen extends StatelessWidget {
-  const AllProductsScreen({super.key});
+class BrandProductsScreen extends StatelessWidget {
+  const BrandProductsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +16,8 @@ class AllProductsScreen extends StatelessWidget {
       /* ------------------------------------------------------------------- */
 
       appBar: const EAppBar(
-        title: Text(ETexts.popularProductsTitle),
         showBackArrow: true,
+        title: Text('Nike'), //!!!
       ),
 
       /* ------------------------------------------------------------------- */
@@ -32,7 +32,20 @@ class AllProductsScreen extends StatelessWidget {
             right: ESizes.defaultSpace,
             bottom: ESizes.defaultSpace + EDeviceUtils.getBottomNavigationBarHeight(),
           ),
-          child: const ESortableProducts(),
+          child: const Column(
+            children: [
+              /* ----------------------------------------------------------- */
+
+              /// Brand Detail
+              EBrandCard(showBorder: true),
+              SizedBox(height: ESizes.spaceBtwSections),
+
+              /// Sort
+              ESortableProducts(),
+
+              /* ----------------------------------------------------------- */
+            ],
+          ),
         ),
       ),
 

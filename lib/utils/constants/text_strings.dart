@@ -65,6 +65,9 @@ class ETexts {
   static const String featuredBrandsTitle = 'Featured Brands';
   static const String mightLikeTitle = 'You might like';
 
+  static const String brandTitle = 'Brand';
+  static const String brandSubTitle = 'Brands';
+
   /* --------------------------- Wishlist Screen --------------------------- */
 
   static const String wishListAppBarTitle = wishList;
