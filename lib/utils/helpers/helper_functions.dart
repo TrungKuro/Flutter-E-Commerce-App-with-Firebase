@@ -74,7 +74,7 @@ class EHelperFunctions {
 
   // Thực hiện việc chuyển trang
   static void navigateToScreen(BuildContext context, Widget screen) {
-    Navigator.push(context, MaterialPageRoute(builder: (_) => screen));
+    Navigator.push(context, MaterialPageRoute(builder: (_) => screen)); //?
   }
 
   /* ----------------------------------------------------------------------- */

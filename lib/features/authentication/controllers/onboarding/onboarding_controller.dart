@@ -9,9 +9,13 @@ import 'package:get_storage/get_storage.dart';
 class OnBoardingController extends GetxController {
   static OnBoardingController get instance => Get.find(); //!
 
-  /// Variables.
+  /* ------------------------------- Variable ------------------------------ */
+
   final pageController = PageController();
+
   Rx<int> currentPageIndex = 0.obs;
+
+  /* ------------------------------- Function ------------------------------ */
 
   /// Update current index when page scroll.
   void updatePageIndicator(int index) => currentPageIndex.value = index;
@@ -24,11 +28,12 @@ class OnBoardingController extends GetxController {
 
   /// Update current index & Jump to the next page.
   void nextPage() {
-    /* --------------------------------------------------------------------- */
-
     if (currentPageIndex.value == ENumberConstants.onBoardingNumber - 1) {
+      /* ------------------------------------------------------------------- */
+
       final storage = GetStorage();
 
+      //! For Debug
       if (kDebugMode) {
         print("=== GET STORAGE Next Button ===");
         print(storage.read(ETexts.getxIsFirstTime));
@@ -36,18 +41,23 @@ class OnBoardingController extends GetxController {
 
       storage.write(ETexts.getxIsFirstTime, false);
 
+      //! For Debug
       if (kDebugMode) {
         print("=== GET STORAGE Next Button ===");
         print(storage.read(ETexts.getxIsFirstTime));
       }
 
       Get.offAll(() => const LoginScreen()); //?
+
+      /* ------------------------------------------------------------------- */
     } else {
+      /* ------------------------------------------------------------------- */
+
       currentPageIndex.value = currentPageIndex.value + 1;
       pageController.jumpToPage(currentPageIndex.value);
-    }
 
-    /* --------------------------------------------------------------------- */
+      /* ------------------------------------------------------------------- */
+    }
   }
 
   /// Update current index & Jump to the last page.
@@ -55,4 +65,6 @@ class OnBoardingController extends GetxController {
     currentPageIndex.value = ENumberConstants.onBoardingNumber - 1;
     pageController.jumpToPage(currentPageIndex.value);
   }
+
+  /* ----------------------------------------------------------------------- */
 }

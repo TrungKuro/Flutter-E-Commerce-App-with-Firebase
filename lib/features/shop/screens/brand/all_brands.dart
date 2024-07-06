@@ -48,7 +48,7 @@ class AllBrandsScreen extends StatelessWidget {
                 mainAxisExtent: ENumberConstants.heightFeaturedBrand,
                 itemBuilder: (context, index) => EBrandCard(
                   showBorder: true,
-                  onTap: () => Get.to(() => const BrandProductsScreen()),
+                  onTap: () => Get.to(() => const BrandProductsScreen()), //?
                 ),
               ),
 

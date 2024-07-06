@@ -55,6 +55,9 @@
 > - Gói [Firebase Auth](https://pub.dev/packages/firebase_auth).
 > - Gói [Cloud Firestore](https://pub.dev/packages/cloud_firestore).
 > - Gói [Firebase Storage](https://pub.dev/packages/firebase_storage).
+> - ...
+> - Gói [Lottie](https://pub.dev/packages/lottie).
+> - Gói [Connectivity Plus](https://pub.dev/packages/connectivity_plus).
 >
 > `3.` Create folders using *"feature first"* approach.
 > - Tiếp cận theo hướng *"tính năng"* trước và *"lớp"* sau.
@@ -100,6 +103,7 @@
 > - [Flaticon](https://www.flaticon.com/): Icon cho Logo Splash, Icon Payment.
 > - [Free vector and 3D illustrations](https://icons8.com/illustrations): ảnh động cho OnBoarding Screen.
 > - [Freepik](https://www.freepik.com/): ảnh Banner, ảnh Avatar.
+> - [Lottie](https://lottiefiles.com/): ảnh động cho Loading Screen.
 >
 > ---
 >
@@ -199,6 +203,14 @@
 >   flutter: === GET STORAGE Auth Repo ===
 >   flutter: false
 > </pre>
+>
+> `[2]` Flutter Firebase Email Password Authentication | Store Data In Firebase Firestore | Form Validation:
+> - Email and Password Authentication.
+> - Form Validation for Data Integrity.
+> - Animated Loader Integration.
+> - Internet Connection Checks.
+> - Storing User Data in Firebase Firestore.
+> - Exception Handling for a Robust System.
 
 ---
 ---
@@ -320,6 +332,55 @@
 > - `Cloud Storage` có chức năng *"lưu trữ" (Store)* và *"truy xuất" (Retrieve)* nội dung do người dùng tạo.
 > - `Cloud Firestore` có chức năng cập nhập data theo <u>thời gian thực</u>, khả năng <u>truy vấn</u> mạnh mẽ và tự động <u>mở rộng</u> quy mô.
 
+### Các lệnh GetX:
+
+> - `Get.put()`
+> - `Get.back()`
+> - `Get.to()`
+> - `Get.find()`
+> - `Get.off()`
+> - `Get.offAll()`
+> - `Get.snackbar()`
+> - ...
+> - `Get.context`
+> - `Get.overlayContext`
+
+### Các lệnh Navigator:
+
+> - `Navigator.of().pop()`
+> - `Navigator.push()`
+
+### Các lệnh MediaQuery:
+
+> - `MediaQuery.of()`
+
+### Các lệnh Theme:
+
+> - `Theme.of()`
+
+### Các hàm xử lý thao tác nhấn của người dùng:
+
+> |Param|Type|
+> |-----|----|
+> |`onTap`|void Function()? = VoidCallback?|
+> |`onPressed`|void Function()? = VoidCallback?|
+> |---|---|
+> |`leadingOnPressed`|void Function()? = VoidCallback?|
+> |`onActionPressed`|void Function()? = VoidCallback?|
+>
+> <u>Note</u>:
+>
+> ``` Dart
+> typedef VoidCallback = void Function()
+> ```
+
+### Các Widget nút nhấn:
+
+> - `TextButton`
+> - `IconButton`
+> - `ElevatedButton`
+> - `OutlinedButton`
+> - `DropdownButtonFormField`
 
 ## Các vấn đề
 

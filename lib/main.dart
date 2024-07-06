@@ -25,7 +25,7 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   ).then(
-    (FirebaseApp value) => Get.put(AuthenticationRepository()),
+    (FirebaseApp value) => Get.put(AuthenticationRepository()), //!
   );
 
   //! Load all the Material Design / Themes / Localizations / Bindings

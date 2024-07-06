@@ -78,7 +78,7 @@ class SettingsScreen extends StatelessWidget {
                     icon: Iconsax.safe_home,
                     title: ETexts.myAddressTitle,
                     subTitle: ETexts.myAddressSubTitle,
-                    onTap: () => Get.to(() => const UserAddressScreen()),
+                    onTap: () => Get.to(() => const UserAddressScreen()), //?
                   ),
                   const ESettingsMenuTile(
                     icon: Iconsax.shopping_cart,
@@ -89,7 +89,7 @@ class SettingsScreen extends StatelessWidget {
                     icon: Iconsax.bag_tick,
                     title: ETexts.myOrdersTitle,
                     subTitle: ETexts.myOrdersSubTitle,
-                    onTap: () => Get.to(() => const OrderScreen()),
+                    onTap: () => Get.to(() => const OrderScreen()), //?
                   ),
                   const ESettingsMenuTile(
                     icon: Iconsax.bank,

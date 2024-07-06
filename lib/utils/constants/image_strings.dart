@@ -28,6 +28,9 @@ class EImages {
   static const String verifyIllustration =
       'assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif';
 
+  static const String loadingAnimation = "assets/images/animations/Lottie Loading.json";
+  static const String successAnimation = "assets/images/animations/Lottie Success.json";
+
   /* ---------------------------- Category Icons --------------------------- */
 
   static const String sportsIcon = 'assets/icons/categories/sports.png';

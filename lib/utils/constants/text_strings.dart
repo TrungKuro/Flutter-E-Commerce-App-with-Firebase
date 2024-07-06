@@ -131,7 +131,7 @@ class ETexts {
   static const String userIDTitle = "User ID";
   static const String userIDValue = "12345";
 
-  static const String emailTitle = "E-mail";
+  static const String emailTitle = "E-Mail";
   static const String emailValue = "hdh.trung96@gmail.com";
 
   static const String phoneNumberTitle = "Phone Number";
@@ -286,4 +286,40 @@ class ETexts {
   /* ----------------------------------------------------------------------- */
 
   static const String getxIsFirstTime = "isFirstTime";
+
+  /* ----------------------------------------------------------------------- */
+  /*                           FIRESTORE - DATABASE                          */
+  /* ----------------------------------------------------------------------- */
+
+  static const String collectionPathUsers = "Users";
+  //
+  static const String userModelFirstName = "FirstName";
+  static const String userModelLastName = "LastName";
+  static const String userModelUserName = "Username";
+  static const String userModelEmail = "Email";
+  static const String userModelPhoneNumber = "PhoneNumber";
+  static const String userModelProfilePicture = "ProfilePicture";
+
+  /* ----------------------------------------------------------------------- */
+  /*                               NOTIFICATION                              */
+  /* ----------------------------------------------------------------------- */
+
+  //! Notification in Dialog
+  static const String waitLoadingDialog = 'We are processing your information...';
+
+  //! Notification in SnackBar
+  static const String ohSnapTitle = 'Oh Snap!';
+  static const String noInternetTitle = 'No Internet Connection';
+  //
+  static const String acceptPrivacyPolicyTitle = 'Accept Privacy Policy';
+  static const String acceptPrivacyPolicyMsg =
+      'In order to create account, you must have to read and accept the Privacy Policy & Terms of Use.';
+  //
+  static const String signUpSuccessTitle = 'Congratulations';
+  static const String signUpSuccessMsg = 'Your account has been created! Verify email to continue.';
+
+  //! Throw Error
+  static const String throwError = 'Something went wrong. Please try again!';
+
+  /* ----------------------------------------------------------------------- */
 }

@@ -55,12 +55,16 @@ class NavigationMenu extends StatelessWidget {
 /* ------------------------------------------------------------------------- */
 
 class NavigationController extends GetxController {
-  /// Variables.
+  /* ------------------------------- Variable ------------------------------ */
+
   final Rx<int> selectedIndex = 0.obs;
+  
   final screens = [
     const HomeScreen(),
     const StoreScreen(),
     const FavouriteScreen(),
     const SettingsScreen(),
   ];
+
+  /* ----------------------------------------------------------------------- */
 }
