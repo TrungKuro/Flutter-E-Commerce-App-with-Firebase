@@ -3,6 +3,7 @@ import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class SuccessScreen extends StatelessWidget {
   const SuccessScreen({
@@ -11,10 +12,12 @@ class SuccessScreen extends StatelessWidget {
     required this.title,
     required this.subTitle,
     required this.onPressed,
+    this.isImgJson = false,
   });
 
   final String image, title, subTitle;
   final VoidCallback onPressed;
+  final bool isImgJson;
 
   @override
   Widget build(BuildContext context) {
@@ -30,11 +33,16 @@ class SuccessScreen extends StatelessWidget {
             children: [
               /* ----------------------------------------------------------- */
 
-              /// Image
-              Image(
-                width: EHelperFunctions.screenWidth() * 0.6,
-                image: AssetImage(image),
-              ),
+              /// Image or Animation
+              isImgJson
+                  ? Lottie.asset(
+                      image,
+                      width: EHelperFunctions.screenWidth() * 0.6,
+                    )
+                  : Image(
+                      image: AssetImage(image),
+                      width: EHelperFunctions.screenWidth() * 0.6,
+                    ),
               const SizedBox(height: ESizes.spaceBtwSections),
 
               /// Title & SubTitle

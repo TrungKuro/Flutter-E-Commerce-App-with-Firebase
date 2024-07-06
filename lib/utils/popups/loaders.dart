@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/utils/constants/colors.dart';
+import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -49,14 +50,18 @@ class ELoaders {
       backgroundColor: EColors.success,
       snackPosition: SnackPosition.BOTTOM,
       duration: Duration(seconds: duration),
-      margin: const EdgeInsets.all(10),
+      margin: const EdgeInsets.only(
+        left: ESizes.defaultSpace,
+        right: ESizes.defaultSpace,
+        bottom: ESizes.defaultSpace,
+      ),
       icon: const Icon(Iconsax.check, color: EColors.white),
     ); //?
   }
 
   /* ----------------------------------------------------------------------- */
 
-  static warningSnackBar({required title, message = ''}) {
+  static warningSnackBar({required title, message = '', duration = 3}) {
     Get.snackbar(
       title,
       message,
@@ -65,15 +70,19 @@ class ELoaders {
       colorText: EColors.white,
       backgroundColor: EColors.warning,
       snackPosition: SnackPosition.BOTTOM,
-      duration: const Duration(seconds: 3),
-      margin: const EdgeInsets.all(20),
+      duration: Duration(seconds: duration),
+      margin: const EdgeInsets.only(
+        left: ESizes.defaultSpace,
+        right: ESizes.defaultSpace,
+        bottom: ESizes.defaultSpace,
+      ),
       icon: const Icon(Iconsax.warning_2, color: EColors.white),
     ); //?
   }
 
   /* ----------------------------------------------------------------------- */
 
-  static errorSnackBar({required title, message = ''}) {
+  static errorSnackBar({required title, message = '', duration = 3}) {
     Get.snackbar(
       title,
       message,
@@ -82,8 +91,12 @@ class ELoaders {
       colorText: EColors.white,
       backgroundColor: EColors.error,
       snackPosition: SnackPosition.BOTTOM,
-      duration: const Duration(seconds: 3),
-      margin: const EdgeInsets.all(20),
+      duration: Duration(seconds: duration),
+      margin: const EdgeInsets.only(
+        left: ESizes.defaultSpace,
+        right: ESizes.defaultSpace,
+        bottom: ESizes.defaultSpace,
+      ),
       icon: const Icon(Iconsax.warning_2, color: EColors.white),
     ); //?
   }

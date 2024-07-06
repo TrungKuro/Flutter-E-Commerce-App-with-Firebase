@@ -20,14 +20,7 @@ class EFullScreenLoader {
         canPop: false, // Disable popping with the Back button
         child: Container(
           color: EHelperFunctions.isDarkMode(Get.context!) ? EColors.dark : EColors.white,
-          width: double.infinity,
-          height: double.infinity,
-          child: Column(
-            children: [
-              const SizedBox(height: 250), // Adjust the spacing as needed
-              EAnimationLoader(text: text, animation: animation),
-            ],
-          ),
+          child: EAnimationLoader(text: text, animation: animation),
         ),
       ),
     );

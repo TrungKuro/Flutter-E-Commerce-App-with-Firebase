@@ -27,32 +27,41 @@ class EAnimationLoader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        children: [
-          Lottie.asset(animation, width: MediaQuery.of(context).size.width * 0.8), // Display Lottie animation
-          const SizedBox(height: ESizes.defaultSpace),
-          Text(
-            text,
-            style: Theme.of(context).textTheme.bodyMedium,
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: ESizes.defaultSpace),
-          showAction
-              ? SizedBox(
-                  width: 250,
-                  child: OutlinedButton(
-                    onPressed: onActionPressed, //?
-                    style: OutlinedButton.styleFrom(backgroundColor: EColors.dark),
-                    child: Text(
-                      actionText!,
-                      style: Theme.of(context).textTheme.bodyMedium!.apply(color: EColors.light),
-                    ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        /* ----------------------------------------------------------------- */
+
+        //! Display Lottie animation
+        Lottie.asset(
+          animation,
+          width: MediaQuery.of(context).size.width * 0.8,
+        ),
+        const SizedBox(height: ESizes.defaultSpace),
+
+        Text(
+          text,
+          style: Theme.of(context).textTheme.bodyMedium,
+          textAlign: TextAlign.center,
+        ),
+        if (showAction) const SizedBox(height: ESizes.defaultSpace),
+
+        showAction
+            ? SizedBox(
+                width: 250,
+                child: OutlinedButton(
+                  onPressed: onActionPressed, //?
+                  style: OutlinedButton.styleFrom(backgroundColor: EColors.dark),
+                  child: Text(
+                    actionText!,
+                    style: Theme.of(context).textTheme.bodyMedium!.apply(color: EColors.light),
                   ),
-                )
-              : const SizedBox()
-        ],
-      ),
+                ),
+              )
+            : const SizedBox(),
+
+        /* ----------------------------------------------------------------- */
+      ],
     );
   }
 }
