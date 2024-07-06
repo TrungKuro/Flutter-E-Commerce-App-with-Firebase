@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:e_commerce_app/data/repositories/authentication/authentication_repository.dart';
 import 'package:e_commerce_app/data/repositories/user/user_repository.dart';
 import 'package:e_commerce_app/features/authentication/screens/signup/verify_email.dart';
@@ -97,7 +95,7 @@ class SignupController extends GetxController {
       );
 
       // Move to Verify Email Screen
-      Get.to(() => const VerifyEmailScreen()); //?
+      Get.to(() => VerifyEmailScreen(email: email.text.trim())); //?
 
       /* ------------------------------------------------------------------- */
     } catch (e) {

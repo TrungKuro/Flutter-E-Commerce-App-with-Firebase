@@ -317,6 +317,10 @@ class ETexts {
   //
   static const String signUpSuccessTitle = 'Congratulations';
   static const String signUpSuccessMsg = 'Your account has been created! Verify email to continue.';
+  //
+  //
+  static const String sentEmailSuccessTitle = 'Email Sent';
+  static const String sentEmailSuccessMsg = 'Please check your inbox and verify your email.';
 
   //! Throw Error
   static const String throwError = 'Something went wrong. Please try again!';

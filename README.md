@@ -211,6 +211,12 @@
 > - Internet Connection Checks.
 > - Storing User Data in Firebase Firestore.
 > - Exception Handling for a Robust System.
+>
+> `[3]` Flutter Email Verification with Firebase:
+> - Firebase Email Verification Method.
+> - Email Verification Controller with GetX.
+> - Auto-Redirect with Timer.periodic.
+> - Manual Exception Handling.
 
 ---
 ---
