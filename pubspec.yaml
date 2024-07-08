@@ -28,8 +28,10 @@ dependencies:
   url_launcher: ^6.3.0
   flutter_native_splash: ^2.4.0
   smooth_page_indicator: ^1.1.0
-  connectivity_plus: ^5.0.1
   lottie: ^3.1.2
+
+  # Utility (Fixed use of old version)
+  connectivity_plus: ^5.0.1
 
   # Product Specific
   carousel_slider: ^4.2.1
@@ -41,6 +43,7 @@ dependencies:
   firebase_auth: ^5.1.1
   cloud_firestore: ^5.0.2
   firebase_storage: ^12.1.0
+  google_sign_in: ^6.2.1
 
 # ------------------------------- PACKAGES END ------------------------------ #
 

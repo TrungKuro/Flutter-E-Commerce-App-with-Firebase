@@ -9,13 +9,17 @@ import 'package:get_storage/get_storage.dart';
 class OnBoardingController extends GetxController {
   static OnBoardingController get instance => Get.find(); //!
 
-  /* ------------------------------- Variable ------------------------------ */
+  /* ----------------------------------------------------------------------- */
+  /*                                 VARIABLE                                */
+  /* ----------------------------------------------------------------------- */
 
   final pageController = PageController();
 
   Rx<int> currentPageIndex = 0.obs;
 
-  /* ------------------------------- Function ------------------------------ */
+  /* ----------------------------------------------------------------------- */
+  /*                                 FUNCTION                                */
+  /* ----------------------------------------------------------------------- */
 
   /// Update current index when page scroll.
   void updatePageIndicator(int index) => currentPageIndex.value = index;

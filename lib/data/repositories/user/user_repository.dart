@@ -10,16 +10,25 @@ import 'package:get/get.dart';
 class UserRepository extends GetxController {
   static UserRepository get instance => Get.find(); //!
 
-  /* ------------------------------- Variable ------------------------------ */
+  /* ----------------------------------------------------------------------- */
+  /*                                 VARIABLE                                */
+  /* ----------------------------------------------------------------------- */
 
+  //! Sử dụng gói "cloud_firestore"
   final FirebaseFirestore _db = FirebaseFirestore.instance;
 
-  /* ------------------------------- Function ------------------------------ */
+  /* ----------------------------------------------------------------------- */
+  /*                                 FUNCTION                                */
+  /* ----------------------------------------------------------------------- */
 
   /// Function to save user data to Firestore.
   Future<void> saveUserRecord(UserModel user) async {
     try {
+      /* ------------------------------------------------------------------- */
+
       await _db.collection(ETexts.collectionPathUsers).doc(user.id).set(user.toJson());
+
+      /* ------------------------------------------------------------------- */
     } on FirebaseException catch (e) {
       throw EFirebaseException(e.code).message;
     } on FormatException catch (_) {

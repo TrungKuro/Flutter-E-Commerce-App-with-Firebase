@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/data/repositories/authentication/authentication_repository.dart';
+import 'package:e_commerce_app/features/personalization/controllers/user_controller.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:e_commerce_app/utils/helpers/network_manager.dart';
@@ -11,10 +12,14 @@ import 'package:get_storage/get_storage.dart';
 class LoginController extends GetxController {
   static LoginController get instance => Get.find(); //!
 
-  /* ------------------------------- Variable ------------------------------ */
+  /* ----------------------------------------------------------------------- */
+  /*                                 VARIABLE                                */
+  /* ----------------------------------------------------------------------- */
 
   final email = TextEditingController();
   final password = TextEditingController();
+
+  final userController = Get.put(UserController()); //!
 
   //! Observable for hiding/showing password
   final hidePassword = true.obs;
@@ -28,7 +33,9 @@ class LoginController extends GetxController {
   //! Form key for Form Validation
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
 
-  /* ------------------------------- Override ------------------------------ */
+  /* ----------------------------------------------------------------------- */
+  /*                                 OVERRIDE                                */
+  /* ----------------------------------------------------------------------- */
 
   /// Automatically fill in remembered information on the form.
   @override
@@ -42,7 +49,7 @@ class LoginController extends GetxController {
   /*                                 FUNCTION                                */
   /* ----------------------------------------------------------------------- */
 
-  /// --- LOGIN
+  /// --- LOGIN (Email & Password SignIn)
   Future<void> emailAndPasswordSignIn() async {
     try {
       /* ------------------------------------------------------------------- */
@@ -96,6 +103,50 @@ class LoginController extends GetxController {
       /* ------------------------------------------------------------------- */
     }
   }
+
+  /// --- LOGIN with GOOGLE (Google SignIn Authentication)
+  Future<void> googleSignIn() async {
+    try {
+      /* ------------------------------------------------------------------- */
+
+      // Start Loading
+      EFullScreenLoader.openLoadingDialog(ETexts.waitLoggingDialog, EImages.loadingAnimation);
+
+      // Check Internet Connectivity
+      final isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected) {
+        // Remove Loader
+        EFullScreenLoader.stopLoading();
+        return;
+      }
+
+      // Google Authentication
+      final userCredentials = await AuthenticationRepository.instance.signInWithGoogle();
+
+      // Save User Record
+      await userController.saveUserRecord(userCredentials);
+
+      // Remove Loader
+      EFullScreenLoader.stopLoading();
+
+      // Redirect
+      AuthenticationRepository.instance.screenRedirect();
+
+      /* ------------------------------------------------------------------- */
+    } catch (e) {
+      /* ------------------------------------------------------------------- */
+
+      // Remove Loader
+      EFullScreenLoader.stopLoading();
+
+      // Show some Generic Error to the user
+      ELoaders.errorSnackBar(title: ETexts.ohSnapTitle, message: e.toString());
+
+      /* ------------------------------------------------------------------- */
+    }
+  }
+
+  /// --- LOGIN with FACEBOOK (Facebook SignIn Authentication)
 
   /* ----------------------------------------------------------------------- */
 }

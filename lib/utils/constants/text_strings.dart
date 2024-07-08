@@ -325,6 +325,9 @@ class ETexts {
   //
   static const String sentEmailSuccessTitle = 'Email Sent';
   static const String sentEmailSuccessMsg = 'Please check your inbox and verify your email.';
+  //
+  static const String saveUserRecordTitle = 'Data not saved';
+  static const String saveUserRecordMsg = 'Something went wrong while saving your information. You can re-saved your data in your Profile.';
 
   //! Throw Error
   static const String throwError = 'Something went wrong. Please try again!';

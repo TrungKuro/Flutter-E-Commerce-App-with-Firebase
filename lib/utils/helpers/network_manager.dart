@@ -10,15 +10,18 @@ import 'package:get/get.dart';
 class NetworkManager extends GetxController {
   static NetworkManager get instance => Get.find(); //!
 
-  /* ------------------------------- Variable ------------------------------ */
+  /* ----------------------------------------------------------------------- */
+  /*                                 VARIABLE                                */
+  /* ----------------------------------------------------------------------- */
 
+  //! Sử dụng gói "connectivity_plus"
   final Connectivity _connectivity = Connectivity();
-
   late StreamSubscription<ConnectivityResult> _connectivitySubscription;
-
   final Rx<ConnectivityResult> _connectionStatus = ConnectivityResult.none.obs;
 
-  /* ------------------------------- Override ------------------------------ */
+  /* ----------------------------------------------------------------------- */
+  /*                                 OVERRIDE                                */
+  /* ----------------------------------------------------------------------- */
 
   /// Initialize the network manager and set up a stream to continually check the connection status.
   @override
@@ -34,7 +37,9 @@ class NetworkManager extends GetxController {
     _connectivitySubscription.cancel();
   }
 
-  /* ------------------------------- Function ------------------------------ */
+  /* ----------------------------------------------------------------------- */
+  /*                                 FUNCTION                                */
+  /* ----------------------------------------------------------------------- */
 
   /// Update the connection status based on changes in connectivity and show a relevant popup for no internet connection.
   Future<void> _updateConnectionStatus(ConnectivityResult result) async {
@@ -48,12 +53,16 @@ class NetworkManager extends GetxController {
   /// Return 'true' if connected, 'false' otherwise.
   Future<bool> isConnected() async {
     try {
+      /* ------------------------------------------------------------------- */
+
       final result = await _connectivity.checkConnectivity();
       if (result == ConnectivityResult.none) {
         return false;
       } else {
         return true;
       }
+
+      /* ------------------------------------------------------------------- */
     } on PlatformException catch (_) {
       return false;
     }

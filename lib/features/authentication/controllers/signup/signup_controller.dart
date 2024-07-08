@@ -13,7 +13,9 @@ import 'package:get/get.dart';
 class SignupController extends GetxController {
   static SignupController get instance => Get.find(); //!
 
-  /* ------------------------------- Variable ------------------------------ */
+  /* ----------------------------------------------------------------------- */
+  /*                                 VARIABLE                                */
+  /* ----------------------------------------------------------------------- */
 
   final firstName = TextEditingController();
   final lastName = TextEditingController();
@@ -31,7 +33,9 @@ class SignupController extends GetxController {
   //! Form key for Form Validation
   GlobalKey<FormState> signupFormKey = GlobalKey<FormState>();
 
-  /* ------------------------------- Function ------------------------------ */
+  /* ----------------------------------------------------------------------- */
+  /*                                 FUNCTION                                */
+  /* ----------------------------------------------------------------------- */
 
   /// --- SIGNUP
   Future<void> signup() async {

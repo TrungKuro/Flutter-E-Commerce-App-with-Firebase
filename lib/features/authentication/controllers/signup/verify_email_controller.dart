@@ -11,9 +11,9 @@ import 'package:get/get.dart';
 class VerifyEmailController extends GetxController {
   static VerifyEmailController get instance => Get.find(); //!
 
-  /* ------------------------------- Variable ------------------------------ */
-
-  /* ------------------------------- Override ------------------------------ */
+  /* ----------------------------------------------------------------------- */
+  /*                                 OVERRIDE                                */
+  /* ----------------------------------------------------------------------- */
 
   /// Send email whenever [Verify Screen] appears & Set time for auto redirect.
   @override
@@ -30,11 +30,15 @@ class VerifyEmailController extends GetxController {
   /// Send "Email Verification" link.
   sendEmailVerification() async {
     try {
+      /* ------------------------------------------------------------------- */
+
       await AuthenticationRepository.instance.sendEmailVerification();
       ELoaders.successSnackBar(
         title: ETexts.sentEmailSuccessTitle,
         message: ETexts.sentEmailSuccessMsg,
       );
+
+      /* ------------------------------------------------------------------- */
     } catch (e) {
       ELoaders.errorSnackBar(title: ETexts.ohSnapTitle, message: e.toString());
     }

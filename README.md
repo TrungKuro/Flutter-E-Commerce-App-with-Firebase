@@ -58,6 +58,7 @@
 > - ...
 > - Gói [Lottie](https://pub.dev/packages/lottie).
 > - Gói [Connectivity Plus](https://pub.dev/packages/connectivity_plus).
+> - Gói [Google Sign In](https://pub.dev/packages/google_sign_in).
 >
 > `3.` Create folders using *"feature first"* approach.
 > - Tiếp cận theo hướng *"tính năng"* trước và *"lớp"* sau.
@@ -226,6 +227,14 @@
 > - Optimizing User Experience.
 > - Email and Password Authentication.
 > - Fetching Data from Local Storage.
+>
+> `[5]` Google Sign in Flutter Firebase | Google Authentication using Firebase:
+> - Add Dependency google_sign_in.
+> - Enable Google Sign-In from Console.
+> - Add SHA1 and SHA256.
+> - Create Sign-In Authentication Function.
+> - Exception Handling.
+> - Call the Login Controller.
 
 ---
 ---
