@@ -141,10 +141,29 @@ class AuthenticationRepository extends GetxController {
     }
   }
 
-  /// [ReAuthenticate] - ReAuthenticate User.
-
   /// [Email Authentication] - Forget Password.
+  Future<void> sendPasswordResetEmail(String email) async {
+    try {
+      /* ------------------------------------------------------------------- */
 
+      await _auth.sendPasswordResetEmail(email: email);
+
+      /* ------------------------------------------------------------------- */
+    } on FirebaseAuthException catch (e) {
+      throw EFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw EFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const EFormatException();
+    } on PlatformException catch (e) {
+      throw EPlatformException(e.code).message;
+    } catch (e) {
+      throw ETexts.throwError;
+    }
+  }
+
+  /// [ReAuthenticate] - ReAuthenticate User.
+  
   /* ----------------- Federated identity & social sign-in ----------------- */
 
   /// [Google Authentication] - GOOGLE
@@ -177,6 +196,7 @@ class AuthenticationRepository extends GetxController {
     } on PlatformException catch (e) {
       throw EPlatformException(e.code).message;
     } catch (e) {
+      //! For Debug
       if (kDebugMode) print('Something went wrong: $e');
       return null;
     }

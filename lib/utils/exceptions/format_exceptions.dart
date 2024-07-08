@@ -18,6 +18,8 @@ class EFormatException implements Exception {
   /// Create a format exception from a specific error code.
   factory EFormatException.fromCode(String code) {
     switch (code) {
+      /* ------------------------------------------------------------------- */
+
       case 'invalid-email-format':
         return const EFormatException('The email address format is invalid. Please enter a valid email.');
       case 'invalid-phone-number-format':
@@ -31,9 +33,13 @@ class EFormatException implements Exception {
       case 'invalid-numeric-format':
         return const EFormatException('The input should be a valid numeric format.');
 
+      /* ------------------------------------------------------------------- */
+
       // Add more cases as needed...
       default:
         return const EFormatException('An unknown error.');
+
+      /* ------------------------------------------------------------------- */
     }
   }
 

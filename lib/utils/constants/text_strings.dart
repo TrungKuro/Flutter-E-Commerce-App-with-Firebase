@@ -310,6 +310,7 @@ class ETexts {
   //! Notification in Dialog
   static const String waitLoadingDialog = 'We are processing your information...';
   static const String waitLoggingDialog = 'Logging you in...';
+  static const String waitResponsesDialog = 'Processing your request...';
 
   //! Notification in SnackBar
   static const String ohSnapTitle = 'Oh Snap!';
@@ -325,6 +326,7 @@ class ETexts {
   //
   static const String sentEmailSuccessTitle = 'Email Sent';
   static const String sentEmailSuccessMsg = 'Please check your inbox and verify your email.';
+  static const String receivedEmailSuccessMsg = 'Email Link Sent to Reset your Password.';
   //
   static const String saveUserRecordTitle = 'Data not saved';
   static const String saveUserRecordMsg = 'Something went wrong while saving your information. You can re-saved your data in your Profile.';

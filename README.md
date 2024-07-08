@@ -235,6 +235,11 @@
 > - Create Sign-In Authentication Function.
 > - Exception Handling.
 > - Call the Login Controller.
+>
+> `[6]` Flutter Forgot Password with firebase | Reset Password in flutter:
+> - Handling Email Exceptions.
+> - Reset Password Function.
+> - Testing and Troubleshooting.
 
 ---
 ---

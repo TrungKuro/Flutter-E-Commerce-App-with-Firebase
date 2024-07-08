@@ -98,7 +98,7 @@ class SignupController extends GetxController {
         message: ETexts.signUpSuccessMsg,
       );
 
-      // Move to Verify Email Screen
+      // Move to [Verify Email Screen]
       Get.to(() => VerifyEmailScreen(email: email.text.trim())); //?
 
       /* ------------------------------------------------------------------- */
