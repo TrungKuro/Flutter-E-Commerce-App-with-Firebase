@@ -19,6 +19,7 @@ class AuthenticationRepository extends GetxController {
 
   /* ------------------------------- Variable ------------------------------ */
 
+  //! Sử dụng gói "get_storage"
   final deviceStorage = GetStorage();
 
   final _auth = FirebaseAuth.instance;
@@ -39,7 +40,7 @@ class AuthenticationRepository extends GetxController {
   /* ----------------------------------------------------------------------- */
 
   /// Function to show relevant screen.
-  screenRedirect() async {
+  void screenRedirect() async {
     final user = _auth.currentUser;
 
     //! For Debug
@@ -49,9 +50,12 @@ class AuthenticationRepository extends GetxController {
     }
 
     if (user != null) {
+      // If the user is logged in
       if (user.emailVerified) {
+        // If the user's email is verified, navigate to the main [Navigation Menu]
         Get.offAll(() => const NavigationMenu()); //?
       } else {
+        // If the user's email is not verified, navigate to the [Verify Email Screen]
         Get.offAll(() => VerifyEmailScreen(email: _auth.currentUser?.email)); //?
       }
     } else {
@@ -68,9 +72,24 @@ class AuthenticationRepository extends GetxController {
 
   /* ----------------------- Email & Password sign-in ---------------------- */
 
-  /// [Email Authentication] - SignIn.
+  /// [Email Authentication] - LOGIN (SIGNIN).
+  Future<UserCredential> loginWithEmailAndPassword(String email, String password) async {
+    try {
+      return await _auth.signInWithEmailAndPassword(email: email, password: password);
+    } on FirebaseAuthException catch (e) {
+      throw EFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw EFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const EFormatException();
+    } on PlatformException catch (e) {
+      throw EPlatformException(e.code).message;
+    } catch (e) {
+      throw ETexts.throwError;
+    }
+  }
 
-  /// [Email Authentication] - Register.
+  /// [Email Authentication] - REGISTER (SIGNUP).
   Future<UserCredential> registerWithEmailAndPassword(String email, String password) async {
     try {
       return await _auth.createUserWithEmailAndPassword(email: email, password: password);

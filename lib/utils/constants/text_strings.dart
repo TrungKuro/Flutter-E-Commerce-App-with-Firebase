@@ -287,6 +287,9 @@ class ETexts {
 
   static const String getxIsFirstTime = "isFirstTime";
 
+  static const String getxRememberEmail = "REMEMBER_ME_EMAIL";
+  static const String getxRememberPass = "REMEMBER_ME_PASSWORD";
+
   /* ----------------------------------------------------------------------- */
   /*                           FIRESTORE - DATABASE                          */
   /* ----------------------------------------------------------------------- */
@@ -306,6 +309,7 @@ class ETexts {
 
   //! Notification in Dialog
   static const String waitLoadingDialog = 'We are processing your information...';
+  static const String waitLoggingDialog = 'Logging you in...';
 
   //! Notification in SnackBar
   static const String ohSnapTitle = 'Oh Snap!';

@@ -217,6 +217,15 @@
 > - Email Verification Controller with GetX.
 > - Auto-Redirect with Timer.periodic.
 > - Manual Exception Handling.
+>
+> `[4]` Login with Email and Password Firebase Flutter | Flutter Login Remember Me using Local Storage:
+> - Creating a Robust Login Controller.
+> - Significance of Form Validation.
+> - Implementing a Password Toggle Feature.
+> - Incorporating "Remember Me" Checkbox.
+> - Optimizing User Experience.
+> - Email and Password Authentication.
+> - Fetching Data from Local Storage.
 
 ---
 ---

@@ -31,6 +31,7 @@ class OnBoardingController extends GetxController {
     if (currentPageIndex.value == ENumberConstants.onBoardingNumber - 1) {
       /* ------------------------------------------------------------------- */
 
+      //! Sử dụng gói "get_storage"
       final storage = GetStorage();
 
       //! For Debug
