@@ -8,6 +8,11 @@ import 'package:iconsax/iconsax.dart';
 class ELoaders {
   /* ----------------------------------------------------------------------- */
 
+  //! Thời gian xem thông báo mặc định, đơn vị giây
+  static const int defaultTimeToView = 3;
+
+  /* ----------------------------------------------------------------------- */
+
   static hideSnackBar() => ScaffoldMessenger.of(Get.context!).hideCurrentSnackBar();
 
   /* ----------------------------------------------------------------------- */
@@ -16,7 +21,7 @@ class ELoaders {
     ScaffoldMessenger.of(Get.context!).showSnackBar(
       SnackBar(
         elevation: 0,
-        duration: const Duration(seconds: 3),
+        duration: const Duration(seconds: defaultTimeToView),
         backgroundColor: Colors.transparent,
         content: Container(
           padding: const EdgeInsets.all(12),
@@ -40,7 +45,7 @@ class ELoaders {
 
   /* ----------------------------------------------------------------------- */
 
-  static successSnackBar({required title, message = '', duration = 3}) {
+  static successSnackBar({required title, message = '', duration = defaultTimeToView}) {
     Get.snackbar(
       title,
       message,
@@ -61,7 +66,7 @@ class ELoaders {
 
   /* ----------------------------------------------------------------------- */
 
-  static warningSnackBar({required title, message = '', duration = 3}) {
+  static warningSnackBar({required title, message = '', duration = defaultTimeToView}) {
     Get.snackbar(
       title,
       message,
@@ -82,7 +87,7 @@ class ELoaders {
 
   /* ----------------------------------------------------------------------- */
 
-  static errorSnackBar({required title, message = '', duration = 3}) {
+  static errorSnackBar({required title, message = '', duration = defaultTimeToView}) {
     Get.snackbar(
       title,
       message,
@@ -97,7 +102,7 @@ class ELoaders {
         right: ESizes.defaultSpace,
         bottom: ESizes.defaultSpace,
       ),
-      icon: const Icon(Iconsax.warning_2, color: EColors.white),
+      icon: const Icon(Icons.error, color: EColors.white),
     ); //?
   }
 

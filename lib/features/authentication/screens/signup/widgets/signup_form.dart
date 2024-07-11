@@ -23,6 +23,8 @@ class ESignUpForm extends StatelessWidget {
           /// First & Last Name
           Row(
             children: [
+              /* ----------------------------------------------------------- */
+
               /// First Name
               Expanded(
                 child: TextFormField(
@@ -88,6 +90,7 @@ class ESignUpForm extends StatelessWidget {
           const SizedBox(height: ESizes.spaceBtwInputFields),
 
           /// Password
+          //! To view observable variable ... of [SignupController]
           Obx(
             () => TextFormField(
               controller: controller.password,
@@ -105,7 +108,7 @@ class ESignUpForm extends StatelessWidget {
           ),
           const SizedBox(height: ESizes.spaceBtwSections),
 
-          /// Terms & Conditions Checkbox
+          /// Privacy Policy and Terms of use
           const ETermsAndConditionsCheckbox(),
           const SizedBox(height: ESizes.spaceBtwSections),
 
@@ -117,6 +120,8 @@ class ESignUpForm extends StatelessWidget {
               child: const Text(ETexts.createAccount),
             ),
           ),
+
+          /* --------------------------------------------------------------- */
         ],
       ),
     );

@@ -7,6 +7,7 @@ class HomeController extends GetxController {
   /*                                 VARIABLE                                */
   /* ----------------------------------------------------------------------- */
 
+  //! Observable
   final carouselCurrentIndex = 0.obs;
 
   /* ----------------------------------------------------------------------- */

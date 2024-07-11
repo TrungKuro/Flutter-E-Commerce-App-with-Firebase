@@ -17,7 +17,9 @@ class NetworkManager extends GetxController {
   //! Sử dụng gói "connectivity_plus"
   final Connectivity _connectivity = Connectivity();
   late StreamSubscription<ConnectivityResult> _connectivitySubscription;
-  final Rx<ConnectivityResult> _connectionStatus = ConnectivityResult.none.obs;
+
+  //! Observable
+  final Rx<ConnectivityResult> connectionStatus = ConnectivityResult.none.obs;
 
   /* ----------------------------------------------------------------------- */
   /*                                 OVERRIDE                                */
@@ -43,9 +45,12 @@ class NetworkManager extends GetxController {
 
   /// Update the connection status based on changes in connectivity and show a relevant popup for no internet connection.
   Future<void> _updateConnectionStatus(ConnectivityResult result) async {
-    _connectionStatus.value = result;
-    if (_connectionStatus.value == ConnectivityResult.none) {
-      ELoaders.warningSnackBar(title: ETexts.noInternetTitle);
+    connectionStatus.value = result;
+    if (connectionStatus.value == ConnectivityResult.none) {
+      ELoaders.warningSnackBar(
+        title: ETexts.noInternetTitle,
+        message: ETexts.noInternetMsg,
+      );
     }
   }
 

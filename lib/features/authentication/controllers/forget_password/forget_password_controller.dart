@@ -24,98 +24,128 @@ class ForgetPasswordController extends GetxController {
   /*                                 FUNCTION                                */
   /* ----------------------------------------------------------------------- */
 
-  /// Send reset password email
-  sendPasswordResetEmail() async {
+  /// --- SEND (reset password email)
+  /// 1. Kiểm tra kết nối mạng.
+  /// 2. Xác thực thông tin người dùng nhập vào.
+  /// 3. Gửi email đặt lại mật khẩu đến địa chỉ email đã cho. [firebase_auth].
+  /// 4. Đi tới màn hình [ResetPasswordScreen].
+  Future<void> sendPasswordResetEmail() async {
     try {
       /* ------------------------------------------------------------------- */
 
       // Start Loading
-      EFullScreenLoader.openLoadingDialog(ETexts.waitResponsesDialog, EImages.loadingAnimation);
+      EFullScreenLoader.openLoadingDialog(
+        ETexts.waitLoadingDialog,
+        EImages.loadingAnimation,
+      );
 
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
-        // Remove Loader
+        // Stop Loading
         EFullScreenLoader.stopLoading();
+        // Show reason message
+        ELoaders.warningSnackBar(
+          title: ETexts.noInternetTitle,
+          message: ETexts.noInternetMsg,
+        );
+        // Stop function
         return;
       }
 
       // Form Validation
       if (!forgetPasswordFormKey.currentState!.validate()) {
-        // Remove Loader
+        // Stop Loading
         EFullScreenLoader.stopLoading();
+        // Stop function
         return;
       }
 
-      // Login user using Email & Password Authentication
+      // Sends a password reset email to the given email address
       await AuthenticationRepository.instance.sendPasswordResetEmail(
         email.text.trim(),
       );
 
-      // Remove Loader
+      // Stop Loading
       EFullScreenLoader.stopLoading();
 
-      // Show [Success Screen]
+      // Show success message
       ELoaders.successSnackBar(
         title: ETexts.sentEmailSuccessTitle,
-        message: ETexts.receivedEmailSuccessMsg,
+        message: ETexts.receivedEmailResetMsg,
       );
 
-      // Redirect
-      AuthenticationRepository.instance.screenRedirect();
-      Get.to(() => ResetPasswordScreen(email: email.text.trim())); //?
+      // Move to [ResetPassword Screen]
+      Get.off(() => ResetPasswordScreen(email: email.text.trim())); //?
 
       /* ------------------------------------------------------------------- */
     } catch (e) {
       /* ------------------------------------------------------------------- */
 
-      // Remove Loader
+      // Stop Loading
       EFullScreenLoader.stopLoading();
 
       // Show some Generic Error to the user
-      ELoaders.errorSnackBar(title: ETexts.ohSnapTitle, message: e.toString());
+      ELoaders.errorSnackBar(
+        title: ETexts.ohSnapTitle,
+        message: e.toString(),
+      );
 
       /* ------------------------------------------------------------------- */
     }
   }
 
-  /// Resend reset password email
-  resendPasswordResetEmail(String email) async {
+  /// --- RESEND (reset password email)
+  /// 1. Kiểm tra kết nối mạng.
+  /// 2. Gửi email đặt lại mật khẩu đến địa chỉ email đã cho. [firebase_auth].
+  Future<void> resendPasswordResetEmail(String email) async {
     try {
       /* ------------------------------------------------------------------- */
 
       // Start Loading
-      EFullScreenLoader.openLoadingDialog(ETexts.waitResponsesDialog, EImages.loadingAnimation);
+      EFullScreenLoader.openLoadingDialog(
+        ETexts.waitLoadingDialog,
+        EImages.loadingAnimation,
+      );
 
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
-        // Remove Loader
+        // Stop Loading
         EFullScreenLoader.stopLoading();
+        // Show reason message
+        ELoaders.warningSnackBar(
+          title: ETexts.noInternetTitle,
+          message: ETexts.noInternetMsg,
+        );
+        // Stop function
         return;
       }
 
-      // Send email to reset password
+      // Sends a password reset email to the given email address
       await AuthenticationRepository.instance.sendPasswordResetEmail(email);
 
-      // Remove Loader
+      // Stop Loading
       EFullScreenLoader.stopLoading();
 
-      // Show [Success Screen]
+      // Show success message
       ELoaders.successSnackBar(
         title: ETexts.sentEmailSuccessTitle,
-        message: ETexts.receivedEmailSuccessMsg,
+        message: ETexts.receivedEmailResetMsg,
       );
 
       /* ------------------------------------------------------------------- */
     } catch (e) {
       /* ------------------------------------------------------------------- */
 
-      // Remove Loader
+      // Stop Loading
       EFullScreenLoader.stopLoading();
 
       // Show some Generic Error to the user
-      ELoaders.errorSnackBar(title: ETexts.ohSnapTitle, message: e.toString());
+      ELoaders.errorSnackBar(
+        title: ETexts.ohSnapTitle,
+        message: e.toString(),
+      );
 
       /* ------------------------------------------------------------------- */
     }

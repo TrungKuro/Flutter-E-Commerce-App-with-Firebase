@@ -23,11 +23,12 @@ class UserController extends GetxController {
       /* ------------------------------------------------------------------- */
 
       if (userCredentials != null) {
-        // Convert Name to First and Last Name
+        // Convert info "Name" from Google account to "FirstName" and "LastName" for Firestore
         final nameParts = UserModel.nameParts(userCredentials.user!.displayName ?? '');
+        // Convert info "Name" from Google account to "UserName" for Firestore
         final userName = UserModel.generateUsername(userCredentials.user!.displayName ?? '');
 
-        // Map Data
+        //! Create user information according to UserModel
         final user = UserModel(
           id: userCredentials.user!.uid,
           firstName: nameParts[0],
@@ -38,7 +39,7 @@ class UserController extends GetxController {
           profilePicture: userCredentials.user!.photoURL ?? '',
         );
 
-        // Save user data
+        //! Save Authenticated user data in the Firebase Firestore
         await userRepository.saveUserRecord(user);
       }
 

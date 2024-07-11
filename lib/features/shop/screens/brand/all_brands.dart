@@ -20,7 +20,10 @@ class AllBrandsScreen extends StatelessWidget {
       /*                                 TOP                                 */
       /* ------------------------------------------------------------------- */
 
-      appBar: const EAppBar(title: Text(ETexts.brandTitle), showBackArrow: true),
+      appBar: const EAppBar(
+        showBackArrow: true,
+        title: Text(ETexts.brandTitle),
+      ),
 
       /* ------------------------------------------------------------------- */
       /*                                 BODY                                */

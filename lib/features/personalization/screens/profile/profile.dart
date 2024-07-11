@@ -20,7 +20,10 @@ class ProfileScreen extends StatelessWidget {
       /*                                 TOP                                 */
       /* ------------------------------------------------------------------- */
 
-      appBar: const EAppBar(showBackArrow: true, title: Text(ETexts.profileAppBarTitle)),
+      appBar: const EAppBar(
+        showBackArrow: true,
+        title: Text(ETexts.profileAppBarTitle),
+      ),
 
       /* ------------------------------------------------------------------- */
       /*                                 BODY                                */

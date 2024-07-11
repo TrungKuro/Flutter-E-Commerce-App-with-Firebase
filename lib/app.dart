@@ -16,6 +16,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    /// Sử dụng [GetMaterialApp] thay vì [MaterialApp] như thông thường.
+    /// If you are going to use routes/snackbars/dialogs/bottomsheets without context.
     return GetMaterialApp(
       /* ------------------------------------------------------------------- */
       debugShowCheckedModeBanner: false,
@@ -23,6 +25,7 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: EAppTheme.lightTheme,
       darkTheme: EAppTheme.darkTheme,
+      /* ------------------------------------------------------------------- */
       initialBinding: GeneralBindings(),
       /* ------------------------------------------------------------------- */
 

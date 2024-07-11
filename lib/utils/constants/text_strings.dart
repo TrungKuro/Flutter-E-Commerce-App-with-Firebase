@@ -121,27 +121,27 @@ class ETexts {
   static const String profileInformationTitle = "Profile Information";
 
   static const String nameTitle = "Name";
-  static const String nameValue = "Hoàng Trung";
+  static const String nameValue = "Admin"; //! For test UI
 
   static const String userNameTitle = "User Name";
-  static const String userNameValue = "Trung Kuro";
+  static const String userNameValue = "Kuro"; //! For test UI
 
   static const String personalInformationTitle = "Personal Information";
 
   static const String userIDTitle = "User ID";
-  static const String userIDValue = "12345";
+  static const String userIDValue = "12345"; //! For test UI
 
   static const String emailTitle = "E-Mail";
-  static const String emailValue = "hdh.trung96@gmail.com";
+  static const String emailValue = "admin@gmail.com"; //! For test UI
 
   static const String phoneNumberTitle = "Phone Number";
-  static const String phoneNumberValue = "076-2534798";
+  static const String phoneNumberValue = "012-3456789"; //! For test UI
 
   static const String genderTitle = "Gender";
-  static const String genderValue = "Male";
+  static const String genderValue = "Male"; //! For test UI
 
   static const String dateOfBirthTitle = "Date of Birth";
-  static const String dateOfBirthValue = "25-11-1996";
+  static const String dateOfBirthValue = "01-01-1996"; //! For test UI
 
   /* ----------------------- Reviews & Ratings Screen ---------------------- */
 
@@ -275,7 +275,7 @@ class ETexts {
   static const String iAgreeTo = 'I agree to';
   static const String privacyPolicy = 'Privacy Policy';
   static const String and = 'and';
-  static const String termsOfUse = 'Terms of use';
+  static const String termsOfUse = 'Terms of Use';
 
   static const String verificationCode = 'Verification Code';
   static const String resendEmail = 'Resend Email';
@@ -285,6 +285,7 @@ class ETexts {
   /*                           GETX - LOCAL STORAGE                          */
   /* ----------------------------------------------------------------------- */
 
+  //! null → true → false
   static const String getxIsFirstTime = "isFirstTime";
 
   static const String getxRememberEmail = "REMEMBER_ME_EMAIL";
@@ -294,11 +295,23 @@ class ETexts {
   /*                           FIRESTORE - DATABASE                          */
   /* ----------------------------------------------------------------------- */
 
+  // Đường dẫn đến thông tin người dùng: [ Users ] -> [ ID_USER ] -> [ JSON ]
+  // Cấu trúc thông tin người dùng được lưu trong Cloud Firestore dưới dạng JSON
+
   static const String collectionPathUsers = "Users";
+
+  // Cấu trúc JSON từ MODEL của User có dạng Map<String, dynamic>
   //
+  // "FirstName"      : String
+  // "LastName"       : String
+  // "UserName"       : String
+  // "Email"          : String
+  // "PhoneNumber"    : String
+  // "ProfilePicture" : String
+
   static const String userModelFirstName = "FirstName";
   static const String userModelLastName = "LastName";
-  static const String userModelUserName = "Username";
+  static const String userModelUserName = "UserName";
   static const String userModelEmail = "Email";
   static const String userModelPhoneNumber = "PhoneNumber";
   static const String userModelProfilePicture = "ProfilePicture";
@@ -315,6 +328,7 @@ class ETexts {
   //! Notification in SnackBar
   static const String ohSnapTitle = 'Oh Snap!';
   static const String noInternetTitle = 'No Internet Connection';
+  static const String noInternetMsg = 'Please check your network connection again.';
   //
   static const String acceptPrivacyPolicyTitle = 'Accept Privacy Policy';
   static const String acceptPrivacyPolicyMsg =
@@ -323,13 +337,16 @@ class ETexts {
   static const String signUpSuccessTitle = 'Congratulations';
   static const String signUpSuccessMsg = 'Your account has been created! Verify email to continue.';
   //
+  static const String unverifiedEmailTitle = 'Unverified Email';
+  static const String unverifiedEmailMsg = 'You have not verified your email yet.';
   //
   static const String sentEmailSuccessTitle = 'Email Sent';
-  static const String sentEmailSuccessMsg = 'Please check your inbox and verify your email.';
-  static const String receivedEmailSuccessMsg = 'Email Link Sent to Reset your Password.';
+  static const String receivedEmailVerifiMsg = 'Please check your inbox and Verify your email.';
+  static const String receivedEmailResetMsg = 'Please check your inbox to Reset your Password.';
   //
   static const String saveUserRecordTitle = 'Data not saved';
-  static const String saveUserRecordMsg = 'Something went wrong while saving your information. You can re-saved your data in your Profile.';
+  static const String saveUserRecordMsg =
+      'Something went wrong while saving your information. You can re-saved your data in your Profile.';
 
   //! Throw Error
   static const String throwError = 'Something went wrong. Please try again!';

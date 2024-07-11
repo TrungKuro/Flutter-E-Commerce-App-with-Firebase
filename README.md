@@ -175,71 +175,257 @@
 > ---
 >
 > `[1]` Flutter Onboarding Screen Only One Time:
-> - Load and Initialize `GetStorage` in *"main.dart"* (Local Storage).
-> - Manually control showing/hiding of a [Splash Screen].
-> - Set up an Authentication repository for screen redirection.
-> - Store / Retrieve data from Local Storage.
->
-> <u>Cụ thể</u>:
-> - Với *"màn hình giới thiệu" [Onboarding Screen]* chỉ cần cho xuất hiện 1 lần đầu tiên, là đủ để cung cấp cho người dùng phần giới thiệu được cá nhân hóa về ứng dụng.
-> - Và sử dụng [Firebase Authentication] để xác định một cách thông minh xem người dùng là người mới hay người dùng quay lại.
+> - Tailored Onboarding.
+>   - Với màn hình giới thiệu [Onboarding Screen] được thiết kế để chỉ xuất hiện trong lần đầu tiên người dùng gặp ứng dụng của bạn, đủ để cung cấp cho người dùng phần giới thiệu được cá nhân hóa về ứng dụng.
+>   - Và sử dụng [Firebase Authentication] để xác định xem người dùng là người mới để thêm giới thiệu [Onboarding Screen] hay người dùng cũ để đến thẳng [Login Screen] sau màn hình chờ [Splash Screen].
+> - Manual Splash Screen Control.
+>   - Tuỳ chỉnh cách hiển thị hoặc ẩn màn hình chờ [Splash Screen] theo cách thủ công.
+> - Authentication Repository Setup.
+>   - Thiết lập [Authentication Repository] đảm nhận chức năng chuyển đổi giữa các màn hình hợp lý dựa trên [User's Authentication Status] cho dù đó là lần truy cập đầu tiên hay quay lại.
+> - Efficient Local Storage Mastery.
+>   - Sử dụng [Local Storage] để lưu trữ và truy xuất dữ liệu, tối ưu hóa hiệu suất ứng dụng, giảm sự phụ thuộc vào các nguồn bên ngoài.
 >
 > <u>Debug</u>:
 >
-> <pre>
-> Ở lần khởi động ứng dụng đầu tiên, sau khi chạy xong [Splash Screen]:
+> ~~~
+> - Ở lần chạy ứng dụng đầu tiên, sau khi chạy xong [Splash Screen].
 >
->   flutter: === GET STORAGE Auth Repo ===
->   flutter: null
+>       flutter: === GET STORAGE Auth Repo ===
+>       flutter: null
 >
-> [Onboarding Screen] xuất hiện, và khi người dùng đã xem qua hết, sẽ hiển thị [Login Screen]:
+> - [Onboarding Screen] xuất hiện, và khi người dùng đã xem qua intro hết.
+> - Sẽ hiển thị [Login Screen], bởi vì ứng dụng chưa có bất cứ thông tin của người dùng nào.
 > 
->   flutter: === GET STORAGE Next Button ===
->   flutter: true
->   flutter: === GET STORAGE Next Button ===
->   flutter: false
+>       flutter: === GET STORAGE before press [Next Button] ===
+>       flutter: true
+>       flutter: === GET STORAGE after press [Next Button] ===
+>       flutter: false
+> ~~~
 >
-> Ở những lần khởi động ứng dụng sau, sau khi chạy xong [Splash Screen] sẽ vào thẳng trực tiếp [Login Screen]:
+> <u>Debug</u>:
 >
->   flutter: === GET STORAGE Auth Repo ===
->   flutter: false
-> </pre>
+> ~~~
+> - Ở những lần khởi động ứng dụng sau, sau khi chạy xong [Splash Screen] sẽ vào thẳng trực tiếp [Login Screen].
+> - Nếu người dùng chưa đăng nhập hoặc đã đăng xuất hoặc chưa thể đăng nhập vì chưa có đăng ký tài khoản.
 >
-> `[2]` Flutter Firebase Email Password Authentication | Store Data In Firebase Firestore | Form Validation:
-> - Email and Password Authentication.
-> - Form Validation for Data Integrity.
-> - Animated Loader Integration.
-> - Internet Connection Checks.
-> - Storing User Data in Firebase Firestore.
-> - Exception Handling for a Robust System.
+>       flutter: === GET STORAGE Auth Repo ===
+>       flutter: false
 >
-> `[3]` Flutter Email Verification with Firebase:
-> - Firebase Email Verification Method.
-> - Email Verification Controller with GetX.
-> - Auto-Redirect with Timer.periodic.
-> - Manual Exception Handling.
+> - Tương tự ở những lần khởi động ứng dụng sau, sau khi chạy xong [Splash Screen] sẽ vào thẳng trực tiếp [VerifyEmail Screen].
+> - Nếu người dùng đã đăng nhập nhưng tài khoản chưa được xác thực.
 >
-> `[4]` Login with Email and Password Firebase Flutter | Flutter Login Remember Me using Local Storage:
-> - Creating a Robust Login Controller.
-> - Significance of Form Validation.
-> - Implementing a Password Toggle Feature.
-> - Incorporating "Remember Me" Checkbox.
-> - Optimizing User Experience.
-> - Email and Password Authentication.
-> - Fetching Data from Local Storage.
+>       flutter: === GET STORAGE Auth Repo ===
+>       flutter: false
 >
-> `[5]` Google Sign in Flutter Firebase | Google Authentication using Firebase:
-> - Add Dependency google_sign_in.
-> - Enable Google Sign-In from Console.
-> - Add SHA1 and SHA256.
-> - Create Sign-In Authentication Function.
-> - Exception Handling.
-> - Call the Login Controller.
+> - Cũng tương tự ở những lần khởi động ứng dụng sau, sau khi chạy xong [Splash Screen] sẽ vào thẳng trực tiếp [Navigation Menu].
+> - Nếu người dùng đã đăng nhập và tài khoản đã xác thực.
 >
-> `[6]` Flutter Forgot Password with firebase | Reset Password in flutter:
-> - Handling Email Exceptions.
-> - Reset Password Function.
-> - Testing and Troubleshooting.
+>       flutter: === GET STORAGE Auth Repo ===
+>       flutter: false
+> ~~~
+>
+> <u>Sơ đồ</u> cách hiển thị UI:
+>
+> ~~~
+> [Splash Screen] --> [Onboarding Screen] --> [Login Screen]
+>               | --------------------------> |
+>               |
+>               | --> [VerifyEmail Screen]
+>               |
+>               | --> [Navigation Menu]
+> ~~~
+>
+> ---
+>
+> - `[2]` Flutter Firebase Email Password Authentication | Store Data In Firebase Firestore | Form Validation.
+> - `[3]` Flutter Email Verification with Firebase.
+> - `[4]` Login with Email and Password Firebase Flutter | Flutter Login Remember Me using Local Storage.
+> - `[5]` Google Sign in Flutter Firebase | Google Authentication using Firebase:
+>   - Add Dependency google_sign_in.
+>     - Thêm gói pub cần thiết, **[google_sign_in]**, để kích hoạt chức năng `Google Sign-In`.
+>     - [Google SignIn with Flutter | Android, iOS and Web tutorial](https://www.youtube.com/watch?v=Q00Foa8CiDk).
+>     - [Google Sign in Flutter Firebase | Google Authentication using Firebase](https://www.youtube.com/watch?v=oUYiCbOETls).
+>   - Enable Google Sign-In from Console.
+>     - Trong dự án Firebase của bạn mà ứng dụng đang sử dụng, bật `Google Sign-In` cho ứng dụng của bạn, thiết lập liên kết xác thực an toàn.
+>   - Add `SHA1` and `SHA256`.
+>     - Tăng cường bảo mật cho dự án của bạn bằng cách định cấu hình cài đặt `SHA1` và `SHA256`, đảm bảo quy trình xác thực mạnh mẽ.
+> - `[6]` Flutter Forgot Password with firebase | Reset Password in flutter.
+>
+> ---
+>
+> <u>Note</u> - các thuật ngữ:
+> - `Sign-Up` ; `Log-Up` - đăng ký tài khoản.
+> - `Sign-In` ; `Log-In` - đăng nhập tài khoản.
+> - `Sign-Out` ; `Log-Out` - đăng xuất tài khoản.
+>
+> <u>Note</u> - dịch vụ Authentication của Firebase có nhiều lựa chọn (Sign-in providers) như:
+> - Native providers: Email/Pass ; Phone ; Anonymous.
+> - Additional providers: Google ; Facebook ; Apple ; GitHub ; ...
+> - Custom providers: ...
+> - Hiện tại ứng dụng đang sử dụng `4` <u>nhà cung cấp đăng nhập</u> từ Firebase là:
+>   - Email/Pass.
+>   - Google.
+>   - Facebook.
+>   - Apple.
+>
+> <u>Note</u> - dịch vụ Cloud Firestore của Firebase: stores data in `Documents`, which are stored in `Collections`.
+
+### Phân tích quá trình tạo tài khoản và sử dụng ứng dụng.
+
+> <u>Sơ đồ</u>: 
+>
+> ~~~
+>             |<-----------|
+> Đăng ký --> Xác thực --> Đăng nhập <--> Đăng xuất
+> |----------------------->|
+> ~~~
+>
+> ---
+>
+> Có tất cả `5` trường hợp:
+> 1. Người dùng chưa có tài khoản, cần đăng ký.
+>     - Đăng ký qua Email/Pass.
+>     - Đăng ký qua Google.
+>     - Đăng ký qua Facebook.
+> 2. Người dùng đã có tài khoản, nhưng chưa xác thực.
+>     - Xác thực qua Email.
+> 3. Người dùng đã có tài khoản, nhưng chưa xác thực, và quên mật khẩu.
+>     - Reset mật khẩu qua Email.
+> 4. Người dùng đã có tài khoản, đã xác thực, chỉ cần đăng nhập.
+>     - Đăng nhập qua Email/Pass.
+>     - Đăng nhập qua Google.
+>     - Đăng nhập qua Facebook.
+> 5. Người dùng đã có tài khoản, đã xác thực, chỉ cần đăng nhập, nhưng quên mật khẩu.
+>     - Reset mật khẩu qua Email.
+
+#### Trường hợp 1: Người dùng chưa có tài khoản, cần đăng ký.
+
+> ~~~
+> [Login Screen] --- Btn.(Create Account) --> [SignUp Screen]
+>              | <--------------------------- |
+>
+>
+> [SignUp Screen] --- Btn.(Create Account)={signup} --> [VerifyEmail Screen]
+>
+>
+> [SignUp Screen] --- Btn.(Icon Google)={googleSignIn} --> !!!
+>
+>
+> [SignUp Screen] --- Btn.(Icon Facebook)={facebookSignIn} --> !!!
+>
+>
+> [SignUp Screen] --- Btn.(Icon Apple)={appleSignIn} --> !!!
+> ~~~
+>
+> - Tại màn hình **[Login Screen]** nhấn nút *(Create Account)* sẽ chuyển đến màn hình **[SignUp Screen]**.
+> - Tại màn hình **[SignUp Screen]** người dùng có <u>`4` lựa chọn để đăng ký tài khoản</u>:
+>
+> 1. Nếu chọn đăng ký qua `Email/Pass`, nhấn nút *(Create Account)*.
+>     - Tuy nhiên người dùng phải nhập đầy đủ các thông tin gồm: { First Name ; Last Name ; User Name ; E-Mail ; Phone ; Pass }.
+>     - Và các thông tin này phải hợp lệ. Trong đó lưu ý { Pass } phải từ 6 kí tự trở lên, có ít nhất 1 chữ cái viết hoa, có ít nhất 1 chữ số, có ít nhất 1 kí tự đặc biệt.
+>     - Bên cạnh người dùng cần đồng ý với *"chính sách bảo mật"* và *"điều khoản sử dụng"* của ứng dụng.
+>     - Sau khi đăng ký người dùng mới thành công, qua dịch vụ `Authentication` của Firebase.
+>     - Và ứng dụng lưu trữ thông tin người dùng mới thành công, qua dịch vụ `Cloud Firestore` của Firebase.
+>     - Sau đó ứng dụng sẽ chuyển sang màn hình **[VerifyEmail Screen]**.
+>
+> 2. Nếu chọn đăng ký qua `Google`, nhấn nút *(Icon Google)*.
+>     - !!!
+>
+> 3. Nếu chọn đăng ký qua `Facebook`, nhấn nút *(Icon Facebook)*.
+>     - !!!
+>
+> 4. Nếu chọn đăng ký qua `Apple`, nhấn nút *(Icon Apple)*.
+>     - !!!
+
+#### Trường hợp 2: Người dùng đã có tài khoản, nhưng chưa xác thực.
+
+> - Khi ứng dụng hiển thị ở màn hình **[VerifyEmail Screen]**.
+> - Tức người dùng đã <u>đăng nhập thành công</u>, nhưng cần phải qua <u>thêm một bước xác thực</u> tài khoản nữa.
+> - Và đồng thời ứng dụng cũng gửi `"email xác minh cho người dùng"` đến địa chỉ email đã cho.
+>
+> ~~~
+> [VerifyEmail Screen] --- Btn.(Resend Email)={sendEmailVerification} --> [VerifyEmail Screen]
+>
+>
+> [VerifyEmail Screen] --- Btn.(Continue)={checkEmailVerificationStatus} --> [Success Screen] --- Btn.(Continue)={screenRedirect} --> [Navigation Menu]
+>                                                                        |
+>                                                                        --> [VerifyEmail Screen]
+>
+>
+> [VerifyEmail Screen] --- Btn.(Icon Clear)={logout} --> [Login Screen]
+> ~~~
+>
+> - Lúc này người dùng check email xem nhận được tin nhắn từ ứng dụng gửi đến chưa?
+> - Nếu chưa có thể nhấn nút *(Resend Email)* để thực hiện gửi lại `"email xác minh cho người dùng"` một lần nữa.
+> - Nếu rồi có thể nhấn nút *(Continue)*.
+>   - Nếu tài khoản <u>đã xác thực</u> thì sẽ chuyển đến màn hình **[Success Screen]** và nhấn tiếp nút *(Continue)* để đến màn hình **[Navigation Menu]**.
+>   - Nếu tài khoản vẫn <u>chưa xác thực</u>, ứng dụng sẽ hiện thông báo cho biết.
+> - Ngược lại, người dùng có thể nhấn nút *(Icon Clear)* sẽ <u>đăng xuất</u> tài khoản và quay lại màn hình **[Login Screen]**.
+
+#### Trường hợp 3: Người dùng đã có tài khoản, nhưng chưa xác thực, và quên mật khẩu.
+
+> - Tại màn hình **[Login Screen]** nhấn nút *(Forget Password)* sẽ chuyển đến màn hình **[ForgetPassword Screen]**.
+> - Tại màn hình **[ForgetPassword Screen]** người dùng có thể nhấn nút *(Submit)* để yêu cầu ứng dụng gửi `"email đặt lại mật khẩu"`.
+> - Tuy nhiên người dùng phải nhập đầy đủ thông tin { E-Mail } và thông tin này phải hợp lệ.
+>
+> ~~~
+> [Login Screen] --- Btn.(Forget Password) --> [ForgetPassword Screen]
+>              | <---------------------------- |
+>
+>
+> [ForgetPassword Screen] --- Btn.(Submit)={sendPasswordResetEmail} --> [ResetPassword Screen] 
+>                                                                   |
+>                                                                   --> [ForgetPassword Screen]
+>
+>
+> [ResetPassword Screen] --- Btn.(Resend Email)={resendPasswordResetEmail} --> [ResetPassword Screen]
+>
+>
+> [ResetPassword Screen] --- Btn.(Done) --> [Login Screen]
+> ~~~
+>
+> - Lúc này người dùng check email xem nhận được tin nhắn từ ứng dụng gửi đến chưa?
+> - Nếu chưa có thể nhấn nút *(Resend Email)* để thực hiện gửi lại `"email đặt lại mật khẩu"` một lần nữa.
+> - Nếu rồi có thể nhấn nút *(Done)* để quay lại màn hình **[Login Screen]**.
+
+#### Trường hợp 4: Người dùng đã có tài khoản, đã xác thực, chỉ cần đăng nhập.
+
+> ~~~
+> [Login Screen] --- Btn.(Sign In)={emailAndPasswordSignIn} --> [VerifyEmail Screen]
+>                                                           |
+>                                                           --> [Navigation Menu]
+>
+>
+> [Login Screen] --- Btn.(Icon Google)={googleSignIn} --> !!!
+>
+>
+> [Login Screen] --- Btn.(Icon Facebook)={facebookSignIn} --> !!!
+>
+>
+> [Login Screen] --- Btn.(Icon Apple)={appleSignIn} --> !!!
+> ~~~
+>
+> - Tại màn hình **[Login Screen]** gười dùng có <u>`4` lựa chọn để đăng nhập tài khoản</u>:
+>
+> 1. Nếu chọn đăng nhập qua `Email/Pass`, nhấn nút *(Sign In)*.
+>     - Tuy nhiên người dùng phải nhập đầy đủ các thông tin gồm: { E-Mail ; Pass } và các thông tin này phải hợp lệ.
+>     - Người dùng có thể nhấn checkbox *(Remember Me)* để ứng dụng ghi nhớ sẵn thông tin đăng nhập cho lần sau.
+>     - Sau khi <u>đăng nhập thành công</u>, qua dịch vụ `Authentication` của Firebase.
+>       - Nếu phát hiện tài khoản <u>chưa xác thực</u>, ứng dụng sẽ chuyển sang màn hình **[VerifyEmail Screen]**.
+>       - Ngược lại, tài khoản <u>đã xác thực</u>, ứng dụng sẽ chuyển sang màn hình **[Navigation Menu]**.
+>
+> 2. Nếu chọn đăng nhập qua `Google`, nhấn nút *(Icon Google)*.
+>     - !!!
+>
+> 3. Nếu chọn đăng nhập qua `Facebook`, nhấn nút *(Icon Facebook)*.
+>     - !!!
+>
+> 4. Nếu chọn đăng nhập qua `Apple`, nhấn nút *(Icon Apple)*.
+>     - !!!
+
+#### Trường hợp 5: Người dùng đã có tài khoản, đã xác thực, chỉ cần đăng nhập, nhưng quên mật khẩu.
+
+> Tương tự <u>trường hợp 3</u>: Người dùng đã có tài khoản, nhưng chưa xác thực, và quên mật khẩu.
 
 ---
 ---
@@ -361,29 +547,55 @@
 > - `Cloud Storage` có chức năng *"lưu trữ" (Store)* và *"truy xuất" (Retrieve)* nội dung do người dùng tạo.
 > - `Cloud Firestore` có chức năng cập nhập data theo <u>thời gian thực</u>, khả năng <u>truy vấn</u> mạnh mẽ và tự động <u>mở rộng</u> quy mô.
 
-### Các lệnh GetX:
+### Các lệnh [GetX]:
 
-> - `Get.put()`
-> - `Get.back()`
-> - `Get.to()`
-> - `Get.find()`
-> - `Get.off()`
-> - `Get.offAll()`
-> - `Get.snackbar()`
-> - ...
-> - `Get.context`
-> - `Get.overlayContext`
+> |Lệnh|Chức năng|Ví dụ|
+> |----|---------|-----|
+> |`Get.to()`|Navigate to a new screen.|Get.to(NextScreen());|
+> |`Get.off()`|To go to the next screen and no option to go back to the previous screen.|Get.off(NextScreen());|
+> |`Get.offAll()`|To go to the next screen and cancel all previous routes.|Get.offAll(NextScreen());|
+> |---|---|---|
+> |`Get.back()`|To close snackbars, dialogs, bottomsheets, or anything you would normally close with **Navigator.pop(context);**|Get.back();|
+> |---|---|---|
+> |`Get.put()`|Instantiate your class using **Get.put()** to make it available for all "child" routes there.|final Controller c = Get.put(Controller());|
+> |`Get.find()`|You can ask Get to find a Controller that is being used by another page and redirect you to it.|final Controller c = Get.find();|
+> |---|---|---|
+> |`Get.context`|Gives the current context of the Navigator.||
+> |`Get.overlayContext`|Give access to current Overlay Context. Gives the context of the snackbar/dialog/bottomsheet in the "foreground", anywhere in your code.||
+> |---|---|---|
+> |`Get.snackbar()`|Sử dụng Widget Snackbar mà ko cần Context.||
 
-### Các lệnh Navigator:
+### Các lớp "Controller" trong dự án sử dụng [GetxController]:
+
+> `Obx` có theo dõi:
+> - `HomeController`
+> - `NavigationController`
+> - `LoginController`
+> - `SignupController`
+>
+> ...:
+> - `OnBoardingController`
+> - `ForgetPasswordController`
+> - `VerifyEmailController`
+> - `UserController`
+>
+> ...:
+> - `AuthenticationRepository`
+> - `UserRepository`
+>
+> ...:
+> - `NetworkManager`
+
+### Các lệnh [Navigator]:
 
 > - `Navigator.of().pop()`
 > - `Navigator.push()`
 
-### Các lệnh MediaQuery:
+### Các lệnh [MediaQuery]:
 
 > - `MediaQuery.of()`
 
-### Các lệnh Theme:
+### Các lệnh [Theme]:
 
 > - `Theme.of()`
 
@@ -396,6 +608,14 @@
 > |---|---|
 > |`leadingOnPressed`|void Function()? = VoidCallback?|
 > |`onActionPressed`|void Function()? = VoidCallback?|
+> |---|---|
+> |`onDotClicked`|void Function(int)?|
+> |`onPageChanged`|void Function(int)?|
+> |`onDestinationSelected`|void Function(int)?|
+> |---|---|
+> |`onChanged`|void Function(bool?)?|
+> |---|---|
+> |`validator`|String? Function(String?)?|
 >
 > <u>Note</u>:
 >

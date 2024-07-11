@@ -28,7 +28,7 @@ class SignupController extends GetxController {
   final hidePassword = true.obs;
 
   //! Observable for privacy policy acceptance
-  final privacyPolicy = true.obs;
+  final privacyPolicy = false.obs;
 
   //! Form key for Form Validation
   GlobalKey<FormState> signupFormKey = GlobalKey<FormState>();
@@ -38,44 +38,65 @@ class SignupController extends GetxController {
   /* ----------------------------------------------------------------------- */
 
   /// --- SIGNUP
+  /// 1. Kiểm tra kết nối mạng.
+  /// 2. Xác thực thông tin người dùng nhập vào.
+  /// 3. Kiểm tra người dùng có chấp nhận "chính sách bảo mật" và "điều khoản sử dụng" của ứng dụng.
+  /// 4. Tạo một tài khoản người dùng mới với địa chỉ email và mật khẩu đã cho. [firebase_auth].
+  /// 5. Trích xuất từ thông tin người dùng nhập vào theo cấu trúc [UserModel].
+  /// 6. Chuyển thông tin người dùng từ MODEL sang JSON và lưu vào Firebase Firestore. [cloud_firestore].
+  /// 7. Đi tới màn hình [VerifyEmailScreen].
   Future<void> signup() async {
     try {
       /* ------------------------------------------------------------------- */
 
       // Start Loading
-      EFullScreenLoader.openLoadingDialog(ETexts.waitLoadingDialog, EImages.loadingAnimation);
+      EFullScreenLoader.openLoadingDialog(
+        ETexts.waitLoadingDialog,
+        EImages.loadingAnimation,
+      );
 
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
-        // Remove Loader
+        // Stop Loading
         EFullScreenLoader.stopLoading();
+        // Show reason message
+        ELoaders.warningSnackBar(
+          title: ETexts.noInternetTitle,
+          message: ETexts.noInternetMsg,
+        );
+        // Stop function
         return;
       }
 
       // Form Validation
       if (!signupFormKey.currentState!.validate()) {
-        // Remove Loader
+        // Stop Loading
         EFullScreenLoader.stopLoading();
+        // Stop function
         return;
       }
 
-      // Privacy Policy Check
+      // Check "Privacy Policy"
       if (!privacyPolicy.value) {
+        // Stop Loading
+        EFullScreenLoader.stopLoading();
+        // Show reason message
         ELoaders.warningSnackBar(
           title: ETexts.acceptPrivacyPolicyTitle,
           message: ETexts.acceptPrivacyPolicyMsg,
         );
+        // Stop function
         return;
       }
 
-      // Regidter user in the Firebase Authentication & Save user data in the Firebase
+      //! Register user in the Firebase Authentication & Save user data in the Firebase
       final userCredential = await AuthenticationRepository.instance.registerWithEmailAndPassword(
         email.text.trim(),
         password.text.trim(),
       );
 
-      // Save Authenticated user data in the Firebase Firestore
+      //! Create user information according to UserModel
       final newUser = UserModel(
         id: userCredential.user!.uid,
         firstName: firstName.text.trim(),
@@ -85,31 +106,35 @@ class SignupController extends GetxController {
         phoneNumber: phoneNumber.text.trim(),
         profilePicture: '', //!!!
       );
-      //
+
+      //! Save Authenticated user data in the Firebase Firestore
       final userRepository = Get.put(UserRepository()); //!
       await userRepository.saveUserRecord(newUser);
 
-      // Remove Loader
+      // Stop Loading
       EFullScreenLoader.stopLoading();
 
-      // Show Success Message
+      // Show success message
       ELoaders.successSnackBar(
         title: ETexts.signUpSuccessTitle,
         message: ETexts.signUpSuccessMsg,
       );
 
-      // Move to [Verify Email Screen]
+      // Move to [VerifyEmail Screen]
       Get.to(() => VerifyEmailScreen(email: email.text.trim())); //?
 
       /* ------------------------------------------------------------------- */
     } catch (e) {
       /* ------------------------------------------------------------------- */
 
-      // Remove Loader
+      // Stop Loading
       EFullScreenLoader.stopLoading();
 
       // Show some Generic Error to the user
-      ELoaders.errorSnackBar(title: ETexts.ohSnapTitle, message: e.toString());
+      ELoaders.errorSnackBar(
+        title: ETexts.ohSnapTitle,
+        message: e.toString(),
+      );
 
       /* ------------------------------------------------------------------- */
     }

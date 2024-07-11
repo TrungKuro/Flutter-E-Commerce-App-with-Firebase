@@ -23,7 +23,10 @@ class CheckoutScreen extends StatelessWidget {
 
       appBar: EAppBar(
         showBackArrow: true,
-        title: Text(ETexts.checkoutScreenAppBarTitle, style: Theme.of(context).textTheme.headlineSmall),
+        title: Text(
+          ETexts.checkoutScreenAppBarTitle,
+          style: Theme.of(context).textTheme.headlineSmall,
+        ),
       ),
 
       /* ------------------------------------------------------------------- */

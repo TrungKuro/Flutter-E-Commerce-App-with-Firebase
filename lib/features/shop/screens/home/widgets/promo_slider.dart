@@ -54,6 +54,7 @@ class EPromoSlider extends StatelessWidget {
 
         /// Dot Navigation for Banner
         Center(
+          //! To view observable variable ... of [HomeController]
           child: Obx(
             () => Row(
               mainAxisSize: MainAxisSize.min,

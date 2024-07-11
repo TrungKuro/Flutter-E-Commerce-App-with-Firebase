@@ -16,8 +16,8 @@ class AllProductsScreen extends StatelessWidget {
       /* ------------------------------------------------------------------- */
 
       appBar: const EAppBar(
-        title: Text(ETexts.popularProductsTitle),
         showBackArrow: true,
+        title: Text(ETexts.popularProductsTitle),
       ),
 
       /* ------------------------------------------------------------------- */

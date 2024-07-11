@@ -17,7 +17,10 @@ class ProductReviewsScreen extends StatelessWidget {
       /*                                 TOP                                 */
       /* ------------------------------------------------------------------- */
 
-      appBar: const EAppBar(title: Text(ETexts.reviewAndRatingAppBarTitle), showBackArrow: true),
+      appBar: const EAppBar(
+        showBackArrow: true,
+        title: Text(ETexts.reviewAndRatingAppBarTitle),
+      ),
 
       /* ------------------------------------------------------------------- */
       /*                                 BODY                                */

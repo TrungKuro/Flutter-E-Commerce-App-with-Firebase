@@ -40,8 +40,8 @@ class LoginController extends GetxController {
   /// Automatically fill in remembered information on the form.
   @override
   void onInit() {
-    email.text = localStorage.read(ETexts.getxRememberEmail);
-    password.text = localStorage.read(ETexts.getxRememberPass);
+    email.text = localStorage.read(ETexts.getxRememberEmail) ?? '';
+    password.text = localStorage.read(ETexts.getxRememberPass) ?? '';
     super.onInit();
   }
 
@@ -50,97 +50,132 @@ class LoginController extends GetxController {
   /* ----------------------------------------------------------------------- */
 
   /// --- LOGIN (Email & Password SignIn)
+  /// 1. Kiểm tra kết nối mạng.
+  /// 2. Xác thực thông tin người dùng nhập vào.
+  /// 3. Lưu sẵn thông tin đăng nhập cho lần tới nếu "Remember Me" được chọn
+  /// 4. Đăng nhập người dùng bằng Email/Pass. [firebase_auth].
+  /// 5. Tuỳ ngữ cảnh sẽ đi tới màn hình phù hợp.
   Future<void> emailAndPasswordSignIn() async {
     try {
       /* ------------------------------------------------------------------- */
 
       // Start Loading
-      EFullScreenLoader.openLoadingDialog(ETexts.waitLoggingDialog, EImages.loadingAnimation);
+      EFullScreenLoader.openLoadingDialog(
+        ETexts.waitLoggingDialog,
+        EImages.loadingAnimation,
+      );
 
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
-        // Remove Loader
+        // Stop Loading
         EFullScreenLoader.stopLoading();
+        // Show reason message
+        ELoaders.warningSnackBar(
+          title: ETexts.noInternetTitle,
+          message: ETexts.noInternetMsg,
+        );
+        // Stop function
         return;
       }
 
       // Form Validation
       if (!loginFormKey.currentState!.validate()) {
-        // Remove Loader
+        // Stop Loading
         EFullScreenLoader.stopLoading();
+        // Stop function
         return;
       }
 
-      // Save data if Remember Me is selected
-      if (!rememberMe.value) {
+      // Save data if "Remember Me" is selected
+      if (rememberMe.value) {
         localStorage.write(ETexts.getxRememberEmail, email.text.trim());
         localStorage.write(ETexts.getxRememberPass, password.text.trim());
       }
 
-      // Login user using Email & Password Authentication
+      //! Login user using Email & Password Authentication
       await AuthenticationRepository.instance.loginWithEmailAndPassword(
         email.text.trim(),
         password.text.trim(),
       );
 
-      // Remove Loader
+      // Stop Loading
       EFullScreenLoader.stopLoading();
 
-      // Redirect
+      // Redirect for screen
       AuthenticationRepository.instance.screenRedirect();
 
       /* ------------------------------------------------------------------- */
     } catch (e) {
       /* ------------------------------------------------------------------- */
 
-      // Remove Loader
+      // Stop Loading
       EFullScreenLoader.stopLoading();
 
       // Show some Generic Error to the user
-      ELoaders.errorSnackBar(title: ETexts.ohSnapTitle, message: e.toString());
+      ELoaders.errorSnackBar(
+        title: ETexts.ohSnapTitle,
+        message: e.toString(),
+      );
 
       /* ------------------------------------------------------------------- */
     }
   }
 
   /// --- LOGIN with GOOGLE (Google SignIn Authentication)
+  /// 1. Kiểm tra kết nối mạng.
+  /// 2. ĐĂNG NHẬP (hoặc ĐĂNG KÝ nếu lần đầu) và cả XÁC THỰC người dùng bằng dịch vụ của Google. [google_sign_in].
+  /// 3. Trích xuất từ thông tin người dùng từ tài khoản Google theo cấu trúc [UserModel].
+  /// 4. Chuyển thông tin người dùng từ MODEL sang JSON và lưu vào Firebase Firestore. [cloud_firestore].
+  /// 5. Tuỳ ngữ cảnh sẽ đi tới màn hình phù hợp.
   Future<void> googleSignIn() async {
     try {
       /* ------------------------------------------------------------------- */
 
       // Start Loading
-      EFullScreenLoader.openLoadingDialog(ETexts.waitLoggingDialog, EImages.loadingAnimation);
+      EFullScreenLoader.openLoadingDialog(
+        ETexts.waitLoggingDialog,
+        EImages.loadingAnimation,
+      );
 
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
-        // Remove Loader
+        // Stop Loading
         EFullScreenLoader.stopLoading();
+        // Show reason message
+        ELoaders.warningSnackBar(
+          title: ETexts.noInternetTitle,
+          message: ETexts.noInternetMsg,
+        );
+        // Stop function
         return;
       }
 
-      // Google Authentication
+      //! Google Authentication
       final userCredentials = await AuthenticationRepository.instance.signInWithGoogle();
 
-      // Save User Record
+      //! Save User Record
       await userController.saveUserRecord(userCredentials);
 
-      // Remove Loader
+      // Stop Loading
       EFullScreenLoader.stopLoading();
 
-      // Redirect
+      // Redirect for screen
       AuthenticationRepository.instance.screenRedirect();
 
       /* ------------------------------------------------------------------- */
     } catch (e) {
       /* ------------------------------------------------------------------- */
 
-      // Remove Loader
+      // Stop Loading
       EFullScreenLoader.stopLoading();
 
       // Show some Generic Error to the user
-      ELoaders.errorSnackBar(title: ETexts.ohSnapTitle, message: e.toString());
+      ELoaders.errorSnackBar(
+        title: ETexts.ohSnapTitle,
+        message: e.toString(),
+      );
 
       /* ------------------------------------------------------------------- */
     }

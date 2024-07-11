@@ -13,10 +13,12 @@ class ESocialButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(LoginController()); //!
-    
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        /* ----------------------------------------------------------------- */
+
         // Icon Google
         Container(
           decoration: BoxDecoration(
@@ -32,8 +34,10 @@ class ESocialButtons extends StatelessWidget {
             ),
           ),
         ),
+
         // Spacer
         const SizedBox(width: ESizes.spaceBtwItems),
+
         // Icon Facebook
         Container(
           decoration: BoxDecoration(
@@ -49,6 +53,27 @@ class ESocialButtons extends StatelessWidget {
             ),
           ),
         ),
+
+        // Spacer
+        const SizedBox(width: ESizes.spaceBtwItems),
+
+        // Icon Apple
+        Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: EColors.grey),
+            borderRadius: BorderRadius.circular(100),
+          ),
+          child: IconButton(
+            onPressed: () {}, //?
+            icon: const Image(
+              width: ESizes.iconMd,
+              height: ESizes.iconMd,
+              image: AssetImage(EImages.apple),
+            ),
+          ),
+        ),
+
+        /* ----------------------------------------------------------------- */
       ],
     );
   }

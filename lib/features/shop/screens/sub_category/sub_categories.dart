@@ -17,8 +17,8 @@ class SubCategoriesScreen extends StatelessWidget {
       /* ------------------------------------------------------------------- */
 
       appBar: const EAppBar(
-        title: Text('Sports'), //!!!
         showBackArrow: true,
+        title: Text('Sports'), //!!!
       ),
 
       /* ------------------------------------------------------------------- */

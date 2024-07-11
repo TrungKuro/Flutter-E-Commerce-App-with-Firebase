@@ -15,6 +15,7 @@ class OnBoardingController extends GetxController {
 
   final pageController = PageController();
 
+  //! Observable
   Rx<int> currentPageIndex = 0.obs;
 
   /* ----------------------------------------------------------------------- */
@@ -40,7 +41,7 @@ class OnBoardingController extends GetxController {
 
       //! For Debug
       if (kDebugMode) {
-        print("=== GET STORAGE Next Button ===");
+        print("=== GET STORAGE before press [Next Button] ===");
         print(storage.read(ETexts.getxIsFirstTime));
       }
 
@@ -48,7 +49,7 @@ class OnBoardingController extends GetxController {
 
       //! For Debug
       if (kDebugMode) {
-        print("=== GET STORAGE Next Button ===");
+        print("=== GET STORAGE after press [Next Button] ===");
         print(storage.read(ETexts.getxIsFirstTime));
       }
 

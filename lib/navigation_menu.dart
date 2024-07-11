@@ -24,12 +24,14 @@ class NavigationMenu extends StatelessWidget {
       /*                                 BODY                                */
       /* ------------------------------------------------------------------- */
 
+      //! To view observable variable ... of [NavigationController]
       body: Obx(() => controller.screens[controller.selectedIndex.value]),
 
       /* ------------------------------------------------------------------- */
       /*                                BOTTOM                               */
       /* ------------------------------------------------------------------- */
 
+      //! To view observable variable ... of [NavigationController]
       bottomNavigationBar: Obx(
         () => NavigationBar(
           height: 80,
@@ -61,6 +63,7 @@ class NavigationController extends GetxController {
   /*                                 VARIABLE                                */
   /* ----------------------------------------------------------------------- */
 
+  //! Observable
   final Rx<int> selectedIndex = 0.obs;
   
   final screens = [

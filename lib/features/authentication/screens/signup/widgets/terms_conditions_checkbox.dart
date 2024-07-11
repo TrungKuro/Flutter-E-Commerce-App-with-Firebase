@@ -21,6 +21,7 @@ class ETermsAndConditionsCheckbox extends StatelessWidget {
         SizedBox(
           width: 24,
           height: 24,
+          //! To view observable variable ... of [SignupController]
           child: Obx(
             () => Checkbox(
               value: controller.privacyPolicy.value,
@@ -32,10 +33,14 @@ class ETermsAndConditionsCheckbox extends StatelessWidget {
         Text.rich(
           TextSpan(
             children: [
+              /* ----------------------------------------------------------- */
+
               TextSpan(
                 text: '${ETexts.iAgreeTo} ',
                 style: Theme.of(context).textTheme.bodySmall,
               ),
+
+              //!!! Add link URL for Privacy Policy
               TextSpan(
                 text: ETexts.privacyPolicy,
                 style: Theme.of(context).textTheme.bodyMedium!.apply(
@@ -44,10 +49,13 @@ class ETermsAndConditionsCheckbox extends StatelessWidget {
                       decorationColor: isDark ? EColors.white : EColors.primary,
                     ),
               ),
+
               TextSpan(
                 text: ' ${ETexts.and} ',
                 style: Theme.of(context).textTheme.bodySmall,
               ),
+
+              //!!! Add link URL for Terms of Use
               TextSpan(
                 text: ETexts.termsOfUse,
                 style: Theme.of(context).textTheme.bodyMedium!.apply(
@@ -56,6 +64,8 @@ class ETermsAndConditionsCheckbox extends StatelessWidget {
                       decorationColor: isDark ? EColors.white : EColors.primary,
                     ),
               ),
+
+              /* ----------------------------------------------------------- */
             ],
           ),
         ),

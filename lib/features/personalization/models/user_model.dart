@@ -94,7 +94,7 @@ class UserModel {
   /*                                 FUNCTION                                */
   /* ----------------------------------------------------------------------- */
 
-  /// Convert model to JSON structure for storing data in Firebase.
+  /// Convert MODEL to JSON structure for storing data in Firebase.
   Map<String, dynamic> toJson() {
     return {
       ETexts.userModelFirstName: firstName,

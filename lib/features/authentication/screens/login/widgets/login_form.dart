@@ -23,6 +23,8 @@ class ELoginForm extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: ESizes.spaceBtwSections),
         child: Column(
           children: [
+            /* ------------------------------------------------------------- */
+
             // Email
             TextFormField(
               controller: controller.email,
@@ -32,9 +34,12 @@ class ELoginForm extends StatelessWidget {
                 labelText: ETexts.email,
               ),
             ),
+
             // Spacer
             const SizedBox(height: ESizes.spaceBtwInputFields),
+
             // Password
+            //! To view observable variable ... of [LoginController]
             Obx(
               () => TextFormField(
                 controller: controller.password,
@@ -50,8 +55,10 @@ class ELoginForm extends StatelessWidget {
                 ),
               ),
             ),
+
             // Spacer
             const SizedBox(height: ESizes.spaceBtwInputFields / 2),
+
             // Remember Me & Forget Password
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -59,6 +66,7 @@ class ELoginForm extends StatelessWidget {
                 // Remember Me
                 Row(
                   children: [
+                    //! To view observable variable ... of [LoginController]
                     Obx(
                       () => Checkbox(
                         value: controller.rememberMe.value,
@@ -75,19 +83,23 @@ class ELoginForm extends StatelessWidget {
                 ),
               ],
             ),
+
             // Spacer
             const SizedBox(height: ESizes.spaceBtwSections),
-            // Sign In Button
+
+            // Sign In
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () => controller.emailAndPasswordSignIn(), //?
-                child: const Text(ETexts.createAccount),
+                child: const Text(ETexts.signIn),
               ),
             ),
+
             // Spacer
             const SizedBox(height: ESizes.spaceBtwItems),
-            // Create Account Button
+
+            // Create Account
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(
@@ -95,6 +107,8 @@ class ELoginForm extends StatelessWidget {
                 child: const Text(ETexts.createAccount),
               ),
             ),
+
+            /* ------------------------------------------------------------- */
           ],
         ),
       ),

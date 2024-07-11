@@ -4,7 +4,6 @@ import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -23,15 +22,7 @@ class ResetPasswordScreen extends StatelessWidget {
       /*                                 TOP                                 */
       /* ------------------------------------------------------------------- */
 
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        actions: [
-          IconButton(
-            onPressed: () => Get.back(), //?
-            icon: const Icon(CupertinoIcons.clear),
-          ),
-        ],
-      ),
+      appBar: AppBar(automaticallyImplyLeading: false),
 
       /* ------------------------------------------------------------------- */
       /*                                 BODY                                */
@@ -42,6 +33,8 @@ class ResetPasswordScreen extends StatelessWidget {
           padding: const EdgeInsets.all(ESizes.defaultSpace),
           child: Column(
             children: [
+              /* ----------------------------------------------------------- */
+
               /// Image
               Image(
                 width: EHelperFunctions.screenWidth() * 0.6,
@@ -87,6 +80,8 @@ class ResetPasswordScreen extends StatelessWidget {
                   child: const Text(ETexts.resendEmail),
                 ),
               ),
+
+              /* ----------------------------------------------------------- */
             ],
           ),
         ),

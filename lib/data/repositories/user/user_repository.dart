@@ -4,6 +4,7 @@ import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:e_commerce_app/utils/exceptions/firebase_exceptions.dart';
 import 'package:e_commerce_app/utils/exceptions/format_exceptions.dart';
 import 'package:e_commerce_app/utils/exceptions/platform_exceptions.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
@@ -27,6 +28,11 @@ class UserRepository extends GetxController {
       /* ------------------------------------------------------------------- */
 
       await _db.collection(ETexts.collectionPathUsers).doc(user.id).set(user.toJson());
+
+      //! For Debug
+      if (kDebugMode) {
+        print('Save info user into Firestore success.');
+      }
 
       /* ------------------------------------------------------------------- */
     } on FirebaseException catch (e) {

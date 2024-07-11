@@ -15,7 +15,10 @@ class OrderScreen extends StatelessWidget {
 
       appBar: EAppBar(
         showBackArrow: true,
-        title: Text(ETexts.orderScreenAppBarTitle, style: Theme.of(context).textTheme.headlineSmall),
+        title: Text(
+          ETexts.orderScreenAppBarTitle,
+          style: Theme.of(context).textTheme.headlineSmall,
+        ),
       ),
 
       /* ------------------------------------------------------------------- */

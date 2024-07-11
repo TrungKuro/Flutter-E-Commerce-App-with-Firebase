@@ -22,7 +22,7 @@ class OnBoardingDotNavigation extends StatelessWidget {
       left: ESizes.defaultSpace,
       child: SmoothPageIndicator(
         controller: controller.pageController,
-        onDotClicked: controller.dotNavigationClick,
+        onDotClicked: controller.dotNavigationClick, //?
         count: ENumberConstants.onBoardingNumber,
         effect: ExpandingDotsEffect(
           activeDotColor: isDark ? EColors.light : EColors.dark,

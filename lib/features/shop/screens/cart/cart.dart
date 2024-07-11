@@ -19,7 +19,10 @@ class CartScreen extends StatelessWidget {
 
       appBar: EAppBar(
         showBackArrow: true,
-        title: Text(ETexts.cartScreenAppBarTitle, style: Theme.of(context).textTheme.headlineSmall),
+        title: Text(
+          ETexts.cartScreenAppBarTitle,
+          style: Theme.of(context).textTheme.headlineSmall,
+        ),
       ),
 
       /* ------------------------------------------------------------------- */

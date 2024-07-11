@@ -32,10 +32,10 @@ class AuthenticationRepository extends GetxController {
   /*                                 OVERRIDE                                */
   /* ----------------------------------------------------------------------- */
 
-  /// Called from main.dart on app launch.
+  /// Called from [main.dart] on app launch.
   @override
   void onReady() {
-    // Remove the native splash screen
+    // Remove the native [Splash Screen]
     FlutterNativeSplash.remove();
     // Redirect to the appropriate
     screenRedirect();
@@ -46,7 +46,7 @@ class AuthenticationRepository extends GetxController {
   /* ----------------------------------------------------------------------- */
 
   /// Function to show relevant screen.
-  void screenRedirect() async {
+  Future<void> screenRedirect() async {
     final user = _auth.currentUser;
 
     //! For Debug
@@ -83,7 +83,15 @@ class AuthenticationRepository extends GetxController {
     try {
       /* ------------------------------------------------------------------- */
 
-      return await _auth.signInWithEmailAndPassword(email: email, password: password);
+      final UserCredential userCredential;
+      userCredential = await _auth.signInWithEmailAndPassword(email: email, password: password);
+
+      //! For Debug
+      if (kDebugMode) {
+        print('Log in to your account success.');
+      }
+
+      return userCredential;
 
       /* ------------------------------------------------------------------- */
     } on FirebaseAuthException catch (e) {
@@ -104,7 +112,15 @@ class AuthenticationRepository extends GetxController {
     try {
       /* ------------------------------------------------------------------- */
 
-      return await _auth.createUserWithEmailAndPassword(email: email, password: password);
+      final UserCredential userCredential;
+      userCredential = await _auth.createUserWithEmailAndPassword(email: email, password: password);
+
+      //! For Debug
+      if (kDebugMode) {
+        print('Create a new user account success.');
+      }
+
+      return userCredential;
 
       /* ------------------------------------------------------------------- */
     } on FirebaseAuthException catch (e) {
@@ -125,7 +141,14 @@ class AuthenticationRepository extends GetxController {
     try {
       /* ------------------------------------------------------------------- */
 
-      return await _auth.currentUser?.sendEmailVerification();
+      if (_auth.currentUser != null) {
+        await _auth.currentUser!.sendEmailVerification();
+
+        //! For Debug
+        if (kDebugMode) {
+          print('Sends a "verification email" to a user success.');
+        }
+      }
 
       /* ------------------------------------------------------------------- */
     } on FirebaseAuthException catch (e) {
@@ -148,6 +171,11 @@ class AuthenticationRepository extends GetxController {
 
       await _auth.sendPasswordResetEmail(email: email);
 
+      //! For Debug
+      if (kDebugMode) {
+        print('Sends a "password reset email" to a user success.');
+      }
+
       /* ------------------------------------------------------------------- */
     } on FirebaseAuthException catch (e) {
       throw EFirebaseAuthException(e.code).message;
@@ -163,8 +191,8 @@ class AuthenticationRepository extends GetxController {
   }
 
   /// [ReAuthenticate] - ReAuthenticate User.
-  
-  /* ----------------- Federated identity & social sign-in ----------------- */
+
+  /* ----------------- Federated identity & Social sign-in ----------------- */
 
   /// [Google Authentication] - GOOGLE
   Future<UserCredential?> signInWithGoogle() async {
@@ -196,23 +224,38 @@ class AuthenticationRepository extends GetxController {
     } on PlatformException catch (e) {
       throw EPlatformException(e.code).message;
     } catch (e) {
+      /* ------------------------------------------------------------------- */
+
       //! For Debug
       if (kDebugMode) print('Something went wrong: $e');
       return null;
+
+      /* ------------------------------------------------------------------- */
     }
   }
 
   /// [Facebook Authentication] - FACEBOOK
 
+  /// [Apple Authentication] - APPLE
+
   /* -------------- ./end Federated identity & Social sign-in -------------- */
 
   /// [Logout User] - Valid for any Authentication.
+  /// 1. Thông báo cho Google [google_sign_in] người dùng muốn đăng xuất.
+  ///    Hoặc Facebook [!!!].
+  ///    Hoặc Apple [!!!].
+  /// 2. Hoặc thông báo cho Firebase người dùng muốn đăng xuất. [firebase_auth].
+  /// 3. Quay lại màn hình [LoginScreen].
   Future<void> logout() async {
     try {
       /* ------------------------------------------------------------------- */
 
       await GoogleSignIn().signOut();
+      //!!! Facebook
+      //!!! Apple
+
       await FirebaseAuth.instance.signOut();
+
       Get.offAll(() => const LoginScreen()); //?
 
       /* ------------------------------------------------------------------- */
