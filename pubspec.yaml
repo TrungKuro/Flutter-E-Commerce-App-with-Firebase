@@ -29,6 +29,7 @@ dependencies:
   flutter_native_splash: ^2.4.0
   smooth_page_indicator: ^1.1.0
   lottie: ^3.1.2
+  shimmer: ^3.0.0
 
   # Utility (Fixed use of old version)
   connectivity_plus: ^5.0.1
@@ -46,6 +47,7 @@ dependencies:
 
   # Google
   google_sign_in: ^6.2.1
+  network_manager: ^0.1.31
 
 # ------------------------------- PACKAGES END ------------------------------ #
 

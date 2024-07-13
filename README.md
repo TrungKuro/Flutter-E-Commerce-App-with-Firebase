@@ -59,6 +59,8 @@
 > - Gói [Lottie](https://pub.dev/packages/lottie).
 > - Gói [Connectivity Plus](https://pub.dev/packages/connectivity_plus).
 > - Gói [Google Sign In](https://pub.dev/packages/google_sign_in).
+> - ...
+> - Gói [Shimmer](https://pub.dev/packages/shimmer).
 >
 > `3.` Create folders using *"feature first"* approach.
 > - Tiếp cận theo hướng *"tính năng"* trước và *"lớp"* sau.
@@ -160,13 +162,8 @@
 >     - [ARTFX J Izuku Midoriya Dark Deku Ver.](https://www.kotobukiya.co.jp/en/product/detail/p4934054052981/)
 >     - [ARTFX J Kyojuro Rengoku](https://www.kotobukiya.co.jp/en/product/detail/p4934054026562/)
 
-## Phần III. Backend:
+## Phần III. Backend: Login Backend
 
-> - Login Backend.
-> - E-Commerce Backend.
->
-> ---
->
 > <u>Nguồn</u>:
 > - [How to Setup Firebase in Flutter | Firebase CLI | Flutter Firebase](https://www.youtube.com/watch?v=91fmyvqBoEo).
 > - [Use Keytool on mac for cert validation](https://dabeen.medium.com/use-keytool-on-mac-for-cert-valida-9f5572a0ebd8).
@@ -427,6 +424,14 @@
 
 > Tương tự <u>trường hợp 3</u>: Người dùng đã có tài khoản, nhưng chưa xác thực, và quên mật khẩu.
 
+## Phần III. Backend: E-Commerce Backend
+
+> - `[7]` Flutter Firestore CRUD Operations (Create Read Update & Delete).
+>   - `Create` - User Repository (User CRUD).
+>   - `Fetch` - User only once and reuse throughout in the app (Reduce number of Reads).
+>   - `Update` - User.
+>   - `Delete` - User from Authentication and Delete Firebase Data.
+
 ---
 ---
 ---
@@ -564,6 +569,7 @@
 > |`Get.overlayContext`|Give access to current Overlay Context. Gives the context of the snackbar/dialog/bottomsheet in the "foreground", anywhere in your code.||
 > |---|---|---|
 > |`Get.snackbar()`|Sử dụng Widget Snackbar mà ko cần Context.||
+> |`Get.defaultDialog()`|Sử dụng Widget Dialog mà ko cần Context.||
 
 ### Các lớp "Controller" trong dự án sử dụng [GetxController]:
 

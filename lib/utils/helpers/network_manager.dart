@@ -16,10 +16,10 @@ class NetworkManager extends GetxController {
 
   //! Sử dụng gói "connectivity_plus"
   final Connectivity _connectivity = Connectivity();
-  late StreamSubscription<ConnectivityResult> _connectivitySubscription;
+  late final StreamSubscription<ConnectivityResult> _connectivitySubscription;
 
   //! Observable
-  final Rx<ConnectivityResult> connectionStatus = ConnectivityResult.none.obs;
+  final Rx<ConnectivityResult> _connectionStatus = ConnectivityResult.none.obs;
 
   /* ----------------------------------------------------------------------- */
   /*                                 OVERRIDE                                */
@@ -45,13 +45,26 @@ class NetworkManager extends GetxController {
 
   /// Update the connection status based on changes in connectivity and show a relevant popup for no internet connection.
   Future<void> _updateConnectionStatus(ConnectivityResult result) async {
-    connectionStatus.value = result;
-    if (connectionStatus.value == ConnectivityResult.none) {
+    /* --------------------------------------------------------------------- */
+
+    _connectionStatus.value = result;
+
+    // Ko có kết nối Internet
+    if (_connectionStatus.value == ConnectivityResult.none) {
       ELoaders.warningSnackBar(
         title: ETexts.noInternetTitle,
         message: ETexts.noInternetMsg,
       );
     }
+    // Có kết nối Internet
+    else {
+      ELoaders.infoSnackBar(
+        title: ETexts.reconnectInternetTitle,
+        message: ETexts.reconnectInternetMsg,
+      );
+    }
+
+    /* --------------------------------------------------------------------- */
   }
 
   /// Check the internet connection status.
@@ -60,8 +73,14 @@ class NetworkManager extends GetxController {
     try {
       /* ------------------------------------------------------------------- */
 
-      final result = await _connectivity.checkConnectivity();
-      if (result == ConnectivityResult.none) {
+      // final result = await _connectivity.checkConnectivity();
+      // if (result == ConnectivityResult.none) {
+      //   return false;
+      // } else {
+      //   return true;
+      // }
+
+      if (_connectionStatus.value == ConnectivityResult.none) {
         return false;
       } else {
         return true;

@@ -40,9 +40,9 @@ class LoginController extends GetxController {
   /// Automatically fill in remembered information on the form.
   @override
   void onInit() {
+    super.onInit();
     email.text = localStorage.read(ETexts.getxRememberEmail) ?? '';
     password.text = localStorage.read(ETexts.getxRememberPass) ?? '';
-    super.onInit();
   }
 
   /* ----------------------------------------------------------------------- */
@@ -182,6 +182,10 @@ class LoginController extends GetxController {
   }
 
   /// --- LOGIN with FACEBOOK (Facebook SignIn Authentication)
+  //!!!
+
+  /// --- LOGIN with APPLE (Apple SignIn Authentication)
+  //!!!
 
   /* ----------------------------------------------------------------------- */
 }

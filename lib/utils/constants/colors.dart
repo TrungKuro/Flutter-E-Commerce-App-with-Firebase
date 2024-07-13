@@ -23,6 +23,14 @@ class EColors {
     ],
   );
 
+  /* ---------------------------- Shimmer Colors --------------------------- */
+
+  static Color? darkShimmerBase = Colors.grey[850];
+  static Color? lightShimmerBase = Colors.grey[300];
+
+  static Color? darkShimmerHightLight = Colors.grey[700];
+  static Color? lightShimmerHightLight = Colors.grey[100];
+
   /* ----------------------------- Icon Colors ----------------------------- */
 
   static const Color favourite = Colors.red;
@@ -94,6 +102,7 @@ class EColors {
   /* --------------------- Error and Validation Colors --------------------- */
 
   static const Color error = Color(0xFFd32f2f);
+  static const Color dangerous = Colors.red;
   static const Color success = Color(0xFF388e3c);
   static const Color warning = Color(0xFFf57c00);
   static const Color info = Color(0xFF1976d2);

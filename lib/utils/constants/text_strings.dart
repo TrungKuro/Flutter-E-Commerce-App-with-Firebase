@@ -10,10 +10,12 @@ class ETexts {
   static const String skip = 'Skip';
   static const String done = 'Done';
   static const String save = 'Save';
+  static const String delete = 'Delete';
+  static const String cancel = 'Cancel';
   static const String apply = 'Apply';
   static const String change = 'Change';
-
   static const String submit = 'Submit';
+  static const String verify = 'Verify';
   static const String logout = 'Logout';
   static const String closeAccount = 'Close Account';
 
@@ -206,6 +208,16 @@ class ETexts {
   static const String successScreenAppBarTitle = "Payment Success!";
   static const String successScreenAppBarSubTitle = "Your item will be shipped soon!";
 
+  /* -------------------------- Change Name Screen ------------------------- */
+
+  static const String changeNameScreenAppBarTitle = "Change Name";
+  static const String changeNameScreenAppBarSubTitle =
+      "Use a real name for easy verification. This name will appear on several pages.";
+
+  /* ---------------------- Re-Auth Login Form Screen ---------------------- */
+
+  static const String reauthLoginFormScreenAppBarTitle = "Re-Authenticate User";
+
   /* ------------------------------ Categories ----------------------------- */
 
   static const String sports = 'Sports';
@@ -292,6 +304,15 @@ class ETexts {
   static const String getxRememberPass = "REMEMBER_ME_PASSWORD";
 
   /* ----------------------------------------------------------------------- */
+  /*                            SIGN-IN PROVIDERS                            */
+  /* ----------------------------------------------------------------------- */
+
+  static const String providerEmailAndPass = "password";
+  static const String providerGoogle = "google.com";
+  static const String providerFacebook = "facebook.com";
+  static const String providerApple = "apple.com";
+
+  /* ----------------------------------------------------------------------- */
   /*                           FIRESTORE - DATABASE                          */
   /* ----------------------------------------------------------------------- */
 
@@ -324,9 +345,19 @@ class ETexts {
   static const String waitLoadingDialog = 'We are processing your information...';
   static const String waitLoggingDialog = 'Logging you in...';
   static const String waitResponsesDialog = 'Processing your request...';
+  static const String waitUpdateDialog = 'We are updating your information...';
+
+  //! Notification in Popup (Dialog)
+  static const String deleteAccountTitle = 'Delete Account';
+  static const String deleteAccountMsg =
+      'Are you sure you want to delete your account permanently? This action is not reversible and all of your data will be removed permanently.';
 
   //! Notification in SnackBar
   static const String ohSnapTitle = 'Oh Snap!';
+  //
+  static const String reconnectInternetTitle = 'Connected to Internet';
+  static const String reconnectInternetMsg = 'Internet connection is restored.';
+  //
   static const String noInternetTitle = 'No Internet Connection';
   static const String noInternetMsg = 'Please check your network connection again.';
   //
@@ -347,6 +378,9 @@ class ETexts {
   static const String saveUserRecordTitle = 'Data not saved';
   static const String saveUserRecordMsg =
       'Something went wrong while saving your information. You can re-saved your data in your Profile.';
+  //
+  static const String updateSuccessTitle = 'Congratulations';
+  static const String updateNameSuccessTitle = 'Your Name has been updated.';
 
   //! Throw Error
   static const String throwError = 'Something went wrong. Please try again!';

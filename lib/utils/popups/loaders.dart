@@ -45,6 +45,27 @@ class ELoaders {
 
   /* ----------------------------------------------------------------------- */
 
+  static infoSnackBar({required title, message = '', duration = defaultTimeToView}) {
+    Get.snackbar(
+      title,
+      message,
+      isDismissible: true,
+      shouldIconPulse: true,
+      colorText: EColors.white,
+      backgroundColor: EColors.info,
+      snackPosition: SnackPosition.BOTTOM,
+      duration: Duration(seconds: duration),
+      margin: const EdgeInsets.only(
+        left: ESizes.defaultSpace,
+        right: ESizes.defaultSpace,
+        bottom: ESizes.defaultSpace,
+      ),
+      icon: const Icon(Iconsax.information, color: EColors.white),
+    ); //?
+  }
+
+  /* ----------------------------------------------------------------------- */
+
   static successSnackBar({required title, message = '', duration = defaultTimeToView}) {
     Get.snackbar(
       title,

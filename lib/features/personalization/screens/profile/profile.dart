@@ -1,6 +1,8 @@
 import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_app/common/widgets/images/circular_image.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
+import 'package:e_commerce_app/features/personalization/controllers/user_controller.dart';
+import 'package:e_commerce_app/features/personalization/screens/profile/widgets/change_name.dart';
 import 'package:e_commerce_app/features/personalization/screens/profile/widgets/profile_menu.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
@@ -8,6 +10,7 @@ import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:e_commerce_app/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -15,6 +18,8 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance; //!
+
     return Scaffold(
       /* ------------------------------------------------------------------- */
       /*                                 TOP                                 */
@@ -63,12 +68,12 @@ class ProfileScreen extends StatelessWidget {
 
                 EProfileMenu(
                   title: ETexts.nameTitle,
-                  value: ETexts.nameValue, //!!!
-                  onPressed: () {}, //?
+                  value: controller.user.value.fullName, // ETexts.nameValue, //! For test UI
+                  onPressed: () => Get.to(const ChangeNameScreen()), //?
                 ),
                 EProfileMenu(
                   title: ETexts.userNameTitle,
-                  value: ETexts.userNameValue, //!!!
+                  value: controller.user.value.userName, // ETexts.userNameValue, //! For test UI
                   onPressed: () {}, //?
                 ),
 
@@ -82,28 +87,28 @@ class ProfileScreen extends StatelessWidget {
 
                 EProfileMenu(
                   title: ETexts.userIDTitle,
-                  value: ETexts.userIDValue, //!!!
+                  value: controller.user.value.id, // ETexts.userIDValue, //! For test UI
                   icon: Iconsax.copy,
                   onPressed: () {}, //?
                 ),
                 EProfileMenu(
                   title: ETexts.emailTitle,
-                  value: ETexts.emailValue, //!!!
+                  value: controller.user.value.email, // ETexts.emailValue, //! For test UI
                   onPressed: () {}, //?
                 ),
                 EProfileMenu(
                   title: ETexts.phoneNumberTitle,
-                  value: ETexts.phoneNumberValue, //!!!
+                  value: controller.user.value.phoneNumber, // ETexts.phoneNumberValue, //! For test UI
                   onPressed: () {}, //?
                 ),
                 EProfileMenu(
                   title: ETexts.genderTitle,
-                  value: ETexts.genderValue, //!!!
+                  value: ETexts.genderValue, //! For test UI
                   onPressed: () {}, //?
                 ),
                 EProfileMenu(
                   title: ETexts.dateOfBirthTitle,
-                  value: ETexts.dateOfBirthValue, //!!!
+                  value: ETexts.dateOfBirthValue, //! For test UI
                   onPressed: () {}, //?
                 ),
 
@@ -114,7 +119,7 @@ class ProfileScreen extends StatelessWidget {
                 /// Button - Close Account
                 Center(
                   child: TextButton(
-                    onPressed: () {}, //?
+                    onPressed: () => controller.deleteAccountWarningPopup(), //?
                     child: const Text(
                       ETexts.closeAccount,
                       style: TextStyle(color: EColors.textRed),

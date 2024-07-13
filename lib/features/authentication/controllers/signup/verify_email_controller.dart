@@ -21,9 +21,9 @@ class VerifyEmailController extends GetxController {
   /// 3. Nếu người dùng xác thực rồi, tự động chuyển đến màn hình [SuccessScreen].
   @override
   void onInit() {
+    super.onInit();
     sendEmailVerification();
     setTimerForAutoRedirect();
-    super.onInit();
   }
 
   /* ----------------------------------------------------------------------- */

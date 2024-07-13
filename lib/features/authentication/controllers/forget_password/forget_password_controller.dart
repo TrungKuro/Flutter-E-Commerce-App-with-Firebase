@@ -35,7 +35,7 @@ class ForgetPasswordController extends GetxController {
 
       // Start Loading
       EFullScreenLoader.openLoadingDialog(
-        ETexts.waitLoadingDialog,
+        ETexts.waitResponsesDialog,
         EImages.loadingAnimation,
       );
 
@@ -104,7 +104,7 @@ class ForgetPasswordController extends GetxController {
 
       // Start Loading
       EFullScreenLoader.openLoadingDialog(
-        ETexts.waitLoadingDialog,
+        ETexts.waitResponsesDialog,
         EImages.loadingAnimation,
       );
 

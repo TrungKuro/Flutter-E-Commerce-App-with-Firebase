@@ -29,6 +29,8 @@ class ForgetPasswordScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            /* ------------------------------------------------------------- */
+
             /// Headings
             Text(
               ETexts.forgetPasswordTitle,
@@ -63,6 +65,8 @@ class ForgetPasswordScreen extends StatelessWidget {
                 child: const Text(ETexts.submit),
               ),
             ),
+
+            /* ------------------------------------------------------------- */
           ],
         ),
       ),

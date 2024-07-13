@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/data/repositories/user/user_repository.dart';
 import 'package:e_commerce_app/features/authentication/screens/login/login.dart';
 import 'package:e_commerce_app/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:e_commerce_app/features/authentication/screens/signup/verify_email.dart';
@@ -40,6 +41,13 @@ class AuthenticationRepository extends GetxController {
     // Redirect to the appropriate
     screenRedirect();
   }
+
+  /* ----------------------------------------------------------------------- */
+  /*                                  GETTER                                 */
+  /* ----------------------------------------------------------------------- */
+
+  /// Get Authenticated User Data.
+  User? get authUser => _auth.currentUser;
 
   /* ----------------------------------------------------------------------- */
   /*                                 FUNCTION                                */
@@ -190,7 +198,35 @@ class AuthenticationRepository extends GetxController {
     }
   }
 
-  /// [ReAuthenticate] - ReAuthenticate User.
+  /// [Re Authenticate] - ReAuthenticate User.
+  Future<void> reAuthenticateEmailAndPassword(String email, String password) async {
+    try {
+      /* ------------------------------------------------------------------- */
+
+      // Create a credential
+      AuthCredential credential = EmailAuthProvider.credential(email: email, password: password);
+
+      // ReAuthenticate
+      await _auth.currentUser!.reauthenticateWithCredential(credential);
+
+      //! For Debug
+      if (kDebugMode) {
+        print('Re-Authenticate user success.');
+      }
+
+      /* ------------------------------------------------------------------- */
+    } on FirebaseAuthException catch (e) {
+      throw EFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw EFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const EFormatException();
+    } on PlatformException catch (e) {
+      throw EPlatformException(e.code).message;
+    } catch (e) {
+      throw ETexts.throwError;
+    }
+  }
 
   /* ----------------- Federated identity & Social sign-in ----------------- */
 
@@ -235,8 +271,10 @@ class AuthenticationRepository extends GetxController {
   }
 
   /// [Facebook Authentication] - FACEBOOK
+  //!!!
 
   /// [Apple Authentication] - APPLE
+  //!!!
 
   /* -------------- ./end Federated identity & Social sign-in -------------- */
 
@@ -256,6 +294,11 @@ class AuthenticationRepository extends GetxController {
 
       await FirebaseAuth.instance.signOut();
 
+      //! For Debug
+      if (kDebugMode) {
+        print('Logout user success.');
+      }
+
       Get.offAll(() => const LoginScreen()); //?
 
       /* ------------------------------------------------------------------- */
@@ -273,6 +316,32 @@ class AuthenticationRepository extends GetxController {
   }
 
   /// [Delete User] - Remove user Auth and Firestore Account.
+  Future<void> deleteAccount() async {
+    try {
+      /* ------------------------------------------------------------------- */
+
+      await UserRepository.instance.removeUserRecord(_auth.currentUser!.uid);
+
+      await _auth.currentUser?.delete();
+
+      //! For Debug
+      if (kDebugMode) {
+        print('Delete user success.');
+      }
+
+      /* ------------------------------------------------------------------- */
+    } on FirebaseAuthException catch (e) {
+      throw EFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw EFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const EFormatException();
+    } on PlatformException catch (e) {
+      throw EPlatformException(e.code).message;
+    } catch (e) {
+      throw ETexts.throwError;
+    }
+  }
 
   /* ----------------------------------------------------------------------- */
 }
