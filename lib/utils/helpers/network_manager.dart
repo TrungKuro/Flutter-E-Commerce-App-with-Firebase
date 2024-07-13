@@ -15,11 +15,9 @@ class NetworkManager extends GetxController {
   /* ----------------------------------------------------------------------- */
 
   //! Sử dụng gói "connectivity_plus"
+  List<ConnectivityResult> _connectionStatus = [ConnectivityResult.none];
   final Connectivity _connectivity = Connectivity();
-  late final StreamSubscription<ConnectivityResult> _connectivitySubscription;
-
-  //! Observable
-  final Rx<ConnectivityResult> _connectionStatus = ConnectivityResult.none.obs;
+  late StreamSubscription<List<ConnectivityResult>> _connectivitySubscription;
 
   /* ----------------------------------------------------------------------- */
   /*                                 OVERRIDE                                */
@@ -44,27 +42,21 @@ class NetworkManager extends GetxController {
   /* ----------------------------------------------------------------------- */
 
   /// Update the connection status based on changes in connectivity and show a relevant popup for no internet connection.
-  Future<void> _updateConnectionStatus(ConnectivityResult result) async {
-    /* --------------------------------------------------------------------- */
-
-    _connectionStatus.value = result;
-
-    // Ko có kết nối Internet
-    if (_connectionStatus.value == ConnectivityResult.none) {
+  Future<void> _updateConnectionStatus(List<ConnectivityResult> result) async {
+    _connectionStatus = result;
+    if (_connectionStatus.contains(ConnectivityResult.none)) {
+      // No available network types
       ELoaders.warningSnackBar(
         title: ETexts.noInternetTitle,
         message: ETexts.noInternetMsg,
       );
-    }
-    // Có kết nối Internet
-    else {
+    } else {
+      // Network available
       ELoaders.infoSnackBar(
         title: ETexts.reconnectInternetTitle,
         message: ETexts.reconnectInternetMsg,
       );
     }
-
-    /* --------------------------------------------------------------------- */
   }
 
   /// Check the internet connection status.
@@ -73,14 +65,14 @@ class NetworkManager extends GetxController {
     try {
       /* ------------------------------------------------------------------- */
 
-      // final result = await _connectivity.checkConnectivity();
-      // if (result == ConnectivityResult.none) {
+      // final List<ConnectivityResult> result = await _connectivity.checkConnectivity();
+      // if (result.contains(ConnectivityResult.none)) {
       //   return false;
       // } else {
       //   return true;
       // }
 
-      if (_connectionStatus.value == ConnectivityResult.none) {
+      if (_connectionStatus.contains(ConnectivityResult.none)) {
         return false;
       } else {
         return true;
@@ -92,5 +84,7 @@ class NetworkManager extends GetxController {
     }
   }
 
+  /* ----------------------------------------------------------------------- */
+  /*                                   ...                                   */
   /* ----------------------------------------------------------------------- */
 }

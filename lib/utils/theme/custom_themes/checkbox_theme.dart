@@ -11,11 +11,11 @@ class EAppCheckboxTheme {
 
   static CheckboxThemeData lightCheckboxTheme = CheckboxThemeData(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-    checkColor: MaterialStateProperty.resolveWith(
-      (states) => (states.contains(MaterialState.selected)) ? EColors.white : EColors.black,
+    checkColor: WidgetStateProperty.resolveWith(
+      (states) => (states.contains(WidgetState.selected)) ? EColors.white : EColors.black,
     ),
-    fillColor: MaterialStateProperty.resolveWith(
-      (states) => (states.contains(MaterialState.selected)) ? EColors.primary : Colors.transparent,
+    fillColor: WidgetStateProperty.resolveWith(
+      (states) => (states.contains(WidgetState.selected)) ? EColors.primary : Colors.transparent,
     ),
   );
 
@@ -23,11 +23,11 @@ class EAppCheckboxTheme {
 
   static CheckboxThemeData darkCheckboxTheme = CheckboxThemeData(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-    checkColor: MaterialStateProperty.resolveWith(
-      (states) => (states.contains(MaterialState.selected)) ? EColors.white : EColors.black,
+    checkColor: WidgetStateProperty.resolveWith(
+      (states) => (states.contains(WidgetState.selected)) ? EColors.white : EColors.black,
     ),
-    fillColor: MaterialStateProperty.resolveWith(
-      (states) => (states.contains(MaterialState.selected)) ? EColors.primary : Colors.transparent,
+    fillColor: WidgetStateProperty.resolveWith(
+      (states) => (states.contains(WidgetState.selected)) ? EColors.primary : Colors.transparent,
     ),
   );
 }

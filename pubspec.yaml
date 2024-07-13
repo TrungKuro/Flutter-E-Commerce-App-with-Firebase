@@ -30,9 +30,7 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   lottie: ^3.1.2
   shimmer: ^3.0.0
-
-  # Utility (Fixed use of old version)
-  connectivity_plus: ^5.0.1
+  connectivity_plus: ^6.0.3
 
   # Product Specific
   carousel_slider: ^4.2.1
@@ -54,7 +52,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.0
+  flutter_lints: ^4.0.0
 
 flutter:
   uses-material-design: true
