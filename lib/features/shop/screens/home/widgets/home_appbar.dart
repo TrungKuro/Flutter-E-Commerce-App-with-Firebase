@@ -32,7 +32,7 @@ class EHomeAppBar extends StatelessWidget {
               return const EShimmerEffect(width: 80, height: 15);
             } else {
               return Text(
-                controller.user.value.fullName, // ETexts.userNameValue, //! For test UI
+                controller.user.value.userName, // ETexts.userNameValue, //! For test UI
                 style: Theme.of(context).textTheme.headlineSmall!.apply(color: EColors.white),
               );
             }

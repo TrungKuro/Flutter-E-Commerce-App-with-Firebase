@@ -69,7 +69,7 @@ class ProfileScreen extends StatelessWidget {
                 EProfileMenu(
                   title: ETexts.nameTitle,
                   value: controller.user.value.fullName, // ETexts.nameValue, //! For test UI
-                  onPressed: () => Get.to(const ChangeNameScreen()), //?
+                  onPressed: () => Get.to(() => const ChangeNameScreen()), //?
                 ),
                 EProfileMenu(
                   title: ETexts.userNameTitle,

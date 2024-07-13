@@ -23,8 +23,9 @@ class EProfileMenu extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: ESizes.spaceBtwItems / 1.5),
         child: Row(
           children: [
+            /* ------------------------------------------------------------- */
             Expanded(
-              flex: 3,
+              flex: 4,
               child: Text(
                 title,
                 style: Theme.of(context).textTheme.bodySmall,
@@ -32,7 +33,7 @@ class EProfileMenu extends StatelessWidget {
               ),
             ),
             Expanded(
-              flex: 5,
+              flex: 6,
               child: Text(
                 value,
                 style: Theme.of(context).textTheme.bodyMedium,
@@ -40,6 +41,7 @@ class EProfileMenu extends StatelessWidget {
               ),
             ),
             Expanded(child: Icon(icon, size: 18)),
+            /* ------------------------------------------------------------- */
           ],
         ),
       ),
