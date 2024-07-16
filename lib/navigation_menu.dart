@@ -64,7 +64,7 @@ class NavigationController extends GetxController {
   /* ----------------------------------------------------------------------- */
 
   //! Observable
-  final Rx<int> selectedIndex = 0.obs;
+  final selectedIndex = 0.obs;
   
   final screens = [
     const HomeScreen(),

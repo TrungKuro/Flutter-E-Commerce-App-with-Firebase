@@ -114,14 +114,14 @@ class SignupController extends GetxController {
       // Stop Loading
       EFullScreenLoader.stopLoading();
 
+      // Move to [VerifyEmail Screen]
+      Get.to(() => VerifyEmailScreen(email: email.text.trim())); //?
+
       // Show success message
       ELoaders.successSnackBar(
         title: ETexts.signUpSuccessTitle,
         message: ETexts.signUpSuccessMsg,
       );
-
-      // Move to [VerifyEmail Screen]
-      Get.to(() => VerifyEmailScreen(email: email.text.trim())); //?
 
       /* ------------------------------------------------------------------- */
     } catch (e) {

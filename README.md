@@ -247,6 +247,11 @@
 >   - Add `SHA1` and `SHA256`.
 >     - Tăng cường bảo mật cho dự án của bạn bằng cách định cấu hình cài đặt `SHA1` và `SHA256`, đảm bảo quy trình xác thực mạnh mẽ.
 > - `[6]` Flutter Forgot Password with firebase | Reset Password in flutter.
+> - `[7]` Flutter Firestore CRUD Operations (Create Read Update & Delete).
+>   - `Create` - User Repository (User CRUD).
+>   - `Fetch` - User only once and reuse throughout in the app (Reduce number of Reads).
+>   - `Update` - User.
+>   - `Delete` - User from Authentication and Delete Firebase Data.
 >
 > ---
 >
@@ -284,6 +289,7 @@
 >     - Đăng ký qua Email/Pass.
 >     - Đăng ký qua Google.
 >     - Đăng ký qua Facebook.
+>     - Đăng ký qua Apple.
 > 2. Người dùng đã có tài khoản, nhưng chưa xác thực.
 >     - Xác thực qua Email.
 > 3. Người dùng đã có tài khoản, nhưng chưa xác thực, và quên mật khẩu.
@@ -402,7 +408,7 @@
 > [Login Screen] --- Btn.(Icon Apple)={appleSignIn} --> !!!
 > ~~~
 >
-> - Tại màn hình **[Login Screen]** gười dùng có <u>`4` lựa chọn để đăng nhập tài khoản</u>:
+> - Tại màn hình **[Login Screen]** người dùng có <u>`4` lựa chọn để đăng nhập tài khoản</u>:
 >
 > 1. Nếu chọn đăng nhập qua `Email/Pass`, nhấn nút *(Sign In)*.
 >     - Tuy nhiên người dùng phải nhập đầy đủ các thông tin gồm: { E-Mail ; Pass } và các thông tin này phải hợp lệ.
@@ -424,13 +430,61 @@
 
 > Tương tự <u>trường hợp 3</u>: Người dùng đã có tài khoản, nhưng chưa xác thực, và quên mật khẩu.
 
+### Phân tích quá trình đăng xuất hoặc xóa tài khoản.
+
+> Gồm `2` trường hợp:
+> 1. Người dùng đăng xuất, vẫn có thể đăng nhập lại.
+>     - Đăng xuất tài khoản.
+> 2. Người dùng xóa tài khoản, ko thể đăng nhập lại bằng tài khoản đó nữa.
+>     - Xóa tài khoản đăng ký qua Email/Pass.
+>     - Xóa tài khoản đăng ký qua Google.
+>     - Xóa tài khoản đăng ký qua Facebook.
+>     - Xóa tài khoản đăng ký qua Apple.
+
+#### Trường hợp 1: Người dùng đăng xuất, vẫn có thể đăng nhập lại.
+
+> ~~~
+> [Settings Screen] --- Btn.(Logout)={logout} --> [SignUp Screen]
+> ~~~
+>
+> - Tại màn hình **[Settings Screen]** thuộc mục *(Profile)* của **[Navigation Menu]**.
+> - Nhấn nút *(Logout)*, sẽ đăng xuất tài khoản hiện đang đăng nhập.
+> - Và chuyển đến màn hình **[SignUp Screen]**.
+
+#### Trường hợp 2: Người dùng xóa tài khoản, ko thể đăng nhập lại bằng tài khoản đó nữa.
+
+> ~~~
+> [Settings Screen] --- Btn.(Icon Edit) --> [Profile Screen]
+>                 | <---------------------- |
+>
+> [Profile Screen] --- Btn.(Close Account)={deleteAccountWarningPopup} --> [Dialog] --> Btn.(Cancel) --> [Profile Screen]
+>                |                                                                  |
+>                |                                                                  --> Btn.(Delete)={deleteUserAccount} --> [ReAuthLoginForm Screen] --- Btn.(Verify)={reAuthenticateEmailAndPasswordUser} --> [Profile Screen]
+>                | <-------------------------------------------------------------------------------------------------------- |
+> ~~~
+>
+> - Tại màn hình **[Settings Screen]** thuộc mục *(Profile)* của **[Navigation Menu]**.
+> - Nhấn nút *(Icon Edit)*, sẽ chuyển đến màn hình **[Profile Screen]**.
+> - Tại màn hình **[Profile Screen]** sẽ có <u>`4` trường hợp khi xóa tài khoản</u> dựa vào loại tài khoản hiện tại đang đăng nhập:
+>
+> 1. Xóa tài khoản đăng ký qua `Email/Pass`.
+>     - Sẽ chuyển đến màn hình **[ReAuthLoginForm Screen]**, cần nhấn nút *(Verify)* để xóa tài khoản.
+>     - Tuy nhiên người dùng phải nhập đầy đủ các thông tin gồm: { E-Mail ; Pass } và các thông tin này phải hợp lệ.
+>     - Sau khi <u>xác thực đăng nhập lại thành công</u>, qua dịch vụ `Authentication` của Firebase.
+>     - Tài khoản sẽ được xóa và chuyển đến màn hình **[Login Screen]**.
+>
+> 2. Xóa tài khoản đăng ký qua `Google`.
+>     - !!!
+>
+> 3. Xóa tài khoản đăng ký qua `Facebook`.
+>     - !!!
+>
+> 4. Xóa tài khoản đăng ký qua `Apple`.
+>     - !!!
+
 ## Phần III. Backend: E-Commerce Backend
 
-> - `[7]` Flutter Firestore CRUD Operations (Create Read Update & Delete).
->   - `Create` - User Repository (User CRUD).
->   - `Fetch` - User only once and reuse throughout in the app (Reduce number of Reads).
->   - `Update` - User.
->   - `Delete` - User from Authentication and Delete Firebase Data.
+> !!!
 
 ---
 ---

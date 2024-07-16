@@ -16,7 +16,7 @@ class OnBoardingController extends GetxController {
   final pageController = PageController();
 
   //! Observable
-  Rx<int> currentPageIndex = 0.obs;
+  final currentPageIndex = 0.obs;
 
   /* ----------------------------------------------------------------------- */
   /*                                 FUNCTION                                */

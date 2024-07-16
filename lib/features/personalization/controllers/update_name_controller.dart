@@ -1,6 +1,5 @@
 import 'package:e_commerce_app/data/repositories/user/user_repository.dart';
 import 'package:e_commerce_app/features/personalization/controllers/user_controller.dart';
-import 'package:e_commerce_app/features/personalization/screens/profile/profile.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:e_commerce_app/utils/helpers/network_manager.dart';
@@ -91,17 +90,20 @@ class UpdateNameController extends GetxController {
       userController.user.value.firstName = firstName.text.trim();
       userController.user.value.lastName = lastName.text.trim();
 
+      //! Update values ​​with specific format from [UserModel]
+      userController.fullNameUser.value = userController.user.value.formattedFullName;
+
       // Stop Loading
       EFullScreenLoader.stopLoading();
+
+      // Move to the previous screen [Profile Screen]
+      Get.back();
 
       // Show success message
       ELoaders.successSnackBar(
         title: ETexts.updateSuccessTitle,
         message: ETexts.updateNameSuccessTitle,
       );
-
-      // Move to the previous screen [Profile Screen]
-      Get.off(() => const ProfileScreen());
 
       /* ------------------------------------------------------------------- */
     } catch (e) {

@@ -61,7 +61,7 @@ class ForgetPasswordController extends GetxController {
         return;
       }
 
-      // Sends a password reset email to the given email address
+      //! Sends a password reset email to the given email address
       await AuthenticationRepository.instance.sendPasswordResetEmail(
         email.text.trim(),
       );
@@ -69,14 +69,14 @@ class ForgetPasswordController extends GetxController {
       // Stop Loading
       EFullScreenLoader.stopLoading();
 
+      // Move to [ResetPassword Screen]
+      Get.to(() => ResetPasswordScreen(email: email.text.trim())); //?
+
       // Show success message
       ELoaders.successSnackBar(
         title: ETexts.sentEmailSuccessTitle,
         message: ETexts.receivedEmailResetMsg,
       );
-
-      // Move to [ResetPassword Screen]
-      Get.off(() => ResetPasswordScreen(email: email.text.trim())); //?
 
       /* ------------------------------------------------------------------- */
     } catch (e) {
@@ -122,7 +122,7 @@ class ForgetPasswordController extends GetxController {
         return;
       }
 
-      // Sends a password reset email to the given email address
+      //! Sends a password reset email to the given email address
       await AuthenticationRepository.instance.sendPasswordResetEmail(email);
 
       // Stop Loading

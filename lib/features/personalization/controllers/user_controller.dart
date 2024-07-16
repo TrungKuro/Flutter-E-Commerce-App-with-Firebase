@@ -29,10 +29,14 @@ class UserController extends GetxController {
   final profileLoading = false.obs;
 
   //! Observable for hiding/showing password
-  final hidePassword = false.obs;
+  final hidePassword = true.obs;
 
   //! Observable
-  Rx<UserModel> user = UserModel.empty().obs;
+  final Rx<UserModel> user = UserModel.empty().obs;
+
+  //! Observable value from formats of [UserModel]
+  final fullNameUser = ''.obs;
+  final phoneNoUser = ''.obs;
 
   //! Form key for Form Validation
   GlobalKey<FormState> reAuthFormKey = GlobalKey<FormState>();
@@ -61,6 +65,10 @@ class UserController extends GetxController {
       //! Load information from the user account to the UI
       final user = await userRepository.fetchUserDetails();
       this.user(user);
+
+      //! And some separately formatted data
+      fullNameUser.value = this.user.value.formattedFullName;
+      phoneNoUser.value = this.user.value.formattedPhoneNo;
 
       /* ------------------------------------------------------------------- */
     } catch (e) {
@@ -129,7 +137,7 @@ class UserController extends GetxController {
             // Stop Loading
             EFullScreenLoader.stopLoading();
             // Move to [ReAuthLoginForm Screen]
-            Get.to(() => const ReAuthLoginFormScreen());
+            Get.off(() => const ReAuthLoginFormScreen());
 
           /* --------------------------------------------------------------- */
 
@@ -243,21 +251,25 @@ class UserController extends GetxController {
       contentPadding: const EdgeInsets.all(ESizes.md),
       title: ETexts.deleteAccountTitle,
       middleText: ETexts.deleteAccountMsg,
+      /* ------------------------------------------------------------------- */
       confirm: ElevatedButton(
         onPressed: () async => deleteUserAccount(), //?
         style: ElevatedButton.styleFrom(
           backgroundColor: EColors.dangerous,
           side: const BorderSide(color: EColors.dangerous),
+          padding: const EdgeInsets.symmetric(vertical: ESizes.sm, horizontal: ESizes.md),
         ),
-        child: const Padding(
-          padding: EdgeInsets.symmetric(horizontal: ESizes.lg),
-          child: Text(ETexts.delete),
-        ),
+        child: const Text(ETexts.delete),
       ),
+      /* ------------------------------------------------------------------- */
       cancel: OutlinedButton(
         onPressed: () => Navigator.of(Get.overlayContext!).pop(), //?
+        style: OutlinedButton.styleFrom(
+          padding: const EdgeInsets.symmetric(vertical: ESizes.sm, horizontal: ESizes.md),
+        ),
         child: const Text(ETexts.cancel),
       ),
+      /* ------------------------------------------------------------------- */
     );
   }
 

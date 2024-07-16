@@ -66,10 +66,12 @@ class ProfileScreen extends StatelessWidget {
                 const ESectionHeading(title: ETexts.profileInformationTitle, showActionButton: false),
                 const SizedBox(height: ESizes.spaceBtwItems),
 
-                EProfileMenu(
-                  title: ETexts.nameTitle,
-                  value: controller.user.value.fullName, // ETexts.nameValue, //! For test UI
-                  onPressed: () => Get.to(() => const ChangeNameScreen()), //?
+                Obx(
+                  () => EProfileMenu(
+                    title: ETexts.nameTitle,
+                    value: controller.fullNameUser.value, // ETexts.nameValue, //! For test UI
+                    onPressed: () => Get.to(() => const ChangeNameScreen()), //?
+                  ),
                 ),
                 EProfileMenu(
                   title: ETexts.userNameTitle,
@@ -94,11 +96,12 @@ class ProfileScreen extends StatelessWidget {
                 EProfileMenu(
                   title: ETexts.emailTitle,
                   value: controller.user.value.email, // ETexts.emailValue, //! For test UI
+                  icon: Iconsax.copy,
                   onPressed: () {}, //?
                 ),
                 EProfileMenu(
                   title: ETexts.phoneNumberTitle,
-                  value: controller.user.value.phoneNumber, // ETexts.phoneNumberValue, //! For test UI
+                  value: controller.phoneNoUser.value, // ETexts.phoneNumberValue, //! For test UI
                   onPressed: () {}, //?
                 ),
                 EProfileMenu(

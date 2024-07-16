@@ -12,6 +12,16 @@ class VerifyEmailController extends GetxController {
   static VerifyEmailController get instance => Get.find(); //!
 
   /* ----------------------------------------------------------------------- */
+  /*                                 VARIABLE                                */
+  /* ----------------------------------------------------------------------- */
+
+  /// Bộ hẹn giờ kiểm tra "xác thực email" liên tục
+  final timerCheck = Timer(
+    Duration.zero,
+    () {},
+  );
+
+  /* ----------------------------------------------------------------------- */
   /*                                 OVERRIDE                                */
   /* ----------------------------------------------------------------------- */
 
@@ -26,6 +36,16 @@ class VerifyEmailController extends GetxController {
     setTimerForAutoRedirect();
   }
 
+  /// Dispose or close the active timer.
+  /// 1. Điều này đảm bảo bộ Timer được tắt hoàn toàn.
+  ///    Trong trường hợp người dùng không xác thực liền mà thoát màn hình [VerifyEmail Screen].
+  ///    Sau đó họ mới "xác thực email" và đăng nhập lại trên màn [Login Screen].
+  @override
+  void onClose() {
+    super.onClose();
+    timerCheck.cancel(); //!
+  }
+
   /* ----------------------------------------------------------------------- */
   /*                                 FUNCTION                                */
   /* ----------------------------------------------------------------------- */
@@ -36,7 +56,7 @@ class VerifyEmailController extends GetxController {
     try {
       /* ------------------------------------------------------------------- */
 
-      // Send verification email again
+      //! Send verification email again
       await AuthenticationRepository.instance.sendEmailVerification();
 
       // Show success message
@@ -67,12 +87,12 @@ class VerifyEmailController extends GetxController {
   Future<void> setTimerForAutoRedirect() async {
     Timer.periodic(
       const Duration(seconds: 1),
-      (timer) async {
+      (timerCheck) async {
         await FirebaseAuth.instance.currentUser?.reload();
         final user = FirebaseAuth.instance.currentUser;
         if (user?.emailVerified ?? false) {
-          timer.cancel(); //!
-          Get.off(
+          timerCheck.cancel(); //!
+          Get.to(
             () => SuccessScreen(
               isImgJson: true,
               image: EImages.successAnimation,
@@ -86,6 +106,8 @@ class VerifyEmailController extends GetxController {
     ); //!
   }
 
+
+  //! Với tính năng "tự động kiểm tra xác thực" thì hầu như lệnh này không được dùng tới.
   /// Manually check if email verified.
   /// 1. Kiểm tra có tài khoản nào đang đăng nhập chưa?
   /// 2. Nếu rồi thì kiểm tra tài khoản đó có được xác thực qua email chưa?
@@ -94,7 +116,7 @@ class VerifyEmailController extends GetxController {
   Future<void> checkEmailVerificationStatus() async {
     final currentUser = FirebaseAuth.instance.currentUser;
     if (currentUser != null && currentUser.emailVerified) {
-      Get.off(
+      Get.to(
         () => SuccessScreen(
           image: EImages.staticSuccessIllustration,
           title: ETexts.yourAccountCreatedTitle,

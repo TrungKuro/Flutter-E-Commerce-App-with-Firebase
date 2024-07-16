@@ -64,7 +64,7 @@ class ReAuthLoginFormScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: ESizes.spaceBtwInputFields),
 
-                /// Login Button
+                /// Verify Button
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
