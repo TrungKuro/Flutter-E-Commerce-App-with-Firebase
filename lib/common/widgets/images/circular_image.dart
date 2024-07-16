@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:e_commerce_app/common/widgets/shimmer/shimmer_effect.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -40,17 +42,35 @@ class ECircularImage extends StatelessWidget {
       ),
       child: isClip
           ? ClipOval(
-              child: Image(
-                fit: fit,
-                image: isNetworkImage ? NetworkImage(image) : AssetImage(image) as ImageProvider,
-                color: overlayColor,
-              ),
+              child: isNetworkImage
+                  ? CachedNetworkImage(
+                      fit: fit,
+                      color: overlayColor,
+                      imageUrl: image,
+                      progressIndicatorBuilder: (context, url, downloadProgress) =>
+                          const EShimmerEffect(width: 55, height: 55),
+                      errorWidget: (context, url, error) => const Icon(Icons.error),
+                    )
+                  : Image(
+                      fit: fit,
+                      color: overlayColor,
+                      image: AssetImage(image),
+                    ),
             )
-          : Image(
-              fit: fit,
-              image: isNetworkImage ? NetworkImage(image) : AssetImage(image) as ImageProvider,
-              color: overlayColor,
-            ),
+          : isNetworkImage
+              ? CachedNetworkImage(
+                  fit: fit,
+                  color: overlayColor,
+                  imageUrl: image,
+                  progressIndicatorBuilder: (context, url, downloadProgress) =>
+                      const EShimmerEffect(width: 55, height: 55),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                )
+              : Image(
+                  fit: fit,
+                  color: overlayColor,
+                  image: AssetImage(image),
+                ),
     );
   }
 }

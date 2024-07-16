@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_commerce_app/data/repositories/authentication/authentication_repository.dart';
 import 'package:e_commerce_app/features/personalization/models/user_model.dart';
@@ -5,9 +7,11 @@ import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:e_commerce_app/utils/exceptions/firebase_exceptions.dart';
 import 'package:e_commerce_app/utils/exceptions/format_exceptions.dart';
 import 'package:e_commerce_app/utils/exceptions/platform_exceptions.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 class UserRepository extends GetxController {
   static UserRepository get instance => Get.find(); //!
@@ -31,9 +35,7 @@ class UserRepository extends GetxController {
       await _db.collection(ETexts.collectionPathUsers).doc(user.id).set(user.toJson());
 
       //! For Debug
-      if (kDebugMode) {
-        print('Save info user into Firestore success.');
-      }
+      if (kDebugMode) print('Save info user into Firestore success.');
 
       /* ------------------------------------------------------------------- */
     } on FirebaseException catch (e) {
@@ -84,9 +86,7 @@ class UserRepository extends GetxController {
       await _db.collection(ETexts.collectionPathUsers).doc(updateUser.id).update(updateUser.toJson());
 
       //! For Debug
-      if (kDebugMode) {
-        print('Update data user into Firestore success.');
-      }
+      if (kDebugMode) print('Update data user into Firestore success.');
 
       /* ------------------------------------------------------------------- */
     } on FirebaseException catch (e) {
@@ -111,9 +111,7 @@ class UserRepository extends GetxController {
           .update(json);
 
       //! For Debug
-      if (kDebugMode) {
-        print('Update single data user into Firestore success.');
-      }
+      if (kDebugMode) print('Update single data user into Firestore success.');
 
       /* ------------------------------------------------------------------- */
     } on FirebaseException catch (e) {
@@ -135,9 +133,7 @@ class UserRepository extends GetxController {
       await _db.collection(ETexts.collectionPathUsers).doc(userID).delete();
 
       //! For Debug
-      if (kDebugMode) {
-        print('Delete info user out Firestore success.');
-      }
+      if (kDebugMode) print('Delete info user out Firestore success.');
 
       /* ------------------------------------------------------------------- */
     } on FirebaseException catch (e) {
@@ -152,7 +148,31 @@ class UserRepository extends GetxController {
   }
 
   /// Function to UPLOAD any Image.
-  //!!!
+  Future<String> uploadImage(String path, XFile image) async {
+    try {
+      /* ------------------------------------------------------------------- */
+
+      //! Upload a [File] from the filesystem then fetches a download URL for this object
+      final ref = FirebaseStorage.instance.ref(path).child(image.name);
+      await ref.putFile(File(image.path));
+      final url = await ref.getDownloadURL();
+
+      //! For Debug
+      if (kDebugMode) print('Upload Image into FirebaseStorage and get URL Image success.');
+
+      return url;
+
+      /* ------------------------------------------------------------------- */
+    } on FirebaseException catch (e) {
+      throw EFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const EFormatException();
+    } on PlatformException catch (e) {
+      throw EPlatformException(e.code).message;
+    } catch (e) {
+      throw ETexts.throwError;
+    }
+  }
 
   /* ----------------------------------------------------------------------- */
 }

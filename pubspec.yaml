@@ -31,6 +31,8 @@ dependencies:
   lottie: ^3.1.2
   shimmer: ^3.0.0
   connectivity_plus: ^6.0.3
+  image_picker: ^1.1.2
+  cached_network_image: ^3.3.1
 
   # Product Specific
   carousel_slider: ^4.2.1
@@ -45,7 +47,6 @@ dependencies:
 
   # Google
   google_sign_in: ^6.2.1
-  network_manager: ^0.1.31
 
 # ------------------------------- PACKAGES END ------------------------------ #
 

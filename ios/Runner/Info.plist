@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 	<dict>
+		<!-- Image Picker Section -->
+		<key>NSPhotoLibraryUsageDescription</key>
+		<string>This app require access for Photo Library Usage.</string>
+		<!-- <key>NSCameraUsageDescription</key>
+		<string>This app require access to the Camera.</string> -->
+		<!-- End of the Image Picker Section -->
 		<key>CFBundleDevelopmentRegion</key>
 		<string>$(DEVELOPMENT_LANGUAGE)</string>
 		<key>CFBundleDisplayName</key>

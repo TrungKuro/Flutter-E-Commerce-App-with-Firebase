@@ -61,6 +61,8 @@
 > - Gói [Google Sign In](https://pub.dev/packages/google_sign_in).
 > - ...
 > - Gói [Shimmer](https://pub.dev/packages/shimmer).
+> - Gói [Image Picker](https://pub.dev/packages/image_picker).
+> - Gói [Cached Network Image](https://pub.dev/packages/cached_network_image).
 >
 > `3.` Create folders using *"feature first"* approach.
 > - Tiếp cận theo hướng *"tính năng"* trước và *"lớp"* sau.
@@ -252,6 +254,10 @@
 >   - `Fetch` - User only once and reuse throughout in the app (Reduce number of Reads).
 >   - `Update` - User.
 >   - `Delete` - User from Authentication and Delete Firebase Data.
+> - `[8]` Flutter Upload Images To Firebase Storage | Display Images From Storage
+>   - Add Dependency image_picker.
+>     - Thêm gói pub cần thiết, **[image_picker]**, để kích hoạt chức năng truy cập hình ảnh trong thiết bị người dùng làm hình nền avatar.
+>     - [Image Picker Permission for Flutter iOS & Android Phone | Pick Image & Capture Image Tutorial 2023](https://www.youtube.com/watch?v=qKTUQbKZNG4).
 >
 > ---
 >

@@ -313,7 +313,7 @@ class ETexts {
   static const String providerApple = "apple.com";
 
   /* ----------------------------------------------------------------------- */
-  /*                           FIRESTORE - DATABASE                          */
+  /*                      FIRESTORE DATABASE (FIREBASE)                      */
   /* ----------------------------------------------------------------------- */
 
   // Đường dẫn đến thông tin người dùng: [ Users ] -> [ ID_USER ] -> [ JSON ]
@@ -336,6 +336,15 @@ class ETexts {
   static const String userModelEmail = "Email";
   static const String userModelPhoneNumber = "PhoneNumber";
   static const String userModelProfilePicture = "ProfilePicture";
+
+  /* ----------------------------------------------------------------------- */
+  /*                            STORAGE (FIREBASE)                           */
+  /* ----------------------------------------------------------------------- */
+
+  // Đường dẫn đến hình ảnh người dùng cung cấp: [ Users ] -> [ Images ] -> [ Profile ]
+  // Hình ảnh người dùng tải lên được lưu trong Storage của Firebase
+
+  static const String storagePathUsersImagesProfile = "Users/Images/Profile/";
 
   /* ----------------------------------------------------------------------- */
   /*                               NOTIFICATION                              */
@@ -381,6 +390,7 @@ class ETexts {
   //
   static const String updateSuccessTitle = 'Congratulations';
   static const String updateNameSuccessTitle = 'Your Name has been updated.';
+  static const String updateProfileImageSuccessTitle = 'Your Profile Image has been updated!';
 
   //! Throw Error
   static const String throwError = 'Something went wrong. Please try again!';

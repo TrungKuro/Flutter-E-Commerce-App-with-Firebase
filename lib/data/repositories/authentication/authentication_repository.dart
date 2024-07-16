@@ -95,9 +95,7 @@ class AuthenticationRepository extends GetxController {
       userCredential = await _auth.signInWithEmailAndPassword(email: email, password: password);
 
       //! For Debug
-      if (kDebugMode) {
-        print('Log in to your account success.');
-      }
+      if (kDebugMode) print('Log in to your account success.');
 
       return userCredential;
 
@@ -124,9 +122,7 @@ class AuthenticationRepository extends GetxController {
       userCredential = await _auth.createUserWithEmailAndPassword(email: email, password: password);
 
       //! For Debug
-      if (kDebugMode) {
-        print('Create a new user account success.');
-      }
+      if (kDebugMode) print('Create a new user account success.');
 
       return userCredential;
 
@@ -153,9 +149,7 @@ class AuthenticationRepository extends GetxController {
         await _auth.currentUser!.sendEmailVerification();
 
         //! For Debug
-        if (kDebugMode) {
-          print('Sends a "verification email" to a user success.');
-        }
+        if (kDebugMode) print('Sends a "verification email" to a user success.');
       }
 
       /* ------------------------------------------------------------------- */
@@ -180,9 +174,7 @@ class AuthenticationRepository extends GetxController {
       await _auth.sendPasswordResetEmail(email: email);
 
       //! For Debug
-      if (kDebugMode) {
-        print('Sends a "password reset email" to a user success.');
-      }
+      if (kDebugMode) print('Sends a "password reset email" to a user success.');
 
       /* ------------------------------------------------------------------- */
     } on FirebaseAuthException catch (e) {
@@ -210,9 +202,7 @@ class AuthenticationRepository extends GetxController {
       await _auth.currentUser!.reauthenticateWithCredential(credential);
 
       //! For Debug
-      if (kDebugMode) {
-        print('Re-Authenticate user success.');
-      }
+      if (kDebugMode) print('Re-Authenticate user success.');
 
       /* ------------------------------------------------------------------- */
     } on FirebaseAuthException catch (e) {
@@ -295,9 +285,7 @@ class AuthenticationRepository extends GetxController {
       await FirebaseAuth.instance.signOut();
 
       //! For Debug
-      if (kDebugMode) {
-        print('Logout user success.');
-      }
+      if (kDebugMode) print('Logout user success.');
 
       Get.offAll(() => const LoginScreen()); //?
 
@@ -325,9 +313,7 @@ class AuthenticationRepository extends GetxController {
       await _auth.currentUser?.delete();
 
       //! For Debug
-      if (kDebugMode) {
-        print('Delete user success.');
-      }
+      if (kDebugMode) print('Delete user success.');
 
       /* ------------------------------------------------------------------- */
     } on FirebaseAuthException catch (e) {

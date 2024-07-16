@@ -13,6 +13,7 @@ import 'package:e_commerce_app/utils/popups/loaders.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 class UserController extends GetxController {
   static UserController get instance => Get.find(); //!
@@ -37,6 +38,9 @@ class UserController extends GetxController {
   //! Observable value from formats of [UserModel]
   final fullNameUser = ''.obs;
   final phoneNoUser = ''.obs;
+
+  //! Observable
+  final imageUploading = false.obs;
 
   //! Form key for Form Validation
   GlobalKey<FormState> reAuthFormKey = GlobalKey<FormState>();
@@ -83,25 +87,31 @@ class UserController extends GetxController {
     try {
       /* ------------------------------------------------------------------- */
 
-      if (userCredentials != null) {
-        // Convert info "Name" from Google account to "FirstName" and "LastName" for Firestore
-        final nameParts = UserModel.nameParts(userCredentials.user!.displayName ?? '');
-        // Convert info "Name" from Google account to "UserName" for Firestore
-        final userName = UserModel.generateUsername(userCredentials.user!.displayName ?? '');
+      //! First update Rx<UserModel> and then check if user data is already stored. If not store new data.
+      await fetchUserRecord();
 
-        //! Create user information according to UserModel
-        final user = UserModel(
-          id: userCredentials.user!.uid,
-          firstName: nameParts[0],
-          lastName: nameParts.length > 1 ? nameParts.sublist(1).join(' ') : '',
-          userName: userName,
-          email: userCredentials.user!.email ?? '',
-          phoneNumber: userCredentials.user!.phoneNumber ?? '',
-          profilePicture: userCredentials.user!.photoURL ?? '',
-        );
+      // If no record already stored.
+      if (user.value.id.isEmpty) {
+        if (userCredentials != null) {
+          // Convert info "Name" from Google account to "FirstName" and "LastName" for Firestore
+          final nameParts = UserModel.nameParts(userCredentials.user!.displayName ?? '');
+          // Convert info "Name" from Google account to "UserName" for Firestore
+          final userName = UserModel.generateUsername(userCredentials.user!.displayName ?? '');
 
-        //! Save Authenticated user data in the Firebase Firestore
-        await userRepository.saveUserRecord(user);
+          //! Create user information according to UserModel
+          final user = UserModel(
+            id: userCredentials.user!.uid,
+            firstName: nameParts[0],
+            lastName: nameParts.length > 1 ? nameParts.sublist(1).join(' ') : '',
+            userName: userName,
+            email: userCredentials.user!.email ?? '',
+            phoneNumber: userCredentials.user!.phoneNumber ?? '',
+            profilePicture: userCredentials.user!.photoURL ?? '',
+          );
+
+          //! Save Authenticated user data in the Firebase Firestore
+          await userRepository.saveUserRecord(user);
+        }
       }
 
       /* ------------------------------------------------------------------- */
@@ -240,6 +250,52 @@ class UserController extends GetxController {
       );
 
       /* ------------------------------------------------------------------- */
+    }
+  }
+
+  /// --- UPLOAD profile image
+  Future<void> uploadUserProfilePicture() async {
+    try {
+      /* ------------------------------------------------------------------- */
+
+      final image = await ImagePicker().pickImage(
+        source: ImageSource.gallery,
+        imageQuality: 70, //!!!
+        maxHeight: 512, //!!!
+        maxWidth: 512, //!!!
+      );
+
+      if (image != null) {
+        imageUploading.value = true;
+
+        //! Upload image
+        final imageUrl = await userRepository.uploadImage(
+          ETexts.storagePathUsersImagesProfile,
+          image,
+        );
+
+        //! Upload user image record
+        Map<String, dynamic> json = {ETexts.userModelProfilePicture: imageUrl};
+        await userRepository.updateSingleField(json);
+
+        //! Makes a direct update image
+        user.value.profilePicture = imageUrl;
+        user.refresh(); //!
+
+        ELoaders.successSnackBar(
+          title: ETexts.updateSuccessTitle,
+          message: ETexts.updateProfileImageSuccessTitle,
+        );
+      }
+
+      /* ------------------------------------------------------------------- */
+    } catch (e) {
+      ELoaders.errorSnackBar(
+        title: ETexts.ohSnapTitle,
+        message: e.toString(),
+      );
+    } finally {
+      imageUploading.value = false;
     }
   }
 
