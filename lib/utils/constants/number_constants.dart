@@ -24,10 +24,10 @@ class ENumberConstants {
   /*                               HOME SCREEN                               */
   /* ----------------------------------------------------------------------- */
 
-  /* ------------------------ Header of Home Screen ------------------------ */
+  /* ------------------ Categories Product of Home Screen ------------------ */
 
-  //! Chiều cao phần Header trên trang [Home] --- no use
-  // static const double heightHeaderHome = 410;
+  //! Số item hiển thị trong "Categories Product" trên trang [Home]
+  static const int categoriesProductNumber = 9; //! For test UI
 
   /* ------------------------ Banner of Home Screen ------------------------ */
 

@@ -25,6 +25,7 @@ class EUserProfileTile extends StatelessWidget {
         padding: EdgeInsets.all(ESizes.xs / 2),
         backgroundColor: EColors.accent,
       ),
+      //! To view observable variable ... of [UserController]
       title: Obx(
         () => Text(
           controller.fullNameUser.value, // ETexts.nameValue, //! For test UI

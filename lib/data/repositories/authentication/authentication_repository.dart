@@ -27,7 +27,7 @@ class AuthenticationRepository extends GetxController {
   final deviceStorage = GetStorage();
 
   //! Sử dụng gói "firebase_auth"
-  final _auth = FirebaseAuth.instance;
+  final _auth = FirebaseAuth.instance; //!
 
   /* ----------------------------------------------------------------------- */
   /*                                 OVERRIDE                                */

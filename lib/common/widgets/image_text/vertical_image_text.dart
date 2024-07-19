@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/common/widgets/images/circular_image.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
@@ -11,12 +12,14 @@ class EVerticalImageText extends StatelessWidget {
     this.textColor = EColors.white,
     this.backgroundColor,
     this.onTap,
+    this.isNetworkImage = true,
   });
 
   final String image, title;
   final Color textColor;
   final Color? backgroundColor;
   final void Function()? onTap;
+  final bool isNetworkImage;
 
   @override
   Widget build(BuildContext context) {
@@ -28,21 +31,31 @@ class EVerticalImageText extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           /// Circular Icon
-          Container(
+          // Container(
+          //   width: 60,
+          //   height: 60,
+          //   padding: const EdgeInsets.all(ESizes.sm + ESizes.xs),
+          //   decoration: BoxDecoration(
+          //     color: backgroundColor ?? (isDark ? EColors.black : EColors.white),
+          //     borderRadius: BorderRadius.circular(100),
+          //   ),
+          //   child: Center(
+          //     child: Image(
+          //       image: AssetImage(image),
+          //       fit: BoxFit.cover,
+          //       color: isDark ? EColors.light : EColors.dark,
+          //     ),
+          //   ),
+          // ),
+          //!!!!! test lại
+          ECircularImage(
             width: 60,
             height: 60,
             padding: const EdgeInsets.all(ESizes.sm + ESizes.xs),
-            decoration: BoxDecoration(
-              color: backgroundColor ?? (isDark ? EColors.black : EColors.white),
-              borderRadius: BorderRadius.circular(100),
-            ),
-            child: Center(
-              child: Image(
-                image: AssetImage(image),
-                fit: BoxFit.cover,
-                color: isDark ? EColors.light : EColors.dark,
-              ),
-            ),
+            backgroundColor: backgroundColor,
+            overlayColor: isDark ? EColors.light : EColors.dark,
+            isNetworkImage: isNetworkImage,
+            image: image,
           ),
 
           /// Text

@@ -254,7 +254,7 @@
 >   - `Fetch` - User only once and reuse throughout in the app (Reduce number of Reads).
 >   - `Update` - User.
 >   - `Delete` - User from Authentication and Delete Firebase Data.
-> - `[8]` Flutter Upload Images To Firebase Storage | Display Images From Storage
+> - `[8]` Flutter Upload Images To Firebase Storage | Display Images From Storage.
 >   - Add Dependency image_picker.
 >     - Thêm gói pub cần thiết, **[image_picker]**, để kích hoạt chức năng truy cập hình ảnh trong thiết bị người dùng làm hình nền avatar.
 >     - [Image Picker Permission for Flutter iOS & Android Phone | Pick Image & Capture Image Tutorial 2023](https://www.youtube.com/watch?v=qKTUQbKZNG4).
@@ -490,6 +490,8 @@
 
 ## Phần III. Backend: E-Commerce Backend
 
+> `[9]` Flutter Fetch Categories from Firebase Only Once | Reduce Firebase Reads.
+>
 > !!!
 
 ---

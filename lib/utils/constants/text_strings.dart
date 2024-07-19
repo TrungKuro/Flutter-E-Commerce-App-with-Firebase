@@ -220,6 +220,8 @@ class ETexts {
 
   /* ------------------------------ Categories ----------------------------- */
 
+  //! For test UI
+
   static const String sports = 'Sports';
   static const String clothes = 'Clothes';
   static const String shoes = 'Shoes';
@@ -338,6 +340,25 @@ class ETexts {
   static const String userModelProfilePicture = "ProfilePicture";
 
   /* ----------------------------------------------------------------------- */
+
+  // Đường dẫn đến thông tin các loại sản phẩm: [ Categories ] -> [ ID_CATEGORY ] -> [ JSON ]
+  // Cấu trúc thông tin các loại sản phẩm được lưu trong Cloud Firestore dưới dạng JSON
+
+  static const String collectionPathCategories = "Categories";
+
+  // Cấu trúc JSON từ MODEL của Category có dạng Map<String, dynamic>
+  //
+  // "Name"       : String
+  // "Image"      : String
+  // "ParentId"   : String
+  // "IsFeatured" : bool
+
+  static const String categoryModelName = "Name";
+  static const String categoryModelImage = "Image";
+  static const String categoryModelParentID = "ParentId";
+  static const String categoryModelIsFeatured = "IsFeatured";
+
+  /* ----------------------------------------------------------------------- */
   /*                            STORAGE (FIREBASE)                           */
   /* ----------------------------------------------------------------------- */
 
@@ -391,6 +412,9 @@ class ETexts {
   static const String updateSuccessTitle = 'Congratulations';
   static const String updateNameSuccessTitle = 'Your Name has been updated.';
   static const String updateProfileImageSuccessTitle = 'Your Profile Image has been updated!';
+
+  //! Notification in Screen
+  static const String noDataFound = 'No Data Found!';
 
   //! Throw Error
   static const String throwError = 'Something went wrong. Please try again!';

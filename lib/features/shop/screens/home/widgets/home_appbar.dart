@@ -24,21 +24,24 @@ class EHomeAppBar extends StatelessWidget {
             ETexts.homeAppBarTitle,
             style: Theme.of(context).textTheme.labelMedium!.apply(color: EColors.grey),
           ),
-          Obx(() {
-            /* ------------------------------------------------------------- */
+          //! To view observable variable ... of [UserController]
+          Obx(
+            () {
+              /* ------------------------------------------------------------- */
 
-            if (controller.profileLoading.value) {
-              // Display a shimmer loader while user profile is being loaded
-              return const EShimmerEffect(width: 80, height: 15);
-            } else {
-              return Text(
-                controller.user.value.userName, // ETexts.userNameValue, //! For test UI
-                style: Theme.of(context).textTheme.headlineSmall!.apply(color: EColors.white),
-              );
-            }
+              if (controller.profileLoading.value) {
+                // Display a shimmer loader while user profile is being loaded
+                return const EShimmerEffect(width: 80, height: 15);
+              } else {
+                return Text(
+                  controller.user.value.userName, // ETexts.userNameValue, //! For test UI
+                  style: Theme.of(context).textTheme.headlineSmall!.apply(color: EColors.white),
+                );
+              }
 
-            /* ------------------------------------------------------------- */
-          }),
+              /* ------------------------------------------------------------- */
+            },
+          ),
         ],
       ),
       actions: const [ECartCounterIcon(iconColor: EColors.white)],

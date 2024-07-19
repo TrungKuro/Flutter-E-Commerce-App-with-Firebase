@@ -21,7 +21,7 @@ class UserRepository extends GetxController {
   /* ----------------------------------------------------------------------- */
 
   //! Sử dụng gói "cloud_firestore"
-  final FirebaseFirestore _db = FirebaseFirestore.instance;
+  final FirebaseFirestore _db = FirebaseFirestore.instance; //!
 
   /* ----------------------------------------------------------------------- */
   /*                                 FUNCTION                                */

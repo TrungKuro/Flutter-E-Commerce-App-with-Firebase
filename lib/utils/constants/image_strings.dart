@@ -34,6 +34,8 @@ class EImages {
 
   /* ---------------------------- Category Icons --------------------------- */
 
+  //! For test UI
+
   static const String sportsIcon = 'assets/icons/categories/sports.png';
   static const String clothesIcon = 'assets/icons/categories/clothes.png';
   static const String shoesIcon = 'assets/icons/categories/shoes.png';
@@ -77,6 +79,8 @@ class EImages {
   /* ------------------------------- Products ------------------------------ */
 
   // Shoes Nike
+  static const String productShoesNike = 'assets/images/products/shoes/nike.png';
+  //
   static const String productShoesNike1 = 'assets/images/products/shoes/nike/Air-Jordan-1-Mid.png';
   static const String productShoesNike2 = 'assets/images/products/shoes/nike/Jumpman-MVP.png';
   static const String productShoesNike3 = 'assets/images/products/shoes/nike/Nike-Dunk-Low-Twist.png';
@@ -84,6 +88,8 @@ class EImages {
   static const String productShoesNike5 = 'assets/images/products/shoes/nike/Tatum-2-Sidewalk-Chalk-PF.png';
 
   // Shoes Adidas
+  static const String productShoesAdidas = 'assets/images/products/shoes/adidas.png';
+  //
   static const String productShoesAdidas1 = 'assets/images/products/shoes/adidas/ADIZERO UBERSONIC 4 TENNIS SHOES.avif';
   static const String productShoesAdidas2 =
       'assets/images/products/shoes/adidas/ADIZERO UBERSONIC 4.1 TENNIS SHOES.avif';
@@ -92,6 +98,8 @@ class EImages {
   static const String productShoesAdidas5 = 'assets/images/products/shoes/adidas/SOLEMATCH CONTROL TENNIS SHOES.avif';
 
   // Shoes Skechers
+  static const String productShoesSkechers = 'assets/images/products/shoes/skechers.png';
+  //
   static const String productShoesSkechers1 =
       'assets/images/products/shoes/skechers/Arch Fit Foamies - Beach Escape.webp';
   static const String productShoesSkechers2 = 'assets/images/products/shoes/skechers/Foamies Creston Ultra.webp';
@@ -103,6 +111,8 @@ class EImages {
       'assets/images/products/shoes/skechers/On-The-GO Hyper Slide - Simplex.webp';
 
   // Shoes Puma
+  static const String productShoesPuma = 'assets/images/products/shoes/puma.png';
+  //
   static const String productShoesPuma1 =
       "assets/images/products/shoes/puma/FUTURE 7 MATCH RUSH Turf Trainer Men's Soccer Cleats.avif";
   static const String productShoesPuma2 =
@@ -117,6 +127,8 @@ class EImages {
   /* ------------------------------- Products ------------------------------ */
 
   // Toys Lego
+  static const String productToysLego = 'assets/images/products/toys/lego.png';
+  //
   static const String productToysLego1 = "assets/images/products/toys/lego/Aston Martin Safety Car & AMR23.webp";
   static const String productToysLego2 = "assets/images/products/toys/lego/Dungeons & Dragons- Red Dragon's Tale.webp";
   static const String productToysLego3 = "assets/images/products/toys/lego/Hogwarts™ Castle- The Great Hall.webp";
@@ -124,6 +136,8 @@ class EImages {
   static const String productToysLego5 = "assets/images/products/toys/lego/TIE Interceptor.webp";
 
   // Toys Schleich
+  static const String productToysSchleich = 'assets/images/products/toys/schleich.jpeg';
+  //
   static const String productToysSchleich1 =
       "assets/images/products/toys/schleich/Schleich Bayala 70728 Rainbow Dragon.webp";
   static const String productToysSchleich2 =
@@ -136,6 +150,8 @@ class EImages {
       "assets/images/products/toys/schleich/Schleich Eldrador Creatures 70152 Shadow Dragon.webp";
 
   // Toys Bandai
+  static const String productToysBandai = 'assets/images/products/toys/bandai.png';
+  //
   static const String productToysBandai1 =
       "assets/images/products/toys/bandai/GUNDAM UNIVERSE RX-78-2 GUNDAM [MARKING PLUS VER.].jpeg";
   static const String productToysBandai2 =
@@ -147,6 +163,8 @@ class EImages {
   static const String productToysBandai5 = "assets/images/products/toys/bandai/RE:100 1:100 GUNDAM LINDWURM.jpeg";
 
   // Toys Kotobukiya
+  static const String productToysKotobukiya = 'assets/images/products/toys/kotobukiya.jpg';
+  //
   static const String productToysKotobukiya1 =
       "assets/images/products/toys/kotobukiya/ARTFX J Io cuddling the sword.jpeg";
   static const String productToysKotobukiya2 =

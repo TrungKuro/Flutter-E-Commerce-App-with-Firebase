@@ -46,18 +46,21 @@ class ProfileScreen extends StatelessWidget {
                 /*                      Profile Picture                      */
                 /* --------------------------------------------------------- */
 
-                Obx(() {
-                  final networkImage = controller.user.value.profilePicture;
-                  final image = networkImage.isNotEmpty ? networkImage : EImages.user; //! For test UI
-                  return controller.imageUploading.value
-                      ? const EShimmerEffect(width: 80, height: 80, radius: 80)
-                      : ECircularImage(
-                          image: image,
-                          width: 80,
-                          height: 80,
-                          isNetworkImage: networkImage.isNotEmpty,
-                        );
-                }),
+                //! To view observable variable ... of [UserController]
+                Obx(
+                  () {
+                    final networkImage = controller.user.value.profilePicture;
+                    final image = networkImage.isNotEmpty ? networkImage : EImages.user; //! For test UI
+                    return controller.imageUploading.value
+                        ? const EShimmerEffect(width: 80, height: 80, radius: 80)
+                        : ECircularImage(
+                            image: image,
+                            width: 80,
+                            height: 80,
+                            isNetworkImage: networkImage.isNotEmpty,
+                          );
+                  },
+                ),
                 TextButton(
                   onPressed: () => controller.uploadUserProfilePicture(), //?
                   child: const Text(ETexts.profileAppBarSubTitle),
@@ -74,6 +77,7 @@ class ProfileScreen extends StatelessWidget {
                 const ESectionHeading(title: ETexts.profileInformationTitle, showActionButton: false),
                 const SizedBox(height: ESizes.spaceBtwItems),
 
+                //! To view observable variable ... of [UserController]
                 Obx(
                   () => EProfileMenu(
                     title: ETexts.nameTitle,

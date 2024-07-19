@@ -73,11 +73,13 @@ flutter:
     - assets/images/user/
     - assets/images/reviews/
 
+    - assets/images/products/shoes/
     - assets/images/products/shoes/nike/
     - assets/images/products/shoes/adidas/
     - assets/images/products/shoes/skechers/
     - assets/images/products/shoes/puma/
     
+    - assets/images/products/toys/
     - assets/images/products/toys/lego/
     - assets/images/products/toys/schleich/
     - assets/images/products/toys/bandai/

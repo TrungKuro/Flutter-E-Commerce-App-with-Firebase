@@ -5,7 +5,7 @@ import 'package:e_commerce_app/utils/formatters/formatter.dart';
 class UserModel {
   /* ----------------------------------------------------------------------- */
 
-  // Keep those values final which you do not want to update
+  //! Keep those values "final" which you do not want to update
   final String id;
   final String userName;
   final String email;
@@ -32,10 +32,12 @@ class UserModel {
   /*                                 FACTORY                                 */
   /* ----------------------------------------------------------------------- */
 
+  /// Map JSON oriented document snapshot from Firebase to [UserModel].
   factory UserModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> document) {
     if (document.data() != null) {
       final data = document.data()!;
 
+      // Map JSON Record to the Model
       return UserModel(
         id: document.id,
         userName: data[ETexts.userModelUserName] ?? '',
@@ -79,7 +81,7 @@ class UserModel {
     return usernameWithPrefix;
   }
 
-  /// Static function to create an empty user model.
+  /// Static function to create an empty [UserModel].
   static UserModel empty() => UserModel(
         id: '',
         userName: '',
