@@ -49,8 +49,7 @@ class ETexts {
   static const String onBoardingTitle3 = "Deliver at your door step";
 
   static const String onBoardingSubTitle1 = "Welcome to a World of Limitless Choices - Your Perfect Product Awaits!";
-  static const String onBoardingSubTitle2 =
-      "For Seamless Transactions, Choose Your Payment Path - Your Convenience, Our Priority!";
+  static const String onBoardingSubTitle2 = "For Seamless Transactions, Choose Your Payment Path - Your Convenience, Our Priority!";
   static const String onBoardingSubTitle3 = "From Our Doorstep to Yours - Swift, Secure, and Contactless Delivery!";
 
   /* ----------------------------- Home Screen ----------------------------- */
@@ -148,8 +147,7 @@ class ETexts {
   /* ----------------------- Reviews & Ratings Screen ---------------------- */
 
   static const String reviewAndRatingAppBarTitle = "Reviews & Ratings";
-  static const String reviewAndRatingAppBarSubTitle =
-      "Ratings and Reviews are verified and are from people who use the same type of device that you use.";
+  static const String reviewAndRatingAppBarSubTitle = "Ratings and Reviews are verified and are from people who use the same type of device that you use.";
 
   /* ---------------------------- Address Screen --------------------------- */
 
@@ -211,8 +209,7 @@ class ETexts {
   /* -------------------------- Change Name Screen ------------------------- */
 
   static const String changeNameScreenAppBarTitle = "Change Name";
-  static const String changeNameScreenAppBarSubTitle =
-      "Use a real name for easy verification. This name will appear on several pages.";
+  static const String changeNameScreenAppBarSubTitle = "Use a real name for easy verification. This name will appear on several pages.";
 
   /* ---------------------- Re-Auth Login Form Screen ---------------------- */
 
@@ -232,6 +229,20 @@ class ETexts {
   static const String jewellery = 'Jewellery';
   static const String electronics = 'Electronics';
 
+  /* -------------------------------- Brands ------------------------------- */
+
+  //! For test UI
+
+  static const String brandAdidas = 'Adidas';
+  static const String brandNike = 'Nike';
+  static const String brandPuma = 'Puma';
+  static const String brandSkechers = 'Skechers';
+  //
+  static const String brandBandai = 'Bandai';
+  static const String brandKotobukiya = 'Kotobukiya';
+  static const String brandLego = 'Lego';
+  static const String brandSchleich = 'Schleich';
+
   /* ------------------------ Navigation Destination ----------------------- */
 
   static const String home = 'Home';
@@ -247,8 +258,7 @@ class ETexts {
   static const String signupTitle = "Let's create your account";
 
   static const String forgetPasswordTitle = 'Forget password';
-  static const String forgetPasswordSubTitle =
-      "Don't worry sometimes people can forget too, enter your email and we will send you a password reset link.";
+  static const String forgetPasswordSubTitle = "Don't worry sometimes people can forget too, enter your email and we will send you a password reset link.";
 
   static const String changeYourPasswordTitle = 'Password Reset Email Sent';
   static const String changeYourPasswordSubTitle =
@@ -261,8 +271,7 @@ class ETexts {
   static const String emailNotReceivedMessage = "Didn't get the email? Check your junk/spam or resend it.";
 
   static const String yourAccountCreatedTitle = 'Your account successfully created!';
-  static const String yourAccountCreatedSubTitle =
-      'Welcome to Your Ultimate Shopping Destination: Your Account is Created, Unleash the Joy of Seamless Online Shopping!';
+  static const String yourAccountCreatedSubTitle = 'Welcome to Your Ultimate Shopping Destination: Your Account is Created, Unleash the Joy of Seamless Online Shopping!';
 
   /* ----------------------- Authentication Form Text ---------------------- */
 
@@ -341,6 +350,23 @@ class ETexts {
 
   /* ----------------------------------------------------------------------- */
 
+  // Đường dẫn đến thông tin các loại sản phẩm: [ Banners ] -> [ ID_BANNER ] -> [ JSON ]
+  // Cấu trúc thông tin các loại sản phẩm được lưu trong Cloud Firestore dưới dạng JSON
+
+  static const String collectionPathBanners = "Banners";
+
+  // Cấu trúc JSON từ MODEL của Banner có dạng Map<String, dynamic>
+  //
+  // "ImageUrl"     : String
+  // "TargetScreen" : String
+  // "Active"       : bool
+
+  static const String bannerModelImageUrl = "ImageUrl";
+  static const String bannerModelTargetScreen = "TargetScreen";
+  static const String bannerModelActive = "Active";
+
+  /* ----------------------------------------------------------------------- */
+
   // Đường dẫn đến thông tin các loại sản phẩm: [ Categories ] -> [ ID_CATEGORY ] -> [ JSON ]
   // Cấu trúc thông tin các loại sản phẩm được lưu trong Cloud Firestore dưới dạng JSON
 
@@ -392,8 +418,7 @@ class ETexts {
   static const String noInternetMsg = 'Please check your network connection again.';
   //
   static const String acceptPrivacyPolicyTitle = 'Accept Privacy Policy';
-  static const String acceptPrivacyPolicyMsg =
-      'In order to create account, you must have to read and accept the Privacy Policy & Terms of Use.';
+  static const String acceptPrivacyPolicyMsg = 'In order to create account, you must have to read and accept the Privacy Policy & Terms of Use.';
   //
   static const String signUpSuccessTitle = 'Congratulations';
   static const String signUpSuccessMsg = 'Your account has been created! Verify email to continue.';
@@ -406,8 +431,7 @@ class ETexts {
   static const String receivedEmailResetMsg = 'Please check your inbox to Reset your Password.';
   //
   static const String saveUserRecordTitle = 'Data not saved';
-  static const String saveUserRecordMsg =
-      'Something went wrong while saving your information. You can re-saved your data in your Profile.';
+  static const String saveUserRecordMsg = 'Something went wrong while saving your information. You can re-saved your data in your Profile.';
   //
   static const String updateSuccessTitle = 'Congratulations';
   static const String updateNameSuccessTitle = 'Your Name has been updated.';

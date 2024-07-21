@@ -26,11 +26,22 @@ class EImages {
   static const String staticSuccessIllustration = 'assets/images/animations/sammy-line-success.png';
   static const String deliveredIllustration = 'assets/images/animations/sammy-line-come-back-later.png';
   static const String deliveredEmailIllustration = 'assets/images/animations/sammy-line-man-receives-a-mail.png';
-  static const String verifyIllustration =
-      'assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif';
+  static const String verifyIllustration = 'assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif';
 
   static const String loadingAnimation = "assets/images/animations/Lottie Loading.json";
   static const String successAnimation = "assets/images/animations/Lottie Success.json";
+
+  /* --------------------------- Payment Methods --------------------------- */
+
+  static const String applePay = "assets/icons/payment_methods/apple-pay.png";
+  static const String googlePay = "assets/icons/payment_methods/google-pay.png";
+  static const String creditCard = "assets/icons/payment_methods/atm-card.png";
+  static const String masterCard = "assets/icons/payment_methods/master-card.png";
+  static const String paypal = "assets/icons/payment_methods/paypal.png";
+  static const String visa = "assets/icons/payment_methods/visa.png";
+  static const String paystack = "assets/icons/payment_methods/money-stack.png";
+  static const String paytm = "assets/icons/payment_methods/paytm.png";
+  static const String successfulPaymentIcon = "assets/icons/payment_methods/payment-check.png";
 
   /* ---------------------------- Category Icons --------------------------- */
 
@@ -46,7 +57,22 @@ class EImages {
   static const String jewelleryIcon = 'assets/icons/categories/jewellery.png';
   static const String electronicsIcon = 'assets/icons/categories/electronics.png';
 
-  /* ------------------------------- Banners ------------------------------- */
+  /* ------------------------------- Profile ------------------------------- */
+
+  //! For test UI
+  static const String user = "assets/images/user/user.jpg";
+
+  /* --------------------------- Product Reviews --------------------------- */
+
+  //! For test UI
+
+  static const String userProfileImage1 = "assets/images/reviews/review_profile_image_1.jpg";
+  static const String userProfileImage2 = "assets/images/reviews/review_profile_image_2.jpg";
+  static const String userProfileImage3 = "assets/images/reviews/review_profile_image_3.jpg";
+
+  /* ----------------------------------------------------------------------- */
+  /*                           DUMMY DATA - BANNERS                          */
+  /* ----------------------------------------------------------------------- */
 
   static const String promoBanner1 = 'assets/images/banners/promo-banner-1.jpg';
   static const String promoBanner2 = 'assets/images/banners/promo-banner-2.jpg';
@@ -54,29 +80,70 @@ class EImages {
   static const String promoBanner4 = 'assets/images/banners/promo-banner-4.jpg';
   static const String promoBanner5 = 'assets/images/banners/promo-banner-5.jpg';
 
-  /* ------------------------------- Profile ------------------------------- */
+  /* ----------------------------------------------------------------------- */
+  /*                          DUMMY DATA - PRODUCTS                          */
+  /* ----------------------------------------------------------------------- */
 
-  static const String user = "assets/images/user/user.jpg";
+  //
 
-  /* --------------------------- Product Reviews --------------------------- */
+  /* -------------------------------- Sports ------------------------------- */
 
-  static const String userProfileImage1 = "assets/images/reviews/review_profile_image_1.jpg";
-  static const String userProfileImage2 = "assets/images/reviews/review_profile_image_2.jpg";
-  static const String userProfileImage3 = "assets/images/reviews/review_profile_image_3.jpg";
+  // Sports Giant
+  static const String productSportsGiant = 'assets/images/products/sports/giant.png';
+  //
+  static const String productSportsGiant1 = 'assets/images/products/sports/giant/Xe Đạp Địa Hình MTB GIANT XTC Advanced 29 3.jpg';
+  static const String productSportsGiant2 = 'assets/images/products/sports/giant/Xe Đạp Đường Phố Touring MOMENTUM iNeed Latte 26.jpg';
+  static const String productSportsGiant3 = 'assets/images/products/sports/giant/Xe Đạp Đua Đường Trường ROAD GIANT TCR Advanced 1+ Disc Pro Compact.jpg';
+  static const String productSportsGiant4 = 'assets/images/products/sports/giant/Xe Đạp Gấp Folding MOMENTUM Pakaway 1.jpg';
 
-  /* --------------------------- Payment Methods --------------------------- */
+  // Sports Wilson
+  static const String productSportsWilson = 'assets/images/products/sports/wilson.webp';
+  //
+  static const String productSportsWilson1 = 'assets/images/products/sports/wilson/CLASH 100 PRO V2 TENNIS RACKET.webp';
+  static const String productSportsWilson2 = 'assets/images/products/sports/wilson/ROLAND-GARROS CLASH 100 V2 TENNIS RACKET.webp';
+  static const String productSportsWilson3 = 'assets/images/products/sports/wilson/ULTRA 100L V4 TENNIS RACKET.webp';
+  static const String productSportsWilson4 = 'assets/images/products/sports/wilson/PRO STAFF 97 V14 TENNIS RACKET.webp';
 
-  static const String applePay = "assets/icons/payment_methods/apple-pay.png";
-  static const String googlePay = "assets/icons/payment_methods/google-pay.png";
-  static const String creditCard = "assets/icons/payment_methods/atm-card.png";
-  static const String masterCard = "assets/icons/payment_methods/master-card.png";
-  static const String paypal = "assets/icons/payment_methods/paypal.png";
-  static const String visa = "assets/icons/payment_methods/visa.png";
-  static const String paystack = "assets/icons/payment_methods/money-stack.png";
-  static const String paytm = "assets/icons/payment_methods/paytm.png";
-  static const String successfulPaymentIcon = "assets/icons/payment_methods/payment-check.png";
+  // Sports Yonex
+  static const String productSportsYonex = 'assets/images/products/sports/yonex.png';
+  //
+  static const String productSportsYonex1 = 'assets/images/products/sports/yonex/Vợt cầu lông Astrox 88S Play.webp';
+  static const String productSportsYonex2 = 'assets/images/products/sports/yonex/Vợt cầu lông Yonex Nanoflare-002 Clear.webp';
+  static const String productSportsYonex3 = 'assets/images/products/sports/yonex/Vợt cầu lông Yonex NF Ability.webp';
 
-  /* ------------------------------- Products ------------------------------ */
+  // Sports AKpro
+  static const String productSportsAKpro = 'assets/images/products/sports/akpro.png';
+  //
+  static const String productSportsAKpro1 = 'assets/images/products/sports/akpro/Bóng rổ da AKpro ABX3 số 5.webp';
+  static const String productSportsAKpro2 = 'assets/images/products/sports/akpro/Bóng rổ da AKpro AB6006 số 7.webp';
+  static const String productSportsAKpro3 = 'assets/images/products/sports/akpro/Quả bóng rổ Molten da BG3200 số 6.webp';
+  static const String productSportsAKpro4 = 'assets/images/products/sports/akpro/Bóng rổ da AKpro AB8008 số 7.webp';
+  static const String productSportsAKpro5 = 'assets/images/products/sports/akpro/Bóng Rổ AKPro cao su AB 5000 số 7.webp';
+
+  // Sports Speedo
+  static const String productSportsSpeedo = 'assets/images/products/sports/speedo.ico';
+  //
+  static const String productSportsSpeedo1 = 'assets/images/products/sports/speedo/Biofuse Mask Infant Goggle Pink.avif';
+  static const String productSportsSpeedo2 = 'assets/images/products/sports/speedo/Fastskin Pure Focus Mirror Goggles.avif';
+  static const String productSportsSpeedo3 = 'assets/images/products/sports/speedo/Rift Junior Goggle Blue.avif';
+
+  /* ------------------------------ Furniture ------------------------------ */
+
+  //!!!!!
+
+  /* ----------------------------- Electronics ----------------------------- */
+
+  //!!!!!
+
+  /* ------------------------------- Clothes ------------------------------- */
+
+  //!!!!!
+
+  /* ------------------------------- Animals ------------------------------- */
+
+  //!!!!!
+
+  /* -------------------------------- Shoes -------------------------------- */
 
   // Shoes Nike
   static const String productShoesNike = 'assets/images/products/shoes/nike.png';
@@ -91,8 +158,7 @@ class EImages {
   static const String productShoesAdidas = 'assets/images/products/shoes/adidas.png';
   //
   static const String productShoesAdidas1 = 'assets/images/products/shoes/adidas/ADIZERO UBERSONIC 4 TENNIS SHOES.avif';
-  static const String productShoesAdidas2 =
-      'assets/images/products/shoes/adidas/ADIZERO UBERSONIC 4.1 TENNIS SHOES.avif';
+  static const String productShoesAdidas2 = 'assets/images/products/shoes/adidas/ADIZERO UBERSONIC 4.1 TENNIS SHOES.avif';
   static const String productShoesAdidas3 = 'assets/images/products/shoes/adidas/BARRICADE 13 TENNIS SHOES.avif';
   static const String productShoesAdidas4 = 'assets/images/products/shoes/adidas/OSADE SHOES.avif';
   static const String productShoesAdidas5 = 'assets/images/products/shoes/adidas/SOLEMATCH CONTROL TENNIS SHOES.avif';
@@ -100,31 +166,30 @@ class EImages {
   // Shoes Skechers
   static const String productShoesSkechers = 'assets/images/products/shoes/skechers.png';
   //
-  static const String productShoesSkechers1 =
-      'assets/images/products/shoes/skechers/Arch Fit Foamies - Beach Escape.webp';
+  static const String productShoesSkechers1 = 'assets/images/products/shoes/skechers/Arch Fit Foamies - Beach Escape.webp';
   static const String productShoesSkechers2 = 'assets/images/products/shoes/skechers/Foamies Creston Ultra.webp';
-  static const String productShoesSkechers3 =
-      'assets/images/products/shoes/skechers/On-The-GO GOwalk Arch Fit - Mission II.webp';
-  static const String productShoesSkechers4 =
-      'assets/images/products/shoes/skechers/On-The-GO Hyper Slide - Palm Vacation.webp';
-  static const String productShoesSkechers5 =
-      'assets/images/products/shoes/skechers/On-The-GO Hyper Slide - Simplex.webp';
+  static const String productShoesSkechers3 = 'assets/images/products/shoes/skechers/On-The-GO GOwalk Arch Fit - Mission II.webp';
+  static const String productShoesSkechers4 = 'assets/images/products/shoes/skechers/On-The-GO Hyper Slide - Palm Vacation.webp';
+  static const String productShoesSkechers5 = 'assets/images/products/shoes/skechers/On-The-GO Hyper Slide - Simplex.webp';
 
   // Shoes Puma
   static const String productShoesPuma = 'assets/images/products/shoes/puma.png';
   //
-  static const String productShoesPuma1 =
-      "assets/images/products/shoes/puma/FUTURE 7 MATCH RUSH Turf Trainer Men's Soccer Cleats.avif";
-  static const String productShoesPuma2 =
-      "assets/images/products/shoes/puma/FUTURE 7 PRO FG:AG Men's Soccer Cleats.avif";
-  static const String productShoesPuma3 =
-      "assets/images/products/shoes/puma/FUTURE 7 ULTIMATE CREATIVITY FG:AG Men's Soccer Cleats.avif";
-  static const String productShoesPuma4 =
-      "assets/images/products/shoes/puma/KING ULTIMATE RUSH FG:AG Men's Soccer Cleats.avif";
-  static const String productShoesPuma5 =
-      "assets/images/products/shoes/puma/ULTRA MATCH RUSH FG:AG Men's Soccer Cleats.avif";
+  static const String productShoesPuma1 = "assets/images/products/shoes/puma/FUTURE 7 MATCH RUSH Turf Trainer Men's Soccer Cleats.avif";
+  static const String productShoesPuma2 = "assets/images/products/shoes/puma/FUTURE 7 PRO FG:AG Men's Soccer Cleats.avif";
+  static const String productShoesPuma3 = "assets/images/products/shoes/puma/FUTURE 7 ULTIMATE CREATIVITY FG:AG Men's Soccer Cleats.avif";
+  static const String productShoesPuma4 = "assets/images/products/shoes/puma/KING ULTIMATE RUSH FG:AG Men's Soccer Cleats.avif";
+  static const String productShoesPuma5 = "assets/images/products/shoes/puma/ULTRA MATCH RUSH FG:AG Men's Soccer Cleats.avif";
 
-  /* ------------------------------- Products ------------------------------ */
+  /* ------------------------------ Cosmetics ------------------------------ */
+
+  //!!!!!
+
+  /* ------------------------------ Jewellery ------------------------------ */
+
+  //!!!!!
+
+  /* --------------------------------- Toys -------------------------------- */
 
   // Toys Lego
   static const String productToysLego = 'assets/images/products/toys/lego.png';
@@ -138,43 +203,31 @@ class EImages {
   // Toys Schleich
   static const String productToysSchleich = 'assets/images/products/toys/schleich.jpeg';
   //
-  static const String productToysSchleich1 =
-      "assets/images/products/toys/schleich/Schleich Bayala 70728 Rainbow Dragon.webp";
-  static const String productToysSchleich2 =
-      "assets/images/products/toys/schleich/Schleich Bayala 70743 - Llamacorn.webp";
-  static const String productToysSchleich3 =
-      "assets/images/products/toys/schleich/Schleich Eldrador Creatures 42554 Shadow Wolf.webp";
-  static const String productToysSchleich4 =
-      "assets/images/products/toys/schleich/Schleich Eldrador Creatures 70151 - Jungle Emperor.webp";
-  static const String productToysSchleich5 =
-      "assets/images/products/toys/schleich/Schleich Eldrador Creatures 70152 Shadow Dragon.webp";
+  static const String productToysSchleich1 = "assets/images/products/toys/schleich/Schleich Bayala 70728 Rainbow Dragon.webp";
+  static const String productToysSchleich2 = "assets/images/products/toys/schleich/Schleich Bayala 70743 - Llamacorn.webp";
+  static const String productToysSchleich3 = "assets/images/products/toys/schleich/Schleich Eldrador Creatures 42554 Shadow Wolf.webp";
+  static const String productToysSchleich4 = "assets/images/products/toys/schleich/Schleich Eldrador Creatures 70151 - Jungle Emperor.webp";
+  static const String productToysSchleich5 = "assets/images/products/toys/schleich/Schleich Eldrador Creatures 70152 Shadow Dragon.webp";
 
   // Toys Bandai
   static const String productToysBandai = 'assets/images/products/toys/bandai.png';
   //
-  static const String productToysBandai1 =
-      "assets/images/products/toys/bandai/GUNDAM UNIVERSE RX-78-2 GUNDAM [MARKING PLUS VER.].jpeg";
-  static const String productToysBandai2 =
-      "assets/images/products/toys/bandai/HG 1:144 GUNDAM LFRITH PRE-PRODUCTION MODEL.jpeg";
-  static const String productToysBandai3 =
-      "assets/images/products/toys/bandai/PG 1:60 UNICORN GUNDAM 03 PHENEX (NARRATIVE Ver.).jpeg";
-  static const String productToysBandai4 =
-      "assets/images/products/toys/bandai/PG 1:60 UNICORN GUNDAM PERFECTIBILITY.jpeg";
+  static const String productToysBandai1 = "assets/images/products/toys/bandai/GUNDAM UNIVERSE RX-78-2 GUNDAM [MARKING PLUS VER.].jpeg";
+  static const String productToysBandai2 = "assets/images/products/toys/bandai/HG 1:144 GUNDAM LFRITH PRE-PRODUCTION MODEL.jpeg";
+  static const String productToysBandai3 = "assets/images/products/toys/bandai/PG 1:60 UNICORN GUNDAM 03 PHENEX (NARRATIVE Ver.).jpeg";
+  static const String productToysBandai4 = "assets/images/products/toys/bandai/PG 1:60 UNICORN GUNDAM PERFECTIBILITY.jpeg";
   static const String productToysBandai5 = "assets/images/products/toys/bandai/RE:100 1:100 GUNDAM LINDWURM.jpeg";
 
   // Toys Kotobukiya
   static const String productToysKotobukiya = 'assets/images/products/toys/kotobukiya.jpg';
   //
-  static const String productToysKotobukiya1 =
-      "assets/images/products/toys/kotobukiya/ARTFX J Io cuddling the sword.jpeg";
-  static const String productToysKotobukiya2 =
-      "assets/images/products/toys/kotobukiya/ARTFX J Izuku Midoriya Dark Deku Ver.jpeg";
+  static const String productToysKotobukiya1 = "assets/images/products/toys/kotobukiya/ARTFX J Io cuddling the sword.jpeg";
+  static const String productToysKotobukiya2 = "assets/images/products/toys/kotobukiya/ARTFX J Izuku Midoriya Dark Deku Ver.jpeg";
   static const String productToysKotobukiya3 = "assets/images/products/toys/kotobukiya/ARTFX J Kyojuro Rengoku.jpeg";
   static const String productToysKotobukiya4 = "assets/images/products/toys/kotobukiya/ARTFX J Tobio Kageyama.jpeg";
-  static const String productToysKotobukiya5 =
-      "assets/images/products/toys/kotobukiya/SNK THE KING OF FIGHTERS 2001 ANGEL BISHOUJO STATUE.jpeg";
+  static const String productToysKotobukiya5 = "assets/images/products/toys/kotobukiya/SNK THE KING OF FIGHTERS 2001 ANGEL BISHOUJO STATUE.jpeg";
 
-  /* ------------------------------- Products ------------------------------ */
-
-  //
+  /* ----------------------------------------------------------------------- */
+  /*                                   ...                                   */
+  /* ----------------------------------------------------------------------- */
 }

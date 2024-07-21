@@ -31,9 +31,6 @@ class ENumberConstants {
 
   /* ------------------------ Banner of Home Screen ------------------------ */
 
-  //! Hiện cho hiển thị 5 {Banner} trên trang [Home]
-  static const int promoBannerNumber = 5;
-
   //! Thời gian giữa mỗi lần chuyển {Banner} (tự động)
   static const Duration autoPlayInterval = Duration(seconds: 5);
 

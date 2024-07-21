@@ -8,7 +8,6 @@ import 'package:e_commerce_app/features/shop/screens/home/widgets/home_appbar.da
 import 'package:e_commerce_app/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
-import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/number_constants.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
@@ -83,15 +82,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   /* ----------------- Promo Banner Slider ----------------- */
 
-                  const EPromoSlider(
-                    banners: [
-                      EImages.promoBanner1,
-                      EImages.promoBanner2,
-                      EImages.promoBanner3,
-                      EImages.promoBanner4,
-                      EImages.promoBanner5,
-                    ], //!!!
-                  ),
+                  const EPromoSlider(),
                   const SizedBox(height: ESizes.spaceBtwSections),
 
                   /* ------------------- Popular Products ------------------ */

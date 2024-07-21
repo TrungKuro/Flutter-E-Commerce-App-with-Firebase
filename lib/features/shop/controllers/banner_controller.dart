@@ -1,27 +1,24 @@
-import 'package:e_commerce_app/data/repositories/categories/category_repository.dart';
-import 'package:e_commerce_app/features/shop/models/category_model.dart';
-import 'package:e_commerce_app/utils/constants/number_constants.dart';
+import 'package:e_commerce_app/data/repositories/banners/banner_repository.dart';
+import 'package:e_commerce_app/features/shop/models/banner_model.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:e_commerce_app/utils/popups/loaders.dart';
 import 'package:get/get.dart';
 
-class CategoryController extends GetxController {
-  static CategoryController get instance => Get.find(); //!
+class BannerController extends GetxController {
+  static BannerController get instance => Get.find(); //!
 
   /* ----------------------------------------------------------------------- */
   /*                                 VARIABLE                                */
   /* ----------------------------------------------------------------------- */
 
-  final _categoryRepository = Get.put(CategoryRepository()); //!
+  //! Observable
+  final carouselCurrentIndex = 0.obs;
 
   //! Observable
   final isLoading = false.obs;
 
   //! Observable
-  RxList<CategoryModel> allCategories = <CategoryModel>[].obs;
-
-  //! Observable
-  RxList<CategoryModel> featuredCategories = <CategoryModel>[].obs;
+  final RxList<BannerModel> banners = <BannerModel>[].obs;
 
   /* ----------------------------------------------------------------------- */
   /*                                 OVERRIDE                                */
@@ -30,32 +27,30 @@ class CategoryController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    fetchCategories();
+    fetchBanners();
   }
 
   /* ----------------------------------------------------------------------- */
   /*                                 FUNCTION                                */
   /* ----------------------------------------------------------------------- */
 
-  /// --- LOAD category data
-  Future<void> fetchCategories() async {
+  /// UPDATE --- current index when page scroll.
+  void updatePageIndicator(int index) => carouselCurrentIndex.value = index;
+
+  /// FETCH --- banners.
+  Future<void> fetchBanners() async {
     try {
       /* ------------------------------------------------------------------- */
 
       // Show loader while loading categories
       isLoading.value = true;
 
-      // Fetch categories from data source (Firestore, API, etc.)
-      final categories = await _categoryRepository.getAllCategories();
+      // Fetch banners
+      final bannerRepo = Get.put(BannerRepository()); //!
+      final banners = await bannerRepo.fetchBanners();
 
-      // Update the categories list
-      allCategories.assignAll(categories);
-
-      // Filter featured categories
-      featuredCategories.assignAll(allCategories
-          .where((category) => category.isFeatured && category.parentId.isEmpty)
-          .take(ENumberConstants.categoriesProductNumber)
-          .toList());
+      // Assign banners
+      this.banners.assignAll(banners);
 
       /* ------------------------------------------------------------------- */
     } catch (e) {
@@ -68,12 +63,6 @@ class CategoryController extends GetxController {
       isLoading.value = false;
     }
   }
-
-  /// --- LOAD selected category data
-  //!!!!!
-
-  /// --- GET "Category" or "Sub-Category" products
-  //!!!!!
 
   /* ----------------------------------------------------------------------- */
 }

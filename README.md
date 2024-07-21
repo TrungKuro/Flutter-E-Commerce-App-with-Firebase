@@ -112,8 +112,41 @@
 >
 > ---
 >
-> <u>Sản phẩm</u>:
-> - Shoes
+> <u>Sản phẩm cho Dummy Data</u>:
+> - `Sports`
+>   - Giant
+>     - [Xe Đạp Đường Phố Touring MOMENTUM iNeed Latte 26](https://giant.vn/shop/xe-dap-duong-pho-touring-momentum-ineed-latte-26-2022/)
+>     - [Xe Đạp Địa Hình MTB GIANT XTC Advanced 29 3](https://giant.vn/shop/xe-dap-dia-hinh-mtb-giant-xtc-advanced-29-3-phanh-dia-banh-29-inches-2024/)
+>     - [Xe Đạp Gấp Folding MOMENTUM Pakaway 1](https://giant.vn/shop/xe-dap-gap-folding-momentum-pakaway-1-banh-20-inches-2024/)
+>     - [Xe Đạp Đua Đường Trường ROAD GIANT TCR Advanced 1+ Disc Pro Compact](https://giant.vn/shop/xe-dap-dua-duong-truong-road-giant-tcr-advanced-1-disc-pro-compact-phanh-dia-banh-700c-2024/)
+>   - Wilson
+>     - [PRO STAFF 97 V14 TENNIS RACKET](https://www.wilson.com/en-us/product/pro-staff-97-v14-frm-wr12570#covertype=52592)
+>     - [ROLAND-GARROS CLASH 100 V2 TENNIS RACKET](https://www.wilson.com/en-us/product/clash-100-v2-rg-2024-frm-wr15070#covertype=52592)
+>     - [CLASH 100 PRO V2 TENNIS RACKET](https://www.wilson.com/en-us/product/clash-100-pro-v2-0-frm-wr07410#covertype=52592)
+>     - [ULTRA 100L V4 TENNIS RACKET](https://www.wilson.com/en-us/product/ultra-100l-v4-0-wr10840#covertype=52592)
+>   - Yonex
+>     - [Vợt cầu lông Astrox 88S Play](https://sport1.vn/products/vot-cau-long-astrox-88s)
+>     - [Vợt cầu lông Yonex Nanoflare-002 Clear](https://sport1.vn/products/vot-cau-long-yonex-nanoflare-002-clear)
+>     - [Vợt cầu lông Yonex NF Ability](https://sport1.vn/products/vot-cau-long-yonex-nf-ability)
+>   - AKpro
+>     - [Bóng Rổ AKPro cao su AB 5000 số 7](https://sport1.vn/products/bong-ro-molten-cao-su-ab-5000-so-7)
+>     - [Bóng rổ da AKpro ABX3 số 5](https://sport1.vn/products/bong-ro-da-akpro-ab8008-so-7)
+>     - [Quả bóng rổ Molten da BG3200 số 6](https://sport1.vn/products/qua-bong-ro-molten-da-bg3200-so-6)
+>     - [Bóng rổ da AKpro AB8008 số 7](https://sport1.vn/products/bong-ro-da-akpro-ab8008-so-6)
+>     - [Bóng rổ da AKpro AB6006 số 7](https://sport1.vn/products/bong-ro-da-akpro-ab6006-so-6)
+>   - Speedo
+>     - [Fastskin Pure Focus Mirror Goggles](https://www.speedo.com/fastskin-pure-focus-mirror-goggles-red-black-white/15340141.html)
+>     - [Biofuse Mask Infant Goggle Pink](https://www.speedo.com/biofuse-mask-infant-goggle-pink/13153215.html)
+>     - [Rift Junior Goggle Blue](https://www.speedo.com/rift-junior-goggle-blue/13153005.html)
+> - `Furniture`
+>   - !!!
+> - `Electronics`
+>   - !!!
+> - `Clothes`
+>   - !!!
+> - `Animals`
+>   - !!!
+> - `Shoes`
 >   - Nike
 >     - [Tatum 2 'Sidewalk Chalk' PF](https://www.nike.com/vn/t/tatum-2-sidewalk-chalk-pf-basketball-shoes-SjC3nc/FZ2203-600)
 >     - [Air Jordan 1 Mid](https://www.nike.com/vn/t/air-jordan-1-mid-shoes-BpARGV/554724-092)
@@ -138,7 +171,11 @@
 >     - [ULTRA MATCH RUSH FG/AG Men's Soccer Cleats](https://us.puma.com/us/en/pd/ultra-match-rush-fg-ag-mens-soccer-cleats/107830?swatch=01)
 >     - [KING ULTIMATE RUSH FG/AG Men's Soccer Cleats](https://us.puma.com/us/en/pd/king-ultimate-rush-fg-ag-mens-soccer-cleats/107824?swatch=01)
 >     - [FUTURE 7 ULTIMATE CREATIVITY FG/AG Men's Soccer Cleats](https://us.puma.com/us/en/pd/future-7-ultimate-creativity-fg-ag-mens-soccer-cleats/107836?swatch=01)
-> - Toys
+> - `Cosmetics`
+>   - !!!
+> - `Jewellery`
+>   - !!!
+> - `Toys`
 >   - Lego
 >     - [Aston Martin Safety Car & AMR23](https://www.lego.com/en-us/product/aston-martin-safety-car-amr23-76925?icmp=HP-SHCC-Standard-SC_CC_Block_Speed_Champion_76925_HP-TH-SC-M3LE7YI5VK)
 >     - [Dungeons & Dragons: Red Dragon's Tale](https://www.lego.com/en-us/product/dungeons-dragons-red-dragon-s-tale-21348)
@@ -490,7 +527,8 @@
 
 ## Phần III. Backend: E-Commerce Backend
 
-> `[9]` Flutter Fetch Categories from Firebase Only Once | Reduce Firebase Reads.
+> `[09]` Flutter Fetch Categories from Firebase Only Once | Reduce Firebase Reads.
+> `[10]` Flutter Fetch Image from Firebase Storage Database and Redirect Seamlessly.
 >
 > !!!
 
@@ -619,6 +657,7 @@
 > |Lệnh|Chức năng|Ví dụ|
 > |----|---------|-----|
 > |`Get.to()`|Navigate to a new screen.|Get.to(NextScreen());|
+> |`Get.toNamed()`|Navigate to new screen with name.|Get.toNamed('/details');|
 > |`Get.off()`|To go to the next screen and no option to go back to the previous screen.|Get.off(NextScreen());|
 > |`Get.offAll()`|To go to the next screen and cancel all previous routes.|Get.offAll(NextScreen());|
 > |---|---|---|
