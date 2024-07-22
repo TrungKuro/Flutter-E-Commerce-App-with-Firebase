@@ -10,7 +10,7 @@ import 'package:e_commerce_app/features/shop/screens/cart/cart.dart';
 import 'package:e_commerce_app/features/shop/screens/checkout/checkout.dart';
 import 'package:e_commerce_app/features/shop/screens/home/home.dart';
 import 'package:e_commerce_app/features/shop/screens/order/order.dart';
-import 'package:e_commerce_app/features/shop/screens/product_details/product_details.dart';
+// import 'package:e_commerce_app/features/shop/screens/product_details/product_details.dart';
 import 'package:e_commerce_app/features/shop/screens/product_reviews/product_reviews.dart';
 import 'package:e_commerce_app/features/shop/screens/store/store.dart';
 import 'package:e_commerce_app/features/shop/screens/wishlist/favourite.dart';
@@ -33,7 +33,7 @@ class AppRoutes {
     // subCategories
 
     GetPage(name: ERoutes.productReviews, page: () => const ProductReviewsScreen()),
-    GetPage(name: ERoutes.productDetail, page: () => const ProductDetailsScreen()),
+    // GetPage(name: ERoutes.productDetail, page: () => const ProductDetailsScreen()),
 
     // search
 

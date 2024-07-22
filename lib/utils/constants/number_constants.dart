@@ -40,7 +40,7 @@ class ENumberConstants {
   /* ------------------- Popular Products of Home Screen ------------------- */
 
   //! Số item hiển thị trong "Popular Products" trên trang [Home]
-  static const int popularProductNumber = 9;
+  static const int popularProductNumber = 5;
 
   //! Độ cao của mỗi item hiển thị trong "Popular Products" trên trang [Home]
   static const double heightPopularProduct = 288;

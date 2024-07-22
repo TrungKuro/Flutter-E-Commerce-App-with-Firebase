@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
+import 'package:e_commerce_app/features/shop/models/product_model.dart';
 import 'package:e_commerce_app/features/shop/screens/product_details/widgets/bottom_add_to_cart.dart';
 import 'package:e_commerce_app/features/shop/screens/product_details/widgets/product_attributes.dart';
 import 'package:e_commerce_app/features/shop/screens/product_details/widgets/product_description.dart';
@@ -13,7 +14,12 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
-  const ProductDetailsScreen({super.key});
+  const ProductDetailsScreen({
+    super.key,
+    required this.product,
+  });
+
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {

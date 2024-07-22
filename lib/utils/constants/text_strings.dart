@@ -328,11 +328,11 @@ class ETexts {
   /* ----------------------------------------------------------------------- */
 
   // Đường dẫn đến thông tin người dùng: [ Users ] -> [ ID_USER ] -> [ JSON ]
-  // Cấu trúc thông tin người dùng được lưu trong Cloud Firestore dưới dạng JSON
+  // Cấu trúc thông tin các 'Users' được lưu trong Cloud Firestore dưới dạng JSON
 
   static const String collectionPathUsers = "Users";
 
-  // Cấu trúc JSON từ MODEL của User có dạng Map<String, dynamic>
+  // Cấu trúc JSON từ MODEL của 'Users' có dạng Map<String, dynamic>
   //
   // "FirstName"      : String
   // "LastName"       : String
@@ -350,12 +350,12 @@ class ETexts {
 
   /* ----------------------------------------------------------------------- */
 
-  // Đường dẫn đến thông tin các loại sản phẩm: [ Banners ] -> [ ID_BANNER ] -> [ JSON ]
-  // Cấu trúc thông tin các loại sản phẩm được lưu trong Cloud Firestore dưới dạng JSON
+  // Đường dẫn đến thông tin các biển quảng cáo: [ Banners ] -> [ ID_BANNER ] -> [ JSON ]
+  // Cấu trúc thông tin các 'Banners' được lưu trong Cloud Firestore dưới dạng JSON
 
   static const String collectionPathBanners = "Banners";
 
-  // Cấu trúc JSON từ MODEL của Banner có dạng Map<String, dynamic>
+  // Cấu trúc JSON từ MODEL của 'Banners' có dạng Map<String, dynamic>
   //
   // "ImageUrl"     : String
   // "TargetScreen" : String
@@ -368,11 +368,11 @@ class ETexts {
   /* ----------------------------------------------------------------------- */
 
   // Đường dẫn đến thông tin các loại sản phẩm: [ Categories ] -> [ ID_CATEGORY ] -> [ JSON ]
-  // Cấu trúc thông tin các loại sản phẩm được lưu trong Cloud Firestore dưới dạng JSON
+  // Cấu trúc thông tin các 'Categories' được lưu trong Cloud Firestore dưới dạng JSON
 
   static const String collectionPathCategories = "Categories";
 
-  // Cấu trúc JSON từ MODEL của Category có dạng Map<String, dynamic>
+  // Cấu trúc JSON từ MODEL của 'Categories' có dạng Map<String, dynamic>
   //
   // "Name"       : String
   // "Image"      : String
@@ -383,6 +383,108 @@ class ETexts {
   static const String categoryModelImage = "Image";
   static const String categoryModelParentID = "ParentId";
   static const String categoryModelIsFeatured = "IsFeatured";
+
+  /* ----------------------------------------------------------------------- */
+
+  // Đường dẫn đến thông tin các loại sản phẩm: [ Brands ] -> [ ID_BRAND ] -> [ JSON ]
+  // Cấu trúc thông tin các 'Brands' được lưu trong Cloud Firestore dưới dạng JSON
+
+  static const String collectionPathBrands = "Brands";
+
+  // Cấu trúc JSON từ MODEL của 'Brands' có dạng Map<String, dynamic>
+  //
+  // "Id"             : String
+  // "Name"           : String
+  // "Image"          : String
+  // "ProductsCount"  : String
+  // "IsFeatured"     : bool
+
+  static const String brandModelID = "Id";
+  static const String brandModelName = "Name";
+  static const String brandModelImage = "Image";
+  static const String brandModelProductsCount = "ProductsCount";
+  static const String brandModelIsFeatured = "IsFeatured";
+
+  /* ----------------------------------------------------------------------- */
+
+  // Đường dẫn đến thông tin các loại sản phẩm: [ Product ] -> [ ID_PRODUCT ] -> [ JSON ]
+  // Cấu trúc thông tin các 'Product' được lưu trong Cloud Firestore dưới dạng JSON
+
+  static const String collectionPathProduct = "Product";
+
+  // Cấu trúc JSON từ MODEL của 'Product' có dạng Map<String, dynamic>
+  //
+  // "SKU"                : String
+  // "Title"              : String
+  // "Stock"              : int
+  // "Price"              : double
+  // "SalePrice"          : double
+  // "Images"             : List<String>
+  // "Thumbnail"          : String
+  // "IsFeatured"         : bool
+  // "CategoryId"         : String
+  // "Brand"              : BrandModel
+  // "Description"        : String
+  // "ProductType"        : String
+  // "ProductAttributes"  : List<ProductAttributeModel>
+  // "ProductVariations"  : List<ProductVariationModel>
+
+  static const String productModelSKU = "SKU";
+  static const String productModelTitle = "Title";
+  static const String productModelStock = "Stock";
+  static const String productModelPrice = "Price";
+  static const String productModelSalePrice = "SalePrice";
+  static const String productModelImages = "Images";
+  static const String productModelThumbnail = "Thumbnail";
+  static const String productModelIsFeatured = "IsFeatured";
+  static const String productModelCategoryID = "CategoryId";
+  static const String productModelBrand = "Brand";
+  static const String productModelDescription = "Description";
+  static const String productModelProductType = "ProductType";
+  static const String productModelProductAttributes = "ProductAttributes";
+  static const String productModelProductVariations = "ProductVariations";
+
+  /* ----------------------------------------------------------------------- */
+
+  // Đường dẫn đến thông tin các thuộc tính của sản phẩm: [ ProductAttribute ] -> [ ID_PRODUCT_ATTRIBUTE ] -> [ JSON ]
+  // Cấu trúc thông tin các 'ProductAttribute' được lưu trong Cloud Firestore dưới dạng JSON
+
+  static const String collectionPathProductAttribute = "ProductAttribute";
+
+  // Cấu trúc JSON từ MODEL của 'ProductAttribute' có dạng Map<String, dynamic>
+  //
+  // "Name"   : String
+  // "Values" : List<String>
+
+  static const String productAttributeModelName = "Name";
+  static const String productAttributeModelValues = "Values";
+
+  /* ----------------------------------------------------------------------- */
+
+  // Đường dẫn đến thông tin các biến thể của sản phẩm: [ ProductVariation ] -> [ ID_PRODUCT_VARIATION ] -> [ JSON ]
+  // Cấu trúc thông tin các 'ProductVariation' được lưu trong Cloud Firestore dưới dạng JSON
+
+  static const String collectionPathProductVariation = "ProductVariation";
+
+  // Cấu trúc JSON từ MODEL của 'ProductVariation' có dạng Map<String, dynamic>
+  //
+  // "Id"               : String
+  // "Image"            : String
+  // "Description"      : String
+  // "Price"            : double
+  // "SalePrice"        : double
+  // "SKU"              : String
+  // "Stock"            : int
+  // "AttributeValues"  : Map<String, String>
+
+  static const String productVariationModelID = "Id";
+  static const String productVariationModelImage = "Image";
+  static const String productVariationModelDescription = "Description";
+  static const String productVariationModelPrice = "Price";
+  static const String productVariationModelSalePrice = "SalePrice";
+  static const String productVariationModelSKU = "SKU";
+  static const String productVariationModelStock = "Stock";
+  static const String productVariationModelAttributeValues = "AttributeValues";
 
   /* ----------------------------------------------------------------------- */
   /*                            STORAGE (FIREBASE)                           */

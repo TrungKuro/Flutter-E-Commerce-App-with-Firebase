@@ -3,6 +3,7 @@ import 'package:e_commerce_app/common/widgets/layouts/grid_layout.dart';
 import 'package:e_commerce_app/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/features/shop/models/category_model.dart';
+import 'package:e_commerce_app/features/shop/models/product_model.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/number_constants.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
@@ -67,7 +68,7 @@ class ECategoryTab extends StatelessWidget {
               /// List "You Might Like"
               EGridLayout(
                 itemCount: ENumberConstants.youMightLikeNumber,
-                itemBuilder: (_, index) => const EProductCardVertical(),
+                itemBuilder: (_, index) => EProductCardVertical(product: ProductModel.empty()),
               ),
             ],
           ),
