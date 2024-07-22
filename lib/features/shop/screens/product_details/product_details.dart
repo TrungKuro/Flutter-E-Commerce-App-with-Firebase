@@ -7,6 +7,7 @@ import 'package:e_commerce_app/features/shop/screens/product_details/widgets/pro
 import 'package:e_commerce_app/features/shop/screens/product_details/widgets/product_meta_data.dart';
 import 'package:e_commerce_app/features/shop/screens/product_details/widgets/rating_and_share.dart';
 import 'package:e_commerce_app/features/shop/screens/product_reviews/product_reviews.dart';
+import 'package:e_commerce_app/utils/constants/enums.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,7 @@ class ProductDetailsScreen extends StatelessWidget {
             /* ------------------------------------------------------------- */
 
             /// Product Image Slider
-            const EProductDetailImageSlider(),
+            EProductDetailImageSlider(product: product),
 
             /// Product Details
             Padding(
@@ -56,14 +57,14 @@ class ProductDetailsScreen extends StatelessWidget {
                   const SizedBox(height: ESizes.spaceBtwSections / 2),
 
                   /// Price, Title, Stock, Brand
-                  const EProductMetalData(),
+                  EProductMetalData(product: product),
 
                   const SizedBox(height: ESizes.spaceBtwSections / 2),
 
                   /// Attributes
-                  const EProductAttributes(),
+                  if (product.productType == ProductType.variable.toString()) EProductAttributes(product: product),
 
-                  const SizedBox(height: ESizes.spaceBtwSections / 2),
+                  if (product.productType == ProductType.variable.toString()) const SizedBox(height: ESizes.spaceBtwSections / 2),
                   const Divider(),
 
                   /* ------------------------------------------------------- */
@@ -82,7 +83,7 @@ class ProductDetailsScreen extends StatelessWidget {
                   const SizedBox(height: ESizes.spaceBtwSections / 2),
 
                   /// Description
-                  const EProductDescription(),
+                  EProductDescription(product: product),
 
                   const SizedBox(height: ESizes.spaceBtwSections / 2),
 

@@ -4,7 +4,7 @@ import 'package:e_commerce_app/common/widgets/layouts/grid_layout.dart';
 import 'package:e_commerce_app/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:e_commerce_app/common/widgets/shimmer/vertical_product_shimmer.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
-import 'package:e_commerce_app/features/shop/controllers/product_controller.dart';
+import 'package:e_commerce_app/features/shop/controllers/product/product_controller.dart';
 import 'package:e_commerce_app/features/shop/screens/all_products.dart/all_products.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/home_categories.dart';

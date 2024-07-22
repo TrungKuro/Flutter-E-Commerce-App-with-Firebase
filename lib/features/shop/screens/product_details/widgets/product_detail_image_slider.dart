@@ -1,23 +1,33 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
 import 'package:e_commerce_app/common/widgets/icons/circular_icon.dart';
 import 'package:e_commerce_app/common/widgets/images/rounded_image.dart';
+import 'package:e_commerce_app/features/shop/controllers/product/images_controller.dart';
+import 'package:e_commerce_app/features/shop/models/product_model.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
-import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/number_constants.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/device/device_utility.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class EProductDetailImageSlider extends StatelessWidget {
-  const EProductDetailImageSlider({super.key});
+  const EProductDetailImageSlider({
+    super.key,
+    required this.product,
+  });
+
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
     final isDark = EHelperFunctions.isDarkMode(context); //!
+
+    final controller = Get.put(ImagesController()); //!!!
+    final images = controller.getAllProductImages(product); //!!!
 
     return ECurvedEdgeWidget(
       child: Container(
@@ -25,11 +35,23 @@ class EProductDetailImageSlider extends StatelessWidget {
         child: Stack(
           children: [
             /// Main Large Image
-            const SizedBox(
+            SizedBox(
               height: ENumberConstants.heightLargeImageProduct,
-              child: Image(
-                fit: BoxFit.cover,
-                image: AssetImage(EImages.productShoesAdidas5), //!!!
+              child: Obx(
+                () {
+                  final image = controller.selectedProductImage.value;
+                  return GestureDetector(
+                    onTap: () => controller.showEnlargedImage(image), //?
+                    child: CachedNetworkImage(
+                      imageUrl: image,
+                      //?
+                      progressIndicatorBuilder: (_, __, downloadProgress) => CircularProgressIndicator(
+                        value: downloadProgress.progress,
+                        color: EColors.primary,
+                      ),
+                    ),
+                  );
+                },
               ),
             ),
 
@@ -45,19 +67,26 @@ class EProductDetailImageSlider extends StatelessWidget {
                     left: ESizes.defaultSpace,
                     right: ESizes.defaultSpace,
                   ),
-                  itemCount: ENumberConstants.productImageNumber,
+                  itemCount: images.length, //ENumberConstants.productImageNumber
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   physics: const AlwaysScrollableScrollPhysics(),
                   //? Dấu (__) nghĩa là gì, nó khác gì với dấu (_)
                   separatorBuilder: (_, __) => const SizedBox(width: ESizes.spaceBtwItems),
-                  itemBuilder: (_, index) => ERoundedImage(
-                    width: ENumberConstants.widthImageProduct,
-                    fit: BoxFit.cover,
-                    backgroundColor: isDark ? EColors.darkDarker30Per : EColors.lightDarker30Per,
-                    border: Border.all(color: EColors.accent),
-                    paddingAll: ESizes.xs,
-                    imageUrl: EImages.productShoesAdidas3, //!!!
+                  itemBuilder: (_, index) => Obx(
+                    () {
+                      final imageSelected = controller.selectedProductImage.value == images[index];
+                      return ERoundedImage(
+                        width: ENumberConstants.widthImageProduct,
+                        fit: BoxFit.cover,
+                        isNetworkImage: true,
+                        imageUrl: images[index],
+                        paddingAll: ESizes.xs,
+                        backgroundColor: isDark ? EColors.darkDarker30Per : EColors.lightDarker30Per,
+                        onPressed: () => controller.selectedProductImage.value = images[index], //?
+                        border: Border.all(color: imageSelected ? EColors.accent : Colors.transparent),
+                      );
+                    },
                   ),
                 ),
               ),
