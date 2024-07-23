@@ -100,7 +100,13 @@ class HomeScreen extends StatelessWidget {
                         /// Title "Popular Products"
                         ESectionHeading(
                           title: ETexts.popularProductsTitle,
-                          onPressed: () => Get.to(() => const AllProductsScreen()), //?
+                          onPressed: () => Get.to(
+                            () => AllProductsScreen(
+                              //query: FirebaseFirestore.instance.collection('Products').where('IsFeatured', isEqualTo: true).limit(6), //!!!
+                              title: ETexts.popularProductsTitle,
+                              futureMethod: controller.fetchAllFeaturedProducts(),
+                            ),
+                          ), //?
                         ),
                         const SizedBox(height: ESizes.spaceBtwItems),
 

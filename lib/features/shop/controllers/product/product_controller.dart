@@ -18,6 +18,7 @@ class ProductController extends GetxController {
     fetchFeaturedProducts();
   }
 
+  /// !!!
   void fetchFeaturedProducts() async {
     try {
       // show loader while loading products
@@ -32,6 +33,18 @@ class ProductController extends GetxController {
       ELoaders.errorSnackBar(title: 'Oh sanp'); //!!!
     } finally {
       isLoading.value = false;
+    }
+  }
+
+  /// !!!
+  Future<List<ProductModel>> fetchAllFeaturedProducts() async {
+    try {
+      // Fetch products
+      final products = await productRepository.getFeaturedProducts();
+      return products;
+    } catch (e) {
+      ELoaders.errorSnackBar(title: 'Oh sanp'); //!!!
+      return [];
     }
   }
 

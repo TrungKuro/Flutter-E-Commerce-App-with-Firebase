@@ -78,19 +78,27 @@ class ProductModel {
   }
 
   /// Map JSON-Oriented document snapshot from Firebase to Model
-  // factory ProductModel.fromQuerySnapshot(QueryDocumentSnapshot<Object?> document) {
-  //   final data = document.data() as Map<String, dynamic>;
+  factory ProductModel.fromQuerySnapshot(QueryDocumentSnapshot<Object?> document) {
+    final data = document.data() as Map<String, dynamic>;
 
-  //   return ProductModel(
-  //     id: document.id,
-  //     sku: data[ETexts.productModelSKU] ?? '',
-  //     title: data[ETexts.productModelTitle] ?? '',
-  //     stock: data[ETexts.productModelStock] ?? 0,
-  //     isFeatured: data[ETexts.productModelIsFeatured] ?? false,
-
-  //     //!!!!!
-  //   );
-  // }
+    return ProductModel(
+      id: document.id,
+      sku: data[ETexts.productModelSKU] ?? '',
+      title: data[ETexts.productModelTitle] ?? '',
+      stock: data[ETexts.productModelStock] ?? 0,
+      isFeatured: data[ETexts.productModelIsFeatured] ?? false,
+      price: double.parse((data[ETexts.productModelPrice] ?? 0.0).toString()),
+      salePrice: double.parse((data[ETexts.productModelSalePrice] ?? 0.0).toString()),
+      thumbnail: data[ETexts.productModelThumbnail] ?? '',
+      categoryId: data[ETexts.productModelCategoryID] ?? '',
+      description: data[ETexts.productModelDescription] ?? '',
+      productType: data[ETexts.productModelProductType] ?? '',
+      brand: BrandModel.fromJson(data[ETexts.productModelBrand]),
+      images: data[ETexts.productModelImages] != null ? List<String>.from(data[ETexts.productModelImages]) : [],
+      productAttributes: (data[ETexts.productModelProductAttributes] as List<dynamic>).map((e) => ProductAttributeModel.fromJson(e)).toList(),
+      productVariations: (data[ETexts.productModelProductVariations] as List<dynamic>).map((e) => ProductVariationModel.fromJson(e)).toList(),
+    );
+  }
 
   /* ----------------------------------------------------------------------- */
   /*                             STATIC FUNCTION                             */
