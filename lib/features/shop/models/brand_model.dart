@@ -1,5 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
-// import 'package:get/get.dart';
 
 class BrandModel {
   /* ----------------------------------------------------------------------- */
@@ -44,16 +44,22 @@ class BrandModel {
   }
 
   /// Map JSON oriented document snapshot from Firebase to [UserModel].
-  // factory BrandModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> document) {
-  //   if (document.data() != null) {
-  //     final data = document.data()!;
+  factory BrandModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> document) {
+    if (document.data() != null) {
+      final data = document.data()!;
 
-  //     // Map JSON Record to the Model
-  //     return BrandModel(
-  //         //!!!!!
-  //         );
-  //   }
-  // }
+      // Map JSON Record to the Model
+      return BrandModel(
+        id: document.id,
+        name: data['Name'] ?? '', //!!!
+        image: data['Image'] ?? '', //!!!
+        productsCount: data['ProductsCount'] ?? '', //!!!
+        isFeatured: data['IsFeatured'] ?? false, //!!!
+      );
+    } else {
+      return BrandModel.empty();
+    }
+  }
 
   /* ----------------------------------------------------------------------- */
   /*                             STATIC FUNCTION                             */

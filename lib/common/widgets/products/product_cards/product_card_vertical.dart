@@ -76,15 +76,16 @@ class EProductCardVertical extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         /// Sale Tag
-                        ERoundedContainer(
-                          radius: ESizes.sm,
-                          backgroundColor: EColors.secondary.withOpacity(0.8),
-                          padding: const EdgeInsets.symmetric(horizontal: ESizes.sm, vertical: ESizes.xs),
-                          child: Text(
-                            '$salePercentage%',
-                            style: Theme.of(context).textTheme.labelLarge!.apply(color: EColors.black),
+                        if (salePercentage != null)
+                          ERoundedContainer(
+                            radius: ESizes.sm,
+                            backgroundColor: EColors.secondary.withOpacity(0.8),
+                            padding: const EdgeInsets.symmetric(horizontal: ESizes.sm, vertical: ESizes.xs),
+                            child: Text(
+                              '$salePercentage%',
+                              style: Theme.of(context).textTheme.labelLarge!.apply(color: EColors.black),
+                            ),
                           ),
-                        ),
 
                         /// Favourite Icon Button
                         const ECircularIcon(
