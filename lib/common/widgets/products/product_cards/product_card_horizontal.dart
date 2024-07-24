@@ -1,6 +1,6 @@
 import 'package:e_commerce_app/common/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:e_commerce_app/common/widgets/icons/circular_icon.dart';
 import 'package:e_commerce_app/common/widgets/images/rounded_image.dart';
+import 'package:e_commerce_app/common/widgets/products/favourite_icon/favourite_icon.dart';
 import 'package:e_commerce_app/common/widgets/texts/brand_title_text_with_verified_icon.dart';
 import 'package:e_commerce_app/common/widgets/texts/product_price_text.dart';
 import 'package:e_commerce_app/common/widgets/texts/product_title_text.dart';
@@ -70,10 +70,7 @@ class EProductCardHorizontal extends StatelessWidget {
                         ),
 
                         /// Favourite Icon Button
-                        const ECircularIcon(
-                          icon: Iconsax.heart5,
-                          color: EColors.favourite,
-                        ),
+                        const EFavouriteIcon(productId: ''), //!!!!!
                       ],
                     ),
                   ),

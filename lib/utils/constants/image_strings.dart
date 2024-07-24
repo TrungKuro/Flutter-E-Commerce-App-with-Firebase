@@ -30,6 +30,7 @@ class EImages {
 
   static const String loadingAnimation = "assets/images/animations/Lottie Loading.json";
   static const String successAnimation = "assets/images/animations/Lottie Success.json";
+  static const String pencilAnimation = "assets/images/animations/Lottie Write.json";
 
   /* --------------------------- Payment Methods --------------------------- */
 
@@ -155,7 +156,8 @@ class EImages {
   static const String productFurnitureIKEA21 = 'assets/images/products/furniture/ikea/Side table, oak effect, 80x31 cm.avif';
   static const String productFurnitureIKEA22 = 'assets/images/products/furniture/ikea/Upholstered ottoman bed, Gunnared dark grey, 160x200 cm.avif';
   static const String productFurnitureIKEA23 = 'assets/images/products/furniture/ikea/Wall-mounted cabinet combination, dark grey:walnut effect, 175x35x70 cm.avif';
-  static const String productFurnitureIKEA24 = 'assets/images/products/furniture/ikea/Wash-stnd w drawers:wash-basin:tap, dark grey:white marble effect, 62x49x79 cm.avif';
+  static const String productFurnitureIKEA24 =
+      'assets/images/products/furniture/ikea/Wash-stnd w drawers:wash-basin:tap, dark grey:white marble effect, 62x49x79 cm.avif';
   static const String productFurnitureIKEA25 = 'assets/images/products/furniture/ikea/Wash-stnd w drawers:wash-basin:tap, oak effect, 82x49x69 cm.avif';
   static const String productFurnitureIKEA26 = 'assets/images/products/furniture/ikea/Wing chair, Kelinge beige.avif';
 

@@ -13,7 +13,7 @@ import 'package:e_commerce_app/features/shop/screens/order/order.dart';
 // import 'package:e_commerce_app/features/shop/screens/product_details/product_details.dart';
 import 'package:e_commerce_app/features/shop/screens/product_reviews/product_reviews.dart';
 import 'package:e_commerce_app/features/shop/screens/store/store.dart';
-import 'package:e_commerce_app/features/shop/screens/wishlist/favourite.dart';
+import 'package:e_commerce_app/features/shop/screens/wishlist/favorite.dart';
 import 'package:e_commerce_app/routes/routes.dart';
 import 'package:get/get.dart';
 
@@ -21,7 +21,7 @@ class AppRoutes {
   static final pages = [
     GetPage(name: ERoutes.home, page: () => const HomeScreen()),
     GetPage(name: ERoutes.store, page: () => const StoreScreen()),
-    GetPage(name: ERoutes.favourites, page: () => const FavouriteScreen()),
+    GetPage(name: ERoutes.favourites, page: () => const FavoriteScreen()),
     GetPage(name: ERoutes.settings, page: () => const SettingsScreen()),
 
     GetPage(name: ERoutes.order, page: () => const OrderScreen()),

@@ -5,18 +5,23 @@ import 'package:get_storage/get_storage.dart';
 class ELocalStorage {
   /* ----------------------------------------------------------------------- */
 
-  static final ELocalStorage _instance = ELocalStorage._internal();
+  late final GetStorage _storage;
 
-  factory ELocalStorage() {
-    return _instance;
-  }
+  // Singleton Instance.
+  static ELocalStorage? _instance;
 
   ELocalStorage._internal();
 
-  /* ----------------------------------------------------------------------- */
+  factory ELocalStorage.instance() {
+    _instance ??= ELocalStorage._internal();
+    return _instance!;
+  }
 
-  //! Sử dụng gói "get_storage"
-  final _storage = GetStorage();
+  static Future<void> init(String bucketName) async {
+    await GetStorage.init(bucketName);
+    _instance = ELocalStorage._internal();
+    _instance!._storage = GetStorage(bucketName);
+  }
 
   /* ----------------------------------------------------------------------- */
 

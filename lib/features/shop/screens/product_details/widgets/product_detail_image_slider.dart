@@ -1,18 +1,16 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
-import 'package:e_commerce_app/common/widgets/icons/circular_icon.dart';
 import 'package:e_commerce_app/common/widgets/images/rounded_image.dart';
+import 'package:e_commerce_app/common/widgets/products/favourite_icon/favourite_icon.dart';
 import 'package:e_commerce_app/features/shop/controllers/product/images_controller.dart';
 import 'package:e_commerce_app/features/shop/models/product_model.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/number_constants.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
-import 'package:e_commerce_app/utils/device/device_utility.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 
 class EProductDetailImageSlider extends StatelessWidget {
   const EProductDetailImageSlider({
@@ -96,14 +94,7 @@ class EProductDetailImageSlider extends StatelessWidget {
             EAppBar(
               showBackArrow: true,
               showBackgroundColorackArrow: true,
-              actions: [
-                ECircularIcon(
-                  icon: Iconsax.heart5,
-                  color: EColors.favourite,
-                  height: EDeviceUtils.getAppBarHeight(),
-                  width: EDeviceUtils.getAppBarHeight(),
-                ), //!!!
-              ],
+              actions: [EFavouriteIcon(isAppBar: true, productId: product.id)],
             ),
           ],
         ),
