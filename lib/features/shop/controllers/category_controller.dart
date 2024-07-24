@@ -1,5 +1,7 @@
 import 'package:e_commerce_app/data/repositories/categories/category_repository.dart';
+import 'package:e_commerce_app/data/repositories/product/product_repository.dart';
 import 'package:e_commerce_app/features/shop/models/category_model.dart';
+import 'package:e_commerce_app/features/shop/models/product_model.dart';
 import 'package:e_commerce_app/utils/constants/number_constants.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:e_commerce_app/utils/popups/loaders.dart';
@@ -52,10 +54,8 @@ class CategoryController extends GetxController {
       allCategories.assignAll(categories);
 
       // Filter featured categories
-      featuredCategories.assignAll(allCategories
-          .where((category) => category.isFeatured && category.parentId.isEmpty)
-          .take(ENumberConstants.categoriesProductNumber)
-          .toList());
+      featuredCategories
+          .assignAll(allCategories.where((category) => category.isFeatured && category.parentId.isEmpty).take(ENumberConstants.categoriesProductNumber).toList());
 
       /* ------------------------------------------------------------------- */
     } catch (e) {
@@ -73,7 +73,11 @@ class CategoryController extends GetxController {
   //!!!!!
 
   /// --- GET "Category" or "Sub-Category" products
-  //!!!!!
+  Future<List<ProductModel>> getCategoryProducts({required String categoryId, int limit = 4}) async {
+    // Fetch limited (4) products against each subCategory;
+    final products = await ProductRepository.instance.getProductsForCategory(categoryId: categoryId, limit: limit);
+    return products;
+  }
 
   /* ----------------------------------------------------------------------- */
 }

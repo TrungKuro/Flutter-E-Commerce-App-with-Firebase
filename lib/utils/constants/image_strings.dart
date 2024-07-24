@@ -129,7 +129,29 @@ class EImages {
 
   /* ------------------------------ Furniture ------------------------------ */
 
-  //!!!!!
+  // Furniture Restoration_Hardware
+  static const String productFurnitureRestorationHardware = 'assets/images/products/furniture/rh.ico';
+  //
+  static const String productFurnitureRestorationHardware1 = '';
+
+  // Furniture French_Heritage
+  static const String productFurnitureFrenchHeritage = 'assets/images/products/furniture/fh.ico';
+  //
+  static const String productFurnitureFrenchHeritage1 = '';
+
+  // Furniture IKEA
+  static const String productFurnitureIKEA = 'assets/images/products/furniture/ikea.jpeg';
+  //
+  static const String productFurnitureIKEA1 = 'assets/images/products/furniture/ikea/Base cabinet with doors and drawer, white, 120 cm.avif';
+  static const String productFurnitureIKEA2 = 'assets/images/products/furniture/ikea/Bin with lid, light grey, 10 l.avif';
+  static const String productFurnitureIKEA3 = 'assets/images/products/furniture/ikea/Inset sink, 2 bowls with drainboard, stainless steel, 110x53 cm.avif';
+  static const String productFurnitureIKEA4 = 'assets/images/products/furniture/ikea/Kitchen mixer tap, brushed black metal.avif';
+  static const String productFurnitureIKEA5 = 'assets/images/products/furniture/ikea/Kitchen, white Maximera:Askersund ash, 240x60x228 cm.avif';
+
+  // Furniture Dietiker
+  static const String productFurnitureDietiker = 'assets/images/products/furniture/dietiker.jpg';
+  //
+  static const String productFurnitureDietiker1 = '';
 
   /* ----------------------------- Electronics ----------------------------- */
 

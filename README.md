@@ -139,7 +139,24 @@
 >     - [Biofuse Mask Infant Goggle Pink](https://www.speedo.com/biofuse-mask-infant-goggle-pink/13153215.html)
 >     - [Rift Junior Goggle Blue](https://www.speedo.com/rift-junior-goggle-blue/13153005.html)
 > - `Furniture`
->   - !!!
+>   - Restoration_Hardware
+>     - []().
+>     - []().
+>     - []().
+>   - French_Heritage
+>     - []().
+>     - []().
+>     - []().
+>   - IKEA
+>     - [Kitchen mixer tap, brushed black metal](https://www.ikea.com/nl/en/p/bosjoen-kitchen-mixer-tap-brushed-black-metal-20303925/).
+>     - [Inset sink, 2 bowls with drainboard, stainless steel, 110x53 cm](https://www.ikea.com/nl/en/p/vattudalen-inset-sink-2-bowls-with-drainboard-stainless-steel-s09158190/).
+>     - [Kitchen, white Maximera/Askersund ash, 240x60x228 cm](https://www.ikea.com/nl/en/p/metod-kitchen-white-maximera-askersund-ash-s59459435/).
+>     - [Base cabinet with doors and drawer, white, 120 cm](https://www.ikea.com/nl/en/p/knoxhult-base-cabinet-with-doors-and-drawer-white-30326790/).
+>     - [Bin with lid, light grey, 10 l](https://www.ikea.com/nl/en/p/hallbar-bin-with-lid-light-grey-80398058/).
+>   - Dietiker
+>     - []().
+>     - []().
+>     - []().
 > - `Electronics`
 >   - !!!
 > - `Clothes`
@@ -532,6 +549,7 @@
 > `[11]` Flutter Fetch Data from Firebase | Fetch and Display Products on Grid.
 > `[12]` Product Details Page Flutter | Images List | Dynamic Product Variations | Firebase Firestore.
 > `[13]` Flutter Fetch and Display Products Dynamically | Sort All Products | FutureBuilder.
+> `[14]` Fetch Category-Specific Brands and their Products Using Future Builder | Flutter Firebase.
 >
 > !!!
 

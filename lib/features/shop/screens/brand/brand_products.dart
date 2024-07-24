@@ -56,7 +56,7 @@ class BrandProductsScreen extends StatelessWidget {
 
               /// Sort
               FutureBuilder(
-                future: controller.getBrandProducts(brand.id),
+                future: controller.getBrandProducts(brandId: brand.id),
                 builder: (context, snapshot) {
                   // Handle loader, no record or error message
                   const loader = EVerticalProductShimmer();
