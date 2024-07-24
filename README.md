@@ -139,24 +139,33 @@
 >     - [Biofuse Mask Infant Goggle Pink](https://www.speedo.com/biofuse-mask-infant-goggle-pink/13153215.html)
 >     - [Rift Junior Goggle Blue](https://www.speedo.com/rift-junior-goggle-blue/13153005.html)
 > - `Furniture`
->   - Restoration_Hardware
->     - []().
->     - []().
->     - []().
->   - French_Heritage
->     - []().
->     - []().
->     - []().
 >   - IKEA
 >     - [Kitchen mixer tap, brushed black metal](https://www.ikea.com/nl/en/p/bosjoen-kitchen-mixer-tap-brushed-black-metal-20303925/).
 >     - [Inset sink, 2 bowls with drainboard, stainless steel, 110x53 cm](https://www.ikea.com/nl/en/p/vattudalen-inset-sink-2-bowls-with-drainboard-stainless-steel-s09158190/).
 >     - [Kitchen, white Maximera/Askersund ash, 240x60x228 cm](https://www.ikea.com/nl/en/p/metod-kitchen-white-maximera-askersund-ash-s59459435/).
 >     - [Base cabinet with doors and drawer, white, 120 cm](https://www.ikea.com/nl/en/p/knoxhult-base-cabinet-with-doors-and-drawer-white-30326790/).
 >     - [Bin with lid, light grey, 10 l](https://www.ikea.com/nl/en/p/hallbar-bin-with-lid-light-grey-80398058/).
->   - Dietiker
->     - []().
->     - []().
->     - []().
+>     - [Day-bed w 3 drawers/2 mattresses, white medium firm, 80x200 cm](https://www.ikea.com/nl/en/p/hemnes-day-bed-w-3-drawers-2-mattresses-white-afjaell-medium-firm-s09521500/).
+>     - [Corner sofa-bed with storage, Skiftebo dark grey](https://www.ikea.com/nl/en/p/friheten-corner-sofa-bed-with-storage-skiftebo-dark-grey-s39216754/).
+>     - [Upholstered ottoman bed, Gunnared dark grey, 160x200 cm](https://www.ikea.com/nl/en/p/idanaes-upholstered-ottoman-bed-gunnared-dark-grey-10458970/).
+>     - [Divan bed, Valevag firm/Tuddal Gunnared beige, 160x200 cm](https://www.ikea.com/nl/en/p/dunvik-divan-bed-valevag-firm-tuddal-gunnared-beige-s09431552/).
+>     - [Chest of 3 drawers, pine, 62x70 cm](https://www.ikea.com/nl/en/p/rast-chest-of-3-drawers-pine-75305709/).
+>     - [Chest of 3 drawers, yellow stain, 108x96 cm](https://www.ikea.com/nl/en/p/hemnes-chest-of-3-drawers-yellow-stain-60585796/).
+>     - [Side table, oak effect, 80x31 cm](https://www.ikea.com/nl/en/p/holmerud-side-table-oak-effect-40541421/).
+>     - [Nest of tables, set of 2, grey/walnut effect](https://www.ikea.com/nl/en/p/sonhult-nest-of-tables-set-of-2-grey-walnut-effect-30578556/).
+>     - [Coffee table, oak veneer, 140x60 cm](https://www.ikea.com/nl/en/p/listerby-coffee-table-oak-veneer-30513904/).
+>     - [Chair, outdoor, foldable black/light brown stained](https://www.ikea.com/nl/en/p/taernoe-chair-outdoor-foldable-black-light-brown-stained-90095428/).
+>     - [Chair, oak effect/Gunnared medium grey](https://www.ikea.com/nl/en/p/bergmund-chair-oak-effect-gunnared-medium-grey-s39384568/).
+>     - [Wing chair, Kelinge beige](https://www.ikea.com/nl/en/p/strandmon-wing-chair-kelinge-beige-10492813/).
+>     - [1,5-seat armchair, Hogalid brown/brown](https://www.ikea.com/nl/en/p/viskafors-1-5-seat-armchair-hoegalid-brown-brown-s99443287/).
+>     - [Wash-stnd w drawers/wash-basin/tap, dark grey/white marble effect, 62x49x79 cm](https://www.ikea.com/nl/en/p/havbaeck-toernviken-wash-stnd-w-drawers-wash-basin-tap-dark-grey-white-marble-effect-s49521046/).
+>     - [Wash-stnd w drawers/wash-basin/tap, oak effect, 82x49x69 cm](https://www.ikea.com/nl/en/p/aengsjoen-orrsjoen-wash-stnd-w-drawers-wash-basin-tap-oak-effect-s09521265/).
+>     - [Desk and storage combination, and swivel chair black/pine](https://www.ikea.com/nl/en/p/fjaellbo-kullaberg-gullhult-desk-and-storage-combination-and-swivel-chair-black-pine-s29436577/).
+>     - [Desk and chair, oak beige](https://www.ikea.com/nl/en/p/ridspoe-fjaellberget-desk-and-chair-oak-beige-s59502783/).
+>     - [Gaming chair, dark grey/grey](https://www.ikea.com/nl/en/p/styrspel-gaming-chair-dark-grey-grey-20522032/).
+>     - [Gaming chair, Gunnared beige](https://www.ikea.com/nl/en/p/gruppspel-gaming-chair-gunnared-beige-60507586/).
+>     - [Wall-mounted cabinet combination, dark grey/walnut effect, 175x35x70 cm](https://www.ikea.com/nl/en/p/eket-wall-mounted-cabinet-combination-dark-grey-walnut-effect-s29492747/).
+>     - [Shelving unit, black-brown/glass, 100x175 cm](https://www.ikea.com/nl/en/p/vittsjoe-shelving-unit-black-brown-glass-20213312/).
 > - `Electronics`
 >   - !!!
 > - `Clothes`

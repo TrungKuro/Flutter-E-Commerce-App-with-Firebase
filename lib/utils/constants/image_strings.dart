@@ -129,29 +129,35 @@ class EImages {
 
   /* ------------------------------ Furniture ------------------------------ */
 
-  // Furniture Restoration_Hardware
-  static const String productFurnitureRestorationHardware = 'assets/images/products/furniture/rh.ico';
-  //
-  static const String productFurnitureRestorationHardware1 = '';
-
-  // Furniture French_Heritage
-  static const String productFurnitureFrenchHeritage = 'assets/images/products/furniture/fh.ico';
-  //
-  static const String productFurnitureFrenchHeritage1 = '';
-
   // Furniture IKEA
   static const String productFurnitureIKEA = 'assets/images/products/furniture/ikea.jpeg';
   //
-  static const String productFurnitureIKEA1 = 'assets/images/products/furniture/ikea/Base cabinet with doors and drawer, white, 120 cm.avif';
-  static const String productFurnitureIKEA2 = 'assets/images/products/furniture/ikea/Bin with lid, light grey, 10 l.avif';
-  static const String productFurnitureIKEA3 = 'assets/images/products/furniture/ikea/Inset sink, 2 bowls with drainboard, stainless steel, 110x53 cm.avif';
-  static const String productFurnitureIKEA4 = 'assets/images/products/furniture/ikea/Kitchen mixer tap, brushed black metal.avif';
-  static const String productFurnitureIKEA5 = 'assets/images/products/furniture/ikea/Kitchen, white Maximera:Askersund ash, 240x60x228 cm.avif';
-
-  // Furniture Dietiker
-  static const String productFurnitureDietiker = 'assets/images/products/furniture/dietiker.jpg';
-  //
-  static const String productFurnitureDietiker1 = '';
+  static const String productFurnitureIKEA01 = 'assets/images/products/furniture/ikea/Base cabinet with doors and drawer, white, 120 cm.avif';
+  static const String productFurnitureIKEA02 = 'assets/images/products/furniture/ikea/Bin with lid, light grey, 10 l.avif';
+  static const String productFurnitureIKEA03 = 'assets/images/products/furniture/ikea/Inset sink, 2 bowls with drainboard, stainless steel, 110x53 cm.avif';
+  static const String productFurnitureIKEA04 = 'assets/images/products/furniture/ikea/Kitchen mixer tap, brushed black metal.avif';
+  static const String productFurnitureIKEA05 = 'assets/images/products/furniture/ikea/Kitchen, white Maximera:Askersund ash, 240x60x228 cm.avif';
+  static const String productFurnitureIKEA06 = 'assets/images/products/furniture/ikea/1,5-seat armchair, Hogalid brown:brown.jpg';
+  static const String productFurnitureIKEA07 = 'assets/images/products/furniture/ikea/Chair, oak effect:Gunnared medium grey.avif';
+  static const String productFurnitureIKEA08 = 'assets/images/products/furniture/ikea/Chair, outdoor, foldable black:light brown stained.avif';
+  static const String productFurnitureIKEA09 = 'assets/images/products/furniture/ikea/Chest of 3 drawers, pine, 62x70 cm.avif';
+  static const String productFurnitureIKEA10 = 'assets/images/products/furniture/ikea/Chest of 3 drawers, yellow stain, 108x96 cm.webp';
+  static const String productFurnitureIKEA11 = 'assets/images/products/furniture/ikea/Coffee table, oak veneer, 140x60 cm.avif';
+  static const String productFurnitureIKEA12 = 'assets/images/products/furniture/ikea/Corner sofa-bed with storage, Skiftebo dark grey.avif';
+  static const String productFurnitureIKEA13 = 'assets/images/products/furniture/ikea/Day-bed w 3 drawers:2 mattresses, white medium firm, 80x200 cm.avif';
+  static const String productFurnitureIKEA14 = 'assets/images/products/furniture/ikea/Desk and chair, oak beige.jpg';
+  static const String productFurnitureIKEA15 = 'assets/images/products/furniture/ikea/Desk and storage combination, and swivel chair black:pine.jpg';
+  static const String productFurnitureIKEA16 = 'assets/images/products/furniture/ikea/Divan bed, Valevag firm:Tuddal Gunnared beige, 160x200 cm.avif';
+  static const String productFurnitureIKEA17 = 'assets/images/products/furniture/ikea/Gaming chair, dark grey:grey.avif';
+  static const String productFurnitureIKEA18 = 'assets/images/products/furniture/ikea/Gaming chair, Gunnared beige.avif';
+  static const String productFurnitureIKEA19 = 'assets/images/products/furniture/ikea/Nest of tables, set of 2, grey:walnut effect.avif';
+  static const String productFurnitureIKEA20 = 'assets/images/products/furniture/ikea/Shelving unit, black-brown:glass, 100x175 cm.avif';
+  static const String productFurnitureIKEA21 = 'assets/images/products/furniture/ikea/Side table, oak effect, 80x31 cm.avif';
+  static const String productFurnitureIKEA22 = 'assets/images/products/furniture/ikea/Upholstered ottoman bed, Gunnared dark grey, 160x200 cm.avif';
+  static const String productFurnitureIKEA23 = 'assets/images/products/furniture/ikea/Wall-mounted cabinet combination, dark grey:walnut effect, 175x35x70 cm.avif';
+  static const String productFurnitureIKEA24 = 'assets/images/products/furniture/ikea/Wash-stnd w drawers:wash-basin:tap, dark grey:white marble effect, 62x49x79 cm.avif';
+  static const String productFurnitureIKEA25 = 'assets/images/products/furniture/ikea/Wash-stnd w drawers:wash-basin:tap, oak effect, 82x49x69 cm.avif';
+  static const String productFurnitureIKEA26 = 'assets/images/products/furniture/ikea/Wing chair, Kelinge beige.avif';
 
   /* ----------------------------- Electronics ----------------------------- */
 
