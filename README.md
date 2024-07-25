@@ -560,6 +560,7 @@
 > `[13]` Flutter Fetch and Display Products Dynamically | Sort All Products | FutureBuilder.
 > `[14]` Fetch Category-Specific Brands and their Products Using Future Builder | Flutter Firebase.
 > `[15]` Everything You Need To Know About Flutter Favorite using local storage and firebase.
+> `[16]` Fetch Sub Categories and their Products from Firestore.
 >
 > !!!
 

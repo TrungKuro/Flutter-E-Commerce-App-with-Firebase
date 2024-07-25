@@ -4,19 +4,28 @@ import 'package:e_commerce_app/common/widgets/products/favourite_icon/favourite_
 import 'package:e_commerce_app/common/widgets/texts/brand_title_text_with_verified_icon.dart';
 import 'package:e_commerce_app/common/widgets/texts/product_price_text.dart';
 import 'package:e_commerce_app/common/widgets/texts/product_title_text.dart';
+import 'package:e_commerce_app/features/shop/controllers/product/product_controller.dart';
+import 'package:e_commerce_app/features/shop/models/product_model.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
-import 'package:e_commerce_app/utils/constants/image_strings.dart';
+import 'package:e_commerce_app/utils/constants/enums.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
 class EProductCardHorizontal extends StatelessWidget {
-  const EProductCardHorizontal({super.key});
+  const EProductCardHorizontal({
+    super.key,
+    required this.product,
+  });
+
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
     final isDark = EHelperFunctions.isDarkMode(context); //!
+    final controller = ProductController.instance;
+    final salePercentage = controller.calculateSalePercentage(product.price, product.salePrice);
 
     return GestureDetector(
       onTap: () {}, //?
@@ -41,10 +50,11 @@ class EProductCardHorizontal extends StatelessWidget {
               child: Stack(
                 children: [
                   /// Thumnail Image
-                  const ERoundedImage(
+                  ERoundedImage(
                     //! Tạo hiệu ứng "Nested corner radii"
                     borderRadius: ESizes.cardRadiusLg - 1 - ESizes.sm,
-                    imageUrl: EImages.productShoesAdidas2, //!!!
+                    imageUrl: product.thumbnail,
+                    isNetworkImage: true,
                     width: double.infinity,
                     height: double.infinity,
                     fit: BoxFit.cover,
@@ -59,18 +69,19 @@ class EProductCardHorizontal extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         /// Sale Tag
-                        ERoundedContainer(
-                          radius: ESizes.sm,
-                          backgroundColor: EColors.secondary.withOpacity(0.8),
-                          padding: const EdgeInsets.symmetric(horizontal: ESizes.sm, vertical: ESizes.xs),
-                          child: Text(
-                            '25%', //!!!
-                            style: Theme.of(context).textTheme.labelLarge!.apply(color: EColors.black),
+                        if (salePercentage != null)
+                          ERoundedContainer(
+                            radius: ESizes.sm,
+                            backgroundColor: EColors.secondary.withOpacity(0.8),
+                            padding: const EdgeInsets.symmetric(horizontal: ESizes.sm, vertical: ESizes.xs),
+                            child: Text(
+                              '$salePercentage%',
+                              style: Theme.of(context).textTheme.labelLarge!.apply(color: EColors.black),
+                            ),
                           ),
-                        ),
 
                         /// Favourite Icon Button
-                        const EFavouriteIcon(productId: ''), //!!!!!
+                        EFavouriteIcon(productId: product.id),
                       ],
                     ),
                   ),
@@ -85,20 +96,20 @@ class EProductCardHorizontal extends StatelessWidget {
                   /* ------------------------------------------------------- */
 
                   /// Name Product
-                  const Padding(
-                    padding: EdgeInsets.only(top: ESizes.sm, right: ESizes.sm),
+                  Padding(
+                    padding: const EdgeInsets.only(top: ESizes.sm, right: ESizes.sm),
                     child: EProductTitleText(
-                      title: 'Green Nike Air Shoes with fly.', //!!!
+                      title: product.title,
                       smallSize: true,
                     ),
                   ),
                   const SizedBox(height: ESizes.spaceBtwItems / 2),
 
                   /// Name Brand
-                  const Padding(
-                    padding: EdgeInsets.only(right: ESizes.sm),
+                  Padding(
+                    padding: const EdgeInsets.only(right: ESizes.sm),
                     child: EBrandTitleWithVerifiedIcon(
-                      title: 'Nike', //!!!
+                      title: product.brand!.name,
                     ),
                   ),
 
@@ -113,10 +124,28 @@ class EProductCardHorizontal extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      /// Price
-                      const EProductPriceText(
-                        price: '35.0', //!!!
-                        isLarge: true,
+                      Flexible(
+                        child: Column(
+                          children: [
+                            if (product.productType == ProductType.single.toString() && product.salePrice > 0)
+                              Padding(
+                                padding: const EdgeInsets.only(left: ESizes.sm),
+                                child: Text(
+                                  product.price.toString(),
+                                  style: Theme.of(context).textTheme.labelMedium!.apply(decoration: TextDecoration.lineThrough),
+                                ),
+                              ),
+
+                            /// Price, show sale price as main price if sale exist.
+                            Padding(
+                              padding: const EdgeInsets.only(left: ESizes.sm),
+                              child: EProductPriceText(
+                                price: controller.getProductPrice(product),
+                                isLarge: true,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
 
                       /// Add to Cart Button

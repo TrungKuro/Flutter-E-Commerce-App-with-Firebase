@@ -102,7 +102,7 @@ class EHomeCategories extends StatelessWidget {
               return EVerticalImageText(
                 image: category.image,
                 title: category.name,
-                onTap: () => Get.to(() => const SubCategoriesScreen()), //?
+                onTap: () => Get.to(() => SubCategoriesScreen(category: category)), //?
               ); // categories[index]
             },
           ),
