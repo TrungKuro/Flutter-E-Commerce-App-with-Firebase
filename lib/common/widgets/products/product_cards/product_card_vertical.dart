@@ -2,6 +2,7 @@ import 'package:e_commerce_app/common/styles/shadow_styles.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:e_commerce_app/common/widgets/images/rounded_image.dart';
 import 'package:e_commerce_app/common/widgets/products/favourite_icon/favourite_icon.dart';
+import 'package:e_commerce_app/common/widgets/products/product_cards/add_to_cart_button.dart';
 import 'package:e_commerce_app/common/widgets/texts/product_price_text.dart';
 import 'package:e_commerce_app/common/widgets/texts/brand_title_text_with_verified_icon.dart';
 import 'package:e_commerce_app/common/widgets/texts/product_title_text.dart';
@@ -14,7 +15,6 @@ import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 
 class EProductCardVertical extends StatelessWidget {
   const EProductCardVertical({
@@ -163,20 +163,7 @@ class EProductCardVertical extends StatelessWidget {
                 ),
 
                 /// Add to Cart Button
-                Container(
-                  decoration: const BoxDecoration(
-                    color: EColors.dark,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(ESizes.cardRadiusMd),
-                      bottomRight: Radius.circular(ESizes.productImageRadius),
-                    ),
-                  ),
-                  child: const SizedBox(
-                    width: ESizes.iconLg * 1.2,
-                    height: ESizes.iconLg * 1.2,
-                    child: Center(child: Icon(Iconsax.add, color: EColors.white)),
-                  ),
-                ),
+                EAddToCartButton(product: product),
               ],
             ),
 

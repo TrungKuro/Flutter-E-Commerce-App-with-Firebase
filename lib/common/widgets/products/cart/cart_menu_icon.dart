@@ -1,6 +1,6 @@
+import 'package:e_commerce_app/features/shop/controllers/product/cart_controller.dart';
 import 'package:e_commerce_app/features/shop/screens/cart/cart.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
-import 'package:e_commerce_app/utils/constants/number_constants.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,12 +10,16 @@ class ECartCounterIcon extends StatelessWidget {
   const ECartCounterIcon({
     super.key,
     this.iconColor,
+    this.counterBgColor,
+    this.counterTextColor,
   });
 
-  final Color? iconColor;
+  final Color? iconColor, counterBgColor, counterTextColor;
 
   @override
   Widget build(BuildContext context) {
+    // get an instance of the CartController
+    final controller = Get.put(CartController()); //!
     final isDark = EHelperFunctions.isDarkMode(context); //!
 
     return Stack(
@@ -38,12 +42,14 @@ class ECartCounterIcon extends StatelessWidget {
               borderRadius: BorderRadius.circular(100),
             ),
             child: Center(
-              child: Text(
-                ENumberConstants.numberProductsInCart.toString(), //!!!
-                style: Theme.of(context).textTheme.labelLarge!.apply(
-                      color: (iconColor != null) ? (EColors.white) : (isDark ? EColors.black : EColors.white),
-                      fontSizeFactor: 0.8,
-                    ),
+              child: Obx(
+                () => Text(
+                  controller.noOfCartItems.value.toString(),
+                  style: Theme.of(context).textTheme.labelLarge!.apply(
+                        color: (iconColor != null) ? (EColors.white) : (isDark ? EColors.black : EColors.white),
+                        fontSizeFactor: 0.8,
+                      ),
+                ),
               ),
             ),
           ),

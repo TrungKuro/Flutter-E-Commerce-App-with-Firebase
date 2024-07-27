@@ -562,6 +562,7 @@
 > `[15]` Everything You Need To Know About Flutter Favorite using local storage and firebase.
 > `[16]` Fetch Sub Categories and their Products from Firestore.
 > `[17]` Flutter Firebase CRUD.
+> `[18]` Effortless Flutter Cart Management.
 >
 > !!!
 

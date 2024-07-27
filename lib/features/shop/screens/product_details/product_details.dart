@@ -122,7 +122,7 @@ class ProductDetailsScreen extends StatelessWidget {
       /*                                BOTTOM                               */
       /* ------------------------------------------------------------------- */
 
-      bottomNavigationBar: const EBottomAddToCart(),
+      bottomNavigationBar: EBottomAddToCart(product: product),
 
       /* ------------------------------------------------------------------- */
     );

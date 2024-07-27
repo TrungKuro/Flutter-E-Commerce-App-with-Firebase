@@ -1,11 +1,8 @@
-import 'package:e_commerce_app/common/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:e_commerce_app/common/widgets/products/cart/product_quantity_with_add_remove_button.dart';
+import 'package:e_commerce_app/common/widgets/images/rounded_image.dart';
 import 'package:e_commerce_app/common/widgets/texts/brand_title_text_with_verified_icon.dart';
-import 'package:e_commerce_app/common/widgets/texts/product_price_text.dart';
 import 'package:e_commerce_app/common/widgets/texts/product_title_text.dart';
+import 'package:e_commerce_app/features/shop/models/cart_item_model.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
-import 'package:e_commerce_app/utils/constants/image_strings.dart';
-import 'package:e_commerce_app/utils/constants/number_constants.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -14,9 +11,11 @@ class ECartItem extends StatelessWidget {
   const ECartItem({
     super.key,
     required this.showAddRemoveButtons,
+    required this.cartItem,
   });
 
   final bool showAddRemoveButtons;
+  final CartItemModel cartItem;
 
   @override
   Widget build(BuildContext context) {
@@ -28,21 +27,29 @@ class ECartItem extends StatelessWidget {
         /* ----------------------------------------------------------------- */
 
         /// Image Product
-        ERoundedContainer(
-          height: ENumberConstants.heightProductInCart,
-          backgroundColor: isDark ? EColors.darkerGrey : EColors.grey,
-          padding: const EdgeInsets.all(ESizes.xs),
-          child: ClipRRect(
-            //! Tạo hiệu ứng "Nested corner radii"
-            borderRadius: BorderRadius.circular(ESizes.md - ESizes.xs),
-            child: Container(
-              color: EColors.darkGrey,
-              child: const Image(
-                fit: BoxFit.cover,
-                image: AssetImage(EImages.productToysBandai2), //!!!
-              ),
-            ),
-          ),
+        // ERoundedContainer(
+        //   height: ENumberConstants.heightProductInCart,
+        //   backgroundColor: isDark ? EColors.darkerGrey : EColors.grey,
+        //   padding: const EdgeInsets.all(ESizes.xs),
+        //   child: ClipRRect(
+        //     //! Tạo hiệu ứng "Nested corner radii"
+        //     borderRadius: BorderRadius.circular(ESizes.md - ESizes.xs),
+        //     child: Container(
+        //       color: EColors.darkGrey,
+        //       child: const Image(
+        //         fit: BoxFit.cover,
+        //         image: AssetImage(EImages.productToysBandai2), //!!!
+        //       ),
+        //     ),
+        //   ),
+        // ),
+        ERoundedImage(
+          imageUrl: cartItem.image ?? '',
+          isNetworkImage: true,
+          width: 60,
+          height: 60,
+          padding: const EdgeInsets.all(ESizes.sm),
+          backgroundColor: isDark ? EColors.darkerGrey : EColors.light,
         ),
 
         /* ----------------------------------------------------------------- */
@@ -59,20 +66,23 @@ class ECartItem extends StatelessWidget {
               /* ------------------------------------------------------------- */
 
               /// Brand
-              const EBrandTitleWithVerifiedIcon(title: 'Nike'), //!!!
+              EBrandTitleWithVerifiedIcon(title: cartItem.brandName ?? ''),
 
               /// Name
-              const EProductTitleText(title: 'Black Sports shoes', maxLines: 1), //!!!
+              EProductTitleText(title: cartItem.title, maxLines: 1),
 
               /// Attributes
               Text.rich(
                 TextSpan(
-                  children: [
-                    TextSpan(text: 'Color ', style: Theme.of(context).textTheme.bodySmall), //!!!
-                    TextSpan(text: 'Green ', style: Theme.of(context).textTheme.bodyLarge), //!!!
-                    TextSpan(text: 'Size ', style: Theme.of(context).textTheme.bodySmall), //!!!
-                    TextSpan(text: 'UK 08 ', style: Theme.of(context).textTheme.bodyLarge), //!!!
-                  ],
+                  children: (cartItem.selectedVariation ?? {})
+                      .entries
+                      .map(
+                        (e) => TextSpan(children: [
+                          TextSpan(text: ' ${e.key} ', style: Theme.of(context).textTheme.bodySmall),
+                          TextSpan(text: '${e.value} ', style: Theme.of(context).textTheme.bodyLarge),
+                        ]),
+                      )
+                      .toList(),
                 ),
               ),
 
@@ -83,14 +93,14 @@ class ECartItem extends StatelessWidget {
               /* ------------------------------------------------------------- */
 
               /// Quantity & Total
-              if (showAddRemoveButtons)
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    EProductQuantityWithAddRemoveButton(),
-                    EProductPriceText(price: '256'), //!!!
-                  ],
-                ),
+              // if (showAddRemoveButtons)
+              //   const Row(
+              //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //     children: [
+              //       EProductQuantityWithAddRemoveButton(),
+              //       EProductPriceText(price: '256'), //!!!
+              //     ],
+              //   ),
 
               /* ------------------------------------------------------------- */
             ],

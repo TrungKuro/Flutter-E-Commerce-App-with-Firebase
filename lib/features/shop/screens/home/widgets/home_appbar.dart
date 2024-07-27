@@ -34,7 +34,7 @@ class EHomeAppBar extends StatelessWidget {
                 return const EShimmerEffect(width: 80, height: 15);
               } else {
                 return Text(
-                  controller.user.value.userName, // ETexts.userNameValue, //! For test UI
+                  controller.fullNameUser.value, //!!!
                   style: Theme.of(context).textTheme.headlineSmall!.apply(color: EColors.white),
                 );
               }
@@ -44,7 +44,13 @@ class EHomeAppBar extends StatelessWidget {
           ),
         ],
       ),
-      actions: const [ECartCounterIcon(iconColor: EColors.white)],
+      actions: const [
+        ECartCounterIcon(
+          iconColor: EColors.white,
+          counterBgColor: EColors.black,
+          counterTextColor: EColors.white,
+        )
+      ],
     );
   }
 }

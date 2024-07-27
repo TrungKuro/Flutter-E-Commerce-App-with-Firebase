@@ -6,7 +6,15 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
 class EProductQuantityWithAddRemoveButton extends StatelessWidget {
-  const EProductQuantityWithAddRemoveButton({super.key});
+  const EProductQuantityWithAddRemoveButton({
+    super.key,
+    required this.quantity,
+    this.add,
+    this.remove,
+  });
+
+  final int quantity;
+  final VoidCallback? add, remove;
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +27,7 @@ class EProductQuantityWithAddRemoveButton extends StatelessWidget {
 
         /// Increase Button
         ECircularIcon(
+          onPressed: remove, //?
           icon: Iconsax.minus,
           width: 32,
           height: 32,
@@ -29,11 +38,12 @@ class EProductQuantityWithAddRemoveButton extends StatelessWidget {
 
         /// Quantity purchased
         const SizedBox(width: ESizes.spaceBtwItems),
-        Text('2', style: Theme.of(context).textTheme.titleSmall), //!!!
+        Text(quantity.toString(), style: Theme.of(context).textTheme.titleSmall),
         const SizedBox(width: ESizes.spaceBtwItems),
 
         /// Decrease Button
-        const ECircularIcon(
+        ECircularIcon(
+          onPressed: add, //?
           icon: Iconsax.add,
           width: 32,
           height: 32,
