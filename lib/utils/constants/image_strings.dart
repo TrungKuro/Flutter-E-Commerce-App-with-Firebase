@@ -32,6 +32,7 @@ class EImages {
   static const String successAnimation = "assets/images/animations/Lottie Success.json";
   static const String pencilAnimation = "assets/images/animations/Lottie Write.json";
   static const String cartAnimation = "assets/images/animations/Lottie Cart.json";
+  static const String orderCompletedAnimation = "assets/images/animations/Lottie Order.json";
 
   /* --------------------------- Payment Methods --------------------------- */
 

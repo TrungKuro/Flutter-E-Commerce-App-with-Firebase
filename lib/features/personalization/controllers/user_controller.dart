@@ -136,7 +136,7 @@ class UserController extends GetxController {
 
       //! First Re-Authenticate User
       final auth = AuthenticationRepository.instance; //!
-      final provider = auth.authUser!.providerData.map((e) => e.providerId).first;
+      final provider = auth.authUser.providerData.map((e) => e.providerId).first;
 
       //! Re-Verify Auth Email
       if (provider.isNotEmpty) {

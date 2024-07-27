@@ -48,7 +48,7 @@ class AuthenticationRepository extends GetxController {
   /* ----------------------------------------------------------------------- */
 
   /// Get Authenticated User Data.
-  User? get authUser => _auth.currentUser;
+  User get authUser => _auth.currentUser!;
 
   /* ----------------------------------------------------------------------- */
   /*                                 FUNCTION                                */

@@ -54,8 +54,7 @@ class UserRepository extends GetxController {
     try {
       /* ------------------------------------------------------------------- */
 
-      final documentSnapshot =
-          await _db.collection(ETexts.collectionPathUsers).doc(AuthenticationRepository.instance.authUser?.uid).get();
+      final documentSnapshot = await _db.collection(ETexts.collectionPathUsers).doc(AuthenticationRepository.instance.authUser.uid).get();
       if (documentSnapshot.exists) {
         //! For Debug
         if (kDebugMode) print('Document exists.');
@@ -105,10 +104,7 @@ class UserRepository extends GetxController {
     try {
       /* ------------------------------------------------------------------- */
 
-      await _db
-          .collection(ETexts.collectionPathUsers)
-          .doc(AuthenticationRepository.instance.authUser?.uid)
-          .update(json);
+      await _db.collection(ETexts.collectionPathUsers).doc(AuthenticationRepository.instance.authUser.uid).update(json);
 
       //! For Debug
       if (kDebugMode) print('Update single data user into Firestore success.');

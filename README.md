@@ -563,6 +563,7 @@
 > `[16]` Fetch Sub Categories and their Products from Firestore.
 > `[17]` Flutter Firebase CRUD.
 > `[18]` Effortless Flutter Cart Management.
+> `[19]` Flutter Order Management.
 >
 > !!!
 

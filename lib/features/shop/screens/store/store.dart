@@ -7,7 +7,7 @@ import 'package:e_commerce_app/common/widgets/shimmer/brands_shimmer.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/common/widgets/brands/brand_card.dart';
 import 'package:e_commerce_app/features/shop/controllers/category_controller.dart';
-import 'package:e_commerce_app/features/shop/controllers/product/brand_controller.dart';
+import 'package:e_commerce_app/features/shop/controllers/brand_controller.dart';
 import 'package:e_commerce_app/features/shop/screens/brand/all_brands.dart';
 import 'package:e_commerce_app/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
