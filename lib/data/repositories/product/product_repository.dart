@@ -2,10 +2,12 @@ import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_commerce_app/data/services/firebase_storage_service.dart';
+import 'package:e_commerce_app/features/shop/models/product_category_model.dart';
 import 'package:e_commerce_app/features/shop/models/product_model.dart';
 import 'package:e_commerce_app/utils/constants/enums.dart';
 import 'package:e_commerce_app/utils/exceptions/firebase_exceptions.dart';
 import 'package:e_commerce_app/utils/exceptions/platform_exceptions.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
@@ -169,6 +171,9 @@ class ProductRepository extends GetxController {
         // Store product in Firestore
         await _db.collection("Products").doc(product.id).set(product.toJson());
       }
+
+      //! For Debug
+      if (kDebugMode) print('Upload a list of all Products to Firestore success.');
     } on FirebaseException catch (e) {
       throw e.message!;
     } on SocketException catch (e) {
@@ -177,6 +182,25 @@ class ProductRepository extends GetxController {
       throw e.message!;
     } catch (e) {
       throw e.toString();
+    }
+  }
+
+  /// Upload product categories to the Cloud Firebase
+  Future<void> uploadProductCategory(List<ProductCategoryModel> productCategories) async {
+    try {
+      // Upload all the product categories
+      for (var productCategory in productCategories) {
+        await _db.collection('ProductCategory').doc().set(productCategory.toJson());
+      }
+
+      //! For Debug
+      if (kDebugMode) print('Upload a list of all ProductCategories to Firestore success.');
+    } on FirebaseException catch (e) {
+      throw EFirebaseException(e.code).message;
+    } on PlatformException catch (e) {
+      throw EPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
     }
   }
 }

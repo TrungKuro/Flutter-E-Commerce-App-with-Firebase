@@ -72,7 +72,7 @@ class EProductCardHorizontal extends StatelessWidget {
                         if (salePercentage != null)
                           ERoundedContainer(
                             radius: ESizes.sm,
-                            backgroundColor: EColors.secondary.withOpacity(0.8),
+                            backgroundColor: EColors.secondary.withValues(alpha: 0.8),
                             padding: const EdgeInsets.symmetric(horizontal: ESizes.sm, vertical: ESizes.xs),
                             child: Text(
                               '$salePercentage%',

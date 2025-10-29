@@ -1,11 +1,11 @@
 name: e_commerce_app
 description: "A new Flutter project."
 
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=3.3.4 <4.0.0'
+  sdk: ">=3.3.4 <4.0.0"
 
 # --------------------------------- PACKAGES -------------------------------- #
 
@@ -35,7 +35,7 @@ dependencies:
   cached_network_image: ^3.3.1
 
   # Product Specific
-  carousel_slider: ^4.2.1
+  carousel_slider: ^5.1.1
   readmore: ^3.0.0
   flutter_rating_bar: ^4.0.1
 
@@ -58,12 +58,11 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-# ------------------------------- LOCAL ASSETS ------------------------------ #
+  # ------------------------------- LOCAL ASSETS ------------------------------ #
 
   assets:
     - assets/logos/
 
-    - assets/icons/brands/
     - assets/icons/categories/
     - assets/icons/payment_methods/
 
@@ -81,7 +80,7 @@ flutter:
     - assets/images/products/shoes/adidas/
     - assets/images/products/shoes/skechers/
     - assets/images/products/shoes/puma/
-    
+
     - assets/images/products/sports/
     - assets/images/products/sports/akpro/
     - assets/images/products/sports/giant/
@@ -95,7 +94,7 @@ flutter:
     - assets/images/products/toys/bandai/
     - assets/images/products/toys/kotobukiya/
 
-# ------------------------------- LOCAL FONTS ------------------------------- #
+  # ------------------------------- LOCAL FONTS ------------------------------- #
 
   fonts:
     - family: coolvetica
@@ -131,4 +130,3 @@ flutter:
         - asset: assets/fonts/Poppins-BoldItalic.ttf
           weight: 800
           style: italic
-        

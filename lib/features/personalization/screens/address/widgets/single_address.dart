@@ -31,7 +31,7 @@ class ESingleAddress extends StatelessWidget {
           showBorder: true,
           padding: const EdgeInsets.all(ESizes.md),
           width: double.infinity,
-          backgroundColor: selectedAddress ? EColors.primary.withOpacity(0.5) : Colors.transparent,
+          backgroundColor: selectedAddress ? EColors.primary.withValues(alpha: 0.5) : Colors.transparent,
           borderColor: selectedAddress
               ? Colors.transparent
               : isDark

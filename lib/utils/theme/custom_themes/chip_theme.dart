@@ -11,7 +11,7 @@ class EAppChipTheme {
 
   static ChipThemeData lightChipTheme = ChipThemeData(
     selectedColor: EColors.primary,
-    disabledColor: EColors.grey.withOpacity(0.4),
+    disabledColor: EColors.grey.withValues(alpha: 0.4),
     checkmarkColor: EColors.white,
     //
     labelStyle: const TextStyle(color: EColors.black),

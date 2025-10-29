@@ -54,38 +54,38 @@ class EColors {
 
   //! Tăng cường độ đậm 30% cho màu "light"
   static Color lightDarker30Per = Color.fromARGB(
-    light.alpha,
-    (light.red * 0.7).round(),
-    (light.green * 0.7).round(),
-    (light.blue * 0.7).round(),
+    (light.a * 255.0).round(),
+    (light.r * 255.0 * 0.7).round(),
+    (light.g * 255.0 * 0.7).round(),
+    (light.b * 255.0 * 0.7).round(),
   );
   //! Tăng cường độ đậm 30% cho màu "dark"
   static Color darkDarker30Per = Color.fromARGB(
-    dark.alpha,
-    (dark.red * 0.7).round(),
-    (dark.green * 0.7).round(),
-    (dark.blue * 0.7).round(),
+    (dark.a * 255.0).round(),
+    (dark.r * 255.0 * 0.7).round(),
+    (dark.g * 255.0 * 0.7).round(),
+    (dark.b * 255.0 * 0.7).round(),
   );
 
   //! Tăng cường độ đậm 10% cho màu "light"
   static Color lightDarker10Per = Color.fromARGB(
-    light.alpha,
-    (light.red * 0.9).round(),
-    (light.green * 0.9).round(),
-    (light.blue * 0.9).round(),
+    (light.a * 255.0).round(),
+    (light.r * 255.0 * 0.9).round(),
+    (light.g * 255.0 * 0.9).round(),
+    (light.b * 255.0 * 0.9).round(),
   );
   //! Tăng cường độ đậm 10% cho màu "dark"
   static Color darkDarker10Per = Color.fromARGB(
-    dark.alpha,
-    (dark.red * 0.9).round(),
-    (dark.green * 0.9).round(),
-    (dark.blue * 0.9).round(),
+    (dark.a * 255.0).round(),
+    (dark.r * 255.0 * 0.9).round(),
+    (dark.g * 255.0 * 0.9).round(),
+    (dark.b * 255.0 * 0.9).round(),
   );
 
   /* --------------------- Background Container Colors --------------------- */
 
   static const Color lightContainer = Color(0xFFf6f6f6);
-  static Color darkContainer = EColors.white.withOpacity(0.1);
+  static Color darkContainer = EColors.white.withValues(alpha: 0.1);
 
   /* ---------------------------- Button Colors ---------------------------- */
 

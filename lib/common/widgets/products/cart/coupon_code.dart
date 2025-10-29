@@ -43,9 +43,9 @@ class ECouponCode extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () {}, //?
               style: ElevatedButton.styleFrom(
-                foregroundColor: isDark ? EColors.white.withOpacity(0.5) : EColors.dark.withOpacity(0.5),
-                backgroundColor: Colors.grey.withOpacity(0.2),
-                side: BorderSide(color: Colors.grey.withOpacity(0.1)),
+                foregroundColor: isDark ? EColors.white.withValues(alpha: 0.5) : EColors.dark.withValues(alpha: 0.5),
+                backgroundColor: Colors.grey.withValues(alpha: 0.2),
+                side: BorderSide(color: Colors.grey.withValues(alpha: 0.1)),
               ),
               child: const Text(ETexts.apply),
             ),

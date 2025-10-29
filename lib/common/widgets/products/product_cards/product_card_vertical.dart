@@ -79,7 +79,7 @@ class EProductCardVertical extends StatelessWidget {
                         if (salePercentage != null)
                           ERoundedContainer(
                             radius: ESizes.sm,
-                            backgroundColor: EColors.secondary.withOpacity(0.8),
+                            backgroundColor: EColors.secondary.withValues(alpha: 0.8),
                             padding: const EdgeInsets.symmetric(horizontal: ESizes.sm, vertical: ESizes.xs),
                             child: Text(
                               '$salePercentage%',
@@ -110,16 +110,18 @@ class EProductCardVertical extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    /// Name Product
+                    /// Name Product (Max 1 lines)
                     EProductTitleText(
                       title: product.title,
                       smallSize: true,
+                      maxLines: 1,
                     ),
                     const SizedBox(height: ESizes.spaceBtwItems / 2),
 
-                    /// Name Brand
+                    /// Name Brand (Max 1 line)
                     EBrandTitleWithVerifiedIcon(
                       title: product.brand!.name,
+                      maxLines: 1,
                     ),
                   ],
                 ),
@@ -137,16 +139,22 @@ class EProductCardVertical extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                /// Price
+                /// Price (Max 1 line each)
                 Flexible(
                   child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       if (product.productType == ProductType.single.toString() && product.salePrice > 0)
                         Padding(
                           padding: const EdgeInsets.only(left: ESizes.sm),
                           child: Text(
-                            product.price.toString(),
-                            style: Theme.of(context).textTheme.labelMedium!.apply(decoration: TextDecoration.lineThrough),
+                            '\$${product.price.toString()}',
+                            style: Theme.of(context).textTheme.labelMedium!.apply(
+                                  decoration: TextDecoration.lineThrough,
+                                ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
 
@@ -156,6 +164,7 @@ class EProductCardVertical extends StatelessWidget {
                         child: EProductPriceText(
                           price: controller.getProductPrice(product),
                           isLarge: true,
+                          maxLines: 1,
                         ),
                       ),
                     ],

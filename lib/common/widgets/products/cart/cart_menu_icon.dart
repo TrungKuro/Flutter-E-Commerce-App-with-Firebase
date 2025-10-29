@@ -38,7 +38,7 @@ class ECartCounterIcon extends StatelessWidget {
             width: 18,
             height: 18,
             decoration: BoxDecoration(
-              color: (iconColor != null) ? (EColors.black.withOpacity(0.5)) : (isDark ? EColors.white : EColors.black),
+              color: (iconColor != null) ? (EColors.black.withValues(alpha: 0.5)) : (isDark ? EColors.white : EColors.black),
               borderRadius: BorderRadius.circular(100),
             ),
             child: Center(

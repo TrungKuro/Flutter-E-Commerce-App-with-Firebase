@@ -35,7 +35,7 @@ class EProductMetalData extends StatelessWidget {
             /// Sale Tag
             ERoundedContainer(
               radius: ESizes.sm,
-              backgroundColor: EColors.secondary.withOpacity(0.8),
+              backgroundColor: EColors.secondary.withValues(alpha: 0.8),
               padding: const EdgeInsets.symmetric(horizontal: ESizes.sm, vertical: ESizes.xs),
               child: Text(
                 '$salePercentage%',

@@ -31,9 +31,7 @@ class ECircularIcon extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-        color: isTransparent
-            ? Colors.transparent
-            : (backgroundColor) ?? (isDark ? EColors.black.withOpacity(0.7) : EColors.white.withOpacity(0.3)),
+        color: isTransparent ? Colors.transparent : (backgroundColor) ?? (isDark ? EColors.black.withValues(alpha: 0.7) : EColors.white.withValues(alpha: 0.3)),
         shape: BoxShape.circle,
       ),
       child: IconButton(

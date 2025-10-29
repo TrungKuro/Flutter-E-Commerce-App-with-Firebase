@@ -18,18 +18,33 @@ class ESettingsMenuTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: Icon(icon, size: 28, color: EColors.primary),
-      title: Text(
-        title,
-        style: Theme.of(context).textTheme.titleMedium,
+    // Check if tile is disabled (onTap is null)
+    final bool isDisabled = onTap == null;
+
+    return Opacity(
+      opacity: isDisabled ? 0.5 : 1.0,
+      child: ListTile(
+        enabled: !isDisabled,
+        leading: Icon(
+          icon,
+          size: 28,
+          color: isDisabled ? EColors.grey : EColors.primary,
+        ),
+        title: Text(
+          title,
+          style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                color: isDisabled ? EColors.grey : null,
+              ),
+        ),
+        subtitle: Text(
+          subTitle,
+          style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                color: isDisabled ? EColors.grey : null,
+              ),
+        ),
+        trailing: trailing,
+        onTap: onTap, //?
       ),
-      subtitle: Text(
-        subTitle,
-        style: Theme.of(context).textTheme.labelMedium,
-      ),
-      trailing: trailing,
-      onTap: onTap, //?
     );
   }
 }

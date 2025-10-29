@@ -20,12 +20,10 @@ class EAppTextTheme {
     //
     bodyLarge: const TextStyle().copyWith(fontSize: 14, fontWeight: FontWeight.w500, color: EColors.textBlack),
     bodyMedium: const TextStyle().copyWith(fontSize: 14, fontWeight: FontWeight.normal, color: EColors.textBlack),
-    bodySmall: const TextStyle()
-        .copyWith(fontSize: 14, fontWeight: FontWeight.w500, color: EColors.textBlack.withOpacity(0.5)),
+    bodySmall: const TextStyle().copyWith(fontSize: 14, fontWeight: FontWeight.w500, color: EColors.textBlack.withValues(alpha: 0.5)),
     //
     labelLarge: const TextStyle().copyWith(fontSize: 12, fontWeight: FontWeight.normal, color: EColors.textBlack),
-    labelMedium: const TextStyle()
-        .copyWith(fontSize: 12, fontWeight: FontWeight.normal, color: EColors.textBlack.withOpacity(0.5)),
+    labelMedium: const TextStyle().copyWith(fontSize: 12, fontWeight: FontWeight.normal, color: EColors.textBlack.withValues(alpha: 0.5)),
   );
 
   /* ----------------------------- Trường tĩnh ----------------------------- */
@@ -41,11 +39,9 @@ class EAppTextTheme {
     //
     bodyLarge: const TextStyle().copyWith(fontSize: 14, fontWeight: FontWeight.w500, color: EColors.textWhite),
     bodyMedium: const TextStyle().copyWith(fontSize: 14, fontWeight: FontWeight.normal, color: EColors.textWhite),
-    bodySmall: const TextStyle()
-        .copyWith(fontSize: 14, fontWeight: FontWeight.w500, color: EColors.textWhite.withOpacity(0.5)),
+    bodySmall: const TextStyle().copyWith(fontSize: 14, fontWeight: FontWeight.w500, color: EColors.textWhite.withValues(alpha: 0.5)),
     //
     labelLarge: const TextStyle().copyWith(fontSize: 12, fontWeight: FontWeight.normal, color: EColors.textWhite),
-    labelMedium: const TextStyle()
-        .copyWith(fontSize: 12, fontWeight: FontWeight.normal, color: EColors.textWhite.withOpacity(0.5)),
+    labelMedium: const TextStyle().copyWith(fontSize: 12, fontWeight: FontWeight.normal, color: EColors.textWhite.withValues(alpha: 0.5)),
   );
 }

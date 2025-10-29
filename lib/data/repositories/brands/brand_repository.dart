@@ -1,9 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:e_commerce_app/data/services/firebase_storage_service.dart';
+import 'package:e_commerce_app/features/shop/models/brand_category_model.dart';
 import 'package:e_commerce_app/features/shop/models/brand_model.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:e_commerce_app/utils/exceptions/firebase_exceptions.dart';
 import 'package:e_commerce_app/utils/exceptions/format_exceptions.dart';
 import 'package:e_commerce_app/utils/exceptions/platform_exceptions.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
@@ -50,6 +53,57 @@ class BrandRepository extends GetxController {
       throw EFirebaseException(e.code).message;
     } on FormatException catch (_) {
       throw const EFormatException();
+    } on PlatformException catch (e) {
+      throw EPlatformException(e.code).message;
+    } catch (e) {
+      throw ETexts.throwError;
+    }
+  }
+
+  /// Upload brands to the Cloud Firebase
+  Future<void> uploadDummyData(List<BrandModel> brands) async {
+    try {
+      // Upload all the Brands along with their images
+      final storage = Get.put(EFirebaseStorageService());
+
+      // Loop through each brand
+      for (var brand in brands) {
+        // Get image data link from the local assets
+        final file = await storage.getImageDataFromAssets(brand.image);
+
+        // Upload image and get its URL
+        final url = await storage.uploadImageData('Brands', file, brand.name);
+
+        // Assign URL to brand image attribute
+        brand.image = url;
+
+        // Store brand in Firestore
+        await _db.collection('Brands').doc(brand.id).set(brand.toJson());
+      }
+
+      //! For Debug
+      if (kDebugMode) print('Upload a list of all Brands to Firestore success.');
+    } on FirebaseException catch (e) {
+      throw EFirebaseException(e.code).message;
+    } on PlatformException catch (e) {
+      throw EPlatformException(e.code).message;
+    } catch (e) {
+      throw ETexts.throwError;
+    }
+  }
+
+  /// Upload brand categories to the Cloud Firebase
+  Future<void> uploadBrandCategory(List<BrandCategoryModel> brandCategories) async {
+    try {
+      // Upload all the brand categories
+      for (var brandCategory in brandCategories) {
+        await _db.collection('BrandCategory').doc().set(brandCategory.toJson());
+      }
+
+      //! For Debug
+      if (kDebugMode) print('Upload a list of all BrandCategories to Firestore success.');
+    } on FirebaseException catch (e) {
+      throw EFirebaseException(e.code).message;
     } on PlatformException catch (e) {
       throw EPlatformException(e.code).message;
     } catch (e) {

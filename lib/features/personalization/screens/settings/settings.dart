@@ -6,6 +6,7 @@ import 'package:e_commerce_app/data/repositories/authentication/authentication_r
 import 'package:e_commerce_app/features/personalization/screens/address/user_address.dart';
 import 'package:e_commerce_app/features/personalization/screens/profile/profile.dart';
 import 'package:e_commerce_app/features/personalization/screens/settings/widgets/settings_menu_tile.dart';
+import 'package:e_commerce_app/features/shop/controllers/upload_data_controller.dart';
 import 'package:e_commerce_app/features/shop/screens/order/order.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
@@ -19,6 +20,8 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final uploadController = Get.put(UploadDataController());
+
     return Scaffold(
       /* ------------------------------------------------------------------- */
       /*                                 BODY                                */
@@ -129,10 +132,13 @@ class SettingsScreen extends StatelessWidget {
 
                   /* ------------------------------------------------------- */
 
-                  const ESettingsMenuTile(
-                    icon: Iconsax.document_upload,
-                    title: ETexts.loadDataTitle,
-                    subTitle: ETexts.loadDataSubTitle,
+                  Obx(
+                    () => ESettingsMenuTile(
+                      icon: Iconsax.document_upload,
+                      title: ETexts.loadDataTitle,
+                      subTitle: uploadController.isUploading.value ? 'Uploading...' : ETexts.loadDataSubTitle,
+                      onTap: uploadController.isUploading.value ? null : () => uploadController.uploadAllData(),
+                    ),
                   ),
                   ESettingsMenuTile(
                     icon: Iconsax.location,
